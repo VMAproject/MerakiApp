@@ -27,14 +27,51 @@
 </header>
 <div class="container-fluid">
 
-    <!--форма для регистрации ивента-->
-    <form  method="POST" action="">
+    <div class="row">
+        <div class="col-lg-6">
 
-        <h2 class="form-heading">Создание мероприятия</h2>
+            <!--форма для регистрации ивента-->
+            <form  method="POST" action="">
 
-        <input type="text" name="${_csrf.parameterName}" />
+                <h2 class="form-heading">Создание мероприятия</h2>
 
-    </form>
+                <!--названия ивента-->
+                <div class="form-group">
+                    <label for="name">Name of event</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location">
+                </div>
+
+                <!--начальная дата-->
+                <div class="form-group">
+                    <label for="date-from">Name of event</label>
+                    <input type="text" class="form-control" id="date-from">
+                </div>
+
+                <!--конечная дата-->
+                <div class="form-group">
+                    <label for="date-to">Name of event</label>
+                    <input type="text" class="form-control" id="date-to">
+                </div>
+
+                <input type="submit" value="Сохранить">
+
+            </form>
+
+        </div>
+        <div class="col-lg-6">
+            <table>
+                <tr>
+                    <td>events list</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
