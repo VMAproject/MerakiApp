@@ -1,0 +1,29 @@
+.logo{
+    height: 40px;
+    width: 30px;
+}
+
+.button{
+    text-decoration:none;
+    text-align:center;
+    padding:24px 40px;
+    border:solid 1px #004F72;
+    -webkit-border-radius:18px;
+    -moz-border-radius:18px;
+    border-radius: 18px;
+    font:26px Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color:#e5ffff;
+    background:#3379b7;
+    -webkit-box-shadow:inset 0px 0px 1px #ffffff;  -moz-box-shadow:inset 0px 0px 1px #ffffff;  box-shadow:inset 0px 0px 1px #ffffff;
+    opacity:0.8;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    filter: alpha(opacity=80);
+    outline: none;
+}
+
+.button:hover {
+    background-color: #286090;
+    border-color: #204d74;}
+
+
