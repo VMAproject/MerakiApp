@@ -1,0 +1,11 @@
+com\meraki\service\UserServiceImpl.class
+com\meraki\service\UserDetailsServiceImpl.class
+com\meraki\model\User.class
+com\meraki\model\Role.class
+com\meraki\dao\RoleDao.class
+com\meraki\validator\UserValidator.class
+com\meraki\dao\UserDao.class
+com\meraki\service\SecurityService.class
+com\meraki\service\UserService.class
+com\meraki\controller\UserController.class
+com\meraki\service\SecurityServiceImpl.class
