@@ -11,15 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by Verlamov on 10.03.17.
- */
+
 @Controller
 public class EventController {
 
     private EventService eventService;
 
-    @Autowired(required = true)
+    @Autowired
     public void setEventService(EventService eventService) {
         this.eventService = eventService;
     }
@@ -46,7 +44,7 @@ public class EventController {
 
     @RequestMapping(value = "remove/{eventId}")
     public String removeEvent(@PathVariable("eventId") Long eventId) {
-        this.eventService.deleteEventById(eventId);
+        eventService.deleteEventById(eventId);
         return "redirect:/events";
     }
 

@@ -28,7 +28,6 @@ public class EventServiceImpl implements EventService {
     @Override
     public void saveEvent(Event event) {
        eventDao.save(event);
-
     }
 
     @Override
@@ -51,7 +50,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<Event> findAllEvents() {
-        return null;
+        return this.eventDao.findAll();
     }
 
 

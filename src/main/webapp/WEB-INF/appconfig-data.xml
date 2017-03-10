@@ -40,4 +40,5 @@
     <tx:annotation-driven/>
 
     <jpa:repositories base-package="com.meraki.dao"/>
+
 </beans>

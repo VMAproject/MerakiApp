@@ -25,7 +25,7 @@ public class Event {
 
     @Column(name = "date_to")
     private Date dateTo;
-
+    @Temporal(TemporalType.DATE)
     @Column(name = "date_from")
     private Date dateFrom;
 
