@@ -5,11 +5,9 @@ import com.meraki.model.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class EventServiceImpl implements EventService {
 
 
@@ -29,7 +27,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public void saveEvent(Event event) {
-        eventDao.save(event);
+       eventDao.save(event);
 
     }
 
@@ -53,6 +51,8 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<Event> findAllEvents() {
-        return eventDao.findAll();
+        return null;
     }
+
+
 }

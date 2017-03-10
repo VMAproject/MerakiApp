@@ -36,7 +36,7 @@
 </header>
 <div class="container-fluid">
 
-    <a href="<c:url value="/welcome"/> "target="_blank"> в главное меню</a>
+    <a href="<c:url value="/welcome"/> " target="_blank"> в главное меню</a>
 
     <br/>
     <br/>
@@ -134,11 +134,11 @@
                 <td colspan="2">
                     <c:if test="${!empty event.name}">
                         <input type="submit"
-                               value="<spring:message text="Edit Book"/>"/>
+                               value="<spring:message text="Edit event"/>"/>
                     </c:if>
                     <c:if test="${empty event.name}">
                         <input type="submit"
-                               value="<spring:message text="Add Book"/>"/>
+                               value="<spring:message text="Add event"/>"/>
                     </c:if>
                 </td>
             </tr>

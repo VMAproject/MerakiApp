@@ -57,6 +57,4 @@ public class EventController {
         model.addAttribute("listEvent", this.eventService.findAllEvents());
         return "events";
     }
-
-
 }
