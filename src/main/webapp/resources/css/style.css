@@ -1,3 +1,27 @@
+@font-face {
+    font-family: "OpenSansRegular";
+    src: url("../../resources/fonts/OpenSansRegular/OpenSansRegular.eot");
+    src: url("../../resources/fonts/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
+    url("../../resources/fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+    url("../../resources/fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "RobotoCondensedRegular";
+    src: url("../../resources/fonts/RobotoCondensedRegular/RobotoCondensedRegular.eot");
+    src: url("../../resources/fonts/RobotoCondensedRegular/RobotoCondensedRegular.eot?#iefix")format("embedded-opentype"),
+    url("../../resources/fonts/RobotoCondensedRegular/RobotoCondensedRegular.woff") format("woff"),
+    url("../../resources/fonts/RobotoCondensedRegular/RobotoCondensedRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+* {
+    font: inherit;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -7,6 +31,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    font-family: OpenSansRegular;
 }
 
 .footer {
@@ -69,4 +94,13 @@ body {
 .greeting-logout {
     cursor: pointer;
     color: #87CEEB;
+}
+
+.header {
+    font-family: RobotoCondensedRegular;
+    text-align: center;
+}
+
+.breadcrumbs {
+    margin-bottom: 15px;
 }
