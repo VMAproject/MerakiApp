@@ -7,5 +7,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface EventDao extends JpaRepository<Event, Long> {
 
-    Event findByName(String name);
 }

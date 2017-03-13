@@ -28,7 +28,8 @@
 
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-        <a class="navbar-brand" href="#"><img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png" alt="logo"></a>
+        <a class="navbar-brand" href="#"><img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
+                                              alt="logo"></a>
         <div class="greeting right">
             <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">
                 <span class="greeting-logout">Logout</span></a>
@@ -42,7 +43,7 @@
         <div class="row">
             <div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4">
                 <div class="size right">
-                    <a href="<c:url value="/events"/> "  class="button"> Мероприятия</a>
+                    <a href="<c:url value="/events"/> " class="button"> Мероприятия</a>
                 </div>
             </div>
             <div class="col-lg-offset-2 col-lg-4 col-md-4 col-sm-4">

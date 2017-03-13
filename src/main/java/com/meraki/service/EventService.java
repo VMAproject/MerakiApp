@@ -1,5 +1,6 @@
 package com.meraki.service;
 
+import com.meraki.exception.NotFound;
 import com.meraki.model.Event;
 
 import java.util.List;
@@ -7,19 +8,15 @@ import java.util.List;
 
 public interface EventService {
 
-    Event findById(Long eventId);
+    Event createEvent(Event event);
 
-    Event findName(String name);
+    Event deleteEvent(long id);
 
-    void saveEvent(Event event);
+    List<Event> findAllEvent();
 
-    void updateEvent(Event event);
+    Event updateEvent(Event event);
 
-    void deleteEventById(Long eventId);
-
-    void deleteAllEvent();
-
-    List<Event> findAllEvents();
+    Event findByEventId(long id);
 
 
 }

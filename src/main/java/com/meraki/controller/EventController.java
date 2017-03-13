@@ -1,20 +1,18 @@
 package com.meraki.controller;
 
+
 import com.meraki.model.Event;
 import com.meraki.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
 public class EventController {
 
+    @Autowired
     private EventService eventService;
 
     @Autowired
@@ -23,36 +21,43 @@ public class EventController {
     }
 
 
-    @RequestMapping(value = "/events", method = RequestMethod.GET)
+    @RequestMapping(value = "events", method = RequestMethod.GET)
     public String listEvents(Model model) {
         model.addAttribute("event", new Event());
-        model.addAttribute("listEvent", this.eventService.findAllEvents());
+        model.addAttribute("listEvent", this.eventService.findAllEvent());
         return "events";
     }
 
-
     @RequestMapping(value = "/events/add", method = RequestMethod.POST)
-    public String addEvents(@ModelAttribute("event") Event event) {
-        if (event.getEventId() == 0) {
-            this.eventService.saveEvent(event);
-        } else {
-            this.eventService.updateEvent(event);
-        }
+    public String addEvent(@ModelAttribute("event") Event event) {
+//        Event event1 = new Event();
+//        event1.setName(event.getName());
+//        event1.setLocation(event.getLocation());
+
+        this.eventService.createEvent(event);
+
+//        if (event.getId() == null) {
+//            this.eventService.createEvent(event);
+//        } else {
+//            this.eventService.updateEvent(event);
+//        }
         return "redirect:/events";
     }
 
+    @RequestMapping(value = "/remove")
 
-    @RequestMapping(value = "remove/{eventId}")
-    public String removeEvent(@PathVariable("eventId") Long eventId) {
-        eventService.deleteEventById(eventId);
+    public String removeEvent(@RequestParam(value = "eventId", required = false) Long id){
+        System.out.println(id);
+        this.eventService.deleteEvent(id);
         return "redirect:/events";
+
     }
 
 
-    @RequestMapping(value = "edit/{eventId}")
-    public String editEvent(@PathVariable("eventId") Long eventId, Model model) {
-        model.addAttribute("event", this.eventService.findById(eventId));
-        model.addAttribute("listEvent", this.eventService.findAllEvents());
+    @RequestMapping(value = "edit/{id}")
+    public String editEvent(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("event", this.eventService.findByEventId(id));
+        model.addAttribute("listEvent", this.eventService.findAllEvent());
         return "events";
     }
 }

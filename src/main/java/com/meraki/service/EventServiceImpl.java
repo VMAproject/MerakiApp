@@ -1,57 +1,68 @@
 package com.meraki.service;
 
 import com.meraki.dao.EventDao;
+
 import com.meraki.model.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class EventServiceImpl implements EventService {
 
 
     @Autowired
+//    @Resource
     private EventDao eventDao;
 
-
-    @Override
-    public Event findById(Long eventId) {
-        return eventDao.findOne(eventId);
+    @Autowired
+    public void setEventDao(EventDao eventDao) {
+        this.eventDao = eventDao;
     }
 
     @Override
-    public Event findName(String name) {
-        return eventDao.findByName(name);
+    public Event createEvent(Event event) {
+        Event createdEvent = event;
+        return eventDao.save(createdEvent);
     }
 
     @Override
-    public void saveEvent(Event event) {
-       eventDao.save(event);
+    public Event deleteEvent(long id) {
+        Event deleteEvent = eventDao.findOne(id);
+        eventDao.delete(deleteEvent);
+        return deleteEvent;
+
+
+//        Event deletedEvent = eventDao.findOne(id);
+//        if (deletedEvent == null ) {
+//            throw new NotFound("no found");
+//        }
+//        eventDao.delete(deletedEvent);
+//        return deletedEvent;
     }
 
     @Override
-    public void updateEvent(Event event) {
-        saveEvent(event);
-
+    public List<Event> findAllEvent() {
+        return eventDao.findAll();
     }
 
     @Override
-    public void deleteEventById(Long eventId) {
-        eventDao.delete(eventId);
+    public Event updateEvent(Event event) {
 
+        Event updatedEvent = eventDao.findOne(event.getId());
+
+        updatedEvent.setName(event.getName());
+        updatedEvent.setLocation(event.getLocation());
+//        updatedEvent.setDateFrom(event.getDateFrom());
+//        updatedEvent.setDateTo(event.getDateTo());
+        return updatedEvent;
     }
 
     @Override
-    public void deleteAllEvent() {
-        eventDao.deleteAll();
-
+    public Event findByEventId(long id) {
+        return eventDao.findOne(id);
     }
-
-    @Override
-    public List<Event> findAllEvents() {
-        return this.eventDao.findAll();
-    }
-
-
 }

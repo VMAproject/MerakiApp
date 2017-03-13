@@ -5,16 +5,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ page session="false" %>
-
-
-<%--
-  Created by IntelliJ IDEA.
-  User: Oleksandr
-  Date: 09.03.2017
-  Time: 14:25
-  To change this template use File | Settings | File Templates.
---%>
-
 <html>
 <head>
     <title>Title</title>
@@ -31,7 +21,8 @@
 
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-        <a class="navbar-brand" href="#"><img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png" alt="logo"></a>
+        <a class="navbar-brand" href="#"><img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
+                                              alt="logo"></a>
         <div class="greeting right">
             <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">
                 <span class="greeting-logout">Logout</span></a>
@@ -62,63 +53,63 @@
 
                 <h2 class="form-heading">Создание мероприятия</h2>
 
-                    <!--id event-->
+                <!--id event-->
                 <c:if test="${!empty event.name}">
                     <div class="form-group">
                         <label for="name">
-                            <form:label path="eventId">
+                            <form:label path="id">
                                 <spring:message text="ID"/>
                             </form:label>
                         </label>
-                        <form:input path="eventId" readonly="true" size="8" disabled="true"/>
-                        <form:hidden path="eventId"/>
+                        <form:input path="id" readonly="true" size="8" disabled="true"/>
+                        <form:hidden path="id"/>
                     </div>
                 </c:if>
 
-                    <!--названия ивента-->
-                    <div class="form-group">
-                        <label for="name">
-                            <form:label path="name">
-                                <spring:message text="Name"/>
-                            </form:label>
-                        </label>
-                        <form:input class="form-control" path="name"/>
-                    </div>
+                <!--названия ивента-->
+                <div class="form-group">
+                    <label for="name">
+                        <form:label path="name">
+                            <spring:message text="Name"/>
+                        </form:label>
+                    </label>
+                    <form:input class="form-control" path="name"/>
+                </div>
 
-                    <div class="form-group">
-                        <label for="location">
-                            <form:label path="location">
-                                <spring:message text="Location"/>
-                            </form:label>
-                        </label>
-                        <form:input class="form-control" path="location"/>
-                    </div>
+                <div class="form-group">
+                    <label for="location">
+                        <form:label path="location">
+                            <spring:message text="Location"/>
+                        </form:label>
+                    </label>
+                    <form:input class="form-control" path="location"/>
+                </div>
 
-                    <!--начальная дата-->
-                    <div class="form-group">
-                        <label for="date-from">
-                            <form:label path="dateFrom">
-                                <spring:message text="DateFrom"/>
-                            </form:label>
-                        </label>
-                        <form:input class="form-control" path="dateFrom"/>
-                    </div>
+                <%--<!--начальная дата-->--%>
+                <%--<div class="form-group">--%>
+                <%--&lt;%&ndash;@declare id="date-from"&ndash;%&gt;<label for="date-from">--%>
+                <%--<form:label path="dateFrom">--%>
+                <%--<spring:message text="DateFrom"/>--%>
+                <%--</form:label>--%>
+                <%--</label>--%>
+                <%--<form:input class="form-control" path="dateFrom"/>--%>
+                <%--</div>--%>
 
-                    <!--конечная дата-->
-                    <div class="form-group">
-                        <%--@declare id="date-to"--%><label for="date-to">
-                            <form:label path="dateTo">
-                                <spring:message text="DateTo"/>
-                            </form:label>
-                        </label>
-                        <form:input class="form-control" path="dateTo"/>
-                    </div>
+                <%--<!--конечная дата-->--%>
+                <%--<div class="form-group">--%>
+                <%--&lt;%&ndash;@declare id="date-to"&ndash;%&gt;<label for="date-to">--%>
+                <%--<form:label path="dateTo">--%>
+                <%--<spring:message text="DateTo"/>--%>
+                <%--</form:label>--%>
+                <%--</label>--%>
+                <%--<form:input class="form-control" path="dateTo"/>--%>
+                <%--</div>--%>
 
-                <c:if test="${!empty event.name}">
+                <c:if test="${!empty event.id}">
                     <input type="submit" class="btn btn-primary"
                            value="<spring:message text="Edit event"/>"/>
                 </c:if>
-                <c:if test="${empty event.name}">
+                <c:if test="${empty event.id}">
                     <input type="submit" class="btn btn-primary"
                            value="<spring:message text="Add event"/>"/>
                 </c:if>
@@ -142,20 +133,25 @@
                         <th width="80">id</th>
                         <th width="120">Name</th>
                         <th width="120">location</th>
-                        <th width="120">date_from</th>
-                        <th width="120">date_to</th>
+                            <%--<th width="120">date_from</th>--%>
+                            <%--<th width="120">date_to</th>--%>
                         <th width="60">Edit</th>
                         <th width="60">Delete</th>
                     </tr>
                     <c:forEach items="${listEvent}" var="event">
                         <tr>
-                            <td>${event.eventId}</td>
+                            <td>${event.id}</td>
                             <td>${event.name}</td>
                             <td>${event.location}</td>
-                            <td>${event.dateFrom}</td>
-                            <td>${event.dateTo}</td>
-                            <td><a href="<c:url value='/edit/${event.eventId}'/> ">EDIT</a></td>
-                            <td><a href="<c:url value='/remove/${event.eventId}}'/>">Delete</a></td>
+                                <%--<td>${event.dateFrom}</td>--%>
+                                <%--<td>${event.dateTo}</td>--%>
+
+                            <td><a href="<c:url value='/edit/${event.id}'/> ">EDIT</a></td>
+                            <td><c:url var="updateLink" value="/remove/">
+                                <c:param name="eventId" value="${event.id}"/>
+                            </c:url>
+                                <a href="${updateLink}">delete</a></td>
+                                <%--<td><a href="<c:url value='/remove/${event.id}}'/>">Delete</a></td>--%>
                         </tr>
                     </c:forEach>
                 </table>
