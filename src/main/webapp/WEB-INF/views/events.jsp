@@ -106,7 +106,7 @@
 
                     <!--конечная дата-->
                     <div class="form-group">
-                        <label for="date-to">
+                        <%--@declare id="date-to"--%><label for="date-to">
                             <form:label path="dateTo">
                                 <spring:message text="DateTo"/>
                             </form:label>

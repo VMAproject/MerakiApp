@@ -1,6 +1,5 @@
 package com.meraki.service;
 
-import com.meraki.dao.EventDao;
 import com.meraki.model.Event;
 
 import java.util.List;
