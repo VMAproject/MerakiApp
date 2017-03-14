@@ -73,8 +73,8 @@ body {
     border-color: #204d74;}
 
 .logo{
-    height: 40px;
-    width: 30px;
+    height: 65px;
+    width: 165px;
 }
 
 .size {
@@ -88,7 +88,7 @@ body {
 }
 
 .right {
-    text-align: right;
+    float: right;
 }
 
 .greeting-logout {

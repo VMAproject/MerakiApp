@@ -28,8 +28,8 @@
 
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-        <a class="navbar-brand" href="#"><img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
-                                              alt="logo"></a>
+       <img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
+                                              alt="logo">
         <div class="greeting right">
             <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">
                 <span class="greeting-logout">Logout</span></a>
