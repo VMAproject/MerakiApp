@@ -23,7 +23,7 @@
 <body>
 
 <%--HEADER --%>
-<jsp:include page="template_page/header.jsp" flush="false"/>
+<jsp:include page="includes/header.jsp" flush="false"/>
 <%--HEADER --%>
 
 <div class="container">
@@ -57,7 +57,7 @@
 </div>
 
 <%--FOOTER--%>
-<jsp:include page="template_page/footer.jsp" flush="false"/>
+<jsp:include page="includes/footer.jsp" flush="false"/>
 <%--FOOTER--%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
