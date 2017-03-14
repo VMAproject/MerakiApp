@@ -8,9 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by Verlamov on 14.03.17.
- */
 @Controller
 public class RouterController {
 
@@ -29,7 +26,6 @@ public class RouterController {
         model.addAttribute("listRouter", this.routerService.findAllRouter());
         return "routers";
     }
-
 
 
 }

@@ -1,6 +1,5 @@
 package com.meraki.service;
 
-import com.meraki.exception.NotFound;
 import com.meraki.model.Event;
 
 import java.util.List;

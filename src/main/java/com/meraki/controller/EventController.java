@@ -15,6 +15,7 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
+
     @Autowired
     public void setEventService(EventService eventService) {
         this.eventService = eventService;
@@ -46,7 +47,7 @@ public class EventController {
 
     @RequestMapping(value = "/remove")
 
-    public String removeEvent(@RequestParam(value = "eventId", required = false) Long id){
+    public String removeEvent(@RequestParam(value = "eventId", required = false) Long id) {
         System.out.println(id);
         this.eventService.deleteEvent(id);
         return "redirect:/events";

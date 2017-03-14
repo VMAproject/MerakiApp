@@ -4,16 +4,13 @@ package com.meraki.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
-
-/**
- * Created by Verlamov on 07.03.17.
- */
 
 @Data
 @Entity
 @Table(name = "router")
-public class Router {
+public class Router implements Serializable {
 
 
     @Id

@@ -15,7 +15,7 @@ public class WelcomeController {
 
 
     @RequestMapping(value = "/routers")
-    public String goRouter(){
+    public String goRouter() {
         return "routers";
     }
 }
