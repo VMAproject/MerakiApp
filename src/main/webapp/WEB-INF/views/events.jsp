@@ -11,8 +11,6 @@
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
     <link href="<c:url value='/resources/css/style.css' />" rel="stylesheet"/>
-    <link href="${contextPath}/resources/css/routers.css" rel="stylesheet">
-    <link href="<c:url value='/resources/css/routers.css' />" rel="stylesheet"/>
 </head>
 <body>
 
@@ -21,19 +19,16 @@
 
 <div class="container-fluid">
 
-    <%--раздел с breadcrumbs--%>
-    <div class="breadcrumbs">
-        <a href="<c:url value="/welcome"/> "> в главное меню</a>
-    </div>
-
     <%--форма добавления ивентов--%>
-    <div class="container header">
-        <h1>ADDING EVENTS</h1>
-    </div>
     <c:url var="addAction" value="/events/add"/>
 
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-offset-1 col-lg-3">
+
+            <%--раздел с breadcrumbs--%>
+            <div class="breadcrumbs">
+                <a href="<c:url value="/welcome"/> "> в главное меню</a>
+            </div>
 
             <c:url var="addAction" value="/events/add"/>
 
@@ -121,27 +116,24 @@
         </div>
 
         <div class="col-lg-offset-1 col-lg-6">
-
-            <h2>Event List</h2>
-            <table>
-                <tr>
-                    <td>events list</td>
-                </tr>
-
-            </table>
+            <div class="header">
+                <h2>ADDING EVENTS</h2>
+            </div>
 
             <%--таблица для вывода ивентов--%>
             <c:if test="${!empty listEvent}">
-                <table>
+                <table class="table">
                     <tr>
-                        <th width="80">id</th>
-                        <th width="120">Name</th>
-                        <th width="120">Location</th>
-                        <th width="120">RouterName</th>
+                        <thead class="thead">
+                            <th width="80">id</th>
+                            <th width="120">Name</th>
+                            <th width="120">Location</th>
+                            <th width="120">RouterName</th>
                             <%--<th width="120">date_from</th>--%>
                             <%--<th width="120">date_to</th>--%>
-                        <th width="60">Edit</th>
-                        <th width="60">Delete</th>
+                            <th width="60">Edit</th>
+                            <th width="60">Delete</th>
+                        </thead>
                     </tr>
                     <c:forEach items="${listEvent}" var="event">
                         <tr>

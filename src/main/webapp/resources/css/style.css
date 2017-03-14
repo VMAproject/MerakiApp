@@ -87,6 +87,24 @@ body {
     color: white;
 }
 
+.greeting-img {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.greeting-img > img {
+    height: 45px;
+    width: 44px;
+    margin-bottom: 11px;
+}
+
+.greeting-user {
+    display: inline-block;
+    font-size: 18px;
+    position: relative;
+    top: 9px;
+}
+
 .right {
     float: right;
 }
@@ -99,8 +117,17 @@ body {
 .header {
     font-family: RobotoCondensedRegular;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .breadcrumbs {
     margin-bottom: 15px;
+}
+
+.form-heading {
+    margin-bottom: 35px;
+}
+
+.thead {
+    background-color: #DCDCDC;
 }

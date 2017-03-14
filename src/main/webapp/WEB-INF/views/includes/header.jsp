@@ -34,8 +34,14 @@
         <img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
              alt="logo">
         <div class="greeting right">
-            <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">
-                <span class="greeting-logout">Logout</span></a>
+            <div class="greeting-img">
+                <img src="${contextPath}/resources/img/user-image.png" alt="user" />
+            </div>
+            <div class="greeting-user">
+                Welcome ${pageContext.request.userPrincipal.name} | <br>
+                <a onclick="document.forms['logoutForm'].submit()">
+                    <span class="greeting-logout">Logout</span></a>
+            </div>
         </div>
     </nav>
 </c:if>
