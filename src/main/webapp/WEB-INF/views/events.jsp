@@ -50,19 +50,6 @@
                     </div>
                 </c:if>
 
-                <%--<c:if test="${!empty event.router.id}">--%>
-                <%--<div class="form-group">--%>
-                <%--<label for="name">--%>
-                <%--<form:label path="routerid">--%>
-                <%--<spring:message text="routerid"/>--%>
-                <%--</form:label>--%>
-                <%--</label>--%>
-                <%--<form:input path="routerid" readonly="true" size="8" disabled="true"/>--%>
-                <%--<form:hidden path="routerid"/>--%>
-                <%--</div>--%>
-                <%--</c:if>--%>
-
-
                 <!--названия ивента-->
                 <div class="form-group">
                     <label for="name">
