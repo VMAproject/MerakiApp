@@ -21,21 +21,10 @@
 
 </head>
 <body>
-<c:if test="${pageContext.request.userPrincipal.name != null}">
-    <form id="logoutForm" method="POST" action="${contextPath}/logout">
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-    </form>
 
-
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-       <img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
-                                              alt="logo">
-        <div class="greeting right">
-            <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">
-                <span class="greeting-logout">Logout</span></a>
-        </div>
-    </nav>
-</c:if>
+<%--HEADER --%>
+<jsp:include page="template_page/header.jsp" flush="false"/>
+<%--HEADER --%>
 
 <div class="container">
 
@@ -67,11 +56,10 @@
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">sashkoi1234@gmail.com</p>
-    </div>
-</footer>
+<%--FOOTER--%>
+<jsp:include page="template_page/footer.jsp" flush="false"/>
+<%--FOOTER--%>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 
