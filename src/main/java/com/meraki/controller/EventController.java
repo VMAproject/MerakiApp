@@ -3,6 +3,7 @@ package com.meraki.controller;
 
 import com.meraki.model.Event;
 import com.meraki.service.EventService;
+import com.meraki.service.RouterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,13 @@ public class EventController {
     @Autowired
     private EventService eventService;
 
+    @Autowired
+    private RouterService routerService;
+
+    @Autowired
+    public void setRouterService(RouterService routerService) {
+        this.routerService = routerService;
+    }
 
     @Autowired
     public void setEventService(EventService eventService) {
@@ -46,7 +54,6 @@ public class EventController {
     }
 
     @RequestMapping(value = "/remove")
-
     public String removeEvent(@RequestParam(value = "eventId", required = false) Long id) {
         System.out.println(id);
         this.eventService.deleteEvent(id);
@@ -58,7 +65,23 @@ public class EventController {
     @RequestMapping(value = "edit/{id}")
     public String editEvent(@PathVariable("id") Long id, Model model) {
         model.addAttribute("event", this.eventService.findByEventId(id));
+
+        Event event = this.eventService.findByEventId(id);
+        eventService.updateEvent(event);
+
         model.addAttribute("listEvent", this.eventService.findAllEvent());
+
+
         return "events";
     }
+
+
+//    @RequestMapping(value = "edites/{id}")
+//    public void editEventBase(@PathVariable("id") Long id, Model model) {
+//        Event event = this.eventService.findByEventId(id);
+//
+//        System.out.println(event.getId() + " " + event.getRouter().getId() + " " + event.getName() + " " + event.getLocation());
+//
+//
+//    }
 }

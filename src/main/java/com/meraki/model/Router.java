@@ -20,9 +20,9 @@ public class Router implements Serializable {
 
     @Column(name = "router_name")
     private String routerName;
-//
-//    @OneToOne(optional = false, mappedBy = "router")
-//    private Event event;
+
+    @OneToOne(optional = false, mappedBy = "router")
+    private Event event;
 
 //
 //    @OneToMany(fetch = FetchType.EAGER, mappedBy = "router")

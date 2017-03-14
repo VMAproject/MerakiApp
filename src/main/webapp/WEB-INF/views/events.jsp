@@ -43,7 +43,7 @@
                 <h2 class="form-heading">Создание мероприятия</h2>
 
                 <!--id event-->
-                <c:if test="${!empty event.name}">
+                <c:if test="${!empty event.id}">
                     <div class="form-group">
                         <label for="name">
                             <form:label path="id">
@@ -54,6 +54,19 @@
                         <form:hidden path="id"/>
                     </div>
                 </c:if>
+
+                <%--<c:if test="${!empty event.router.id}">--%>
+                <%--<div class="form-group">--%>
+                <%--<label for="name">--%>
+                <%--<form:label path="routerid">--%>
+                <%--<spring:message text="routerid"/>--%>
+                <%--</form:label>--%>
+                <%--</label>--%>
+                <%--<form:input path="routerid" readonly="true" size="8" disabled="true"/>--%>
+                <%--<form:hidden path="routerid"/>--%>
+                <%--</div>--%>
+                <%--</c:if>--%>
+
 
                 <!--названия ивента-->
                 <div class="form-group">
@@ -98,6 +111,8 @@
                     <input type="submit" class="btn btn-primary"
                            value="<spring:message text="Edit event"/>"/>
                 </c:if>
+
+                <%--<td><a href="<c:url value='/edites/${event.id}'/> ">EDIT</a></td>--%>
                 <c:if test="${empty event.id}">
                     <input type="submit" class="btn btn-primary"
                            value="<spring:message text="Add event"/>"/>
@@ -121,7 +136,8 @@
                     <tr>
                         <th width="80">id</th>
                         <th width="120">Name</th>
-                        <th width="120">location</th>
+                        <th width="120">Location</th>
+                        <th width="120">RouterName</th>
                             <%--<th width="120">date_from</th>--%>
                             <%--<th width="120">date_to</th>--%>
                         <th width="60">Edit</th>
@@ -132,6 +148,7 @@
                             <td>${event.id}</td>
                             <td>${event.name}</td>
                             <td>${event.location}</td>
+                            <td>${event.router.routerName}</td>
                                 <%--<td>${event.dateFrom}</td>--%>
                                 <%--<td>${event.dateTo}</td>--%>
 

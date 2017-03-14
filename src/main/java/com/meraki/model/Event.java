@@ -33,9 +33,9 @@ public class Event implements Serializable {
 //    private Date dateTo;
 
 
-//    @OneToOne(optional = false)
-//    @JoinColumn(name = "router_id", unique = true, nullable = false)
-//    private Router router;
+    @OneToOne(optional = false)
+    @JoinColumn(name = "router_id", unique = true, nullable = true)
+    private Router router;
 
 
 }
