@@ -55,7 +55,7 @@
         <div class="row">
             <div class="col-lg-offset-1 col-lg-4 col-md-4 col-sm-4">
                 <div class="size right">
-                    <a href="#" class="button"/>Роутеры</a>
+                    <a href="<c:url value="/routers"/> " class="button">Роутеры</a>
                 </div>
             </div>
             <div class="col-lg-offset-2 col-lg-4 col-md-4 col-sm-4">

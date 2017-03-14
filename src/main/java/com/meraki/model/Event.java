@@ -3,13 +3,14 @@ package com.meraki.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
 @Data
 @Entity
 @Table(name = "event")
-public class Event {
+public class Event implements Serializable {
 
 
     @Id

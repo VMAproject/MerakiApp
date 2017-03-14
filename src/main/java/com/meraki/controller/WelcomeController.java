@@ -12,4 +12,10 @@ public class WelcomeController {
     public String goEvent() {
         return "events";
     }
+
+
+    @RequestMapping(value = "/routers")
+    public String goRouter(){
+        return "routers";
+    }
 }
