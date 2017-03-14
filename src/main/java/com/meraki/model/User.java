@@ -69,26 +69,6 @@ public class User implements Serializable {
         this.roles = roles;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User that = (User) o;
-
-        return Objects.equals(this.confirmPassword, that.confirmPassword) &&
-                Objects.equals(this.id, that.id) &&
-                Objects.equals(this.password, that.password) &&
-                Objects.equals(this.roles, that.roles) &&
-                Objects.equals(this.username, that.username);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(confirmPassword, id, password, roles, username);
-    }
-
     @Override
     public String toString() {
         return new StringJoiner(", ", this.getClass().getSimpleName() + "[", "]")
