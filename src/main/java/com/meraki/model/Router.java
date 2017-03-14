@@ -1,11 +1,8 @@
 package com.meraki.model;
 
-
 import lombok.Data;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 @Data
 @Entity
@@ -23,10 +20,10 @@ public class Router implements Serializable {
 
     @Column(name = "router_name")
     private String routerName;
-
+//
 //    @OneToOne(optional = false, mappedBy = "router")
 //    private Event event;
-//
+
 //
 //    @OneToMany(fetch = FetchType.EAGER, mappedBy = "router")
 //    private Set<StackData> stackDataSet;

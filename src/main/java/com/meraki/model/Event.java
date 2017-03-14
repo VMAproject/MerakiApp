@@ -33,10 +33,6 @@ public class Event implements Serializable {
 //    private Date dateTo;
 
 
-//    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-//    @JoinColumn(name = "user_id", nullable = false)
-//    private User user;
-
 //    @OneToOne(optional = false)
 //    @JoinColumn(name = "router_id", unique = true, nullable = false)
 //    private Router router;

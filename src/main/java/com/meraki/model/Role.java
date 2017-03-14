@@ -3,7 +3,9 @@ package com.meraki.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Set;
+import java.util.StringJoiner;
 
 
 @Entity
@@ -47,12 +49,30 @@ public class Role implements Serializable {
         this.users = users;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Role that = (Role) o;
+
+        return Objects.equals(this.id, that.id) &&
+                Objects.equals(this.name, that.name) &&
+                Objects.equals(this.users, that.users);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, users);
+    }
+
     @Override
     public String toString() {
-        return "Role{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", users=" + users +
-                '}';
+        return new StringJoiner(", ", this.getClass().getSimpleName() + "[", "]")
+                .add("id = " + id)
+                .add("name = " + name)
+                .add("users = " + users)
+                .toString();
     }
 }
