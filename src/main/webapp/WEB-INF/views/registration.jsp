@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -28,7 +29,30 @@
 
 <body>
 
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
+         alt="logo">
+    <div class="greeting right">
+        <div class="clock">
+            <div id="Date"></div>
+            <ul>
+                <li id="hours"></li>
+                <li id="point">:</li>
+                <li id="min"></li>
+                <li id="point">:</li>
+                <li id="sec"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
+    <div class="breadcrumbs">
+        <a href="<c:url value="/login"/> ">Главная</a>
+    </div>
+</div>
+
+<div class="container-fluid">
 
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
         <h2 class="form-signin-heading">Create your account</h2>
@@ -92,5 +116,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 <script src="${contextPath}/resources/js/validation.js"></script>
+<script src="${contextPath}/resources/js/clock.js"></script>
 </body>
 </html>

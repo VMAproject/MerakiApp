@@ -26,13 +26,30 @@
 
 <body>
 
-<div class="container">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <img class="logo" src="${contextPath}/resources/img/CiscoMeraki.png"
+         alt="logo">
+    <div class="greeting right">
+        <div class="clock">
+            <div id="Date"></div>
+            <ul>
+                <li id="hours"></li>
+                <li id="point">:</li>
+                <li id="min"></li>
+                <li id="point">:</li>
+                <li id="sec"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
 
     <form method="POST" action="${contextPath}/login" class="form-signin">
         <h2 class="form-heading">Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span>${message}</span>
+            <span class="success">${message}</span>
             <input name="username" type="text" class="form-control" placeholder="Username"
                    autofocus="true"/>
             <input name="password" type="password" class="form-control" placeholder="Password"/>
@@ -53,5 +70,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+<script src="${contextPath}/resources/js/clock.js"></script>
 </body>
 </html>

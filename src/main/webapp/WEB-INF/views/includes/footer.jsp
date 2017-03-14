@@ -14,7 +14,7 @@
 </head>
 <body>
 <footer class="footer">
-    <div class="container">
+    <div class="container-fluid">
         <p class="text-muted">sashkoi1234@gmail.com</p>
     </div>
 </footer>
