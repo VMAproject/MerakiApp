@@ -17,6 +17,7 @@
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/registration.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/validation.css" rel="stylesheet">
 
 
@@ -84,6 +85,10 @@
 
 </div>
 <!-- /container -->
+
+<%--FOOTER--%>
+<jsp:include page="includes/footer.jsp" flush="false"/>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 <script src="${contextPath}/resources/js/validation.js"></script>
