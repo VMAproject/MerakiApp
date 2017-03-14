@@ -66,8 +66,8 @@ public class EventController {
     public String editEvent(@PathVariable("id") Long id, Model model) {
         model.addAttribute("event", this.eventService.findByEventId(id));
 
-        Event event = this.eventService.findByEventId(id);
-        eventService.updateEvent(event);
+//        Event event = this.eventService.findByEventId(id);
+//        eventService.updateEvent(event);
 
         model.addAttribute("listEvent", this.eventService.findAllEvent());
 
