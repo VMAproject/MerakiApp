@@ -17,6 +17,7 @@
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/validation.css" rel="stylesheet">
 
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -33,23 +34,48 @@
         <spring:bind path="username">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="text" path="username" class="form-control" placeholder="Username"
-                            autofocus="true"></form:input>
+                            autofocus="true" title="should be app symbols"></form:input>
                 <form:errors path="username"></form:errors>
+
+                    <%--validation--%>
+                <div class="alert alert-success hidden">
+                    You have success
+                </div>
+                <div class="alert alert-danger hidden">
+                    Something wrong in your sintax
+                </div>
             </div>
         </spring:bind>
 
         <spring:bind path="password">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+                <form:input type="password" path="password" class="form-control" placeholder="Password"
+                            title="should be app symbols"></form:input>
                 <form:errors path="password"></form:errors>
+
+                    <%--validation--%>
+                <div class="alert alert-success hidden">
+                    You have success
+                </div>
+                <div class="alert alert-danger hidden">
+                    Something wrong in your sintax
+                </div>
             </div>
         </spring:bind>
 
         <spring:bind path="confirmPassword">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="password" path="confirmPassword" class="form-control"
-                            placeholder="Confirm your password"></form:input>
+                            placeholder="Confirm your password" title="should be app symbols"></form:input>
                 <form:errors path="confirmPassword"></form:errors>
+
+                    <%--validation--%>
+                <div class="alert alert-success hidden">
+                    You have success
+                </div>
+                <div class="alert alert-danger hidden">
+                    Something wrong in your sintax
+                </div>
             </div>
         </spring:bind>
 
@@ -60,5 +86,6 @@
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+<script src="${contextPath}/resources/js/validation.js"></script>
 </body>
 </html>
