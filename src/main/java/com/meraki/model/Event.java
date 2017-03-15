@@ -15,7 +15,7 @@ public class Event implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "event_id")
     private Long id;
 
     @Column(name = "name")
@@ -32,10 +32,14 @@ public class Event implements Serializable {
 //    @Column(name = "date_to")
 //    private Date dateTo;
 
-
-    @OneToOne(optional = false)
-    @JoinColumn(name = "router_id", unique = true, nullable = true)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "router_id", nullable = false)
     private Router router;
+
+
+//    @OneToOne(optional = false)
+//    @JoinColumn(name = "router_id", unique = true, nullable = true)
+//    private Router router;
 
 
 }
