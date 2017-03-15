@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Set;
 
 @Data
@@ -26,9 +27,22 @@ public class Router implements Serializable {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "router")
     private Set<Event> events;
 
-//
-//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "router")
-//    private Set<StackData> stackDataSet;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Router that = (Router) o;
+
+        return Objects.equals(this.events, that.events) &&
+                Objects.equals(this.id, that.id) &&
+                Objects.equals(this.routerName, that.routerName) &&
+                Objects.equals(this.serialNum, that.serialNum);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(events, id, routerName, serialNum);
+    }
 }

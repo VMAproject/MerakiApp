@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 
 @Data
@@ -37,9 +38,21 @@ public class Event implements Serializable {
     private Router router;
 
 
-//    @OneToOne(optional = false)
-//    @JoinColumn(name = "router_id", unique = true, nullable = true)
-//    private Router router;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Event that = (Event) o;
 
+        return Objects.equals(this.id, that.id) &&
+                Objects.equals(this.location, that.location) &&
+                Objects.equals(this.name, that.name) &&
+                Objects.equals(this.router, that.router);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, location, name, router);
+    }
 }
