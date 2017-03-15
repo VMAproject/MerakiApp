@@ -109,7 +109,7 @@
 
             <%--таблица для вывода ивентов--%>
             <c:if test="${!empty listEvent}">
-                <table class="table">
+                <table class="table table-bordered">
                     <tr>
                         <thead class="thead">
                             <th width="80">id</th>

@@ -39,7 +39,7 @@ body {
 }
 
 .clock {
-    width: 200px;
+    width: 250px;
     margin-right: 10px;
     padding: 10px;
     color: #fff;
@@ -64,7 +64,7 @@ ul li {
     display: inline;
     font-size: 1.5em;
     text-align: center;
-    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-shadow: 0 0 5px #00c6ff;
 }
 

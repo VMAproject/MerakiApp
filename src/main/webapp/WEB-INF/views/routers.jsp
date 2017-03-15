@@ -36,7 +36,7 @@
     <div class="container center">
         <h1>СПИСОК РОУТЕРОВ</h1>
         <table class="table table-bordered">
-            <thead>
+            <thead class="thead">
             <tr>
                 <th>id</th>
                 <th>Name</th>
