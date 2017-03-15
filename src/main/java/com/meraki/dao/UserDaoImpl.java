@@ -1,5 +1,5 @@
 
-package com.meraki.mapper;
+package com.meraki.dao;
 
 import com.meraki.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 @SuppressWarnings("unchecked")
-public class UserMapperImpl implements UserMapper {
+public class UserDaoImpl implements UserDao {
 
     @Autowired
     private HibernateTemplate hibernateTemplate;

@@ -1,7 +1,7 @@
 package com.meraki.service;
 
 import com.meraki.entity.User;
-import com.meraki.mapper.UserMapper;
+import com.meraki.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserMapper usermapper;
+    UserDao usermapper;
 
     @Override
     public List<User> getAllUsers() {

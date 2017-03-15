@@ -1,10 +1,10 @@
-package com.meraki.mapper;
+package com.meraki.dao;
 
 import com.meraki.entity.User;
 
 import java.util.List;
 
-public interface UserMapper {
+public interface UserDao {
 
     List<User> getAllUsers();
 

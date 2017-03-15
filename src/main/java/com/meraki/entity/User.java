@@ -1,29 +1,63 @@
 
 package com.meraki.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-
+@Data
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 7790622876833971743L;
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userid", unique = true, nullable = false)
     private Integer userid;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "roleid", nullable = false)
     private Role role;
+
+    @Column(name = "username", nullable = false, length = 45)
     private String username;
+
+    @Column(name = "password", nullable = false, length = 45)
     private String password;
+
+    @Column(name = "email", nullable = false, length = 45)
     private String email;
+
+    @Column(name = "firstName", length = 45)
     private String firstName;
+
+    @Column(name = "lastName", length = 45)
     private String lastName;
+
+    @Column(name = "phone", length = 45)
     private String phone;
+
+    @Column(name = "isactive")
     private String isactive;
+
+    @Temporal(TemporalType.TIMESTAMP)
+
+    @Column(name = "regdate", length = 19)
     private Date regdate;
+
+    @Column(name = "isnonexpired")
     private String isnonexpired;
+
+    @Column(name = "isnonlocked")
     private String isnonlocked;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "expDate", length = 19)
     private Date expDate;
 
     public User() {
@@ -52,9 +86,7 @@ public class User implements Serializable {
         this.expDate = expDate;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userid", unique = true, nullable = false)
+
     public Integer getUserid() {
         return this.userid;
     }
@@ -63,8 +95,7 @@ public class User implements Serializable {
         this.userid = userid;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "roleid", nullable = false)
+
     public Role getRole() {
         return this.role;
     }
@@ -74,7 +105,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "username", nullable = false, length = 45)
     public String getUsername() {
         return this.username;
     }
@@ -84,7 +114,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "password", nullable = false, length = 45)
     public String getPassword() {
         return this.password;
     }
@@ -94,7 +123,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "email", nullable = false, length = 45)
     public String getEmail() {
         return this.email;
     }
@@ -104,7 +132,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "firstName", length = 45)
     public String getFirstName() {
         return this.firstName;
     }
@@ -114,7 +141,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "lastName", length = 45)
     public String getLastName() {
         return this.lastName;
     }
@@ -124,7 +150,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "phone", length = 45)
     public String getPhone() {
         return this.phone;
     }
@@ -134,7 +159,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "isactive")
     public String getIsactive() {
         return this.isactive;
     }
@@ -143,8 +167,7 @@ public class User implements Serializable {
         this.isactive = isactive;
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "regdate", length = 19)
+
     public Date getRegdate() {
         return this.regdate;
     }
@@ -154,7 +177,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "isnonexpired")
     public String getIsnonexpired() {
         return this.isnonexpired;
     }
@@ -164,7 +186,6 @@ public class User implements Serializable {
     }
 
 
-    @Column(name = "isnonlocked")
     public String getIsnonlocked() {
         return this.isnonlocked;
     }
@@ -173,8 +194,7 @@ public class User implements Serializable {
         this.isnonlocked = isnonlocked;
     }
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "expDate", length = 19)
+
     public Date getExpDate() {
         return this.expDate;
     }

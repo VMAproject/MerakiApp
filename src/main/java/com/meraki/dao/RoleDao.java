@@ -1,10 +1,10 @@
-package com.meraki.mapper;
+package com.meraki.dao;
 
 import com.meraki.entity.Role;
 
 import java.util.List;
 
-public interface RoleMapper {
+public interface RoleDao {
 
     List<Role> getAllUsers();
 

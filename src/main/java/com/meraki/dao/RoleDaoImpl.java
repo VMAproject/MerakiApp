@@ -1,5 +1,5 @@
 
-package com.meraki.mapper;
+package com.meraki.dao;
 
 import com.meraki.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 @Repository
-public class RoleMapperImpl implements RoleMapper{
+public class RoleDaoImpl implements RoleDao {
 
 	@Autowired
 	private HibernateTemplate hibernateTemplate;

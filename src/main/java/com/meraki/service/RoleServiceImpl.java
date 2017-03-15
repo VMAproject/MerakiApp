@@ -1,7 +1,7 @@
 package com.meraki.service;
 
 import com.meraki.entity.Role;
-import com.meraki.mapper.RoleMapper;
+import com.meraki.dao.RoleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class RoleServiceImpl implements RoleService {
 
     @Autowired
-    RoleMapper rolemapper;
+    RoleDao rolemapper;
 
     @Override
     public List<Role> getAllUsers() {
