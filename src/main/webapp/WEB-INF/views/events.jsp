@@ -11,6 +11,7 @@
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
     <link href="<c:url value='/resources/css/style.css' />" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis" rel="stylesheet">
 </head>
 <body>
 

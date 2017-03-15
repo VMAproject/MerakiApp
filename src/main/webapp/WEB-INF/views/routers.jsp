@@ -18,6 +18,7 @@
     <link href="<c:url value='/resources/css/style.css' />" rel="stylesheet"/>
     <link href="${contextPath}/resources/css/routers.css" rel="stylesheet">
     <link href="<c:url value='/resources/css/routers.css' />" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis" rel="stylesheet">
 </head>
 <body>
 

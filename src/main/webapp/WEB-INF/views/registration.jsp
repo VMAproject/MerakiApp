@@ -20,6 +20,7 @@
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/registration.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/validation.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis" rel="stylesheet">
 
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

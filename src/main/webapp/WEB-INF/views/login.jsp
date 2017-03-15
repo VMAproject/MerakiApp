@@ -18,6 +18,7 @@
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/registration.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis" rel="stylesheet">
     <%--для отсчетов countdown<link rel="stylesheet" href="${contextPath}/css/styles.css" />--%>
     <%--<link rel="stylesheet" href="${contextPath}/countdown/jquery.countdown.css" />--%>
 
