@@ -1,41 +1,52 @@
 package com.meraki.service;
 
-
-import com.meraki.dao.RoleDao;
-import com.meraki.dao.UserDao;
-import com.meraki.model.Role;
-import com.meraki.model.User;
+import com.meraki.entity.User;
+import com.meraki.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao userDao;
-
-    @Autowired
-    private RoleDao roleDao;
-
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    UserMapper usermapper;
 
     @Override
-    public void save(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        Set<Role> roles = new HashSet<>();
-        roles.add(roleDao.getOne(1L));
-        user.setRoles(roles);
-        userDao.save(user);
+    public List<User> getAllUsers() {
+        return usermapper.getAllUsers();
     }
 
     @Override
-    public User findByUsername(String username) {
-        return userDao.findByUsername(username);
+    public User getUserById(int userId) {
+        return usermapper.getUserById(userId);
     }
+
+    @Override
+    public boolean addUser(User user) {
+        return usermapper.addUser(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        usermapper.updateUser(user);
+    }
+
+    @Override
+    public void deleteUser(int userId) {
+        usermapper.deleteUser(userId);
+    }
+
+    @Override
+    public boolean userExists(String username) {
+        return usermapper.userExists(username);
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return usermapper.getUserByUsername(username);
+    }
+
 }

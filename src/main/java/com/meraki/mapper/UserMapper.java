@@ -1,10 +1,10 @@
-package com.meraki.service;
+package com.meraki.mapper;
 
 import com.meraki.entity.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserMapper {
 
     List<User> getAllUsers();
 
