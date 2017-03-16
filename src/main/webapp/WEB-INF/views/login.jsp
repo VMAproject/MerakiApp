@@ -53,9 +53,36 @@
 				</span>
         </font>
         <form class="register-form" id="registerForm" action="#" method="post">
-            <input type="text" placeholder="name" id="username" autocomplete="off"/>
-            <input type="password" placeholder="password" id="password"/>
-            <input type="email" placeholder="email address" id="email" autocomplete="off"/>
+            <div class="username">
+                <input type="text" placeholder="name" id="username" autocomplete="off"/>
+                <%--validation--%>
+                <div class="alert alert-success hidden">
+                    You have success
+                </div>
+                <div class="alert alert-danger hidden">
+                    Something wrong in your sintax
+                </div>
+            </div>
+            <div class="password">
+                <input type="password" placeholder="password" id="password"/>
+                <%--validation--%>
+                <div class="alert alert-success hidden">
+                    You have success
+                </div>
+                <div class="alert alert-danger hidden">
+                    Something wrong in your sintax
+                </div>
+            </div>
+            <div class="email">
+                <input type="email" placeholder="email address" id="email" autocomplete="off"/>
+                <%--validation--%>
+                <div class="alert alert-success hidden">
+                    You have success
+                </div>
+                <div class="alert alert-danger hidden">
+                    Something wrong in your sintax
+                </div>
+            </div>
             <input type="hidden" id="csrfToken" value="${_csrf.token}"/>
             <input type="hidden" id="csrfHeader" value="${_csrf.headerName}"/>
             <button>create</button>
@@ -83,5 +110,6 @@
 <script src="${contextPath}/resources/js/clock.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/dscountdown.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/startCountdown.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/validation.js"></script>
 </body>
 </html>
