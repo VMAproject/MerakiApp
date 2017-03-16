@@ -93,7 +93,7 @@
             <input type="text" name="username" placeholder="username" autocomplete="off"/>
             <input type="password" name="password" placeholder="password"/>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <button>login</button>
+            <button>log in</button>
             <p class="message">Not registered? <a href="#" onclick="toggle_visibility(); return false;" class="message">Create
                 an account</a></p>
         </form>
