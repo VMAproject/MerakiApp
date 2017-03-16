@@ -1,122 +1,49 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Verlamov
-  Date: 15.03.17
-  Time: 16:52
-  To change this template use File | Settings | File Templates.
---%>
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>User Registration Form</title>
+    <title>EVENTS List</title>
     <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
     <link href="<c:url value='/resources/css/app.css' />" rel="stylesheet"></link>
 </head>
 
 <body>
-
 <div class="generic-container">
-    <div class="well lead">User Registration Form</div>
-    <form:form method="POST" modelAttribute="user" class="form-horizontal">
-        <form:input type="hidden" path="id" id="id"/>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="firstName">First Name</label>
-                <div class="col-md-7">
-                    <form:input type="text" path="firstName" id="firstName" class="form-control input-sm"/>
-                    <div class="has-error">
-                        <form:errors path="firstName" class="help-inline"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="lastName">Last Name</label>
-                <div class="col-md-7">
-                    <form:input type="text" path="lastName" id="lastName" class="form-control input-sm" />
-                    <div class="has-error">
-                        <form:errors path="lastName" class="help-inline"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="ssoId">SSO ID</label>
-                <div class="col-md-7">
-                    <c:choose>
-                        <c:when test="${edit}">
-                            <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm" disabled="true"/>
-                        </c:when>
-                        <c:otherwise>
-                            <form:input type="text" path="ssoId" id="ssoId" class="form-control input-sm" />
-                            <div class="has-error">
-                                <form:errors path="ssoId" class="help-inline"/>
-                            </div>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="password">Password</label>
-                <div class="col-md-7">
-                    <form:input type="password" path="password" id="password" class="form-control input-sm" />
-                    <div class="has-error">
-                        <form:errors path="password" class="help-inline"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="email">Email</label>
-                <div class="col-md-7">
-                    <form:input type="text" path="email" id="email" class="form-control input-sm" />
-                    <div class="has-error">
-                        <form:errors path="email" class="help-inline"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label class="col-md-3 control-lable" for="userProfiles">Roles</label>
-                <div class="col-md-7">
-                    <form:select path="userProfiles" items="${roles}" multiple="true" itemValue="id" itemLabel="type" class="form-control input-sm" />
-                    <div class="has-error">
-                        <form:errors path="userProfiles" class="help-inline"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="form-actions floatRight">
-                <c:choose>
-                    <c:when test="${edit}">
-                        <input type="submit" value="Update" class="btn btn-primary btn-sm"/> or <a href="<c:url value='/list' />">Cancel</a>
-                    </c:when>
-                    <c:otherwise>
-                        <input type="submit" value="Register" class="btn btn-primary btn-sm"/> or <a href="<c:url value='/list' />">Cancel</a>
-                    </c:otherwise>
-                </c:choose>
-            </div>
-        </div>
-    </form:form>
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><span class="lead">List of Users </span></div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>location</th>
+                <th>Name</th>
+                <%--<th>Email</th>--%>
+                <%--<th>SSO ID</th>--%>
+                <th width="100"></th>
+                <th width="100"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${events}" var="event">
+                <tr>
+                    <td>${event.location}</td>
+                    <td>${event.name}</td>
+                        <%--<td>${user.email}</td>--%>
+                        <%--<td>${user.ssoId}</td>--%>
+                    <td><a href="<c:url value='/edit-event-${event.name}' />"
+                           class="btn btn-success custom-width">edit</a></td>
+                    <td><a href="<c:url value='/delete-event-${event.name}' />" class="btn btn-danger custom-width">delete</a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+    <%--<div class="well">--%>
+        <%--<a href="<c:url value='/newevent' />">Add New EVENT</a>--%>
+    <%--</div>--%>
 </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.meraki.controller;
 
 import com.meraki.entity.Event;
+import com.meraki.entity.Router;
 import com.meraki.service.EventService;
 import com.meraki.service.RouterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,6 +25,7 @@ import java.util.Locale;
  */
 
 @Controller
+@RequestMapping(value = "/events")
 public class EventController {
 
     @Autowired
@@ -40,6 +44,8 @@ public class EventController {
     public String listEvents(Model model) {
         List<Event> events = eventService.findAllEvents();
         model.addAttribute("events", events);
+        System.out.println(model);
+        System.out.println(events);
         return "eventList";
     }
 
@@ -62,7 +68,10 @@ public class EventController {
 
 
     @RequestMapping(value = "/newevent", method = RequestMethod.POST)
-    public String saveEvent(@Valid Event event, BindingResult bindingResult, ModelMap modelMap) {
+    public String saveEvent(@Valid Event event,
+                            BindingResult bindingResult,
+                            ModelMap modelMap) {
+
         if (bindingResult.hasErrors()) {
             return "eventAdd";
         }
@@ -72,9 +81,57 @@ public class EventController {
         }
         eventService.saveEvent(event);
 
-        modelMap.addAttribute("success","Event"+ event.)
+        modelMap.addAttribute("success", "Event" + event.getLocation() + " registered successfully");
+        return "eventSuccess";
 
     }
 
+    /**
+     * This method will provide the medium to update an existing event.
+     */
 
+    @RequestMapping(value = {"/edit-event-{name}"}, method = RequestMethod.GET)
+    public String editEvent(@PathVariable String name, ModelMap modelMap) {
+
+        Event event = eventService.findByName(name);
+
+        modelMap.addAttribute("event", event);
+        modelMap.addAttribute("edit", true);
+
+        return "eventAdd";
+
+    }
+
+    @RequestMapping(value = "/edit-event-{name}", method = RequestMethod.POST)
+    public String updateEvent(@Valid Event event,
+                              BindingResult result,
+                              ModelMap model,
+                              @PathVariable String name) {
+
+        if (result.hasErrors()) {
+            return "eventAdd";
+        }
+        eventService.updateEvent(event);
+
+        model.addAttribute("success", "Event" + event.getLocation() + "");
+        return "eventSuccess";
+    }
+
+    /**
+     * This method will delete an event by it's NAME value.
+     */
+
+    @RequestMapping(value = "/delete-event-{name}", method = RequestMethod.GET)
+    public String deleteEvent(@PathVariable String name) {
+        eventService.deleteEventByName(name);
+        return "redirect:/list";
+    }
+
+    /**
+     * This method will provide ROUTER list to views
+     */
+    @ModelAttribute("router")
+    public List<Router> initializeRouters() {
+        return routerService.findAll();
+    }
 }
