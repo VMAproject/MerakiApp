@@ -56,7 +56,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public Event getEventWithRouterById(int id) {
         Event event = eventDao.getEventById(id);
-        event.getRouters().size();
+        event.getRouterList().size();
         return event;
     }
 }

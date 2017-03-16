@@ -67,27 +67,27 @@
             </tr>
         </c:if>
 
-        <tr>
-            <td>
-                <form:label path="name">
-                    <spring:message text="Name"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="name"/>
-            </td>
-        </tr>
+        <%--<tr>--%>
+            <%--<td>--%>
+                <%--<form:label path="name">--%>
+                    <%--<spring:message text="Name"/>--%>
+                <%--</form:label>--%>
+            <%--</td>--%>
+            <%--<td>--%>
+                <%--<form:input path="name"/>--%>
+            <%--</td>--%>
+        <%--</tr>--%>
 
-        <tr>
-            <td>
-                <form:label path="location">
-                    <spring:message text="location"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="location"/>
-            </td>
-        </tr>
+        <%--<tr>--%>
+            <%--<td>--%>
+                <%--<form:label path="location">--%>
+                    <%--<spring:message text="location"/>--%>
+                <%--</form:label>--%>
+            <%--</td>--%>
+            <%--<td>--%>
+                <%--<form:input path="location"/>--%>
+            <%--</td>--%>
+        <%--</tr>--%>
 
         <tr>
             <td colspan="2">
@@ -106,7 +106,7 @@
     <br>
 
 </form:form>
-<h3>Films List</h3>
+<h3>Event List</h3>
 <c:if test="${!empty eventList}">
     <table class="tg">
         <tr>
@@ -122,9 +122,9 @@
                 <td>${event.eventId}</td>
                 <td>${event.name}</td>
                 <td>${event.location}</td>
-                <td><a href="<c:url value='/router/${event.id}' />">View Router</a></td>
-                <td><a href="<c:url value='/edit/${event.id}' />">Edit</a></td>
-                <td><a href="<c:url value='/remove/${event.id}' />">Delete</a></td>
+                <td><a href="<c:url value='/router/${event.eventId}' />">View Router</a></td>
+                <td><a href="<c:url value='/edit/${event.eventId}' />">Edit</a></td>
+                <td><a href="<c:url value='/remove/${event.eventId}' />">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
