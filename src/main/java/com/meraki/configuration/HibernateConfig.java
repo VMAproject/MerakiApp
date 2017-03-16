@@ -1,5 +1,4 @@
-
-package com.meraki.config;
+package com.meraki.configuration;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -24,7 +23,7 @@ import java.util.Properties;
 public class HibernateConfig {
 
     @Autowired
-    private Environment env;
+    private Environment environment;
 
     @Bean
     public HibernateTemplate hibernateTemplate() {
@@ -33,38 +32,38 @@ public class HibernateConfig {
 
     @Bean
     public SessionFactory sessionFactory() {
-        LocalSessionFactoryBean lsfb = new LocalSessionFactoryBean();
-        lsfb.setDataSource(getDataSource());
-        lsfb.setPackagesToScan("com.meraki");
-        lsfb.setHibernateProperties(hibernateProperties());
+        LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
+        localSessionFactoryBean.setDataSource(getDataSource());
+        localSessionFactoryBean.setPackagesToScan("com.meraki");
+        localSessionFactoryBean.setHibernateProperties(hibernateProperties());
         try {
-            lsfb.afterPropertiesSet();
+            localSessionFactoryBean.afterPropertiesSet();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return lsfb.getObject();
+        return localSessionFactoryBean.getObject();
     }
 
     @Bean
     public DataSource getDataSource() {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(env.getProperty("database.driver"));
-        dataSource.setUrl(env.getProperty("database.url"));
-        dataSource.setUsername(env.getProperty("database.root"));
-        dataSource.setPassword(env.getProperty("database.password"));
+        dataSource.setDriverClassName(environment.getProperty("database.driver"));
+        dataSource.setUrl(environment.getProperty("database.url"));
+        dataSource.setUsername(environment.getProperty("database.root"));
+        dataSource.setPassword(environment.getProperty("database.password"));
         return dataSource;
     }
 
     @Bean
-    public HibernateTransactionManager hibTransMan() {
+    public HibernateTransactionManager hibernateTransactionManager() {
         return new HibernateTransactionManager(sessionFactory());
     }
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
-        properties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
-        properties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
+        properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
+        properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
+        properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
         properties.put("hibernate.enable_lazy_load_no_trans", "true");
         properties.put("hibernate.hbm2ddl.import_files", "import.sql");
         return properties;

@@ -1,4 +1,4 @@
-package com.meraki.config;
+package com.meraki.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

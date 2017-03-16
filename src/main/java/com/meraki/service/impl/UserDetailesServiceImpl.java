@@ -1,6 +1,7 @@
-package com.meraki.service;
+package com.meraki.service.impl;
 
 import com.meraki.entity.User;
+import com.meraki.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,4 +1,4 @@
 -- preload dta insert role table value
 
-insert into role(roleid,rolename)	values( 1, 'admin');
-insert into role(roleid,rolename)	values( 2, 'user');
+INSERT INTO role (roleid, rolename) VALUES (1, 'admin');
+INSERT INTO role (roleid, rolename) VALUES (2, 'user');

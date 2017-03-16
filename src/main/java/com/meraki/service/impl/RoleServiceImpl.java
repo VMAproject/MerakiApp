@@ -1,7 +1,8 @@
-package com.meraki.service;
+package com.meraki.service.impl;
 
 import com.meraki.entity.Role;
 import com.meraki.dao.RoleDao;
+import com.meraki.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

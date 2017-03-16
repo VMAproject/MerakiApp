@@ -34,5 +34,5 @@ package com.meraki.entity;//package com.authorization.model;
 //
 //    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
 //    @JoinColumn(name = "router_id", nullable = false)
-//    private Router router;
+//    private RouterService router;
 //}

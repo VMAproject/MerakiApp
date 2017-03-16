@@ -12,6 +12,8 @@
         </p>
         <p>This is an open source project</p>
 
+        <a href="<c:url value='/events' />">Goto Events</a>
+
     </jsp:body>
 </t:dashboard>
 </html>

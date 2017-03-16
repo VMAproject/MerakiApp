@@ -1,4 +1,4 @@
-package com.meraki.config;
+package com.meraki.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -17,8 +17,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     UserDetailsService userDetailsService;
 
     @Autowired
-    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+    public void configureGlobalSecurity(AuthenticationManagerBuilder authenticationBuilder) throws Exception {
+        authenticationBuilder.userDetailsService(userDetailsService);
     }
 
     @Override

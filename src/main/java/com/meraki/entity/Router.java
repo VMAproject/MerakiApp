@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 @Data
 @Entity
@@ -15,7 +14,7 @@ public class Router implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "router_id")
-    private Long id;
+    private Integer routerId;
 
     @Column(name = "serial_num")
     private String serialNum;
@@ -23,12 +22,9 @@ public class Router implements Serializable {
     @Column(name = "router_name")
     private String routerName;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "router")
-    private Set<Event> events;
+    @Column(name = "type", length = 15, unique = true, nullable = true)
+    private String type = RouterType.PORTABLE.getRouterType();
 
-//
-//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "router")
-//    private Set<StackData> stackDataSet;
 
 
 }

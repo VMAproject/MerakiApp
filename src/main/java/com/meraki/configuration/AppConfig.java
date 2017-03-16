@@ -1,5 +1,5 @@
 
-package com.meraki.config;
+package com.meraki.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -24,29 +24,29 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
+        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
+        internalResourceViewResolver.setViewClass(JstlView.class);
+        internalResourceViewResolver.setPrefix("/WEB-INF/views/");
+        internalResourceViewResolver.setSuffix(".jsp");
 
-        return viewResolver;
+        return internalResourceViewResolver;
     }
 
     /*
     * Configure ResourceHandlers to serve static resources like CSS/ Javascript etc...
     */
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
+        resourceHandlerRegistry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
 
     @Bean
     public LocaleResolver localeResolver() {
-        CookieLocaleResolver resolver = new CookieLocaleResolver();
-        resolver.setDefaultLocale(new Locale("en"));
-        resolver.setCookieName("localeCookie");
-        resolver.setCookieMaxAge(4800);
-        return resolver;
+        CookieLocaleResolver cookieLocaleResolver = new CookieLocaleResolver();
+        cookieLocaleResolver.setDefaultLocale(new Locale("en"));
+        cookieLocaleResolver.setCookieName("localeCookie");
+        cookieLocaleResolver.setCookieMaxAge(4800);
+        return cookieLocaleResolver;
     }
 
 

@@ -1,9 +1,12 @@
 package com.meraki.entity;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
@@ -15,7 +18,7 @@ public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
-    private Long id;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -31,14 +34,17 @@ public class Event implements Serializable {
 //    @Column(name = "date_to")
 //    private Date dateTo;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "router_id", nullable = false)
-    private Router router;
+    @NotEmpty
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "Event_Router",
+            joinColumns = {@JoinColumn(name = "event_id")},
+            inverseJoinColumns = {@JoinColumn(name = "router_id")})
+    private Set<Router> routers = new HashSet<>();
 
 
 //    @OneToOne(optional = false)
 //    @JoinColumn(name = "router_id", unique = true, nullable = true)
-//    private Router router;
+//    private RouterService router;
 
 
 }
