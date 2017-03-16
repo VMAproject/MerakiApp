@@ -43,9 +43,9 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value = "/events")
+    @RequestMapping(value = "/event")
     public String goEvents() {
-        return "eventList";
+        return "event";
     }
 
 }

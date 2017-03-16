@@ -1,13 +1,11 @@
 package com.meraki.entity;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 import java.util.StringJoiner;
 
 
@@ -36,12 +34,9 @@ public class Event implements Serializable {
 //    @Column(name = "date_to")
 //    private Date dateTo;
 
-    @NotEmpty
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "Event_Router",
-            joinColumns = {@JoinColumn(name = "event_id")},
-            inverseJoinColumns = {@JoinColumn(name = "router_id")})
-    private Set<Router> routers = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "event_id", updatable = false, insertable = false)
+    private List<Router> routers;
 
     @Override
     public boolean equals(Object o) {
@@ -75,9 +70,6 @@ public class Event implements Serializable {
 //    @OneToOne(optional = false)
 //    @JoinColumn(name = "router_id", unique = true, nullable = true)
 //    private RouterService router;
-
-
-
 
 
 }

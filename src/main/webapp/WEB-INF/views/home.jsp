@@ -12,7 +12,7 @@
         </p>
         <p>This is an open source project</p>
 
-        <a href="<c:url value='/events' />">Goto Events</a>
+        <a href="<c:url value='/event' />">Goto Events</a>
 
     </jsp:body>
 </t:dashboard>
