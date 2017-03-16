@@ -1,5 +1,6 @@
 package com.meraki.dao;
 
+import com.meraki.entity.Event;
 import com.meraki.entity.Router;
 
 import java.util.List;
@@ -9,11 +10,15 @@ import java.util.List;
  */
 public interface RouterDao {
 
-    List<Router> findAll();
+    void addRouter(Router router);
 
-    Router findByType(String type);
+    void updateRouter(Router router);
 
-    Router findById(int id);
+    void removeRouter(int id);
+
+    Router getRouterById(int id);
+
+    List<Router> getRouterList();
 
 
 }

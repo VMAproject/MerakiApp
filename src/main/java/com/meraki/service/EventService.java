@@ -9,18 +9,15 @@ import java.util.List;
  */
 public interface EventService {
 
-
-    Event findById(int id);
-
-    Event findByName(String name);
-
-    void saveEvent(Event event);
+    void addEvent(Event event);
 
     void updateEvent(Event event);
 
-    void deleteEventByName(String name);
+    void removeEvent(int id);
 
-    List<Event> findAllEvents();
+    Event getEventById(int id);
 
-    boolean isEventNameUnique(Integer id, String name);
+    List<Event> getEventList();
+
+    Event getEventWithRouterById(int id);
 }

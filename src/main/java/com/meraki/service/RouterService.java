@@ -9,11 +9,16 @@ import java.util.List;
  */
 public interface RouterService {
 
-    Router findById(int id);
+    void addRouter(Router router);
 
-    Router findByType(String type);
+    void updateRouter(Router router);
 
-    List<Router> findAll();
+    void removeRouter(int id);
 
+    Router getRouterById(int id);
+
+    List<Router> getRouterList();
+
+//    Router getRoutreListById(int id);
 
 }

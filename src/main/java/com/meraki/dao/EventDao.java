@@ -9,14 +9,14 @@ import java.util.List;
  */
 public interface EventDao {
 
-    Event findById(int id);
+    void addEvent(Event event);
 
-    Event findByName(String name);
+    void updateEvent(Event event);
 
-    void save(Event event);
+    void removeEvent(int id);
 
-    void deleteByName(String name);
+    Event getEventById(int id);
 
-    List<Event> findAllEvents();
+    List<Event> getEventList();
 
 }

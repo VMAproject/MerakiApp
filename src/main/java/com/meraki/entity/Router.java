@@ -22,5 +22,8 @@ public class Router implements Serializable {
     @Column(name = "router_name")
     private String routerName;
 
+    @Column(name = "event_id")
+    private Integer eventId;
+
 
 }

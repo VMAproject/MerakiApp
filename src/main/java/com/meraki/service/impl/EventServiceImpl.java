@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Verlamov on 15.03.17.
  */
 
-@Service("eventService")
+@Service
 @Transactional
 public class EventServiceImpl implements EventService {
 
@@ -21,49 +21,42 @@ public class EventServiceImpl implements EventService {
     @Autowired
     private EventDao eventDao;
 
-
-    @Override
-    public Event findById(int id) {
-        return eventDao.findById(id);
+    @Autowired
+    public void setEventDao(EventDao eventDao) {
+        this.eventDao = eventDao;
     }
 
-    @Override
-    public Event findByName(String name) {
-        Event event = eventDao.findByName(name);
-        return event;
-    }
 
     @Override
-    public void saveEvent(Event event) {
-        eventDao.save(event);
-
+    public void addEvent(Event event) {
+        eventDao.addEvent(event);
     }
 
     @Override
     public void updateEvent(Event event) {
-        Event entity = eventDao.findById(event.getId());
-        if (entity != null) {
-            entity.setName(event.getName());
-            entity.setLocation(event.getLocation());
-            entity.setRouters(event.getRouters());
-        }
+        eventDao.updateEvent(event);
+    }
+
+    @Override
+    public void removeEvent(int id) {
+        eventDao.removeEvent(id);
 
     }
 
     @Override
-    public void deleteEventByName(String name) {
-        eventDao.deleteByName(name);
-
+    public Event getEventById(int id) {
+        return eventDao.getEventById(id);
     }
 
     @Override
-    public List<Event> findAllEvents() {
-        return eventDao.findAllEvents();
+    public List<Event> getEventList() {
+        return eventDao.getEventList();
     }
 
     @Override
-    public boolean isEventNameUnique(Integer id, String name) {
-        Event event = eventDao.findByName(name);
-        return (event == null || ((id != null) && (event.getId() == id)));
+    public Event getEventWithRouterById(int id) {
+        Event event = eventDao.getEventById(id);
+        event.getRouters().size();
+        return event;
     }
 }
