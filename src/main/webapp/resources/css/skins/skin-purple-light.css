@@ -78,7 +78,7 @@
   color: #848484;
   background: #f9fafc;
 }
-.skin-purple-light .sidebar-menu > li > a {
+.skin-purple-light .sidebar-menu > li .active {
   border-left: 3px solid transparent;
   font-weight: 600;
 }

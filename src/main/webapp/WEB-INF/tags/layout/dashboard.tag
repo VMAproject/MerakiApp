@@ -28,7 +28,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="resources/css/skins/skin-purple-light.min.css">
+    <link rel="stylesheet" href="resources/css/skins/skin-purple-light.css">
+
+    <link rel="stylesheet" href="${contextPath}/resources/css/home.css" />
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
@@ -73,11 +75,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="http://javabase.info" class="logo" target="_blank">
+        <a href="#" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>javabase</b></span>
+          <span class="logo-mini">
+            <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
+          </span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>javabase </b> Inc. </span>
+          <span class="logo-lg">
+            <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
+          </span>
         </a>
 
         <!-- Header Navbar -->
@@ -160,6 +166,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li><a href="#">Link in level 2</a></li>
               </ul>
             </li> -->
+            <li><a href="/event"><i class="fa fa-list-alt"></i><span>Events</span></a></li>
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
@@ -184,7 +191,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <footer class="main-footer">
         <!-- Default to the left -->
         <jsp:invoke fragment="footer"/>
-        <strong>Copyright &copy; 2016 an open source project <a href="http://javabase.info" target="_blank">@Javabase Inc.</a></strong> All rights reserved.
+        <strong>Copyright &copy; 2016 an project <a href="#">@OurCorporeation.</a></strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
 
