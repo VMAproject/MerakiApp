@@ -4,12 +4,45 @@
 <html>
 <head>
     <title>Sign in Login</title>
-    <link href="<c:url value='/resources/css/login.css' />" rel="stylesheet"></link>
+    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value='/resources/css/login/login.css' />" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis" rel="stylesheet">
+    <link rel="stylesheet" href="${contextPath}/resources/css/login/dscountdown.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/css/login/timer.css" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="<c:url value='/resources/js/funtions/login.js' />"></script>
+    <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+
+<%--header--%>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <img class="logo" src="${contextPath}/resources/images/CiscoMeraki.png"
+         alt="logo">
+    <div class="greeting right">
+        <div class="clock">
+            <div id="Date"></div>
+            <ul>
+                <li id="hours"></li>
+                <li id="point">:</li>
+                <li id="min"></li>
+                <li id="point">:</li>
+                <li id="sec"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<%--countdown--%>
+<div class="countdown">
+    <div class="start">
+        <h1>ДО ЗАПУСКА ПРОЕКТА ОСТАЛОСЬ</h1>
+    </div>
+    <div class="demo1"></div>
+</div>
+
 <div class="login-page">
     <div class="form">
         <font color="red">
@@ -40,5 +73,15 @@
     </div>
 </div>
 
+<%--FOOTER--%>
+<footer class="footer">
+    <div class="container-fluid">
+        <p class="text-muted">sashkoi1234@gmail.com</p>
+    </div>
+</footer>
+
+<script src="${contextPath}/resources/js/clock.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/dscountdown.min.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/startCountdown.js"></script>
 </body>
 </html>
