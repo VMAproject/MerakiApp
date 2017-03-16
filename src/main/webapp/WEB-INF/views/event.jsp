@@ -89,18 +89,18 @@
             <%--</td>--%>
         <%--</tr>--%>
 
-        <tr>
-            <td colspan="2">
-                <c:if test="${!empty event.name}">
-                    <input type="submit"
-                           value="<spring:message text="Edit Event"/>"/>
-                </c:if>
-                <c:if test="${empty event.name}">
-                    <input type="submit"
-                           value="<spring:message text="Add Event"/>"/>
-                </c:if>
-            </td>
-        </tr>
+        <%--<tr>--%>
+            <%--<td colspan="2">--%>
+                <%--<c:if test="${!empty event.name}">--%>
+                    <%--<input type="submit"--%>
+                           <%--value="<spring:message text="Edit Event"/>"/>--%>
+                <%--</c:if>--%>
+                <%--<c:if test="${empty event.name}">--%>
+                    <%--<input type="submit"--%>
+                           <%--value="<spring:message text="Add Event"/>"/>--%>
+                <%--</c:if>--%>
+            <%--</td>--%>
+        <%--</tr>--%>
     </table>
 
     <br>
