@@ -7,7 +7,6 @@ $(document).ready(
         var danger = $(e.target).siblings('.alert-danger');
         var reg = /.{6,}/;
         var match = $(e.target).val().match(reg);
-        console.log(success);
         if (match) {
             success.removeClass('hidden');
             danger.addClass('hidden');
@@ -16,7 +15,8 @@ $(document).ready(
             danger.removeClass('hidden');
         }
     }).focusout(function (e) {
-        $(e.target).siblings('.alert-success').addClass('hidden');
-        $(e.target).siblings('.alert-danger').addClass('hidden');
+            console.log($("#registerForm").data('clicked') == true);
+            $(e.target).siblings('.alert-success').addClass('hidden');
+            $(e.target).siblings('.alert-danger').addClass('hidden');
     })
 )

@@ -138,3 +138,8 @@ body {
   height: 65px;
   width: 165px;
 }
+
+/*reintroduce style*/
+.alert {
+  padding: 5px !important;
+}

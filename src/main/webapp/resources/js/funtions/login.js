@@ -15,7 +15,7 @@ function toggle_visibility() {
  */
 $(document).ready(function ($) {
     $("#registerForm").submit(function (event) {
-
+        $(this).data('clicked', true);
         event.preventDefault();
         var data = {},
             role = {},
@@ -28,39 +28,43 @@ $(document).ready(function ($) {
         data["email"] = $("#email").val();
         data["role"] = role;
 
-        console.log(data);
         var token = $('#csrfToken').val();
         var header = $('#csrfHeader').val();
         /*
          * if in spring aplication csrf enable
          * send csrf parameter in header otherwise 405 error
          */
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: JSON.stringify(data),
-            dataType: 'json',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("Accept", "application/json");
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader(header, token);
-            },
-            success: function (resonse) {
-                var message = "registration Sucess";
-                //				$("#msg").html(data.message);
-                console.log(resonse.data);
-                alert(resonse.message);
-                data = null;
-                document.getElementById("registerForm").reset()
-            },
-            error: function (e) {
-                console.log("ERROR: ", e);
-                alert("registration falied");
-//						$("#msg").html(e.message);
-                data = null;
-                document.getElementById("registerForm").reset()
-            }
-        });
 
+
+        if(data["username"] == '' || data["password"] == '' || data["email"] == '') {
+            alert('You should fill all fields');
+        } else {
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: JSON.stringify(data),
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Accept", "application/json");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    xhr.setRequestHeader(header, token);
+                },
+                success: function (resonse) {
+                    var message = "registration Sucess";
+                    //				$("#msg").html(data.message);
+                    console.log(resonse.data);
+                    alert(resonse.message);
+                    toggle_visibility();
+                    data = null;
+                    document.getElementById("registerForm").reset()
+                },
+                error: function (e) {
+                    console.log("ERROR: ", e);
+//						$("#msg").html(e.message);
+                    data = null;
+                    document.getElementById("registerForm").reset()
+                }
+            });
+        }
     });
 });
