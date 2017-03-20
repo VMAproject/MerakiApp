@@ -1,4 +1,4 @@
-package com.meraki.entity;//package com.authorization.model;
+package com.meraki.entity;
 //
 //import lombok.Data;
 //

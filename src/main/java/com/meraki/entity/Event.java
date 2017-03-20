@@ -4,7 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.StringJoiner;
 
 
 @Data
@@ -12,11 +14,12 @@ import java.util.List;
 @Table(name = "event")
 public class Event implements Serializable {
 
+    private static final long serialVersionUID = -7988799579036225132L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
-    private Integer eventId;
+    private long id;
 
     @Column(name = "name")
     private String name;
@@ -32,14 +35,46 @@ public class Event implements Serializable {
 //    @Column(name = "date_to")
 //    private Date dateTo;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "event_id", updatable = false, insertable = false)
-    private List<Router> routerList;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "event")
+    private Set<Router> routers;
+
+    public Event() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Event that = (Event) o;
+
+        return Objects.equals(this.id, that.id) &&
+                Objects.equals(this.location, that.location) &&
+                Objects.equals(this.name, that.name) &&
+                Objects.equals(this.routers, that.routers) &&
+                Objects.equals(this.serialVersionUID, that.serialVersionUID);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, location, name, routers, serialVersionUID);
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", this.getClass().getSimpleName() + "[", "]")
+                .add("id = " + id)
+                .add("location = " + location)
+                .add("name = " + name)
+                .add("routers = " + routers)
+                .add("serialVersionUID = " + serialVersionUID)
+                .toString();
+    }
 
 
 //    @OneToOne(optional = false)
-//    @JoinColumn(name = "router_id", unique = true, nullable = true)
-//    private RouterService router;
+//    @JoinColumn(name = "router_id", unique = false, nullable = true)
+//    private Router router;
 
 
 }

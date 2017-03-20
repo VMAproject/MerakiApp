@@ -3,71 +3,73 @@ package com.meraki.controller;
 import com.meraki.entity.Event;
 import com.meraki.entity.Router;
 import com.meraki.service.EventService;
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 
 @Controller
 public class EventController {
 
+    private static final Logger logger = Logger.getLogger(EventController.class);
+
     @Autowired
     private EventService eventService;
 
-    @Autowired
-    public void setEventService(EventService eventService) {
-        this.eventService = eventService;
-    }
 
-    @RequestMapping(value = "/events", method = RequestMethod.GET)
-    public String listEvents(Model model) {
-        model.addAttribute("event", new Event());
-        model.addAttribute("eventList", this.eventService.getEventList());
-        return "event";
+    @RequestMapping("getAllEventLists")
+    public ModelAndView getAllEmployees() {
+        List<Event> eventList = eventService.getAllEvents();
+        logger.info("get all event" + eventList);
+        return new ModelAndView("eventList", "eventList", eventList);
     }
 
 
-    //For add and update EVENT both
+    @RequestMapping("createEvent")
+    public ModelAndView createEvent(@ModelAttribute Event event) {
+        logger.info("create event " + event);
+        return new ModelAndView("eventForm");
+    }
 
-    @RequestMapping(value = "/event/add", method = RequestMethod.POST)
-    public String addEvent(@ModelAttribute("event") Event event) {
-        if (event.getEventId() == 0) {
-            //new event, add it
-            this.eventService.addEvent(event);
+    @RequestMapping("editEvent")
+    public ModelAndView editEvent(@RequestParam long id, @ModelAttribute Event event) {
+        event = eventService.getEvent(id);
+        logger.info("edit event " + event);
+        return new ModelAndView("eventForm", "eventObject", event);
+    }
+
+    @RequestMapping("saveEvent")
+    public ModelAndView saveEvent(@ModelAttribute Event event) {
+        logger.info("save event " + event);
+
+        if (event.getId() == 0) {
+            eventService.createEvent(event);
         } else {
-            //existing event, call update
-            this.eventService.updateEvent(event);
+            eventService.updateEvent(event);
         }
-        return "redirect:/events";
+
+        logger.info("save event " + event);
+        return new ModelAndView("redirect:getAllEventLists");
     }
 
-
-    @RequestMapping(value = "/remove/{id}")
-    public String removeEvent(@PathVariable("id") int id) {
-        this.eventService.removeEvent(id);
-        return "redirect:/events";
+    @RequestMapping("deleteEvent")
+    public ModelAndView deleteEvent(@RequestParam long id) {
+        eventService.deleteEvent(id);
+        logger.info("delete event " + id);
+        return new ModelAndView("redirect:getAllEventLists");
     }
 
-    @RequestMapping(value = "/edit/{id}")
-    public String editEvent(@PathVariable("id") int id, Model model) {
-        model.addAttribute("event", eventService.getEventById(id));
-        model.addAttribute("eventList", eventService.getEventList());
-        return "event";
+    @RequestMapping("searchEvent")
+    public ModelAndView search(@RequestParam("searchName") String searchName) {
+        List<Event> eventList = eventService.getAllEvents(searchName);
+        return new ModelAndView("eventList", "eventList", eventList);
     }
 
-    @RequestMapping("/router/{id}")
-    public ModelAndView viewRouters(@PathVariable("id") int id) {
-        ModelAndView modelAndView = new ModelAndView("router");
-        modelAndView.addObject("routerList", eventService.getEventWithRouterById(id).getRouterList());
-        Router router = new Router();
-        router.setEventId(id);
-        modelAndView.addObject("router", router);
-        return modelAndView;
-    }
 
 }

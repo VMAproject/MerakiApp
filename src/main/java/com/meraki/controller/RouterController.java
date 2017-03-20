@@ -2,51 +2,68 @@ package com.meraki.controller;
 
 import com.meraki.entity.Router;
 import com.meraki.service.RouterService;
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * Created by Verlamov on 16.03.17.
- */
+import java.util.List;
+
 @Controller
 public class RouterController {
+
+    private static final Logger logger = org.jboss.logging.Logger.getLogger(RouterController.class);
+
     @Autowired
     private RouterService routerService;
 
-    @Autowired
-    public void setRouterService(RouterService routerService) {
-        this.routerService = routerService;
+
+    @RequestMapping("getAllRouterLists")
+    public ModelAndView getAllRouters() {
+        List<Router> routerList = routerService.getAllRouters();
+        logger.info("get all router" + routerList);
+        return new ModelAndView("routerList", "routerList", routerList);
     }
 
-    @RequestMapping(value = "/router/add", method = RequestMethod.POST)
-    public String addRouter(@ModelAttribute("router") Router router) {
-        if (router.getRouterId() == 0) {
-            //nre router add it
-            this.routerService.addRouter(router);
-        } else {
-            //existing router call update
-            this.routerService.updateRouter(router);
+    @RequestMapping("createRouter")
+    public ModelAndView createRouter(@ModelAttribute Router router) {
+        logger.info("create router" + router);
+        return new ModelAndView("routerForm");
+    }
+
+    @RequestMapping("editRouter")
+    public ModelAndView editRouter(@RequestParam long id, @ModelAttribute Router router) {
+        router = routerService.getRouter(id);
+        logger.info("edit router" + router);
+        return new ModelAndView("routerForm", "routerObject", router);
+    }
+
+
+    @RequestMapping("saveRouter")
+    public ModelAndView saveRouter(@ModelAttribute Router router){
+        logger.info("save router"+router);
+
+        if (router.getId()==0){
+            routerService.createRouter(router);
+        }else {
+            routerService.updateRouter(router);
         }
-        return "redirect:/router" + router.getEventId();
-    }
 
-    @RequestMapping(value = "/edit_router/{id}")
-    public ModelAndView editRouter(@PathVariable("id") int id) {
-        ModelAndView modelAndView = new ModelAndView("router");
-        modelAndView.addObject("router", this.routerService.getRouterById(id));
-        return modelAndView;
+        logger.info("save " + router);
+
+        return new ModelAndView("redirect:getAllRouterLists");
     }
 
 
-    @RequestMapping(value = "/event{eventId}/remove_router/{routerId")
-    public String deleteRouter(@PathVariable("eventId") int eventId, @PathVariable("routerId") int routerId) {
-        this.routerService.removeRouter(routerId);
-        return "redirect:/router/" + routerId;
+    @RequestMapping("deleteRouter")
+    public ModelAndView deleteRouter(@RequestParam long id){
+        routerService.deleteRouter(id);
+        logger.info("delete router "+ id);
+
+        return new ModelAndView("redirect:getAllRouterLists");
     }
 
 

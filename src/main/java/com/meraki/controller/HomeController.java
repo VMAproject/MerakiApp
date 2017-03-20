@@ -31,9 +31,7 @@ public class HomeController {
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
-
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
         if (principal instanceof UserDetails) {
             String username = ((UserDetails) principal).getUsername();
             User user = userservice.getUserByUsername(username);
@@ -43,9 +41,9 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value = "/event")
-    public String goEvents() {
-        return "event";
-    }
+//    @RequestMapping(value = "/eventList", method = RequestMethod.GET)
+//    public String goEvents() {
+//        return "eventList";
+//    }
 
 }

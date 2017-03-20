@@ -46,7 +46,6 @@ public class User implements Serializable {
     private String isactive;
 
     @Temporal(TemporalType.TIMESTAMP)
-
     @Column(name = "regdate", length = 19)
     private Date regdate;
 

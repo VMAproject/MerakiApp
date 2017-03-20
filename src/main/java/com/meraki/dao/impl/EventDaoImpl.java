@@ -2,18 +2,14 @@ package com.meraki.dao.impl;
 
 import com.meraki.dao.EventDao;
 import com.meraki.entity.Event;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import com.meraki.util.HibernateUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by Verlamov on 15.03.17.
- */
 
 @Repository
 public class EventDaoImpl implements EventDao {
@@ -21,55 +17,45 @@ public class EventDaoImpl implements EventDao {
     private static final Logger logger = LoggerFactory.getLogger(EventDaoImpl.class);
 
     @Autowired
-    private SessionFactory sessionFactory;
+    private HibernateUtil hibernateUtil;
 
-    @Autowired
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+
+    @Override
+    public long createEvent(Event event) {
+        return (Long) hibernateUtil.create(event);
     }
 
     @Override
-    public void addEvent(Event event) {
-        Session session = sessionFactory.getCurrentSession();
-        session.persist(event);
-        logger.info("Event saved successfully, Event Details=" + event);
+    public Event updateEvent(Event event) {
+        return hibernateUtil.update(event);
     }
 
     @Override
-    public void updateEvent(Event event) {
-        Session session = sessionFactory.getCurrentSession();
-        session.update(event);
-        logger.info("Event update successfully, Event Details=" + event);
-
+    public void deleteEvent(long id) {
+        Event event = new Event();
+        event.setId(id);
+        hibernateUtil.delete(event);
     }
 
     @Override
-    public void removeEvent(int id) {
-        Session session = sessionFactory.getCurrentSession();
-        Event event = (Event) session.load(Event.class, new Integer(id));
-        if (null != event) {
-            session.delete(event);
-        }
-        logger.info("Event deleted successfully, Event details=" + event);
+    public List<Event> getAllEvents() {
+        return hibernateUtil.fetchAll(Event.class);
     }
 
     @Override
-    public Event getEventById(int id) {
-        Session session = this.sessionFactory.getCurrentSession();
-        Event event = (Event) session.load(Event.class, new Integer(id));
-        logger.info("Event loaded successfully, Event details=" + event);
-        return event;
+    public Event getEvent(long id) {
+        return hibernateUtil.fetchById(id, Event.class);
     }
-
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Event> getEventList() {
-        Session session = sessionFactory.getCurrentSession();
-        List<Event> eventList = session.createQuery("from Event ").list();
-        for (Event event : eventList) {
-            logger.info("Event List::" + event);
-        }
-        return eventList;
+    public List<Event> getAllEvents(String eventName) {
+        String query = "SELECT e.* FROM Event e WHERE e.name like '%" + eventName + "%'";
+        List<Object[]> eventObjects = hibernateUtil.fetchAll(query);
+        List<Event> events = new ArrayList<Event>();
+        for (Object[] eventObject : eventObjects) ;
+        Event event = new Event();
+//        int id = ((BigInteger) eventObject[0]).longValue();
+        return null;
     }
 }

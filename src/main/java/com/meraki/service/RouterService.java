@@ -1,24 +1,19 @@
 package com.meraki.service;
 
 import com.meraki.entity.Router;
-
 import java.util.List;
 
-/**
- * Created by Verlamov on 15.03.17.
- */
+
 public interface RouterService {
 
-    void addRouter(Router router);
+    long createRouter(Router router);
 
-    void updateRouter(Router router);
+    Router updateRouter(Router router);
 
-    void removeRouter(int id);
+    void deleteRouter(long id);
 
-    Router getRouterById(int id);
+    List<Router> getAllRouters();
 
-    List<Router> getRouterList();
-
-//    Router getRoutreListById(int id);
+    Router getRouter(long id);
 
 }

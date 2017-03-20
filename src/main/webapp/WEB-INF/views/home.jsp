@@ -12,7 +12,8 @@
         </p>
         <p>This is a close project</p>
 
-        <a href="<c:url value='/event' />">Goto Events</a>
+        <a href="<c:url value='/getAllEventLists' />">Goto Events</a>
+        <a href="<c:url value='/getAllRouterLists' />">Goto Routers</a>
 
     </jsp:body>
 </t:dashboard>

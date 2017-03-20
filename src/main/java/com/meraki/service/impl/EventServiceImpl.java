@@ -9,10 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 15.03.17.
- */
-
 @Service
 @Transactional
 public class EventServiceImpl implements EventService {
@@ -21,42 +17,34 @@ public class EventServiceImpl implements EventService {
     @Autowired
     private EventDao eventDao;
 
-    @Autowired
-    public void setEventDao(EventDao eventDao) {
-        this.eventDao = eventDao;
-    }
-
 
     @Override
-    public void addEvent(Event event) {
-        eventDao.addEvent(event);
+    public long createEvent(Event event) {
+        return eventDao.createEvent(event);
     }
 
     @Override
-    public void updateEvent(Event event) {
-        eventDao.updateEvent(event);
+    public Event updateEvent(Event event) {
+        return eventDao.updateEvent(event);
     }
 
     @Override
-    public void removeEvent(int id) {
-        eventDao.removeEvent(id);
-
+    public void deleteEvent(long id) {
+        eventDao.deleteEvent(id);
     }
 
     @Override
-    public Event getEventById(int id) {
-        return eventDao.getEventById(id);
+    public List<Event> getAllEvents() {
+        return eventDao.getAllEvents();
     }
 
     @Override
-    public List<Event> getEventList() {
-        return eventDao.getEventList();
+    public Event getEvent(long id) {
+        return eventDao.getEvent(id);
     }
 
     @Override
-    public Event getEventWithRouterById(int id) {
-        Event event = eventDao.getEventById(id);
-        event.getRouterList().size();
-        return event;
+    public List<Event> getAllEvents(String eventName) {
+        return eventDao.getAllEvents(eventName);
     }
 }

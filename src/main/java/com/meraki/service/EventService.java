@@ -4,20 +4,19 @@ import com.meraki.entity.Event;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 15.03.17.
- */
+
 public interface EventService {
 
-    void addEvent(Event event);
+    long createEvent(Event event);
 
-    void updateEvent(Event event);
+    Event updateEvent(Event event);
 
-    void removeEvent(int id);
+    void deleteEvent(long id);
 
-    Event getEventById(int id);
+    List<Event> getAllEvents();
 
-    List<Event> getEventList();
+    Event getEvent(long id);
 
-    Event getEventWithRouterById(int id);
+    List<Event> getAllEvents(String eventName);
+
 }

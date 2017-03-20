@@ -9,9 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 15.03.17.
- */
 
 @Service
 @Transactional
@@ -20,33 +17,29 @@ public class RouterServiceImpl implements RouterService {
     @Autowired
     private RouterDao routerDao;
 
-    @Autowired
-    public void setRouterDao(RouterDao routerDao) {
-        this.routerDao = routerDao;
+
+    @Override
+    public long createRouter(Router router) {
+        return routerDao.createRouter(router);
     }
 
     @Override
-    public void addRouter(Router router) {
-        routerDao.addRouter(router);
+    public Router updateRouter(Router router) {
+        return routerDao.updateRouter(router);
     }
 
     @Override
-    public void updateRouter(Router router) {
-        routerDao.updateRouter(router);
+    public void deleteRouter(long id) {
+        routerDao.deleteRouter(id);
     }
 
     @Override
-    public void removeRouter(int id) {
-        routerDao.removeRouter(id);
+    public List<Router> getAllRouters() {
+        return routerDao.getAllRouters();
     }
 
     @Override
-    public Router getRouterById(int id) {
-        return routerDao.getRouterById(id);
-    }
-
-    @Override
-    public List<Router> getRouterList() {
-        return routerDao.getRouterList();
+    public Router getRouter(long id) {
+        return routerDao.getRouter(id);
     }
 }

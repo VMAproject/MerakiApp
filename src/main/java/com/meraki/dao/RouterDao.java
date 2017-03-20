@@ -10,15 +10,14 @@ import java.util.List;
  */
 public interface RouterDao {
 
-    void addRouter(Router router);
+    long createRouter(Router router);
 
-    void updateRouter(Router router);
+    Router updateRouter(Router router);
 
-    void removeRouter(int id);
+    void deleteRouter(long id);
 
-    Router getRouterById(int id);
+    List<Router> getAllRouters();
 
-    List<Router> getRouterList();
-
+    Router getRouter(long id);
 
 }
