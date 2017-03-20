@@ -4,9 +4,6 @@ import com.meraki.entity.Event;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 15.03.17.
- */
 public interface EventDao {
 
      long createEvent(Event event);

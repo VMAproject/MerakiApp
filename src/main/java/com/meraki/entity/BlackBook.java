@@ -4,9 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-/**
- * Created by Verlamov on 20.03.17.
- */
+
 @Data
 @Entity
 @Table(name = "blackBook")

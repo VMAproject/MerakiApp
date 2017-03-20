@@ -9,10 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 20.03.17.
- */
-
 @Service
 @Transactional
 public class BlackBookServiceImpl implements BlackBookService {

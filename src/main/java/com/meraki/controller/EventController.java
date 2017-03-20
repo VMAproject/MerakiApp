@@ -1,7 +1,6 @@
 package com.meraki.controller;
 
 import com.meraki.entity.Event;
-import com.meraki.entity.Router;
 import com.meraki.service.EventService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,9 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 20.03.17.
- */
 
 public interface BlackBookService {
 

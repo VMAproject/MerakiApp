@@ -43,12 +43,12 @@ public class RouterController {
 
 
     @RequestMapping("saveRouter")
-    public ModelAndView saveRouter(@ModelAttribute Router router){
-        logger.info("save router"+router);
+    public ModelAndView saveRouter(@ModelAttribute Router router) {
+        logger.info("save router" + router);
 
-        if (router.getId()==0){
+        if (router.getId() == 0) {
             routerService.createRouter(router);
-        }else {
+        } else {
             routerService.updateRouter(router);
         }
 
@@ -59,9 +59,9 @@ public class RouterController {
 
 
     @RequestMapping("deleteRouter")
-    public ModelAndView deleteRouter(@RequestParam long id){
+    public ModelAndView deleteRouter(@RequestParam long id) {
         routerService.deleteRouter(id);
-        logger.info("delete router "+ id);
+        logger.info("delete router " + id);
 
         return new ModelAndView("redirect:getAllRouterLists");
     }
