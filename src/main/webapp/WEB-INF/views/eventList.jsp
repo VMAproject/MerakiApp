@@ -44,6 +44,8 @@
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>location</th>
+                                <th>Date From</th>
+                                <th>Date To</th>
                                     <%--<th>Router</th>--%>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -55,6 +57,8 @@
                                     <th><c:out value="${event.id}"/></th>
                                     <th><c:out value="${event.name}"/></th>
                                     <th><c:out value="${event.location}"/></th>
+                                    <th><c:out value="${event.dateFrom}"/></th>
+                                    <th><c:out value="${event.dateTo}"/></th>
                                         <%--<th><c:out value="${event.routers}"/></th>--%>
                                     <th><a href="/editEvent?id=<c:out value='${event.id}'/>">Edit</a></th>
                                     <th><a href="/deleteEvent?id=<c:out value='${event.id}'/>">Delete</a></th>

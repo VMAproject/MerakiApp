@@ -34,12 +34,19 @@
                             </div>
                         </div>
 
-                        <%--<div class="form-group">--%>
-                        <%--<div class="control-label col-xs-3"><form:label path="salary">Salary</form:label></div>--%>
-                        <%--<div class="col-xs-6">--%>
-                        <%--<form:input cssClass="form-control" path="salary" value="${employeeObject.salary}"/>--%>
-                        <%--</div>--%>
-                        <%--</div>--%>
+                        <div class="form-group">
+                            <form:label path="dateFrom" cssClass="control-label col-xs-3">dateFrom</form:label>
+                            <div class="col-xs-6">
+                                <form:input cssClass="form-control" path="dateFrom" value="${eventObject.dateFrom}"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <form:label path="dateTo" cssClass="control-label col-xs-3">dateFrom</form:label>
+                            <div class="col-xs-6">
+                                <form:input cssClass="form-control" path="dateTo" value="${eventObject.dateTo}"/>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="row">
@@ -65,7 +72,9 @@
                 // getting the employee form values
                 var name = $('#name').val().trim();
                 var location = $('#location').val();
-//        var salary = $('#salary').val();
+                var dateFrom = $('#dateFrom').val();
+                var dateTo = $('#dateTo').val();
+
                 if (name.length == 0) {
                     alert('Please enter name');
                     $('#name').focus();
@@ -78,11 +87,17 @@
                     return false;
                 }
 
-//        if(salary <= 0) {
-//            alert('Please enter proper salary');
-//            $('#salary').focus();
-//            return false;
-//        }
+                if (dateFrom <= 0) {
+                    alert('please enter date from');
+                    $('#dateFrom').focus();
+                    return false;
+                }
+
+                if (dateTo.length <= 0) {
+                    alert('please enter date to');
+                    $('#dateTo').focus();
+                    return false;
+                }
                 return true;
             }
         </script>

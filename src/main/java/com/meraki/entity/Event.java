@@ -1,9 +1,11 @@
 package com.meraki.entity;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Set;
 import java.util.StringJoiner;
@@ -27,13 +29,15 @@ public class Event implements Serializable {
     @Column(name = "location")
     private String location;
 
-//    @Temporal(TemporalType.DATE)
-//    @Column(name = "date_from")
-//    private Date dateFrom;
-//
-//    @Temporal(TemporalType.DATE)
-//    @Column(name = "date_to")
-//    private Date dateTo;
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @Column(name = "date_from")
+    private Date dateFrom;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @Column(name = "date_to")
+    private Date dateTo;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "event")
     private Set<Router> routers;
