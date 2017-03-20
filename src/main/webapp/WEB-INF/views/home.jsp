@@ -12,9 +12,9 @@
         </p>
         <p>This is a close project</p>
 
-        <a href="<c:url value='/getAllEventLists' />">Goto Events</a>
-        <a href="<c:url value='/getAllRouterLists' />">Goto Routers</a>
-        <a href="<c:url value='/getAllBlackBookLists' />">Goto Black List</a>
+        <%--<a href="<c:url value='/getAllEventLists' />">Goto Events</a>--%>
+        <%--<a href="<c:url value='/getAllRouterLists' />">Goto Routers</a>--%>
+        <%--<a href="<c:url value='/getAllBlackBookLists' />">Goto Black List</a>--%>
 
     </jsp:body>
 </t:dashboard>

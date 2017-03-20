@@ -1,14 +1,13 @@
 package com.meraki.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Set;
-import java.util.StringJoiner;
+import java.util.*;
 
 
 @Data
@@ -29,18 +28,19 @@ public class Event implements Serializable {
     @Column(name = "location")
     private String location;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_from")
     private Date dateFrom;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_to")
     private Date dateTo;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "event")
-    private Set<Router> routers;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "event",
+            cascade = CascadeType.ALL)
+    private Set<Router> routers = new HashSet<>();
 
     public Event() {
     }
@@ -52,27 +52,32 @@ public class Event implements Serializable {
 
         Event that = (Event) o;
 
-        return Objects.equals(this.id, that.id) &&
+        return Objects.equals(this.dateFrom, that.dateFrom) &&
+                Objects.equals(this.dateTo, that.dateTo) &&
+                Objects.equals(this.id, that.id) &&
                 Objects.equals(this.location, that.location) &&
                 Objects.equals(this.name, that.name) &&
-                Objects.equals(this.routers, that.routers) &&
-                Objects.equals(this.serialVersionUID, that.serialVersionUID);
+                Objects.equals(this.routers, that.routers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, location, name, routers, serialVersionUID);
+        return Objects.hash(dateFrom, dateTo, id, location, name, routers);
     }
 
     @Override
     public String toString() {
         return new StringJoiner(", ", this.getClass().getSimpleName() + "[", "]")
+                .add("dateFrom = " + dateFrom)
+                .add("dateTo = " + dateTo)
                 .add("id = " + id)
                 .add("location = " + location)
                 .add("name = " + name)
                 .add("routers = " + routers)
-                .add("serialVersionUID = " + serialVersionUID)
                 .toString();
+    }
+
+    public void setRouters() {
     }
 
 

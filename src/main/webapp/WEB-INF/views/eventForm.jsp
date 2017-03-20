@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ include file="/WEB-INF/tags/layout/includes.jsp" %>
 <t:dashboard>
 
@@ -37,14 +38,16 @@
                         <div class="form-group">
                             <form:label path="dateFrom" cssClass="control-label col-xs-3">dateFrom</form:label>
                             <div class="col-xs-6">
-                                <form:input cssClass="form-control" path="dateFrom" value="${eventObject.dateFrom}"/>
+                                <form:input type="date" cssClass="form-control" path="dateFrom"
+                                            value="${eventObject.dateFrom}"/>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <form:label path="dateTo" cssClass="control-label col-xs-3">dateFrom</form:label>
+                            <form:label path="dateTo" cssClass="control-label col-xs-3">date To</form:label>
                             <div class="col-xs-6">
-                                <form:input cssClass="form-control" path="dateTo" value="${eventObject.dateTo}"/>
+                                <form:input type="date" cssClass="form-control" path="dateTo"
+                                            value="${eventObject.dateTo}"/>
                             </div>
                         </div>
 

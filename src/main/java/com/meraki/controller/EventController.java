@@ -2,6 +2,7 @@ package com.meraki.controller;
 
 import com.meraki.entity.Event;
 import com.meraki.service.EventService;
+import com.meraki.service.RouterService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,10 @@ public class EventController {
 
     @Autowired
     private EventService eventService;
+
+
+    @Autowired
+    private RouterService routerService;
 
 
     @RequestMapping("getAllEventLists")

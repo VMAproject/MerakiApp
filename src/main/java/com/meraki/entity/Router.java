@@ -26,8 +26,8 @@ public class Router implements Serializable {
     private String routerName;
 
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "event_id", nullable = true)
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name = "event_id", nullable = true,updatable = false, insertable = false)
     private Event event;
 
     public Router() {

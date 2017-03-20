@@ -1,4 +1,4 @@
-<%@tag description="iTrack Layout" pageEncoding="UTF-8"%>
+<%@tag description="iTrack Layout" pageEncoding="UTF-8" %>
 <%@attribute name="header" fragment="true" %>
 <%@attribute name="footer" fragment="true" %>
 <%@attribute name="sidebar" fragment="true" %>
@@ -10,7 +10,7 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>IssueTracking System</title>
@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="${contextPath}/resources/css/event.css">
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/home.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/css/home.css"/>
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
@@ -44,163 +44,167 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <jsp:invoke fragment="header"/>
-  </head>
-  <!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |
-  |               | sidebar-mini                            |
-  |---------------------------------------------------------|
-  -->
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
 <body class="hold-transition skin-purple-light sidebar-collapse">
-    <%--<c:url var="index" value="/" />--%>
-    <div class="wrapper">
+<%--<c:url var="index" value="/" />--%>
+<div class="wrapper">
 
-      <!-- Main Header -->
-      <header class="main-header">
+    <!-- Main Header -->
+    <header class="main-header">
 
         <!-- Logo -->
         <a href="#" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini">
             <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
           </span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">
             <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
           </span>
         </a>
 
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-          <!-- Navbar Right Menu -->
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              
-              <!-- User Account Menu -->
-              <li class="dropdown user user-menu">
-                <!-- Menu Toggle Button -->
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- The user image in the navbar-->
-                  <img src="resources/images/avatar.png" class="user-image" alt="User Image">
-                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">${user.username}</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- The user image in the menu -->
-                  <li class="user-header">
-                    <img src="resources/images/avatar.png" class="img-circle" alt="User Image">
-                    <p>
-                      ${user.firstName} ${user.lastName} - ${user.role.rolename}
-                      <small>Member since ${user.regdate}</small>
-                    </p>
-                  </li>
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="profile" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href='<c:url value="/logout"></c:url>' class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                  </li>
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img src="resources/images/avatar.png" class="user-image" alt="User Image">
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">${user.username}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- The user image in the menu -->
+                            <li class="user-header">
+                                <img src="resources/images/avatar.png" class="img-circle" alt="User Image">
+                                <p>
+                                    ${user.firstName} ${user.lastName} - ${user.role.rolename}
+                                    <small>Member since ${user.regdate}</small>
+                                </p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="profile" class="btn btn-default btn-flat">Profile</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href='<c:url value="/logout"></c:url>' class="btn btn-default btn-flat">Sign
+                                        out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-            </ul>
-          </div>
+            </div>
         </nav>
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-          <!-- Sidebar user panel (optional) -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="resources/images/avatar.png" class="img-circle" alt="User Image">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="resources/images/avatar.png" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>${user.firstName} ${user.lastName}</p>
+                    <!-- Status -->
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
             </div>
-            <div class="pull-left info">
-              <p>${user.firstName} ${user.lastName}</p>
-              <!-- Status -->
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
 
-          <!-- search form (Optional) -->
-<!--           <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form> -->
-          <!-- /.search form -->
+            <!-- search form (Optional) -->
+                       <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                          <input type="text" name="q" class="form-control" placeholder="Search...">
+                          <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                          </span>
+                        </div>
+                      </form>
+            <!-- /.search form -->
 
-          <!-- Sidebar Menu -->
-          <ul class="sidebar-menu">
-            <li class="active"><a href="<c:url value='/' />"><i class="fa fa-link"></i><span>Home</span></a></li>
-<!--             <li class="treeview">
-              <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="#">Link in level 2</a></li>
-                <li><a href="#">Link in level 2</a></li>
-              </ul>
-            </li> -->
-            <li><a href="#" /><i class="fa fa-list-alt"></i><span>Events</span></a></li>
-          </ul><!-- /.sidebar-menu -->
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <li class="active"><a href="<c:url value='/' />"><i class="fa fa-link"></i><span>Home</span></a></li>
+                <!--             <li class="treeview">
+                              <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+                              <ul class="treeview-menu">
+                                <li><a href="#">Link in level 2</a></li>
+                                <li><a href="#">Link in level 2</a></li>
+                              </ul>
+                            </li> -->
+                <li><a href="<c:url value='/getAllEventLists' />"/><i class="fa fa-list-alt"></i><span>Events</span></a></li>
+                <li><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-list-alt"></i><span>Routers</span></a></li>
+                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-list-alt"></i><span>Black list</span></a></li>
+
+            </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
-      </aside>
+    </aside>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-       		<jsp:invoke fragment="contentHeader"/>
+            <jsp:invoke fragment="contentHeader"/>
         </section>
 
         <!-- Main content -->
         <section class="content">
 
-          <!-- Your Page Content Here -->
+            <!-- Your Page Content Here -->
             <jsp:doBody/>
         </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+    </div><!-- /.content-wrapper -->
 
-      <!-- Main Footer -->
-      <footer class="main-footer">
+    <!-- Main Footer -->
+    <footer class="main-footer">
         <!-- Default to the left -->
         <jsp:invoke fragment="footer"/>
-        <strong>Copyright &copy; 2016 an project <a href="#">@OurCorporeation.</a></strong> All rights reserved.
-      </footer>
-    </div><!-- ./wrapper -->
+        <strong>Copyright &copy; 2017 <a href="#">@OurCorporeation.</a></strong> All rights reserved.
+    </footer>
+</div><!-- ./wrapper -->
 
 
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-         Both of these plugins are recommended to enhance the
-         user experience. Slimscroll is required when using the
-         fixed layout. -->
-  </body>
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+</body>
 </html>

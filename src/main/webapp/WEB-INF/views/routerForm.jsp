@@ -36,12 +36,12 @@
                             </div>
                         </div>
 
-                        <%--<div class="form-group">--%>
-                        <%--<div class="control-label col-xs-3"><form:label path="salary">Salary</form:label></div>--%>
-                        <%--<div class="col-xs-6">--%>
-                        <%--<form:input cssClass="form-control" path="salary" value="${employeeObject.salary}"/>--%>
-                        <%--</div>--%>
-                        <%--</div>--%>
+                        <div class="form-group">
+                            <div class="control-label col-xs-3"><form:label path="event">Event</form:label></div>
+                            <div class="col-xs-6">
+                                <form:input cssClass="form-control" path="event" value="${routerObject.event.id}"/>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="row">
@@ -66,8 +66,9 @@
 
                 // getting the employee form values
                 var routerName = $('#routerName').val().trim();
-                var lapMac = $('#apMac').val();
-//        var salary = $('#salary').val();
+                var apMac = $('#apMac').val();
+                var event = $('#event').val();
+
                 if (routerName.length == 0) {
                     alert('Please enter routerName');
                     $('#routerName').focus();
@@ -78,6 +79,12 @@
                     alert('Please enter apMac');
                     $('#apMac').focus();
                     return false;
+                }
+
+                if (event <= 0) {
+                    alert('please enter event');
+                    $('#event').focus();
+                    return false
                 }
 
 //        if(salary <= 0) {

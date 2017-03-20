@@ -59,7 +59,7 @@
                                     <th><c:out value="${event.location}"/></th>
                                     <th><c:out value="${event.dateFrom}"/></th>
                                     <th><c:out value="${event.dateTo}"/></th>
-                                        <%--<th><c:out value="${event.routers}"/></th>--%>
+                                        <%--<th><c:out value="${event.routers.size()}"/></th>--%>
                                     <th><a href="/editEvent?id=<c:out value='${event.id}'/>">Edit</a></th>
                                     <th><a href="/deleteEvent?id=<c:out value='${event.id}'/>">Delete</a></th>
                                 </tr>
