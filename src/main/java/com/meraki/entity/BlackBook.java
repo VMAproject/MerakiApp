@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Data
 @Entity
-@Table(name = "blackList")
+@Table(name = "blackBook")
 public class BlackBook {
 
     private static final long serialVersionUID = -7988799579036225137L;
