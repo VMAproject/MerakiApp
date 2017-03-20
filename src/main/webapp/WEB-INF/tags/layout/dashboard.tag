@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |---------------------------------------------------------|
   -->
 <body class="hold-transition skin-purple-light sidebar-collapse">
-    <c:url var="index" value="/" />
+    <%--<c:url var="index" value="/" />--%>
     <div class="wrapper">
 
       <!-- Main Header -->
@@ -158,7 +158,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="active"><a href="${index}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+            <li class="active"><a href="<c:url value='/' />"><i class="fa fa-link"></i><span>Home</span></a></li>
 <!--             <li class="treeview">
               <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
@@ -166,7 +166,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li><a href="#">Link in level 2</a></li>
               </ul>
             </li> -->
-            <li><a href="/event"><i class="fa fa-list-alt"></i><span>Events</span></a></li>
+            <li><a href="#" /><i class="fa fa-list-alt"></i><span>Events</span></a></li>
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
