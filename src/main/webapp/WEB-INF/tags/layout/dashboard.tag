@@ -30,6 +30,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     -->
     <link rel="stylesheet" href="resources/css/skins/skin-purple-light.css">
 
+    <link rel="stylesheet" href="${contextPath}/resources/css/event.css">
+
     <link rel="stylesheet" href="${contextPath}/resources/css/home.css" />
     <!-- REQUIRED JS SCRIPTS -->
 
