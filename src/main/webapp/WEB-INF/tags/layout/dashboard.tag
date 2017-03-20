@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="resources/css/skins/skin-purple-light.css">
+    <link rel="stylesheet" href="resources/css/skins/skin-black-light.css">
 
     <link rel="stylesheet" href="${contextPath}/resources/css/event.css">
 
@@ -69,7 +69,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-purple-light sidebar-collapse">
+<body class="hold-transition skin-black-light sidebar-collapse">
 <%--<c:url var="index" value="/" />--%>
 <div class="wrapper">
 
@@ -170,8 +170,8 @@ desired effect
                               </ul>
                             </li> -->
                 <li><a href="<c:url value='/getAllEventLists' />"/><i class="fa fa-list-alt"></i><span>Events</span></a></li>
-                <li><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-list-alt"></i><span>Routers</span></a></li>
-                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-list-alt"></i><span>Black list</span></a></li>
+                <li><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a></li>
+                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text" aria-hidden="true"></i><span>Black list</span></a></li>
 
             </ul><!-- /.sidebar-menu -->
         </section>

@@ -5,13 +5,11 @@
 <t:dashboard>
 
     <jsp:body>
-        <div class="container myrow-container">
+        <div class="container-fluid myrow-container">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <div align="left"><b>Router List</b></div>
-                        <div align="right"><a href="createRouter">Add New router</a></div>
-                    </h3>
+                    <div class="panel-title"><b>Events</b></div>
+                    <div class="panel-add"><a href="createEvent">Add New Event</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty routerList}">
@@ -34,13 +32,13 @@
                             <tbody>
                             <c:forEach items="${routerList}" var="router">
                                 <tr>
-                                    <th><c:out value="${router.id}"/></th>
-                                    <th><c:out value="${router.apMac}"/></th>
-                                    <th><c:out value="${router.routerName}"/></th>
-                                    <th><c:out value="${router.event}"/></th>
+                                    <td><c:out value="${router.id}"/></td>
+                                    <td><c:out value="${router.apMac}"/></td>
+                                    <td><c:out value="${router.routerName}"/></td>
+                                    <td><c:out value="${router.event}"/></td>
                                         <%--<th><c:out value="${event.router.id}"/></th>--%>
-                                    <th><a href="/editRouter?id=<c:out value='${router.id}'/>">Edit</a></th>
-                                    <th><a href="/deleteRouter?id=<c:out value='${router.id}'/>">Delete</a></th>
+                                    <td><a href="/editRouter?id=<c:out value='${router.id}'/>">Edit</a></td>
+                                    <td><a href="/deleteRouter?id=<c:out value='${router.id}'/>">Delete</a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>

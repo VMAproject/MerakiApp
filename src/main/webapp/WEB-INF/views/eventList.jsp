@@ -6,13 +6,11 @@
 
 
     <jsp:body>
-        <div class="container myrow-container">
+        <div class="container-fluid myrow-container">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <div align="left"><b>Employees List</b></div>
-                        <div align="right"><a href="createEvent">Add New Event</a></div>
-                    </h3>
+                        <div class="panel-title"><b>Events</b></div>
+                        <div class="panel-add"><a href="createEvent">Add New Event</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty eventList}">
@@ -54,14 +52,14 @@
                             <tbody>
                             <c:forEach items="${eventList}" var="event">
                                 <tr>
-                                    <th><c:out value="${event.id}"/></th>
-                                    <th><c:out value="${event.name}"/></th>
-                                    <th><c:out value="${event.location}"/></th>
-                                    <th><c:out value="${event.dateFrom}"/></th>
-                                    <th><c:out value="${event.dateTo}"/></th>
+                                    <td><c:out value="${event.id}"/></td>
+                                    <td><c:out value="${event.name}"/></td>
+                                    <td><c:out value="${event.location}"/></td>
+                                    <td><c:out value="${event.dateFrom}"/></td>
+                                    <td><c:out value="${event.dateTo}"/></td>
                                         <%--<th><c:out value="${event.routers.size()}"/></th>--%>
-                                    <th><a href="/editEvent?id=<c:out value='${event.id}'/>">Edit</a></th>
-                                    <th><a href="/deleteEvent?id=<c:out value='${event.id}'/>">Delete</a></th>
+                                    <td><a href="/editEvent?id=<c:out value='${event.id}'/>">Edit</a></td>
+                                    <td><a href="/deleteEvent?id=<c:out value='${event.id}'/>">Delete</a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>

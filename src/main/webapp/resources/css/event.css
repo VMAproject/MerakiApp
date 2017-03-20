@@ -1,3 +1,13 @@
 .bottom-space {
     margin-bottom: 10px;
 }
+/*if we will do new site this styles contain in new folder*/
+.panel-title {
+    display: inline-block;
+}
+
+.panel-add {
+    display: inline-block;
+    float: right;
+}
+/*--------------------------------------------*/

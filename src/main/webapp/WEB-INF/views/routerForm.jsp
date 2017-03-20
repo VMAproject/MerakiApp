@@ -7,7 +7,7 @@
 
     <jsp:body>
 
-        <div class="container myrow-container">
+        <div class="container-fluid myrow-container">
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title">

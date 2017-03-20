@@ -5,13 +5,11 @@
 <t:dashboard>
 
     <jsp:body>
-        <div class="container myrow-container">
+        <div class="container-fluid myrow-container">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <div align="left"><b>Black book List</b></div>
-                        <div align="right"><a href="createBlackBook">Add New Black book</a></div>
-                    </h3>
+                    <div class="panel-title"><b>Black List</b></div>
+                    <div class="panel-add"><a href="createEvent">Add New User</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty blackBookList}">
@@ -33,12 +31,12 @@
                             <tbody>
                             <c:forEach items="${blackBookList}" var="blackBook">
                                 <tr>
-                                    <th><c:out value="${blackBook.id}"/></th>
-                                    <th><c:out value="${blackBook.name}"/></th>
-                                    <th><c:out value="${blackBook.clientMac}"/></th>
+                                    <td><c:out value="${blackBook.id}"/></td>
+                                    <td><c:out value="${blackBook.name}"/></td>
+                                    <td><c:out value="${blackBook.clientMac}"/></td>
                                         <%--<th><c:out value="${event.routers}"/></th>--%>
-                                    <th><a href="/editBlackBook?id=<c:out value='${blackBook.id}'/>">Edit</a></th>
-                                    <th><a href="/deleteBlackBook?id=<c:out value='${blackBook.id}'/>">Delete</a></th>
+                                    <td><a href="/editBlackBook?id=<c:out value='${blackBook.id}'/>">Edit</a></td>
+                                    <td><a href="/deleteBlackBook?id=<c:out value='${blackBook.id}'/>">Delete</a></td>
                                 </tr>
                             </c:forEach>
                             </tbody>
