@@ -9,17 +9,17 @@ import java.util.List;
  */
 public interface EventDao {
 
-    public long createEvent(Event event);
+     long createEvent(Event event);
 
-    public Event updateEvent(Event event);
+     Event updateEvent(Event event);
 
-    public void deleteEvent(long id);
+     void deleteEvent(long id);
 
-    public List<Event> getAllEvents();
+     List<Event> getAllEvents();
 
-    public Event getEvent(long id);
+     Event getEvent(long id);
 
-    public List<Event> getAllEvents(String eventName);
+     List<Event> getAllEvents(String eventName);
 
 
 }
