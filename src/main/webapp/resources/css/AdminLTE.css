@@ -144,7 +144,7 @@ body.hold-transition .main-header .logo {
 /* Content */
 .content {
   min-height: 250px;
-  padding: 15px;
+  padding-top: 35px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -202,7 +202,7 @@ a:focus {
   margin-bottom: 0;
   margin-left: 230px;
   border: none;
-  min-height: 50px;
+  min-height: 71px;
   border-radius: 0;
 }
 .layout-top-nav .main-header > .navbar {
@@ -254,7 +254,7 @@ a:focus {
   float: left;
   background-color: transparent;
   background-image: none;
-  padding: 15px 15px;
+  padding: 25px 20px;
   font-family: fontAwesome;
 }
 .main-header .sidebar-toggle:before {
@@ -290,7 +290,7 @@ a:focus {
   transition: width 0.3s ease-in-out;
   display: block;
   float: left;
-  height: 50px;
+  height: 71px;
   font-size: 20px;
   line-height: 50px;
   text-align: center;
@@ -377,8 +377,8 @@ a:focus {
     float: left;
   }
   .navbar-custom-menu .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 26px;
+    padding-bottom: 25px;
     line-height: 20px;
   }
 }
@@ -418,7 +418,7 @@ a:focus {
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 50px;
+  padding-top: 71px;
   min-height: 100%;
   width: 230px;
   z-index: 810;
@@ -4726,4 +4726,11 @@ table.text-center th {
   .table-responsive > .table tr td {
     white-space: normal!important;
   }
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a {
+      padding-top: 26px !important;
+      padding-bottom: 25px !important;
+    }
 }

@@ -143,3 +143,10 @@ body {
 .alert {
   padding: 5px !important;
 }
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px !important;
+  }
+}
+
