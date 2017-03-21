@@ -33,6 +33,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="${contextPath}/resources/css/event.css">
 
     <link rel="stylesheet" href="${contextPath}/resources/css/home.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"/>
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
@@ -41,6 +43,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="resources/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="resources/js/app.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

@@ -37,6 +37,22 @@
                                     <%--</div>--%>
                             </div>
                             <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker2'>
+                                    <input type='text' class="form-control"/>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <input type="submit" id="saveEvent" class="btn btn-primary button" value="Save"
                                        onclick="return submitEventForm();"/>
                             </div>
@@ -56,12 +72,23 @@
                                             <%--value="${eventObject.dateTo}"/>--%>
                             <%--</div>--%>
                         <%--</div>--%>
+
                     </form:form>
                 </div>
             </div>
         </div>
 
         <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    locale: 'ru'
+                });
+            });
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    locale: 'ru'
+                });
+            });
             function submitEventForm() {
 
                 // getting the employee form values
