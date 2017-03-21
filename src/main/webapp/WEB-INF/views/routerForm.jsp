@@ -11,7 +11,7 @@
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        Event Details
+                       Router Details
                     </h3>
                 </div>
                 <div class="panel-body">
@@ -20,7 +20,7 @@
 
                         <div class="form-group">
                             <div class="control-label col-xs-3">
-                                <form:label path="routerName">routerName</form:label></div>
+                                <form:label path="routerName">Router Name</form:label></div>
                             <div class="col-xs-6">
                                 <form:hidden path="id" value="${routerObject.id}"/>
 
@@ -39,7 +39,7 @@
                         <div class="form-group">
                             <div class="control-label col-xs-3"><form:label path="event">Event</form:label></div>
                             <div class="col-xs-6">
-                                <form:input cssClass="form-control" path="event" value="${routerObject.event.id}"/>
+                                <form:input cssClass="form-control" path="event" value="${routerObject.event}"/>
                             </div>
                         </div>
 
@@ -87,11 +87,6 @@
                     return false
                 }
 
-//        if(salary <= 0) {
-//            alert('Please enter proper salary');
-//            $('#salary').focus();
-//            return false;
-//        }
                 return true;
             }
         </script>

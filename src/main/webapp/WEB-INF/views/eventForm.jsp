@@ -35,20 +35,29 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <form:label path="dateFrom" cssClass="control-label col-xs-3">dateFrom</form:label>
-                            <div class="col-xs-6">
-                                <form:input type="date" cssClass="form-control" path="dateFrom"
-                                            value="${eventObject.dateFrom}"/>
-                            </div>
-                        </div>
+                        <%--<div class="form-group">--%>
+                            <%--<form:label path="dateFrom" cssClass="control-label col-xs-3">dateFrom</form:label>--%>
+                            <%--<div class="col-xs-6">--%>
+                                <%--<form:input cssClass="form-control" path="dateFrom"--%>
+                                            <%--value="${eventObject.dateFrom}"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+
+                        <%--<div class="form-group">--%>
+                            <%--<form:label path="dateTo" cssClass="control-label col-xs-3">date To</form:label>--%>
+                            <%--<div class="col-xs-6">--%>
+                                <%--<form:input cssClass="form-control" path="dateTo"--%>
+                                            <%--value="${eventObject.dateTo}"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
 
                         <div class="form-group">
-                            <form:label path="dateTo" cssClass="control-label col-xs-3">date To</form:label>
-                            <div class="col-xs-6">
-                                <form:input type="date" cssClass="form-control" path="dateTo"
-                                            value="${eventObject.dateTo}"/>
-                            </div>
+                            <input type="text" name="idr" cssClass="control-label col-xs-3"/>
+                            <%--<form:label path="" cssClass="control-label col-xs-3">RouterID</form:label>--%>
+                            <%--<div class="col-xs-6">--%>
+                                <%--<form:input type="text" cssClass="form-control" path="routerId"--%>
+                                            <%--value="${eventObject.routers}"/>--%>
+                            <%--</div>--%>
                         </div>
 
                         <div class="form-group">

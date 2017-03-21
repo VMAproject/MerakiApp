@@ -35,13 +35,6 @@
                             </div>
                         </div>
 
-                        <%--<div class="form-group">--%>
-                        <%--<div class="control-label col-xs-3"><form:label path="salary">Salary</form:label></div>--%>
-                        <%--<div class="col-xs-6">--%>
-                        <%--<form:input cssClass="form-control" path="salary" value="${employeeObject.salary}"/>--%>
-                        <%--</div>--%>
-                        <%--</div>--%>
-
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-xs-4">
@@ -79,11 +72,6 @@
                     return false;
                 }
 
-//        if(salary <= 0) {
-//            alert('Please enter proper salary');
-//            $('#salary').focus();
-//            return false;
-//        }
                 return true;
             }
         </script>

@@ -1,6 +1,7 @@
 package com.meraki.controller;
 
 import com.meraki.entity.Event;
+import com.meraki.entity.Router;
 import com.meraki.service.EventService;
 import com.meraki.service.RouterService;
 import org.jboss.logging.Logger;
@@ -11,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -39,6 +43,7 @@ public class EventController {
     public ModelAndView createEvent(@ModelAttribute Event event) {
         logger.info("create event " + event);
         return new ModelAndView("eventForm");
+
     }
 
     @RequestMapping("editEvent")
@@ -49,13 +54,27 @@ public class EventController {
     }
 
     @RequestMapping("saveEvent")
-    public ModelAndView saveEvent(@ModelAttribute Event event) {
+    public ModelAndView saveEvent(@ModelAttribute Event event, HttpServletRequest request) {
         logger.info("save event " + event);
+        int id = Integer.parseInt(request.getParameter("idr")); /// сделать коментарии а то пиздец
 
+//        System.out.println(event.getDateFrom() + event.getDateTo().toString());
+
+        Router router = routerService.getRouter(id);
+//        router.setEvent(event);
+
+        Set<Router> routerSet = new HashSet<>();
+        routerSet.add(router);
+
+        event.setRouters(routerSet);
+
+//        routerService.updateRouter(router);
         if (event.getId() == 0) {
             eventService.createEvent(event);
+
         } else {
             eventService.updateEvent(event);
+//            routerService.updateRouter(router);
         }
 
         logger.info("save event " + event);

@@ -8,8 +8,8 @@
         <div class="container-fluid myrow-container">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <div class="panel-title"><b>Events</b></div>
-                    <div class="panel-add"><a href="createEvent">Add New Event</a></div>
+                    <div class="panel-title"><b>Routers</b></div>
+                    <div class="panel-add"><a href="createRouter">Add New Router</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty routerList}">

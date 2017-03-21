@@ -15,7 +15,7 @@ import java.util.*;
 @Table(name = "event")
 public class Event implements Serializable {
 
-    private static final long serialVersionUID = -7988799579036225132L;
+//    private static final long serialVersionUID = -7988799579036225132L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,50 +38,28 @@ public class Event implements Serializable {
     @Column(name = "date_to")
     private Date dateTo;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "event",
-            cascade = CascadeType.ALL)
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "event",
+//            cascade = CascadeType.ALL)
+//    private Set<Router> routers = new HashSet<>();
+
+
+    @OneToMany(mappedBy = "event" , cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Router> routers = new HashSet<>();
+
+//    @OneToMany(mappedBy = "event" , cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<Router> routers = new HashSet<>();
 
     public Event() {
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Event that = (Event) o;
-
-        return Objects.equals(this.dateFrom, that.dateFrom) &&
-                Objects.equals(this.dateTo, that.dateTo) &&
-                Objects.equals(this.id, that.id) &&
-                Objects.equals(this.location, that.location) &&
-                Objects.equals(this.name, that.name) &&
-                Objects.equals(this.routers, that.routers);
+    public Event(String name, String location, Date dateFrom, Date dateTo, Set<Router> routers) {
+        this.name = name;
+        this.location = location;
+        this.dateFrom = dateFrom;
+        this.dateTo = dateTo;
+        this.routers = routers;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(dateFrom, dateTo, id, location, name, routers);
-    }
-
-    @Override
-    public String toString() {
-        return new StringJoiner(", ", this.getClass().getSimpleName() + "[", "]")
-                .add("dateFrom = " + dateFrom)
-                .add("dateTo = " + dateTo)
-                .add("id = " + id)
-                .add("location = " + location)
-                .add("name = " + name)
-                .add("routers = " + routers)
-                .toString();
-    }
-
-    public void setRouters() {
-    }
-
-
-//    @OneToOne(optional = false)
+    //    @OneToOne(optional = false)
 //    @JoinColumn(name = "router_id", unique = false, nullable = true)
 //    private Router router;
 

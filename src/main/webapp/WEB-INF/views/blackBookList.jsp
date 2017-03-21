@@ -9,7 +9,7 @@
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <div class="panel-title"><b>Black List</b></div>
-                    <div class="panel-add"><a href="createEvent">Add New User</a></div>
+                    <div class="panel-add"><a href="createBlackBook">Add New Users to Black List</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty blackBookList}">
@@ -23,7 +23,6 @@
                                 <th>Id</th>
                                 <th>Name</th>
                                 <th>clientMac</th>
-                                    <%--<th>Router</th>--%>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -34,7 +33,7 @@
                                     <td><c:out value="${blackBook.id}"/></td>
                                     <td><c:out value="${blackBook.name}"/></td>
                                     <td><c:out value="${blackBook.clientMac}"/></td>
-                                        <%--<th><c:out value="${event.routers}"/></th>--%>
+
                                     <td><a href="/editBlackBook?id=<c:out value='${blackBook.id}'/>">Edit</a></td>
                                     <td><a href="/deleteBlackBook?id=<c:out value='${blackBook.id}'/>">Delete</a></td>
                                 </tr>

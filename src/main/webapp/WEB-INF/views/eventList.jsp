@@ -57,7 +57,10 @@
                                     <td><c:out value="${event.location}"/></td>
                                     <td><c:out value="${event.dateFrom}"/></td>
                                     <td><c:out value="${event.dateTo}"/></td>
-                                        <%--<th><c:out value="${event.routers.size()}"/></th>--%>
+                                    <%--<c:forEach items="${event.routers}" var= "routers">--%>
+                                        <%--<td><c:out value="${routers.id}"></c:out></td>--%>
+                                    <%--</c:forEach>--%>
+                                        <%--<th><c:out value="${event.routers.iterator()}"/></th>--%>
                                     <td><a href="/editEvent?id=<c:out value='${event.id}'/>">Edit</a></td>
                                     <td><a href="/deleteEvent?id=<c:out value='${event.id}'/>">Delete</a></td>
                                 </tr>
