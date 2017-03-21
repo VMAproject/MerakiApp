@@ -17,45 +17,30 @@
                 <div class="panel-body">
                     <form:form id="routerForm" cssClass="form-horizontal" modelAttribute="router" method="post"
                                action="saveRouter">
+                        <div class="container panel-body-group">
 
-                        <div class="form-group">
-                            <div class="control-label col-xs-3">
-                                <form:label path="routerName">Router Name</form:label></div>
-                            <div class="col-xs-6">
+                            <div class="form-group">
+                                <form:label path="routerName">Router Name</form:label>
                                 <form:hidden path="id" value="${routerObject.id}"/>
-
                                 <form:input cssClass="form-control" path="routerName"
                                             value="${routerObject.routerName}"/>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <form:label path="apMac" cssClass="control-label col-xs-3">apMac</form:label>
-                            <div class="col-xs-6">
+                            <div class="form-group">
+                                <form:label path="apMac">apMac</form:label>
                                 <form:input cssClass="form-control" path="apMac" value="${routerObject.apMac}"/>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <div class="control-label col-xs-3"><form:label path="event">Event</form:label></div>
-                            <div class="col-xs-6">
+                            <div class="form-group">
+                                <form:label path="event">Event</form:label>
                                 <form:input cssClass="form-control" path="event" value="${routerObject.event}"/>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-xs-4">
-                                </div>
-                                <div class="col-xs-4">
-                                    <input type="submit" id="saveRouter" class="btn btn-primary" value="Save"
-                                           onclick="return submitRouterForm();"/>
-                                </div>
-                                <div class="col-xs-4">
-                                </div>
+                            <div class="form-group">
+                                <input type="submit" id="saveRouter" class="btn btn-primary button" value="Save"
+                                       onclick="return submitRouterForm();"/>
                             </div>
                         </div>
-
                     </form:form>
                 </div>
             </div>

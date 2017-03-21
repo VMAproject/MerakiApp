@@ -19,7 +19,7 @@
 
 <%--header--%>
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-    <img class="logo" src="${contextPath}/resources/images/CiscoMeraki.png"
+    <img class="logo logo_left" src="${contextPath}/resources/images/CiscoMeraki.png"
          alt="logo">
     <div class="greeting right">
         <div class="clock">

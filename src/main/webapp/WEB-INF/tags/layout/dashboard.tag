@@ -171,10 +171,9 @@ desired effect
                 </li>
                 <li><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
-                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text"
-                                                                          aria-hidden="true"></i><span>Black list</span></a>
+                <li><a href="<c:url value='/statistic' />"/><i class="fa fa-pie-chart"></i><span>Statistic</span></a>
                 </li>
-                <li><a href="<c:url value='/statistic' />"/><i class="fa fa-file-text" aria-hidden="true"></i><span>Statistic</span></a>
+                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text"></i><span>Black list</span></a>
                 </li>
 
             </ul><!-- /.sidebar-menu -->

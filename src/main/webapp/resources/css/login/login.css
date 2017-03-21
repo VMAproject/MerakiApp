@@ -139,6 +139,10 @@ body {
   width: 165px;
 }
 
+.logo_left {
+  margin-left: 30px;
+}
+
 /*reintroduce style*/
 .alert {
   padding: 5px !important;
@@ -149,4 +153,6 @@ body {
     border-radius: 0px !important;
   }
 }
+
+
 
