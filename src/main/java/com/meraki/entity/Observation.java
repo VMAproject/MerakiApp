@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by Verlamov on 21.03.17.
@@ -41,8 +42,9 @@ public class Observation implements Serializable {
     @Column(name = "seenEpoch")
     private int seenEpoch;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "seenTime")
-    private int seenTime;
+    private Date seenTime;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "router_id")
