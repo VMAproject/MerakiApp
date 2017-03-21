@@ -146,14 +146,15 @@ desired effect
             </div>
 
             <!-- search form (Optional) -->
-                       <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                          <input type="text" name="q" class="form-control" placeholder="Search...">
-                          <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                                    class="fa fa-search"></i></button>
                           </span>
-                        </div>
-                      </form>
+                </div>
+            </form>
             <!-- /.search form -->
 
             <!-- Sidebar Menu -->
@@ -166,9 +167,15 @@ desired effect
                                 <li><a href="#">Link in level 2</a></li>
                               </ul>
                             </li> -->
-                <li><a href="<c:url value='/getAllEventLists' />"/><i class="fa fa-list-alt"></i><span>Events</span></a></li>
-                <li><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a></li>
-                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text" aria-hidden="true"></i><span>Black list</span></a></li>
+                <li><a href="<c:url value='/getAllEventLists' />"/><i class="fa fa-list-alt"></i><span>Events</span></a>
+                </li>
+                <li><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
+                </li>
+                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text"
+                                                                          aria-hidden="true"></i><span>Black list</span></a>
+                </li>
+                <li><a href="<c:url value='/statistic' />"/><i class="fa fa-file-text" aria-hidden="true"></i><span>Statistic</span></a>
+                </li>
 
             </ul><!-- /.sidebar-menu -->
         </section>

@@ -1,13 +1,13 @@
 package com.meraki.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Data
@@ -38,16 +38,8 @@ public class Event implements Serializable {
     @Column(name = "date_to")
     private Date dateTo;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "event",
-//            cascade = CascadeType.ALL)
-//    private Set<Router> routers = new HashSet<>();
-
-
-    @OneToMany(mappedBy = "event" , cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Router> routers = new HashSet<>();
-
-//    @OneToMany(mappedBy = "event" , cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Set<Router> routers = new HashSet<>();
 
     public Event() {
     }
@@ -59,6 +51,7 @@ public class Event implements Serializable {
         this.dateTo = dateTo;
         this.routers = routers;
     }
+
     //    @OneToOne(optional = false)
 //    @JoinColumn(name = "router_id", unique = false, nullable = true)
 //    private Router router;

@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -33,17 +35,14 @@ public class Router implements Serializable {
     @JoinColumn(name = "event_id")
     private Event event;
 
-    public Router() {
-    }
+    @OneToMany(mappedBy = "router", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Observation> observations = new HashSet<>();
 
-    public Router(String apMac, String routerName, Event event) {
-        this.apMac = apMac;
-        this.routerName = routerName;
-        this.event = event;
-    }
+    @OneToMany(mappedBy = "router", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ApTag> apTags = new HashSet<>();
 
-    //    @OneToOne(optional = false, mappedBy = "router")
-//    private Event event;
+    @OneToMany(mappedBy = "router", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ApFloor> apFloors = new HashSet<>();
 
 
 }
