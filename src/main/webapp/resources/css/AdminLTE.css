@@ -4734,3 +4734,37 @@ table.text-center th {
       padding-bottom: 25px !important;
     }
 }
+
+nav {
+  position: relative;
+}
+
+.nav,
+.navbar-nav>li,
+.navbar-nav>li>a {
+  height: 100%;
+}
+
+.navbar-custom-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.panel-body-group {
+  width: 76%;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 8px 35px;
+}
+
+.myrow-container {
+  width: 55%;
+}
+
+.center-block {
+  text-align: center;
+}

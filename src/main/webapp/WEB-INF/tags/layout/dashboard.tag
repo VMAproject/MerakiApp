@@ -112,16 +112,13 @@ desired effect
                             <li class="user-header">
                                 <img src="resources/images/avatar.png" class="img-circle" alt="User Image">
                                 <p>
-                                    ${user.firstName} ${user.lastName} - ${user.role.rolename}
+                                    You are logged in as - ${user.role.rolename}
                                     <small>Member since ${user.regdate}</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="profile" class="btn btn-default btn-flat">Profile</a>
-                                </div>
-                                <div class="pull-right">
+                                <div class="center-block">
                                     <a href='<c:url value="/logout"></c:url>' class="btn btn-default btn-flat">Sign
                                         out</a>
                                 </div>

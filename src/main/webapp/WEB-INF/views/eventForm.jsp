@@ -17,23 +17,29 @@
                 <div class="panel-body">
                     <form:form id="eventForm" cssClass="form-horizontal" modelAttribute="event" method="post"
                                action="saveEvent">
-
-                        <div class="form-group">
-                            <div class="control-label col-xs-3">
-                                <form:label path="name">Name</form:label></div>
-                            <div class="col-xs-6">
+                        <div class="container panel-body-group">
+                            <div class="form-group">
+                                <form:label path="name">Name</form:label>
                                 <form:hidden path="id" value="${eventObject.id}"/>
-
                                 <form:input cssClass="form-control" path="name" value="${eventObject.name}"/>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <form:label path="location" cssClass="control-label col-xs-3">location</form:label>
-                            <div class="col-xs-6">
+                            <div class="form-group">
+                                <form:label path="location" cssClass="control-label">Location</form:label>
                                 <form:input cssClass="form-control" path="location" value="${eventObject.location}"/>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="routerId" class="control-label">Router Id</label>
+                                <input type="text" name="idr" class="form-control" id="routerId"/>
+                                    <%--<form:label path="" cssClass="control-label col-xs-3">RouterID</form:label>--%>
+                                    <%--<div class="col-xs-6">--%>
+                                    <%--<form:input type="text" cssClass="form-control" path="routerId"--%>
+                                    <%--value="${eventObject.routers}"/>--%>
+                                    <%--</div>--%>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" id="saveEvent" class="btn btn-primary button" value="Save"
+                                       onclick="return submitEventForm();"/>
+                            </div>
 
                         <%--<div class="form-group">--%>
                             <%--<form:label path="dateFrom" cssClass="control-label col-xs-3">dateFrom</form:label>--%>
@@ -50,29 +56,6 @@
                                             <%--value="${eventObject.dateTo}"/>--%>
                             <%--</div>--%>
                         <%--</div>--%>
-
-                        <div class="form-group">
-                            <input type="text" name="idr" cssClass="control-label col-xs-3"/>
-                            <%--<form:label path="" cssClass="control-label col-xs-3">RouterID</form:label>--%>
-                            <%--<div class="col-xs-6">--%>
-                                <%--<form:input type="text" cssClass="form-control" path="routerId"--%>
-                                            <%--value="${eventObject.routers}"/>--%>
-                            <%--</div>--%>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-xs-4">
-                                </div>
-                                <div class="col-xs-4">
-                                    <input type="submit" id="saveEvent" class="btn btn-primary" value="Save"
-                                           onclick="return submitEventForm();"/>
-                                </div>
-                                <div class="col-xs-4">
-                                </div>
-                            </div>
-                        </div>
-
                     </form:form>
                 </div>
             </div>
