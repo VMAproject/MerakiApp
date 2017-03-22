@@ -4762,7 +4762,8 @@ nav {
 }
 
 .myrow-container {
-  width: 55%;
+  display: table;
+  min-width: 55%;
 }
 
 .center-block {

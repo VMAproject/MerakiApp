@@ -38,7 +38,9 @@
                             </div>
                             <div class="form-group">
                                 <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control"/>
+                                    <form:label path="dateFrom" cssClass="control-label">dateFrom</form:label>
+                                    <form:input cssClass="form-control" path="dateFrom"
+                                                value="${eventObject.dateFrom}"/>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -46,7 +48,9 @@
                             </div>
                             <div class="form-group">
                                 <div class='input-group date' id='datetimepicker2'>
-                                    <input type='text' class="form-control"/>
+                                    <form:label path="dateTo" cssClass="control-label">dateTo</form:label>
+                                        <form:input cssClass="form-control" path="dateTo"
+                                        value="${eventObject.dateTo}"/>
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
