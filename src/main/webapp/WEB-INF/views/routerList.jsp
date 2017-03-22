@@ -48,6 +48,12 @@
             </div>
         </div>
 
+        <script>
+            $(function () {
+                $('#router').addClass('active');
+            });
+        </script>
+
     </jsp:body>
 </t:dashboard>
 </html>

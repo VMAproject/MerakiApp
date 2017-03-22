@@ -163,7 +163,7 @@ desired effect
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-                <li class="active"><a href="<c:url value='/' />"><i class="fa fa-link"></i><span>Home</span></a></li>
+                <li id="home"><a href="<c:url value='/' />"><i class="fa fa-link"></i><span>Home</span></a></li>
                 <!--             <li class="treeview">
                               <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                               <ul class="treeview-menu">
@@ -171,13 +171,13 @@ desired effect
                                 <li><a href="#">Link in level 2</a></li>
                               </ul>
                             </li> -->
-                <li><a href="<c:url value='/getAllEventLists' />"/><i class="fa fa-list-alt"></i><span>Events</span></a>
+                <li id="event"><a href="<c:url value='/getAllEventLists' />"/><i class="fa fa-list-alt"></i><span>Events</span></a>
                 </li>
-                <li><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
+                <li id="router"><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
-                <li><a href="<c:url value='getAllObservationLists' />"/><i class="fa fa-pie-chart"></i><span>Statistic</span></a>
+                <li id="statistic"><a href="<c:url value='getAllObservationLists' />"/><i class="fa fa-pie-chart"></i><span>Statistic</span></a>
                 </li>
-                <li><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text"></i><span>Black list</span></a>
+                <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text"></i><span>Black list</span></a>
                 </li>
 
             </ul><!-- /.sidebar-menu -->

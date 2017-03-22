@@ -37,8 +37,8 @@
                                     <%--</div>--%>
                             </div>
                             <div class="form-group">
+                                <form:label path="dateFrom" cssClass="control-label">dateFrom</form:label>
                                 <div class='input-group date' id='datetimepicker1'>
-                                    <form:label path="dateFrom" cssClass="control-label">dateFrom</form:label>
                                     <form:input cssClass="form-control" path="dateFrom"
                                                 value="${eventObject.dateFrom}"/>
                                     <span class="input-group-addon">
@@ -47,8 +47,8 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <form:label path="dateTo" cssClass="control-label">dateTo</form:label>
                                 <div class='input-group date' id='datetimepicker2'>
-                                    <form:label path="dateTo" cssClass="control-label">dateTo</form:label>
                                         <form:input cssClass="form-control" path="dateTo"
                                         value="${eventObject.dateTo}"/>
                                     <span class="input-group-addon">
@@ -83,6 +83,9 @@
         </div>
 
         <script type="text/javascript">
+            $(function () {
+                $('#event').addClass('active');
+            });
             $(function () {
                 $('#datetimepicker1').datetimepicker({
                     locale: 'ru'

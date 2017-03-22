@@ -135,12 +135,13 @@ body {
 }
 
 .logo{
-  height: 65px;
-  width: 165px;
+  height: 35px;
+  width: 150px;
 }
 
 .logo_left {
   margin-left: 30px;
+  margin-top: 16px;
 }
 
 /*reintroduce style*/

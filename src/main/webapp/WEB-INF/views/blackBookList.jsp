@@ -49,6 +49,11 @@
         <%-- <script src="<c:url value="/resources/js/jquery-2.1.3.js"/>"></script>
         <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
          --%>
+        <script>
+            $(function () {
+                $('#blackList').addClass('active');
+            });
+        </script>
 
     </jsp:body>
 </t:dashboard>

@@ -72,6 +72,12 @@
             </div>
         </div>
 
+        <script>
+            $(function () {
+                $('#event').addClass('active');
+            });
+        </script>
+
     </jsp:body>
 </t:dashboard>
 </html>

@@ -54,6 +54,9 @@
         </div>
 
         <script type="text/javascript">
+            $(function () {
+                $('#blackList').addClass('active');
+            });
             function submitBlackBookForm() {
 
                 // getting the employee form values

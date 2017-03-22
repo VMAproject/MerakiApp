@@ -47,6 +47,9 @@
         </div>
 
         <script type="text/javascript">
+            $(function () {
+                $('#router').addClass('active');
+            });
             function submitRouterForm() {
 
                 // getting the employee form values
