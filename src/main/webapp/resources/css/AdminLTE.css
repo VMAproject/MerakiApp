@@ -95,7 +95,7 @@ body {
 }
 .content-wrapper,
 .right-side {
-  min-height: 100%;
+  height: 100%;
   background-color: #ecf0f5;
   z-index: 800;
 }
@@ -4762,8 +4762,8 @@ nav {
 }
 
 .myrow-container {
-  display: table;
-  min-width: 55%;
+  display: ta;
+  width: 55%;
 }
 
 .center-block {

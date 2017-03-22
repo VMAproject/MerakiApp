@@ -4,11 +4,10 @@
 
     <jsp:body>
 
-        <h1>welcome <c:out value="${user.username}"></c:out>, </h1>
+        <h1>Welcome <c:out value="${user.username}"></c:out>, </h1>
         <p>This is sample Miraki Project</p>
-        <p><b>note :</b> If you wanna use it you should ask cool guys
-            who wrote this site pages
-            otherwise every time you'll hang out something may happen wrong:))
+        <p> We hope your visit will help you understand the opportunities
+            and potential rewards that are available when you use this application
         </p>
         <p>This is a close project</p>
 

@@ -116,7 +116,7 @@ desired effect
                             <li class="user-header">
                                 <img src="resources/images/avatar.png" class="img-circle" alt="User Image">
                                 <p>
-                                    You are logged in as - ${user.role.rolename}
+                                    You are logged in as ${user.role.rolename}
                                     <small>Member since ${user.regdate}</small>
                                 </p>
                             </li>
