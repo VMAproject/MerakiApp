@@ -46,5 +46,9 @@ public class HibernateUtil {
         return (T) sessionFactory.getCurrentSession().get(entityClass, id);
     }
 
+    public <T> List<T> fetchAllU(Class<T> entityClass) {
+        return sessionFactory.getCurrentSession().createSQLQuery("SELECT * FROM meraki_db.observation WHERE rssi > 15" + entityClass.getName()).list();
+    }
+
 
 }

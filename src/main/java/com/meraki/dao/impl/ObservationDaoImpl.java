@@ -52,6 +52,6 @@ public class ObservationDaoImpl implements ObservationDao {
 
     @Override
     public List<Observation> getAllUniqueObservation() {
-        return hibernateUtil.fetchAll(Observation.class);
+        return hibernateUtil.fetchAllU(Observation.class);
     }
 }

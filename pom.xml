@@ -209,6 +209,13 @@
             <version>2.9.7</version>
         </dependency>
 
+        <!-- Add Hikari Connection Pooling support -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
     </dependencies>
 
 

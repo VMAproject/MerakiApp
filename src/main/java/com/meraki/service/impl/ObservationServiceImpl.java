@@ -3,9 +3,7 @@ package com.meraki.service.impl;
 import com.meraki.dao.ObservationDao;
 import com.meraki.entity.Observation;
 import com.meraki.service.ObservationService;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,9 +52,6 @@ public class ObservationServiceImpl implements ObservationService {
 
     @Override
     public List<Observation> getAllUniqueObservation() {
-        Session session = sessionFactory.getCurrentSession();
-
-        Query query = session.createQuery("SELECT * FROM miraki2.observations WHERE rssi > 15 GROUP BY clientMac ORDER BY seenTime ASC");
-        return query.list();
+        return observationDao.getAllUniqueObservation();
     }
 }

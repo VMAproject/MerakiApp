@@ -13,7 +13,7 @@
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty observationList}">
-                        There are no Router
+                        There are no Observation
                     </c:if>
                     <c:if test="${not empty observationList}">
 

@@ -1,5 +1,6 @@
 package com.meraki.configuration;
 
+import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,9 @@ public class HibernateConfig {
         dataSource.setPassword(environment.getProperty("database.password"));
         return dataSource;
     }
+
+
+
 
     @Bean
     public HibernateTransactionManager hibernateTransactionManager() {

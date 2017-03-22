@@ -50,4 +50,5 @@ public class Observation implements Serializable {
     @JoinColumn(name = "router_id")
     private Router router;
 
+
 }

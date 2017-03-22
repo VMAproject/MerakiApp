@@ -2,6 +2,7 @@ package com.meraki.controller;
 
 import com.meraki.entity.Observation;
 import com.meraki.service.ObservationService;
+import org.hibernate.SessionFactory;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ public class StatisticController {
     private static final Logger logger = Logger.getLogger(StatisticController.class);
 
     @Autowired
+    private SessionFactory sessionFactory;
+
+    @Autowired
     private ObservationService observationService;
 
 
@@ -33,10 +37,17 @@ public class StatisticController {
     }
 
 
+    //    @RequestMapping("getAllObservationUniqueLists")
+//    public ModelAndView getAllObservationUniqueLists() {
+//        ModelAndView modelAndView = new ModelAndView("observationList");
+//        List<Observation> observationUniqueList = observationService.getAllUniqueObservation();
+//        modelAndView.addObject("observationUniqueList", observationUniqueList);
+//        return modelAndView;
+//    }
     @RequestMapping("getAllObservationUniqueLists")
     public ModelAndView getAllObservationUniqueLists() {
         ModelAndView modelAndView = new ModelAndView("observationList");
-        List<Observation> observationUniqueList = observationService.getAllUniqueObservation();
+        List<Observation> observationUniqueList = sessionFactory.getCurrentSession().createSQLQuery("SELECT * FROM meraki_db.observation WHERE rssi > 15 GROUP BY clientMac").list();
         modelAndView.addObject("observationUniqueList", observationUniqueList);
         return modelAndView;
     }
