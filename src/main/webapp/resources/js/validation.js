@@ -15,8 +15,8 @@ $(document).ready(
             danger.removeClass('hidden');
         }
     }).focusout(function (e) {
-            console.log($("#registerForm").data('clicked') == true);
-            $(e.target).siblings('.alert-success').addClass('hidden');
-            $(e.target).siblings('.alert-danger').addClass('hidden');
+        console.log($("#registerForm").data('clicked') == true);
+        $(e.target).siblings('.alert-success').addClass('hidden');
+        $(e.target).siblings('.alert-danger').addClass('hidden');
     })
 )

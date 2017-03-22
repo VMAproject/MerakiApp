@@ -31,9 +31,9 @@
                                 <th>rssi</th>
                                 <th>seenEpoch</th>
                                 <th>seenTime"</th>
-                                <%--<th>routerID</th>--%>
-                                <%--<th>Edit</th>--%>
-                                <%--<th>Delete</th>--%>
+                                    <%--<th>routerID</th>--%>
+                                    <%--<th>Edit</th>--%>
+                                    <%--<th>Delete</th>--%>
                             </tr>
                             </thead>
                             <tbody>
@@ -49,11 +49,11 @@
                                     <td><c:out value="${observation.rssi}"/></td>
                                     <td><c:out value="${observation.seenEpoch}"/></td>
                                     <td><c:out value="${observation.seenTime}"/></td>
-                                    <%--<td><c:out value="${observation.router}"/></td>--%>
+                                        <%--<td><c:out value="${observation.router}"/></td>--%>
 
                                         <%--<th><c:out value="${event.router.id}"/></th>--%>
-                                    <%--<td><a href="/editRouter?id=<c:out value='${router.id}'/>">Edit</a></td>--%>
-                                    <%--<td><a href="/deleteRouter?id=<c:out value='${router.id}'/>">Delete</a></td>--%>
+                                        <%--<td><a href="/editRouter?id=<c:out value='${router.id}'/>">Edit</a></td>--%>
+                                        <%--<td><a href="/deleteRouter?id=<c:out value='${router.id}'/>">Delete</a></td>--%>
                                 </tr>
                             </c:forEach>
                             </tbody>

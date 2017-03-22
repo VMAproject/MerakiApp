@@ -7,8 +7,8 @@
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="<c:url value='/resources/css/login/login.css' />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis" rel="stylesheet">
-    <link rel="stylesheet" href="${contextPath}/resources/css/login/dscountdown.css" />
-    <link rel="stylesheet" href="${contextPath}/resources/css/login/timer.css" />
+    <link rel="stylesheet" href="${contextPath}/resources/css/login/dscountdown.css"/>
+    <link rel="stylesheet" href="${contextPath}/resources/css/login/timer.css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="<c:url value='/resources/js/funtions/login.js' />"></script>

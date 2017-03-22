@@ -9,8 +9,8 @@
         <div class="container-fluid myrow-container">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                        <div class="panel-title"><b>Events</b></div>
-                        <div class="panel-add"><a href="createEvent">Add New Event</a></div>
+                    <div class="panel-title"><b>Events</b></div>
+                    <div class="panel-add"><a href="createEvent">Add New Event</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty eventList}">
@@ -21,17 +21,17 @@
                         <form action="/searchEvent">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <%--<div class="form-group">--%>
+                                        <%--<div class="form-group">--%>
                                         <%--<label for="searchName">Search Event:</label>--%>
                                         <%--<input type="text" class="form-control" name="searchName" id="searchName"/>--%>
                                         <%----%>
-                                    <%--</div>--%>
-                                        <div class="input-group bottom-space">
-                                            <input type="text" class="form-control" placeholder="Search for...">
-                                            <span class="input-group-btn">
+                                        <%--</div>--%>
+                                    <div class="input-group bottom-space">
+                                        <input type="text" class="form-control" placeholder="Search for...">
+                                        <span class="input-group-btn">
                                                 <input class="btn btn-success" type='submit' value='Search'/>
                                             </span>
-                                        </div><!-- /input-group -->
+                                    </div><!-- /input-group -->
                                 </div>
                             </div>
                         </form>
@@ -57,9 +57,9 @@
                                     <td><c:out value="${event.location}"/></td>
                                     <td><c:out value="${event.dateFrom}"/></td>
                                     <td><c:out value="${event.dateTo}"/></td>
-                                    <%--<c:forEach items="${event.routers}" var= "routers">--%>
+                                        <%--<c:forEach items="${event.routers}" var= "routers">--%>
                                         <%--<td><c:out value="${routers.id}"></c:out></td>--%>
-                                    <%--</c:forEach>--%>
+                                        <%--</c:forEach>--%>
                                         <%--<th><c:out value="${event.routers.iterator()}"/></th>--%>
                                     <td><a href="/editEvent?id=<c:out value='${event.id}'/>">Edit</a></td>
                                     <td><a href="/deleteEvent?id=<c:out value='${event.id}'/>">Delete</a></td>

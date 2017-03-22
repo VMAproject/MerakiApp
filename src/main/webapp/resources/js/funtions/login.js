@@ -36,7 +36,7 @@ $(document).ready(function ($) {
          */
 
 
-        if(data["username"] == '' || data["password"] == '' || data["email"] == '') {
+        if (data["username"] == '' || data["password"] == '' || data["email"] == '') {
             alert('You should fill all fields');
         } else {
             $.ajax({

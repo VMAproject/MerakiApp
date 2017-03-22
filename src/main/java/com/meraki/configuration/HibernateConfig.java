@@ -1,5 +1,6 @@
 package com.meraki.configuration;
 
+import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
@@ -34,7 +35,7 @@ public class HibernateConfig {
     @Bean
     public SessionFactory sessionFactory() {
         LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
-        localSessionFactoryBean.setDataSource(getDataSource());
+        localSessionFactoryBean.setDataSource(dataSource());
         localSessionFactoryBean.setPackagesToScan("com.meraki");
         localSessionFactoryBean.setHibernateProperties(hibernateProperties());
         try {
@@ -45,18 +46,29 @@ public class HibernateConfig {
         return localSessionFactoryBean.getObject();
     }
 
-    @Bean
-    public DataSource getDataSource() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(environment.getProperty("database.driver"));
-        dataSource.setUrl(environment.getProperty("database.url"));
-        dataSource.setUsername(environment.getProperty("database.root"));
-        dataSource.setPassword(environment.getProperty("database.password"));
+
+
+
+    @Bean(destroyMethod = "close")
+    public DataSource dataSource(){
+        HikariConfig hikariConfig = new HikariConfig();
+        hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/meraki_db");
+        hikariConfig.setUsername("root");
+        hikariConfig.setPassword("root");
+
+        hikariConfig.setMaximumPoolSize(5);
+        hikariConfig.setConnectionTestQuery("SELECT 1");
+        hikariConfig.setPoolName("springHikariCP");
+
+        hikariConfig.addDataSourceProperty("dataSource.cachePrepStmts", "true");
+        hikariConfig.addDataSourceProperty("dataSource.prepStmtCacheSize", "250");
+        hikariConfig.addDataSourceProperty("dataSource.prepStmtCacheSqlLimit", "2048");
+        hikariConfig.addDataSourceProperty("dataSource.useServerPrepStmts", "true");
+
+        HikariDataSource dataSource = new HikariDataSource(hikariConfig);
         return dataSource;
     }
-
-
-
 
     @Bean
     public HibernateTransactionManager hibernateTransactionManager() {

@@ -34,7 +34,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="${contextPath}/resources/css/home.css"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"/>
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
@@ -171,13 +172,16 @@ desired effect
                                 <li><a href="#">Link in level 2</a></li>
                               </ul>
                             </li> -->
-                <li id="event"><a href="<c:url value='/getAllEventLists' />"/><i class="fa fa-list-alt"></i><span>Events</span></a>
+                <li id="event"><a href="<c:url value='/getAllEventLists' />"/><i
+                        class="fa fa-list-alt"></i><span>Events</span></a>
                 </li>
                 <li id="router"><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
-                <li id="statistic"><a href="<c:url value='getAllObservationLists' />"/><i class="fa fa-pie-chart"></i><span>Statistic</span></a>
+                <li id="statistic"><a href="<c:url value='getAllObservationLists' />"/><i
+                        class="fa fa-pie-chart"></i><span>Statistic</span></a>
                 </li>
-                <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i class="fa fa-file-text"></i><span>Black list</span></a>
+                <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i
+                        class="fa fa-file-text"></i><span>Black list</span></a>
                 </li>
 
             </ul><!-- /.sidebar-menu -->

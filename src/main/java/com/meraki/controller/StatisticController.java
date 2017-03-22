@@ -44,6 +44,9 @@ public class StatisticController {
 //        modelAndView.addObject("observationUniqueList", observationUniqueList);
 //        return modelAndView;
 //    }
+
+
+
     @RequestMapping("getAllObservationUniqueLists")
     public ModelAndView getAllObservationUniqueLists() {
         ModelAndView modelAndView = new ModelAndView("observationList");

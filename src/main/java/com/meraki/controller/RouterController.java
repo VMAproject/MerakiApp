@@ -43,7 +43,7 @@ public class RouterController {
     }
 
 
-    @RequestMapping(value = "saveRouter",method = RequestMethod.POST)
+    @RequestMapping(value = "saveRouter", method = RequestMethod.POST)
     public ModelAndView saveRouter(@ModelAttribute Router router) {
         logger.info("save router" + router);
 
