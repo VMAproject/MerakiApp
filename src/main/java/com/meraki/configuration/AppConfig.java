@@ -53,9 +53,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         cookieLocaleResolver.setCookieMaxAge(4800);
         return cookieLocaleResolver;
     }
+
+
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
