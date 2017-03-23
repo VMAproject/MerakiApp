@@ -46,7 +46,7 @@ public class Observation implements Serializable {
     @Column(name = "seenTime")
     private Date seenTime;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "router_id")
     private Router router;
 

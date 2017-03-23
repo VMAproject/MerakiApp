@@ -175,6 +175,9 @@ desired effect
                 <li id="event"><a href="<c:url value='/getAllEventLists' />"/><i
                         class="fa fa-list-alt"></i><span>Events</span></a>
                 </li>
+                <li id="shop"><a href="<c:url value='/shopList' />"/><i
+                        class="fa fa-file-text"></i><span>Shop</span></a>
+                </li>
                 <li id="router"><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
                 <li id="statistic"><a href="<c:url value='getAllObservationLists' />"/><i
@@ -183,6 +186,9 @@ desired effect
                 <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i
                         class="fa fa-file-text"></i><span>Black list</span></a>
                 </li>
+
+
+
 
             </ul><!-- /.sidebar-menu -->
         </section>

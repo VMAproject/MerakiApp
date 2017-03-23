@@ -54,8 +54,10 @@ public class HibernateConfig {
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
         hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/meraki_db");
+//        hikariConfig.setJdbcUrl("jdbc:mysql://10.103.185.145:3306/meraki_db");
         hikariConfig.setUsername("root");
         hikariConfig.setPassword("root");
+//        hikariConfig.setPassword("D120d10k83");
 
         hikariConfig.setMaximumPoolSize(5);
         hikariConfig.setConnectionTestQuery("SELECT 1");

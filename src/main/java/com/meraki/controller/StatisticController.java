@@ -46,11 +46,10 @@ public class StatisticController {
 //    }
 
 
-
     @RequestMapping("getAllObservationUniqueLists")
     public ModelAndView getAllObservationUniqueLists() {
         ModelAndView modelAndView = new ModelAndView("observationList");
-        List<Observation> observationUniqueList = sessionFactory.getCurrentSession().createSQLQuery("SELECT * FROM meraki_db.observation WHERE rssi > 15 GROUP BY clientMac").list();
+        List<Observation> observationUniqueList = observationService.getAllUniqueObservation();
         modelAndView.addObject("observationUniqueList", observationUniqueList);
         return modelAndView;
     }
