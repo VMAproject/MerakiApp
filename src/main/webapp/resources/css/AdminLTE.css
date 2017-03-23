@@ -10,6 +10,27 @@
  * Core: General Layout Style
  * -------------------------
  */
+
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+  url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "RobotoMedium";
+  src: url("../fonts/RobotoMedium/RobotoMedium.eot");
+  src: url("../fonts/RobotoMedium/RobotoMedium.eot?#iefix")format("embedded-opentype"),
+  url("../fonts/RobotoMedium/RobotoMedium.woff") format("woff"),
+  url("../fonts/RobotoMedium/RobotoMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
 html,
 body {
   min-height: 100%;
@@ -2616,6 +2637,7 @@ a:focus {
 }
 .table > thead > tr > th {
   border-bottom: 2px solid #f4f4f4;
+  min-width: 86px;
 }
 .table tr td .progress {
   margin-top: 5px;
@@ -4753,7 +4775,7 @@ nav {
 }
 
 .panel-body-group {
-  width: 76%;
+  width: 65%;
   margin: 0 auto;
 }
 
@@ -4762,10 +4784,23 @@ nav {
 }
 
 .myrow-container {
-  display: ta;
-  width: 55%;
+  display: table;
+  width: 75%;
+}
+
+.myrow-container .panel-body {
+  font-family: OpenSansRegular;
+  font-size: 13px;
+}
+
+.myrow-container .panel-heading {
+  font-family: RobotoMedium;
 }
 
 .center-block {
   text-align: center;
+}
+
+.panel-title_bottom {
+  margin-bottom: 10px;
 }

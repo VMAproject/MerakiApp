@@ -6,10 +6,10 @@
 
     <jsp:body>
         <div class="container-fluid myrow-container">
-            <div class="panel panel-success">
+            <div class="form">
                 <div class="panel-heading">
-                    <div class="panel-title"><b>Black List</b></div>
-                    <div class="panel-add"><a href="createBlackBook">Add New Users to Black List</a></div>
+                    <div class="panel-title"><h1>Black Book List</h1></div>
+                    <div class="panel-add"><a href="createBlackBook">Add New Appliance</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty blackBookList}">

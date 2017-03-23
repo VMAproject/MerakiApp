@@ -6,9 +6,9 @@
 
     <jsp:body>
         <div class="container-fluid myrow-container">
-            <div class="panel panel-success">
+            <div class="form">
                 <div class="panel-heading">
-                    <div class="panel-title"><b>Routers</b></div>
+                    <div class="panel-title"><h1>Routers</h1></div>
                     <div class="panel-add"><a href="createRouter">Add New Router</a></div>
                 </div>
                 <div class="panel-body">

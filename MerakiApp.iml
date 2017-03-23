@@ -69,5 +69,6 @@
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.14" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.7" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.6.0" level="project" />
   </component>
 </module>

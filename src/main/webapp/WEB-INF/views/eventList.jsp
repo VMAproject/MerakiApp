@@ -7,9 +7,9 @@
 
     <jsp:body>
         <div class="container-fluid myrow-container">
-            <div class="panel panel-success">
+            <div class="form">
                 <div class="panel-heading">
-                    <div class="panel-title"><b>Events</b></div>
+                    <div class="panel-title"><h1>Events</h1></div>
                     <div class="panel-add"><a href="createEvent">Add New Event</a></div>
                 </div>
                 <div class="panel-body">
@@ -29,7 +29,7 @@
                                     <div class="input-group bottom-space">
                                         <input type="text" class="form-control" placeholder="Search for...">
                                         <span class="input-group-btn">
-                                                <input class="btn btn-success" type='submit' value='Search'/>
+                                                <input class="btn btn-primary" type='submit' value='Search'/>
                                             </span>
                                     </div><!-- /input-group -->
                                 </div>
