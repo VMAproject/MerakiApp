@@ -9,7 +9,10 @@
             <div class="form">
                 <div class="panel-heading">
                     <div class="panel-title"><h1>Black Book List</h1></div>
-                    <div class="panel-add"><a href="createBlackBook">Add New Appliance</a></div>
+                    <div class="panel-add">
+                        <a href="createBlackBook">Add New Appliance</a>
+                        <a href="javascript:PopUpToggle()"> FAQ</a>
+                    </div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty blackBookList}">

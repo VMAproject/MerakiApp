@@ -44,6 +44,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="resources/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="resources/js/app.min.js"></script>
+    <script src="resources/js/faq.js"></script>
+
     <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -214,7 +216,8 @@ desired effect
     <footer class="main-footer">
         <!-- Default to the left -->
         <jsp:invoke fragment="footer"/>
-        <strong>Copyright &copy; 2017 <a href="#">@OurCorporeation.</a></strong> All rights reserved.
+        Copyright &copy; 2017 by Mikhaylik Denis, Mikhaylik Denis, Tsymbalenko Oleksandr.
+        All rights reserved.
     </footer>
 </div><!-- ./wrapper -->
 
@@ -223,5 +226,12 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+<div class="b-popup" id="popup1">
+    <div class="b-popup-content">
+        <input type="button" onclick="PopUpToggle()" class="great_btn">
+        <img src="resources/images/main.png" alt="main">
+        <img src="resources/images/second.png" alt="second">
+    </div>
+</div>
 </body>
 </html>

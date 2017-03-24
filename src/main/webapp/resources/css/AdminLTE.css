@@ -4804,3 +4804,40 @@ nav {
 .panel-title_bottom {
   margin-bottom: 10px;
 }
+
+.b-popup{
+  width:100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  overflow-y: scroll;
+  top:0px;
+  z-index: 3000;
+}
+.b-popup .b-popup-content{
+  margin:10px auto 10px auto;
+  width: 85%;
+  text-align: center;
+  padding:10px;
+  position: relative;
+  background-color: #c5c5c5;
+  border-radius:5px;
+  box-shadow: 0px 0px 10px #000;
+}
+
+.b-popup .b-popup-content>img {
+  padding: 10px;
+  width: 85%;
+}
+
+.great_btn {
+  background: url(https://static.popmechanic.ru/media/lpgen-2/form2-build/img/close.png) no-repeat;
+  border-radius: 0;
+  opacity: 0.9;
+  height: 17px;
+  width: 12px;
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  cursor: pointer;
+}

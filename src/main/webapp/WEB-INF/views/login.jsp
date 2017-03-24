@@ -70,7 +70,7 @@
                     You have success
                 </div>
                 <div class="alert alert-danger hidden">
-                    Something wrong in your sintax
+                    Something wrong in your words
                 </div>
             </div>
             <div class="email">
@@ -102,8 +102,9 @@
 
 <%--FOOTER--%>
 <footer class="footer">
-    <div class="container-fluid">
-        <p class="text-muted">sashkoi1234@gmail.com</p>
+    <div class="container-fluid footer_bottom">
+        <p class="text-muted">Copyright &copy; 2017 by Mikhaylik Denis, Mikhaylik Denis, Tsymbalenko Oleksandr.
+            All rights reserved.</p>
     </div>
 </footer>
 
