@@ -23,11 +23,18 @@ public class RouterController {
     private RouterService routerService;
 
 
-    @RequestMapping("getAllRouterLists")
-    public ModelAndView getAllRouters() {
-        List<Router> routerList = routerService.getAllRouters();
-        logger.info("get all router" + routerList);
-        return new ModelAndView("routerList", "routerList", routerList);
+//    @RequestMapping("getAllRouterLists")
+//    public ModelAndView getAllRouters() {
+//        List<Router> routerList = routerService.getAllRouters();
+//        logger.info("get all router" + routerList);
+//        return new ModelAndView("routerList", "routerList", routerList);
+//    }
+
+
+    @RequestMapping("/routers/all")
+    public String showRouters(Model model) {
+        model.addAttribute("routerList", routerService.getAllRouters());
+        return "routerList";
     }
 
     @RequestMapping("createRouter")
@@ -56,7 +63,7 @@ public class RouterController {
 
         logger.info("save " + router);
 
-        return new ModelAndView("redirect:getAllRouterLists");
+        return new ModelAndView("redirect:/routers/all");
     }
 
 
@@ -65,7 +72,7 @@ public class RouterController {
         routerService.deleteRouter(id);
         logger.info("delete router " + id);
 
-        return new ModelAndView("redirect:getAllRouterLists");
+        return new ModelAndView("redirect:/routers/all");
     }
 
 

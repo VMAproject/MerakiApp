@@ -172,13 +172,13 @@ desired effect
                                 <li><a href="#">Link in level 2</a></li>
                               </ul>
                             </li> -->
-                <li id="event"><a href="<c:url value='/getAllEventLists' />"/><i
+                <li id="event"><a href="<c:url value='/events/all' />"/><i
                         class="fa fa-list-alt"></i><span>Events</span></a>
                 </li>
                 <li id="shop"><a href="<c:url value='/storeList' />"/><i
                         class="fa fa-file-text"></i><span>Shop</span></a>
                 </li>
-                <li id="router"><a href="<c:url value='/getAllRouterLists' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
+                <li id="router"><a href="<c:url value='/routers/all' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
                 <li id="statistic"><a href="<c:url value='getAllObservationLists' />"/><i
                         class="fa fa-pie-chart"></i><span>Statistic</span></a>

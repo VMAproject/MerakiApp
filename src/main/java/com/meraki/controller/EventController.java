@@ -48,17 +48,30 @@ public class EventController {
     public ModelAndView deleteEvent(@RequestParam long id) {
         eventService.deleteEvent(id);
         logger.info("delete event " + id);
-        return new ModelAndView("redirect:getAllEventLists");
+        return new ModelAndView("redirect:/events/all");
     }
 
 
-    @RequestMapping(value = "/createEvent",method = RequestMethod.POST) /// добавление -
-    public String saveEvent(@RequestParam String name,
-                            @RequestParam String location,
-                            @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateFrom,
-                            @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateTo,
-                            @RequestParam long id) {
-        logger.info("save event ///");
+    @RequestMapping("/editEvent")/// изменение
+    public ModelAndView editEvent(@RequestParam long id, @ModelAttribute Event event) {
+        event = eventService.getEvent(id);
+        logger.info("edit event " + event);
+        return new ModelAndView("eventForm", "eventObject", event);
+    }
+
+
+    @RequestMapping("/events")
+    public String eventsPage(Model model) {
+        model.addAttribute("allRouters", routerService.getAllRouters());
+        return "eventForm";
+    }
+
+    @RequestMapping(value = "/events/add", method = RequestMethod.GET)
+    public String addEvent(@RequestParam String name,
+                           @RequestParam String location,
+                           @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateFrom,
+                           @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateTo,
+                           @RequestParam long id) {
 
         Event event = new Event();
         event.setName(name);
@@ -71,15 +84,14 @@ public class EventController {
         router.setEvent(event);
         routerService.updateRouter(router);
 
-        return "eventList";
+
+        return "redirect:/events/all";
     }
 
-
-    @RequestMapping("/getAllEventLists")  ///////// отображение всех евентов +
-    public ModelAndView getAllEmployees() {
-        List<Event> eventList = eventService.getAllEvents();
-        logger.info("get all event" + eventList);
-        return new ModelAndView("eventList", "eventList", eventList);
+    @RequestMapping("/events/all")
+    public String showEvents(Model model) {
+        model.addAttribute("allEvents", eventService.getAllEvents());
+        return "eventList";
     }
 
 
@@ -90,43 +102,6 @@ public class EventController {
 //
 //    }
 
-    @RequestMapping("editEvent")
-    public ModelAndView editEvent(@RequestParam long id, @ModelAttribute Event event) {
-        event = eventService.getEvent(id);
-        logger.info("edit event " + event);
-        return new ModelAndView("eventForm", "eventObject", event);
-    }
-
-
-    @RequestMapping("/events")
-    public String eventsPage(Model model) {
-        model.addAttribute("allRouters", routerService.getAllRouters());
-
-        return "eventsPage";
-    }
-//
-//
-//    @RequestMapping(value = "createEvent", method = RequestMethod.POST)
-//    public String createEvent(@RequestParam String name,
-//                              @RequestParam String location,
-//                              @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateFrom,
-//                              @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateTo,
-//                              @RequestParam long id) {
-//
-//        Event event = new Event();
-//        event.setName(name);
-//        event.setLocation(location);
-//        event.setDateFrom(dateFrom);
-//        event.setDateTo(dateTo);
-//        long eventId = eventService.createEvent(event);
-//        event = eventService.getEvent(eventId);
-//        Router router = routerService.getRouter(id);
-//        router.setEvent(event);
-//        routerService.updateRouter(router);
-//
-//        return "redirect:/getAllEventLists";
-//    }
-////
 
 //
 //    @RequestMapping("searchEvent")
