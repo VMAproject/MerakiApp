@@ -11,69 +11,56 @@
             <div class="form">
                 <div class="panel-body">
                     <div class="container panel-body-group">
-                    <form:form id="eventForm" cssClass="form-horizontal" modelAttribute="event" method="post"
-                               action="saveEvent">
-                        <div class="panel-title panel-title_bottom"><h1>Event Details</h1></div>
-                        <div class="form-group">
-                            <form:label path="name">Name</form:label>
-                            <form:hidden path="id" value="${eventObject.id}"/>
-                            <form:input cssClass="form-control" path="name" value="${eventObject.name}"/>
-                        </div>
-                        <div class="form-group">
-                            <form:label path="location" cssClass="control-label">Location</form:label>
-                            <form:input cssClass="form-control" path="location" value="${eventObject.location}"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="routerId" class="control-label">Router Id</label>
-                            <input type="text" name="idr" class="form-control" id="routerId"/>
-                                <%--<form:label path="" cssClass="control-label col-xs-3">RouterID</form:label>--%>
-                                <%--<div class="col-xs-6">--%>
-                                <%--<form:input type="text" cssClass="form-control" path="routerId"--%>
-                                <%--value="${eventObject.routers}"/>--%>
-                                <%--</div>--%>
-                        </div>
-                        <div class="form-group">
-                            <form:label path="dateFrom" cssClass="control-label">dateFrom</form:label>
-                            <div class='input-group date' id='datetimepicker1'>
-                                <form:input cssClass="form-control" path="dateFrom"
-                                            value="${eventObject.dateFrom}"/>
-                                <span class="input-group-addon">
+
+                        <h2>Add Event</h2>
+                            <%--<form action="createEvent" method="post">--%>
+                        <form action="/createEvent" method="post">
+
+                            <div class="panel-title panel-title_bottom"><h1>Event Details</h1></div>
+
+                            <div class="form-group">
+                                <label for="name">name:</label>
+                                <input id="name" type="text" name="name"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">location:</label>
+                                <input id="location" type="text" name="location"/></p>
+                            </div>
+
+                            <div class="form-group">
+                                <select name="id">
+                                    <c:forEach items="${allRouters}" var="router">
+                                        <option value="${router.id}">${router.routerName}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dateFrom">dateFrom:</label>
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input id="dateFrom" type="date" name="dateFrom"/></p>
+                                    <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <form:label path="dateTo" cssClass="control-label">dateTo</form:label>
-                            <div class='input-group date' id='datetimepicker2'>
-                                <form:input cssClass="form-control" path="dateTo"
-                                            value="${eventObject.dateTo}"/>
-                                <span class="input-group-addon">
+
+                            <div class="form-group">
+                                <label for="dateTo">dateTo:</label>
+                                <div class='input-group date' id='datetimepicker2'>
+                                    <input id="dateTo" type="date" name="dateTo"/></p>
+                                    <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" id="saveEvent" class="btn btn-primary button" value="Save"
-                                   onclick="return submitEventForm();"/>
-                        </div>
 
-                            <%--<div class="form-group">--%>
-                            <%--<form:label path="dateFrom" cssClass="control-label col-xs-3">dateFrom</form:label>--%>
-                            <%--<div class="col-xs-6">--%>
-                            <%--<form:input cssClass="form-control" path="dateFrom"--%>
-                            <%--value="${eventObject.dateFrom}"/>--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
+                            <div class="form-group">
+                                <input type="submit" id="saveEvent" class="btn btn-primary button" value="Save"/>
+                            </div>
 
-                            <%--<div class="form-group">--%>
-                            <%--<form:label path="dateTo" cssClass="control-label col-xs-3">date To</form:label>--%>
-                            <%--<div class="col-xs-6">--%>
-                            <%--<form:input cssClass="form-control" path="dateTo"--%>
-                            <%--value="${eventObject.dateTo}"/>--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
-
-                        </form:form>
+                        </form>
                     </div>
                 </div>
             </div>

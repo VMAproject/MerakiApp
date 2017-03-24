@@ -31,9 +31,9 @@ public class Router implements Serializable {
 //    private Event event;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "shop_id")
-    private Shop shop;
+//    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "store_id")
+//    private Store store;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "event_id")

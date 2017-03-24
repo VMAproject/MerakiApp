@@ -8,42 +8,42 @@
     <jsp:body>
 
         <div class="container-fluid myrow-container">
-            <%--<div class="panel panel-success">--%>
+                <%--<div class="panel panel-success">--%>
                 <%--<div class="panel-heading">--%>
-                    <%--<h3 class="panel-title">--%>
-                        <%--Router Details--%>
-                    <%--</h3>--%>
+                <%--<h3 class="panel-title">--%>
+                <%--Router Details--%>
+                <%--</h3>--%>
                 <%--</div>--%>
                 <%--<div class="panel-body">--%>
-                    <%--<form:form id="routerForm" cssClass="form-horizontal" modelAttribute="router" method="post"--%>
-                               <%--action="saveRouter">--%>
-                        <%--<div class="container panel-body-group">--%>
+                <%--<form:form id="routerForm" cssClass="form-horizontal" modelAttribute="router" method="post"--%>
+                <%--action="saveRouter">--%>
+                <%--<div class="container panel-body-group">--%>
 
-                            <%--<div class="form-group">--%>
-                                <%--<form:label path="routerName">Router Name</form:label>--%>
-                                <%--<form:hidden path="id" value="${routerObject.id}"/>--%>
-                                <%--<form:input cssClass="form-control" path="routerName"--%>
-                                            <%--value="${routerObject.routerName}"/>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="form-group">--%>
-                                <%--<form:label path="apMac">apMac</form:label>--%>
-                                <%--<form:input cssClass="form-control" path="apMac" value="${routerObject.apMac}"/>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="form-group">--%>
-                                <%--<form:label path="event">Event</form:label>--%>
-                                <%--<form:input cssClass="form-control" path="event" value="${routerObject.event}"/>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="form-group">--%>
-                                <%--<input type="submit" id="saveRouter" class="btn btn-primary button" value="Save"--%>
-                                       <%--onclick="return submitRouterForm();"/>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</form:form>--%>
+                <%--<div class="form-group">--%>
+                <%--<form:label path="routerName">Router Name</form:label>--%>
+                <%--<form:hidden path="id" value="${routerObject.id}"/>--%>
+                <%--<form:input cssClass="form-control" path="routerName"--%>
+                <%--value="${routerObject.routerName}"/>--%>
                 <%--</div>--%>
-            <%--</div>--%>
+
+                <%--<div class="form-group">--%>
+                <%--<form:label path="apMac">apMac</form:label>--%>
+                <%--<form:input cssClass="form-control" path="apMac" value="${routerObject.apMac}"/>--%>
+                <%--</div>--%>
+
+                <%--<div class="form-group">--%>
+                <%--<form:label path="event">Event</form:label>--%>
+                <%--<form:input cssClass="form-control" path="event" value="${routerObject.event}"/>--%>
+                <%--</div>--%>
+
+                <%--<div class="form-group">--%>
+                <%--<input type="submit" id="saveRouter" class="btn btn-primary button" value="Save"--%>
+                <%--onclick="return submitRouterForm();"/>--%>
+                <%--</div>--%>
+                <%--</div>--%>
+                <%--</form:form>--%>
+                <%--</div>--%>
+                <%--</div>--%>
 
             <div class="form">
                 <div class="panel-body">
@@ -61,11 +61,6 @@
                             <div class="form-group">
                                 <form:label path="apMac">apMac</form:label>
                                 <form:input cssClass="form-control" path="apMac" value="${routerObject.apMac}"/>
-                            </div>
-
-                            <div class="form-group">
-                                <form:label path="event">Event</form:label>
-                                <form:input cssClass="form-control" path="event" value="${routerObject.event}"/>
                             </div>
 
                             <div class="form-group">
@@ -100,13 +95,6 @@
                     $('#apMac').focus();
                     return false;
                 }
-
-                if (event <= 0) {
-                    alert('please enter event');
-                    $('#event').focus();
-                    return false
-                }
-
                 return true;
             }
         </script>

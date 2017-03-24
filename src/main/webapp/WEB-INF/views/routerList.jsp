@@ -24,7 +24,6 @@
                                 <th>Id</th>
                                 <th>apMac</th>
                                 <th>RouterName</th>
-                                <th>EVENT</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -35,8 +34,6 @@
                                     <td><c:out value="${router.id}"/></td>
                                     <td><c:out value="${router.apMac}"/></td>
                                     <td><c:out value="${router.routerName}"/></td>
-                                    <td><c:out value="${router.event}"/></td>
-                                        <%--<th><c:out value="${event.router.id}"/></th>--%>
                                     <td><a href="/editRouter?id=<c:out value='${router.id}'/>">Edit</a></td>
                                     <td><a href="/deleteRouter?id=<c:out value='${router.id}'/>">Delete</a></td>
                                 </tr>
