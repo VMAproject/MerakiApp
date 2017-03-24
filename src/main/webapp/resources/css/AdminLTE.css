@@ -4841,3 +4841,8 @@ nav {
   right: 11px;
   cursor: pointer;
 }
+
+.breadcrumbs {
+  color: #5790C6;
+  padding-bottom: 7px;
+}
