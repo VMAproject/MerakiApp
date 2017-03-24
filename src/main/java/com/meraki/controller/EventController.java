@@ -33,17 +33,6 @@ public class EventController {
     @Autowired
     private RouterService routerService;
 
-    @Autowired
-    public void setRouterService(RouterService routerService) {
-        this.routerService = routerService;
-    }
-
-    @Autowired
-    public void setEventService(EventService eventService) {
-        this.eventService = eventService;
-    }
-
-
     @RequestMapping("/deleteEvent") /// удаление +
     public ModelAndView deleteEvent(@RequestParam long id) {
         eventService.deleteEvent(id);

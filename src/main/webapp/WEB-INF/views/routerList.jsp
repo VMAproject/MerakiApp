@@ -9,7 +9,7 @@
             <div class="form">
                 <div class="panel-heading">
                     <div class="panel-title"><h1>Routers</h1></div>
-                    <div class="panel-add"><a href="createRouter">Add New Router</a></div>
+                    <%--<div class="panel-add"><a href="createRouter">Add New Router</a></div>--%>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty routerList}">
@@ -34,8 +34,8 @@
                                     <td><c:out value="${router.id}"/></td>
                                     <td><c:out value="${router.apMac}"/></td>
                                     <td><c:out value="${router.routerName}"/></td>
-                                    <td><a href="/editRouter?id=<c:out value='${router.id}'/>">Edit</a></td>
-                                    <td><a href="/deleteRouter?id=<c:out value='${router.id}'/>">Delete</a></td>
+                                    <%--<td><a href="/editRouter?id=<c:out value='${router.id}'/>">Edit</a></td>--%>
+                                    <%--<td><a href="/deleteRouter?id=<c:out value='${router.id}'/>">Delete</a></td>--%>
                                 </tr>
                             </c:forEach>
                             </tbody>

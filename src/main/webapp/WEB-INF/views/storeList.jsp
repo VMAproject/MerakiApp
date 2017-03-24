@@ -1,16 +1,33 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Verlamov
-  Date: 23.03.17
-  Time: 15:37
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/WEB-INF/tags/layout/includes.jsp" %>
+<t:dashboard>
 
-</body>
-</html>
+
+    <jsp:body>
+
+        <p><a href="/">Back to main page</a>
+        <p><a href="/events">Store  page</a>
+
+        <h2>All Stores</h2>
+        <table border="1">
+        <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>location</th>
+        <th>Update</th>
+        <th>Delete</th>
+        </tr>
+        <c:forEach items="${allStores}" var="store">
+            <tr>
+                <td>${store.id}</td>
+                <td>${store.name}</td>
+                <td>${store.location}</td>
+
+                <td><a href="/editStore?id=<c:out value='${event.id}'/>">Edit</a></td>
+                <td><a href="/deleteStore?id=<c:out value='${event.id}'/>">Delete</a></td>
+
+            </tr>
+        </c:forEach>
+        </table>

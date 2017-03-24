@@ -177,10 +177,11 @@ desired effect
                 <li id="event"><a href="<c:url value='/events/all' />"/><i
                         class="fa fa-list-alt"></i><span>Events</span></a>
                 </li>
-                <li id="shop"><a href="<c:url value='/storeList' />"/><i
+                <li id="shop"><a href="<c:url value='/stores/all' />"/><i
                         class="fa fa-file-text"></i><span>Shop</span></a>
                 </li>
-                <li id="router"><a href="<c:url value='/routers/all' />"/><i class="fa fa-signal"></i><span>Routers</span></a>
+                <li id="router"><a href="<c:url value='/routers/all' />"/><i
+                        class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
                 <li id="statistic"><a href="<c:url value='getAllObservationLists' />"/><i
                         class="fa fa-pie-chart"></i><span>Statistic</span></a>
@@ -188,8 +189,6 @@ desired effect
                 <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i
                         class="fa fa-file-text"></i><span>Black list</span></a>
                 </li>
-
-
 
 
             </ul><!-- /.sidebar-menu -->
