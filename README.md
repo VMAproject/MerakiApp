@@ -3,7 +3,7 @@
 
 **The application for data acquisition from Cisco Meraki cloud.**
 
-[![Build Status](https://travis-ci.org/VMAproject/MerakiApp.svg?branch=verlamov-back )](https://travis-ci.org/VMAproject/MerakiApp)
+[![Build Status](https://travis-ci.org/VMAproject/MerakiApp.svg?branch=master )](https://travis-ci.org/VMAproject/MerakiApp)
 
 ## Technologies ##
 
