@@ -18,6 +18,6 @@ public class ExceptionController {
 
     @RequestMapping(value = "/404", method = RequestMethod.GET)
     public String notFoundPage() {
-        return "404";
+        return "exception/404";
     }
 }

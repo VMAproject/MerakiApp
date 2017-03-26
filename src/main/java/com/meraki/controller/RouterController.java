@@ -4,6 +4,7 @@ import com.meraki.entity.Router;
 import com.meraki.service.interfaces.RouterService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,23 +18,20 @@ public class RouterController {
 
     private static final Logger logger = org.jboss.logging.Logger.getLogger(RouterController.class);
 
-    @Autowired
     private RouterService routerService;
 
-
-//    @RequestMapping("getAllRouterLists")
-//    public ModelAndView getAllRouters() {
-//        List<Router> routerList = routerService.getAllRouters();
-//        logger.info("get all router" + routerList);
-//        return new ModelAndView("routerList", "routerList", routerList);
-//    }
-
+    @Autowired
+    @Qualifier("routerServiceImpl")
+    public void setRouterService(RouterService routerService) {
+        this.routerService = routerService;
+    }
 
     @RequestMapping("/routers/all")
     public String showRouters(Model model) {
         model.addAttribute("routerList", routerService.getAllRouters());
-        return "routerList";
+        return "router/routerList";
     }
+
 
     @RequestMapping("createRouter")
     public ModelAndView createRouter(@ModelAttribute Router router) {

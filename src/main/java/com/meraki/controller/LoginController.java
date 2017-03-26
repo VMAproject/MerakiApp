@@ -3,6 +3,7 @@ package com.meraki.controller;
 import com.meraki.entity.User;
 import com.meraki.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,11 +23,21 @@ import java.util.Map;
 @Controller
 public class LoginController {
 
-    @Autowired
     private PasswordEncoder passwordEncoder;
 
+    private UserService userService;
+
     @Autowired
-    UserService userservice;
+    @Qualifier("passwordEncoder")
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    @Autowired
+    @Qualifier("userServiceImpl")
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
@@ -36,7 +47,7 @@ public class LoginController {
     @ResponseBody
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public Map<String, Object> registration(@RequestBody User user) {
-        Map<String, Object> response = new HashMap<String, Object>();
+        Map<String, Object> response = new HashMap<>();
 
 
         user.setRegdate(new Date());
@@ -48,7 +59,7 @@ public class LoginController {
         user.setPassword(encodedPassword);
 
 
-        Boolean save = userservice.addUser(user);
+        Boolean save = userService.addUser(user);
         if (save) {
             response.put("success", true);
             response.put("message", "Registration Success");
