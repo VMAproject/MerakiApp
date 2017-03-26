@@ -1,8 +1,8 @@
 package com.meraki.service.impl;
 
-import com.meraki.dao.StoreDao;
+import com.meraki.dao.interfaces.StoreDao;
 import com.meraki.entity.Store;
-import com.meraki.service.StoreService;
+import com.meraki.service.interfaces.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

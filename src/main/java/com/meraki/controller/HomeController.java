@@ -1,7 +1,7 @@
 package com.meraki.controller;
 
 import com.meraki.entity.User;
-import com.meraki.service.UserService;
+import com.meraki.service.interfaces.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

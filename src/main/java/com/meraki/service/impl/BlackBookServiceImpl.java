@@ -1,8 +1,8 @@
 package com.meraki.service.impl;
 
-import com.meraki.dao.BlackBookDao;
+import com.meraki.dao.interfaces.BlackBookDao;
 import com.meraki.entity.BlackBook;
-import com.meraki.service.BlackBookService;
+import com.meraki.service.interfaces.BlackBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

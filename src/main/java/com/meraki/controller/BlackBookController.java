@@ -1,7 +1,7 @@
 package com.meraki.controller;
 
 import com.meraki.entity.BlackBook;
-import com.meraki.service.BlackBookService;
+import com.meraki.service.interfaces.BlackBookService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

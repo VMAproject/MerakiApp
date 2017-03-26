@@ -1,6 +1,6 @@
 package com.meraki.dao.impl;
 
-import com.meraki.dao.EventDao;
+import com.meraki.dao.interfaces.EventDao;
 import com.meraki.entity.Event;
 import com.meraki.util.HibernateUtil;
 import org.slf4j.Logger;

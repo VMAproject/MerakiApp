@@ -1,6 +1,6 @@
 package com.meraki.dao.impl;
 
-import com.meraki.dao.RouterDao;
+import com.meraki.dao.interfaces.RouterDao;
 import com.meraki.entity.Router;
 import com.meraki.util.HibernateUtil;
 import org.slf4j.Logger;

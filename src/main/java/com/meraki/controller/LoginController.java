@@ -1,10 +1,11 @@
 package com.meraki.controller;
 
 import com.meraki.entity.User;
-import com.meraki.service.UserService;
+import com.meraki.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +23,9 @@ import java.util.Map;
 public class LoginController {
 
     @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
     UserService userservice;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -34,15 +38,20 @@ public class LoginController {
     public Map<String, Object> registration(@RequestBody User user) {
         Map<String, Object> response = new HashMap<String, Object>();
 
+
         user.setRegdate(new Date());
         user.setIsactive("Y");
         user.setIsnonexpired("Y");
         user.setIsnonlocked("Y");
 
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+
+
         Boolean save = userservice.addUser(user);
         if (save) {
-            response.put("suceess", true);
-            response.put("message", "Registration Sucess");
+            response.put("success", true);
+            response.put("message", "Registration Success");
             return response;
         } else {
             response.put("error", true);

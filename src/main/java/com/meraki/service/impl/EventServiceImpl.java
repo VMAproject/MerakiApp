@@ -1,8 +1,8 @@
 package com.meraki.service.impl;
 
-import com.meraki.dao.EventDao;
+import com.meraki.dao.interfaces.EventDao;
 import com.meraki.entity.Event;
-import com.meraki.service.EventService;
+import com.meraki.service.interfaces.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

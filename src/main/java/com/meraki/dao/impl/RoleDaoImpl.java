@@ -1,7 +1,7 @@
 
 package com.meraki.dao.impl;
 
-import com.meraki.dao.RoleDao;
+import com.meraki.dao.interfaces.RoleDao;
 import com.meraki.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;

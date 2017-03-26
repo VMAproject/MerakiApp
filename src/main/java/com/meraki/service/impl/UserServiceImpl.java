@@ -1,8 +1,8 @@
 package com.meraki.service.impl;
 
 import com.meraki.entity.User;
-import com.meraki.dao.UserDao;
-import com.meraki.service.UserService;
+import com.meraki.dao.interfaces.UserDao;
+import com.meraki.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,41 +13,41 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserDao usermapper;
+    UserDao userDao;
 
     @Override
     public List<User> getAllUsers() {
-        return usermapper.getAllUsers();
+        return userDao.getAllUsers();
     }
 
     @Override
     public User getUserById(int userId) {
-        return usermapper.getUserById(userId);
+        return userDao.getUserById(userId);
     }
 
     @Override
     public boolean addUser(User user) {
-        return usermapper.addUser(user);
+        return userDao.addUser(user);
     }
 
     @Override
     public void updateUser(User user) {
-        usermapper.updateUser(user);
+        userDao.updateUser(user);
     }
 
     @Override
     public void deleteUser(int userId) {
-        usermapper.deleteUser(userId);
+        userDao.deleteUser(userId);
     }
 
     @Override
     public boolean userExists(String username) {
-        return usermapper.userExists(username);
+        return userDao.userExists(username);
     }
 
     @Override
     public User getUserByUsername(String username) {
-        return usermapper.getUserByUsername(username);
+        return userDao.getUserByUsername(username);
     }
 
 }

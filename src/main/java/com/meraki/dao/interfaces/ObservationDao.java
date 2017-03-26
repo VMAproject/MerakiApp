@@ -1,4 +1,4 @@
-package com.meraki.dao;
+package com.meraki.dao.interfaces;
 
 import com.meraki.entity.Observation;
 
