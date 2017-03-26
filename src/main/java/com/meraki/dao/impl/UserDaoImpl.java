@@ -1,7 +1,7 @@
 
 package com.meraki.dao.impl;
 
-import com.meraki.dao.UserDao;
+import com.meraki.dao.interfaces.UserDao;
 import com.meraki.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;

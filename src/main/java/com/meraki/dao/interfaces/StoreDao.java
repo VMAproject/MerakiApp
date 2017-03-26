@@ -1,4 +1,4 @@
-package com.meraki.service;
+package com.meraki.dao.interfaces;
 
 import com.meraki.entity.Store;
 
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Verlamov on 24.03.17.
  */
-public interface StoreService {
+public interface StoreDao {
 
     long createStore(Store store);
 

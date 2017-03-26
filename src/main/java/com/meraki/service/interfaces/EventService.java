@@ -1,4 +1,4 @@
-package com.meraki.service;
+package com.meraki.service.interfaces;
 
 import com.meraki.entity.Event;
 

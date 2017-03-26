@@ -1,7 +1,7 @@
 package com.meraki.controller;
 
-import com.meraki.service.RouterService;
-import com.meraki.service.StoreService;
+import com.meraki.service.interfaces.RouterService;
+import com.meraki.service.interfaces.StoreService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

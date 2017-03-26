@@ -1,8 +1,8 @@
 package com.meraki.service.impl;
 
-import com.meraki.dao.RouterDao;
+import com.meraki.dao.interfaces.RouterDao;
 import com.meraki.entity.Router;
-import com.meraki.service.RouterService;
+import com.meraki.service.interfaces.RouterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

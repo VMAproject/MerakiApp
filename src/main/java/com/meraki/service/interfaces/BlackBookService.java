@@ -1,11 +1,12 @@
-package com.meraki.dao;
+package com.meraki.service.interfaces;
 
 import com.meraki.entity.BlackBook;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
-public interface BlackBookDao {
+public interface BlackBookService {
 
     long createBlackBook(BlackBook blackBook);
 
@@ -16,6 +17,5 @@ public interface BlackBookDao {
     List<BlackBook> getAllBlackBooks();
 
     BlackBook getBlackBook(long id);
-
 
 }

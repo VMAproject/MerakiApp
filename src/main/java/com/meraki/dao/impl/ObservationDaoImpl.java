@@ -1,6 +1,6 @@
 package com.meraki.dao.impl;
 
-import com.meraki.dao.ObservationDao;
+import com.meraki.dao.interfaces.ObservationDao;
 import com.meraki.entity.Observation;
 import com.meraki.util.HibernateUtil;
 import org.slf4j.Logger;

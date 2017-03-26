@@ -1,7 +1,7 @@
 package com.meraki.controller;
 
 import com.meraki.entity.Observation;
-import com.meraki.service.ObservationService;
+import com.meraki.service.interfaces.ObservationService;
 import org.hibernate.SessionFactory;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

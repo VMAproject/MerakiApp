@@ -2,8 +2,8 @@ package com.meraki.controller;
 
 import com.meraki.entity.Event;
 import com.meraki.entity.Router;
-import com.meraki.service.EventService;
-import com.meraki.service.RouterService;
+import com.meraki.service.interfaces.EventService;
+import com.meraki.service.interfaces.RouterService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,11 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 
 @Controller

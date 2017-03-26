@@ -1,11 +1,11 @@
-package com.meraki.service;
+package com.meraki.dao.interfaces;
 
 import com.meraki.entity.Router;
 
 import java.util.List;
 
 
-public interface RouterService {
+public interface RouterDao {
 
     long createRouter(Router router);
 

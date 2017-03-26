@@ -24,8 +24,8 @@
                                 <th>Id</th>
                                 <th>apMac</th>
                                 <th>RouterName</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <%--<th>Edit</th>--%>
+                                <%--<th>Delete</th>--%>
                             </tr>
                             </thead>
                             <tbody>

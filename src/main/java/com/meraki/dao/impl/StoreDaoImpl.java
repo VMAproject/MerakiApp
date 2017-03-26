@@ -1,6 +1,6 @@
 package com.meraki.dao.impl;
 
-import com.meraki.dao.StoreDao;
+import com.meraki.dao.interfaces.StoreDao;
 import com.meraki.entity.Store;
 import com.meraki.util.HibernateUtil;
 import org.slf4j.Logger;

@@ -1,8 +1,8 @@
 package com.meraki.service.impl;
 
-import com.meraki.dao.ObservationDao;
+import com.meraki.dao.interfaces.ObservationDao;
 import com.meraki.entity.Observation;
-import com.meraki.service.ObservationService;
+import com.meraki.service.interfaces.ObservationService;
 import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

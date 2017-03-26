@@ -59,13 +59,12 @@ public class HibernateConfig {
     }
 
 
-
 //// heraki CONFIG
 //    @Bean(destroyMethod = "close")
 //    public DataSource dataSource(){
 //        HikariConfig hikariConfig = new HikariConfig();
-//        hikariConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/meraki_db");
+//        hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
+//        hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/meraki_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
 ////        hikariConfig.setJdbcUrl("jdbc:mysql://10.103.185.145:3306/meraki_db");
 //        hikariConfig.setUsername("root");
 //        hikariConfig.setPassword("root");

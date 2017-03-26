@@ -1,6 +1,6 @@
 package com.meraki.dao.impl;
 
-import com.meraki.dao.BlackBookDao;
+import com.meraki.dao.interfaces.BlackBookDao;
 import com.meraki.entity.BlackBook;
 import com.meraki.util.HibernateUtil;
 import org.slf4j.Logger;

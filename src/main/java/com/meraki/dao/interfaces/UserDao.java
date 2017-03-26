@@ -1,10 +1,10 @@
-package com.meraki.service;
+package com.meraki.dao.interfaces;
 
 import com.meraki.entity.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
 
     List<User> getAllUsers();
 
