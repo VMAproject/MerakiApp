@@ -11,9 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 21.03.17.
- */
 
 @Controller
 public class StatisticController {

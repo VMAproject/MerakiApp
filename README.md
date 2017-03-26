@@ -3,22 +3,24 @@
 
 **The application for data acquisition from Cisco Meraki cloud.**
 
-[![Build Status](https://travis-ci.org/VMAproject/MerakiApp.svg?branch=test)](https://travis-ci.org/VMAproject/MerakiApp)
+[![Build Status](https://travis-ci.org/VMAproject/MerakiApp.svg?branch=master )](https://travis-ci.org/VMAproject/MerakiApp)
 
 ## Technologies ##
 
-* Maven
-* Hibernate
-* JPA annotations
-* PostgreSQL
-* JSTL
-* Servlets
-* Log4J via SLF4J
-* JUnit
-* Hibernate maven plugin
+
+* Java 8
 * Spring MVC
 * Spring ORM
+* Spring Security
+* Hibernate
+* HikariCP
+* JPA annotations
+* MySQL
+* lombok
+* JSTL
+* Log4J & SLF4J
+* Maven
 
 
-Total Line JavaCode:	2314	line
+Total Line JavaCode:	2318	line
 
