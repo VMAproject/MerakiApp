@@ -17,7 +17,7 @@ public class Router implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "router_id")
-    private long id;
+    private Long id;
 
     @Column(name = "apMac")
     private String apMac;
