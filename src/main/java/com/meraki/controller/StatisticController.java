@@ -27,7 +27,7 @@ public class StatisticController {
 
     @RequestMapping("getAllObservationLists")
     public ModelAndView getAllObservation() {
-        ModelAndView modelAndView = new ModelAndView("observationList");
+        ModelAndView modelAndView = new ModelAndView("observation/observationList");
         List<Observation> observationList = observationService.getAllObservation();
         modelAndView.addObject("observationList", observationList);
         return modelAndView;
@@ -45,7 +45,7 @@ public class StatisticController {
 
     @RequestMapping("getAllObservationUniqueLists")
     public ModelAndView getAllObservationUniqueLists() {
-        ModelAndView modelAndView = new ModelAndView("observationList");
+        ModelAndView modelAndView = new ModelAndView("observation/observationList");
         List<Observation> observationUniqueList = observationService.getAllUniqueObservation();
         modelAndView.addObject("observationUniqueList", observationUniqueList);
         return modelAndView;

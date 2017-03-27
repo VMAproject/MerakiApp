@@ -25,6 +25,6 @@ public class StoreController {
     @RequestMapping("/stores/all")
     public String showStore(Model model) {
         model.addAttribute("allStores", storeService.getAllStore());
-        return "storeList";
+        return "store/storeList";
     }
 }

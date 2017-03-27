@@ -11,7 +11,7 @@
             <div class="form">
                 <div class="panel-body">
                     <form:form id="routerForm" cssClass="form-horizontal" modelAttribute="router" method="post"
-                               action="saveRouter">
+                               action="/routers/add">
                         <div class="container panel-bod y-group">
                             <div class="panel-title panel-title_bottom"><h1>Router Details</h1></div>
                             <div class="form-group">
