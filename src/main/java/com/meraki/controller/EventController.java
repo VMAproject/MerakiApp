@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Controller
@@ -64,6 +66,18 @@ public class EventController {
         Router router = routerService.getRouter(id);
         router.setEvent(event);
         routerService.updateRouter(router);
+
+//        Event event = new Event();
+//        event.setName(name);
+//        event.setLocation(location);
+//        event.setDateFrom(dateFrom);
+//        event.setDateTo(dateTo);
+//
+//        Router router = routerService.getRouter(id);
+//        router.setEvent(event);
+//        event.getRouters().add(router);
+//
+//        eventService.createEvent(event);
 
         return "redirect:/events/all";
     }
