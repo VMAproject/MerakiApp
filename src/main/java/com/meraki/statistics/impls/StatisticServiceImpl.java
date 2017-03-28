@@ -74,6 +74,7 @@ public class StatisticServiceImpl implements StatisticService {
         return resultList;
     }
 
+    @Transactional
     public List<Observation> getObservationsByRouterId(long id) {
         List<Observation> resultList = new ArrayList<>();
 
