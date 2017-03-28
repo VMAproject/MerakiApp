@@ -1,5 +1,5 @@
 
-package com.meraki.dao.impl;
+package com.meraki.dao.impls;
 
 import com.meraki.dao.interfaces.UserDao;
 import com.meraki.entity.User;

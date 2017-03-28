@@ -2,7 +2,8 @@ package com.meraki.controller;
 
 import com.meraki.entity.Observation;
 import com.meraki.service.interfaces.EventService;
-import com.meraki.statistics.StatisticService;
+import com.meraki.statistics.impls.StatisticServiceImpl;
+import com.meraki.statistics.interfaces.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class StatisticController {
     private EventService eventService;
 
     @Autowired
-    @Qualifier("statisticService")
+    @Qualifier("statisticServiceImpl")
     public void setStatisticService(StatisticService statisticService) {
         this.statisticService = statisticService;
     }
@@ -43,7 +44,7 @@ public class StatisticController {
         Set<Observation> resultSet = statisticService.getAllUniqueObservationsByEventId(eventId);
 
         model.addAttribute("observations", resultSet);
-        model.addAttribute("count", resultSet.size());
+        model.addAttribute("amount", resultSet.size());
 
         return "statistic/statisticList";
     }

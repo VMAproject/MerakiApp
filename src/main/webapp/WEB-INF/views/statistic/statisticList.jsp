@@ -23,7 +23,7 @@
                                 </c:forEach>
                             </select>
                             <input type="submit" id="sendEvent" class="btn btn-primary button" value="Apply"/>
-                            <h2 class="panel-add">Items: ${count}</h2>
+                            <h2 class="panel-add">Items: ${amount}</h2>
                         </form>
                     </div>
                     <c:if test="${empty observations}">

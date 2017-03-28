@@ -218,7 +218,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <footer class="main-footer">
                 <!-- Default to the left -->
                 <jsp:invoke fragment="footer"/>
-                Copyright &copy; 2017 by Mikhaylik Denis, Mikhaylik Denis, Tsymbalenko Oleksandr.
+                Copyright &copy; 2017 by Verlamov Michail, Matushkin Rostyslav, Tsymbalenko Oleksandr, Mikhaylik Denis.
                 All rights reserved.
             </footer>
         </div><!-- ./wrapper -->
