@@ -28,11 +28,16 @@ public class StatisticService {
     public Set<Observation> getAllUniqueObservationsByEventId(long id) {
         Set<Observation> resultSet = new HashSet<>();
 
-        List<Observation> listWithoutUniqueness = getAllObservationsByEventId(id);
-        resultSet.addAll(listWithoutUniqueness);
+        List<Observation> listWithoutUniqueness = getAllObservationsByEventId(id); // Лист с дубликатами по "clientMac"
 
-        System.out.println(listWithoutUniqueness.size());
-        System.out.println(resultSet.size());
+        List<Observation> listWithConsideringRssi = new ArrayList<>(); // Лист с учетом "rssi" > 15
+        for (Observation obsv : listWithoutUniqueness) {
+            if (obsv.getRssi() >= 15) {
+                listWithConsideringRssi.add(obsv);
+            }
+        }
+
+        resultSet.addAll(listWithConsideringRssi);
 
         return resultSet;
     }
