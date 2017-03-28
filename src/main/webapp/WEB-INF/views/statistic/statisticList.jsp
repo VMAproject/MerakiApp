@@ -29,15 +29,26 @@
                         There are no Event
                     </c:if>
                     <c:if test="${not empty observations}">
-                        <c:forEach items="${events}" var="event">
+                        <table class="table table-hover table-bordered">
+                            <thead style="background-color: #bce8f1;">
                             <tr>
-                                <td>${event.id}</td>
-                                <td>${event.name}</td>
-                                <td>${event.location}</td>
-                                <td>${event.dateFrom.toString()}</td>
-                                <td>${event.dateTo.toString()}</td>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>location</th>
+                                <th>Date From</th>
+                                <th>Date To</th>
                             </tr>
-                        </c:forEach>
+                            </thead>
+                            <c:forEach items="${events}" var="event">
+                                <tr>
+                                    <td>${event.id}</td>
+                                    <td>${event.name}</td>
+                                    <td>${event.location}</td>
+                                    <td>${event.dateFrom.toString()}</td>
+                                    <td>${event.dateTo.toString()}</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
                     </c:if>
                 </div>
             </div>
