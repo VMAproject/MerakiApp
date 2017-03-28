@@ -19,10 +19,9 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <select class="selectpicker" name="id">
-                            <%--<c:forEach items="${routersList}" var="router">--%>
-                                <%--<option value="${router.id}">${router.routerName}</option>--%>
-                            <%--</c:forEach>--%>
-                                <option value="first">First</option>
+                            <c:forEach items="${events}" var="event">
+                                <option value="${event.id}">${event.name}</option>
+                            </c:forEach>
                         </select>
                     </div>
                     <c:if test="${empty observations}">
