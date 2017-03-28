@@ -117,7 +117,7 @@ body {
 .content-wrapper,
 .right-side {
   height: 100%;
-  background-color: #ecf0f5;
+  background-color: #eeeeee;
   z-index: 800;
 }
 .main-footer {
