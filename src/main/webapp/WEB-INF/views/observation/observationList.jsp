@@ -9,7 +9,7 @@
             <div class="form">
                 <div class="panel-heading">
                     <div class="panel-title"><h1>Statistic</h1></div>
-                    <div class="panel-add"><a href="#">Add New Data</a></div>
+                    <div class="panel-add"><a href="#">Search uniq </a></div>
                 </div>
                 <div class="panel-body">#
                     <c:if test="${empty observationList}">

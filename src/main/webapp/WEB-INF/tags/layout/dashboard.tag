@@ -185,7 +185,7 @@ desired effect
                 <li id="router"><a href="<c:url value='/routers/all' />"/><i
                         class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
-                <li id="statistic"><a href="<c:url value='getAllObservationLists' />"/><i
+                <li id="statistic"><a href="<c:url value='/observations/all' />"/><i
                         class="fa fa-pie-chart"></i><span>Statistic</span></a>
                 </li>
                 <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i
