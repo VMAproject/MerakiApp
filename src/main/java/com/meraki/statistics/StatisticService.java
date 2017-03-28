@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class StatisticService {
@@ -23,7 +25,19 @@ public class StatisticService {
         this.sessionFactory = sessionFactory;
     }
 
-    public List<Observation> getAllUniqueObservationsByEventId(long id) {
+    public Set<Observation> getAllUniqueObservationsByEventId(long id) {
+        Set<Observation> resultSet = new HashSet<>();
+
+        List<Observation> listWithoutUniqueness = getAllObservationsByEventId(id);
+        resultSet.addAll(listWithoutUniqueness);
+
+        System.out.println(listWithoutUniqueness.size());
+        System.out.println(resultSet.size());
+
+        return resultSet;
+    }
+
+    private List<Observation> getAllObservationsByEventId(long id) {
         List<Observation> resultSet = new ArrayList<>();
 
         List<Router> loadedRouters = getRoutersByEventId(id);

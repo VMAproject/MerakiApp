@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -31,8 +31,8 @@ public class StatisticController {
 
     @RequestMapping(value = "/statistic/select/event", method = RequestMethod.GET)
     public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId, Model model) {
-        List<Observation> resultList = statisticService.getAllUniqueObservationsByEventId(eventId);
-        model.addAttribute("observations", resultList);
+        Set<Observation> resultSet = statisticService.getAllUniqueObservationsByEventId(eventId);
+        model.addAttribute("observations", resultSet);
 
         return "statistic/statisticList";
     }
