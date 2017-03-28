@@ -1,18 +1,14 @@
 package com.meraki.controller;
 
 import com.meraki.entity.Observation;
-import com.meraki.service.interfaces.ObservationService;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Order;
-import org.jboss.logging.Logger;
+import com.meraki.statistics.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -20,58 +16,24 @@ import java.util.List;
 @Controller
 public class StatisticController {
 
-
-    private static final Logger logger = Logger.getLogger(StatisticController.class);
-
-    @Autowired
-    private SessionFactory sessionFactory;
-
+    private StatisticService statisticService;
 
     @Autowired
-    private ObservationService observationService;
-
-
-//    @RequestMapping("/observations/all")
-//    public String showAllObservation(Model model) {
-//        model.addAttribute("observationList", observationService.getAllObservation());
-//        return "observation/observationList";
-//    }
-
-
-    @RequestMapping("/observations/all")
-    public ModelAndView getAllObservation() {
-        ModelAndView modelAndView = new ModelAndView("observation/observationList");
-        List<Observation> observationList = observationService.getAllObservation();
-        modelAndView.addObject("observationList", observationList);
-        return modelAndView;
+    @Qualifier("statisticService")
+    public void setStatisticService(StatisticService statisticService) {
+        this.statisticService = statisticService;
     }
 
-
-    @RequestMapping("/observation/uniq/event")
-    public ModelAndView getAllUniq() {
-        ModelAndView modelAndView = new ModelAndView("observation/observationList");
-
-        return modelAndView;
-
+    @RequestMapping("/statistic/all")
+    public String getStatisticAll() {
+        return "statistic/statisticList";
     }
 
+    @RequestMapping(value = "/statistic/select/event", method = RequestMethod.GET)
+    public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId, Model model) {
+        List<Observation> resultList = statisticService.getAllUniqueObservationsByEventId(eventId);
+        model.addAttribute("observations", resultList);
 
-    //    @RequestMapping("getAllObservationUniqueLists")
-//    public ModelAndView getAllObservationUniqueLists() {
-//        ModelAndView modelAndView = new ModelAndView("observationList");
-//        List<Observation> observationUniqueList = observationService.getAllUniqueObservation();
-//        modelAndView.addObject("observationUniqueList", observationUniqueList);
-//        return modelAndView;
-//    }
-
-
-    @RequestMapping("getAllObservationUniqueLists")
-    public ModelAndView getAllObservationUniqueLists() {
-        ModelAndView modelAndView = new ModelAndView("observation/observationList");
-        List<Observation> observationUniqueList = observationService.getAllUniqueObservation();
-        modelAndView.addObject("observationUniqueList", observationUniqueList);
-        return modelAndView;
+        return "statistic/statisticList";
     }
-
-
 }
