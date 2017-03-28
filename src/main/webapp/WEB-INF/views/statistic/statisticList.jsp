@@ -23,6 +23,7 @@
                                 <option value="${event.id}">${event.name}</option>
                             </c:forEach>
                         </select>
+                        <input type="submit" id="sendEvent" class="btn btn-primary button" value="Apply"/>
                     </div>
                     <c:if test="${empty observations}">
                         There are no Event
