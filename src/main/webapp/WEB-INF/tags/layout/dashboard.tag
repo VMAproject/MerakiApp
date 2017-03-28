@@ -235,6 +235,12 @@ desired effect
             <img src="${contextPath}/resources/images/Android_1.webp" alt="Android-step1">
         </div>
         <div class="container">
+            <b>Подключитесь к сети</b>
+            Это способ будет работать только при активном подключении к интерфейсу, который нуждается
+            в МАС-адресе (Wi-Fi, если вам нужен MAC-адрес карты беспроводной связи; Ethernet, если вам
+            нужен MAC-адрес проводной карты).
+        </div>
+        <div class="container">
             <img src="${contextPath}/resources/images/Android_2.webp" alt="Android-step2">
         </div>
     </div>
