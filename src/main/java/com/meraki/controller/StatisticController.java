@@ -33,15 +33,17 @@ public class StatisticController {
     }
 
     @RequestMapping("/statistic/all")
-    public String getStatisticAll() {
+    public String getStatisticAll(Model model) {
+        model.addAttribute("events", eventService.getAllEvents());
         return "statistic/statisticList";
     }
 
     @RequestMapping(value = "/statistic/select/event", method = RequestMethod.GET)
-    public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId, Model model) {
+    public String getAllUniqueObservationsByEventId(@RequestParam("id") long eventId, Model model) {
         Set<Observation> resultSet = statisticService.getAllUniqueObservationsByEventId(eventId);
+
         model.addAttribute("observations", resultSet);
-        model.addAttribute("events", eventService.getAllEvents());
+        model.addAttribute("count", resultSet.size());
 
         return "statistic/statisticList";
     }
