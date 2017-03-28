@@ -1,6 +1,7 @@
 package com.meraki.controller;
 
 import com.meraki.entity.Observation;
+import com.meraki.service.interfaces.EventService;
 import com.meraki.statistics.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,11 +18,18 @@ import java.util.Set;
 public class StatisticController {
 
     private StatisticService statisticService;
+    private EventService eventService;
 
     @Autowired
     @Qualifier("statisticService")
     public void setStatisticService(StatisticService statisticService) {
         this.statisticService = statisticService;
+    }
+
+    @Autowired
+    @Qualifier("eventServiceImpl")
+    public void setEventService(EventService eventService) {
+        this.eventService = eventService;
     }
 
     @RequestMapping("/statistic/all")
@@ -33,6 +41,7 @@ public class StatisticController {
     public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId, Model model) {
         Set<Observation> resultSet = statisticService.getAllUniqueObservationsByEventId(eventId);
         model.addAttribute("observations", resultSet);
+        model.addAttribute("events", eventService.getAllEvents());
 
         return "statistic/statisticList";
     }

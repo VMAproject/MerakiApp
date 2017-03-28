@@ -25,15 +25,19 @@
                                 <option value="first">First</option>
                         </select>
                     </div>
-                    <c:if test="${empty statistics}">
+                    <c:if test="${empty observations}">
                         There are no Event
                     </c:if>
-                    <c:if test="${not empty statistics}">
-
-                        <form action="">
-
-
-                        </form>
+                    <c:if test="${not empty observations}">
+                        <c:forEach items="${events}" var="event">
+                            <tr>
+                                <td>${event.id}</td>
+                                <td>${event.name}</td>
+                                <td>${event.location}</td>
+                                <td>${event.dateFrom.toString()}</td>
+                                <td>${event.dateTo.toString()}</td>
+                            </tr>
+                        </c:forEach>
                     </c:if>
                 </div>
             </div>
