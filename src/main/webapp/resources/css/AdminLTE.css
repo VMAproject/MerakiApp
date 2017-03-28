@@ -407,7 +407,13 @@ a:focus {
   .main-header {
     position: relative;
   }
-  .main-header .logo,
+  .main-header .logo {
+    float: none;
+    position: absolute;
+    left: 10%;
+    z-index: 10000;
+    width: 70%
+  }
   .main-header .navbar {
     width: 100%;
     float: none;
