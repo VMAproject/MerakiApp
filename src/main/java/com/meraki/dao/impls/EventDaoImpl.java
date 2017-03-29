@@ -14,20 +14,16 @@ import java.util.List;
 @Repository
 public class EventDaoImpl implements EventDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(EventDaoImpl.class);
-
     @Autowired
     private HibernateUtil hibernateUtil;
 
     @Override
     public long createEvent(Event event) {
-        logger.info("***EventDao*** create Event =>" + event);
         return (Long) hibernateUtil.create(event);
     }
 
     @Override
     public Event updateEvent(Event event) {
-        logger.info("***EventDao*** update Event =>" + event);
         return hibernateUtil.update(event);
     }
 
@@ -35,19 +31,16 @@ public class EventDaoImpl implements EventDao {
     public void deleteEvent(long id) {
         Event event = new Event();
         event.setId(id);
-        logger.info("***EventDao*** delete Event =>" + id);
         hibernateUtil.delete(event);
     }
 
     @Override
     public List<Event> getAllEvents() {
-        logger.info("***EventDao*** get All Events =>" + Event.class);
         return hibernateUtil.fetchAll(Event.class);
     }
 
     @Override
     public Event getEvent(long id) {
-        logger.info("***EventDao*** get Event =>" + id + Event.class);
         return hibernateUtil.fetchById(id, Event.class);
     }
 

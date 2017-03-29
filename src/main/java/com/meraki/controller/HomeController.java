@@ -31,7 +31,6 @@ public class HomeController {
     @Autowired
     @Qualifier("userServiceImpl")
     public void setUserService(UserService userService) {
-        log.info("*** Home Controller *** " + userService);
         this.userService = userService;
     }
 
@@ -40,6 +39,10 @@ public class HomeController {
     public void setResponse(HttpSession response) {
         this.response = response;
     }
+
+
+
+    //====================================== Methods ==============================================
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
@@ -52,10 +55,5 @@ public class HomeController {
         log.info("*** Home Controller *** ||| Welcome home! ||| ");
         return "home";
     }
-
-//    @RequestMapping(value = "/eventList", method = RequestMethod.GET)
-//    public String goEvents() {
-//        return "eventList";
-//    }
 
 }
