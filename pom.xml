@@ -6,7 +6,7 @@
 
     <groupId>com.meraki</groupId>
     <artifactId>MerakiApp</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>0.9-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <properties>
