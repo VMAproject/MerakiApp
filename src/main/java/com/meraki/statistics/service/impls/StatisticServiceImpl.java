@@ -6,12 +6,10 @@ import com.meraki.entity.Router;
 import com.meraki.entity.Store;
 import com.meraki.statistics.dao.interfaces.StatisticDao;
 import com.meraki.statistics.service.interfaces.StatisticService;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -110,8 +108,19 @@ public class StatisticServiceImpl implements StatisticService {
     public Set<Observation> compareEventToStore(Event event, Store store) {
         Set<Observation> resultSet = new HashSet<>();
 
-//        Set<Observation> observationsByEvent = getAllUniqueObservationsByEventId();
-//        Set<Observation> observationsByStore =
+        Set<Observation> observationsByEvent = getAllUniqueObservationsByEventId(event.getId());
+        Set<Observation> observationsByStore = getAllUniqueObservationsByStoreId(store.getId());
+
+        for (Observation obsv1 : observationsByEvent) {
+            String clientMac1 = obsv1.getClientMac();
+            for (Observation obsv2 : observationsByStore) {
+                String clientMac2 = obsv2.getClientMac();
+                if (clientMac1.equals(clientMac2)) {
+                    resultSet.add(obsv1);
+                    break;
+                }
+            }
+        }
 
         return resultSet;
     }

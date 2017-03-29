@@ -216,7 +216,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 class="fa fa-list-alt"></i><span>Events</span></a>
                         </li>
                         <li id="shop"><a href="<c:url value='/stores/all' />"/><i
-                                class="fa fa-shopping-cart"></i><span>Shop</span></a>
+                                class="fa fa-shopping-cart"></i><span>Stores</span></a>
                         </li>
                         <li id="router"><a href="<c:url value='/routers/all' />"/><i
                                 class="fa fa-signal"></i><span>Routers</span></a>
