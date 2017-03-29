@@ -44,7 +44,7 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#event').addClass('active');
+            $('#shop').addClass('active');
         });
         $(function () {
             $('#datetimepicker1').datetimepicker({

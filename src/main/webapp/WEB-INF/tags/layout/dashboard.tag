@@ -14,6 +14,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>IssueTracking System</title>
+
+        <!-- adding favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="${contextPath}
+        /resources/images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="${contextPath}
+        /resources/images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="${contextPath}
+        /resources/images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="${contextPath}
+        /resources/images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="${contextPath}
+        /resources/images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="${contextPath}
+        /resources/images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="${contextPath}
+        /resources/images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="${contextPath}
+        /resources/images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="${contextPath}
+        /resources/images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="${contextPath}
+        /resources/images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="${contextPath}
+        /resources/images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="${contextPath}
+        /resources/images/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="${contextPath}
+        /resources/images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="${contextPath}
+        /resources/images/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel=icon href=favicon.png sizes="16x16" type="image/png">
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
@@ -90,11 +125,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini">
-            <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
+            <img src="${contextPath}/resources/images/faq/CiscoMeraki.png" alt="logo">
           </span>
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg">
-            <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
+            <img src="${contextPath}/resources/images/faq/CiscoMeraki.png" alt="logo">
           </span>
                 </a>
 
@@ -113,14 +148,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="/resources/images/avatar.png" class="user-image" alt="User Image">
+                                    <img src="/resources/images/faq/avatar.png" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs">${user.username}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="/resources/images/avatar.png" class="img-circle" alt="User Image">
+                                        <img src="/resources/images/faq/avatar.png" class="img-circle" alt="User Image">
                                         <p>
                                             You are logged in as ${user.role.rolename}
                                             <small>Member since ${user.regdate}</small>
@@ -146,7 +181,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="/resources/images/avatar.png" class="img-circle" alt="User Image">
+                            <img src="/resources/images/faq/avatar.png" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>${user.firstName} ${user.lastName}</p>
@@ -181,7 +216,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 class="fa fa-list-alt"></i><span>Events</span></a>
                         </li>
                         <li id="shop"><a href="<c:url value='/stores/all' />"/><i
-                                class="fa fa-file-text"></i><span>Shop</span></a>
+                                class="fa fa-shopping-cart"></i><span>Shop</span></a>
                         </li>
                         <li id="router"><a href="<c:url value='/routers/all' />"/><i
                                 class="fa fa-signal"></i><span>Routers</span></a>
@@ -231,31 +266,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="b-popup" id="popup1">
             <div class="b-popup-content">
                 <input type="button" onclick="PopUpToggle()" class="great_btn">
-                <img src="/resources/images/main.png" alt="main">
-                <img src="/resources/images/second.png" alt="second">
+                <div class="container">
+                    <img src="${contextPath}/resources/images/faq/Android_1.webp" alt="Android-step1">
+                </div>
+                <div class="container">
+                    <b>Подключитесь к сети</b>
+                    Это способ будет работать только при активном подключении к интерфейсу, который нуждается
+                    в МАС-адресе (Wi-Fi, если вам нужен MAC-адрес карты беспроводной связи; Ethernet, если вам
+                    нужен MAC-адрес проводной карты).
+                </div>
+                <div class="container">
+                    <img src="${contextPath}/resources/images/faq/Android_2.webp" alt="Android-step2">
+                </div>
             </div>
         </div>
     </body>
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
-<div class="b-popup" id="popup1">
-    <div class="b-popup-content">
-        <input type="button" onclick="PopUpToggle()" class="great_btn">
-        <div class="container">
-            <img src="${contextPath}/resources/images/Android_1.webp" alt="Android-step1">
-        </div>
-        <div class="container">
-            <b>Подключитесь к сети</b>
-            Это способ будет работать только при активном подключении к интерфейсу, который нуждается
-            в МАС-адресе (Wi-Fi, если вам нужен MAC-адрес карты беспроводной связи; Ethernet, если вам
-            нужен MAC-адрес проводной карты).
-        </div>
-        <div class="container">
-            <img src="${contextPath}/resources/images/Android_2.webp" alt="Android-step2">
-        </div>
-    </div>
-</div>
-</body>
 </html>
