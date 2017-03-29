@@ -26,7 +26,7 @@ public class StatisticServiceImpl implements StatisticService {
         this.statisticDao = statisticDao;
     }
 
-    @Transactional
+    @Override
     public Set<Observation> getAllUniqueObservationsByEventId(long id) {
         Set<Observation> resultSet = new HashSet<>();
 
@@ -42,7 +42,23 @@ public class StatisticServiceImpl implements StatisticService {
         return resultSet;
     }
 
-    @Transactional
+    @Override
+    public Set<Observation> getAllUniqueObservationsByStoreId(long id) {
+        Set<Observation> resultSet = new HashSet<>();
+
+        List<Observation> listWithoutUniqueness = getAllObservationsByStoreId(id);
+        List<Observation> listWithConsideringRssi = new ArrayList<>();
+        for (Observation obsv : listWithoutUniqueness) {
+            if (obsv.getRssi() >= 15) {
+                listWithConsideringRssi.add(obsv);
+            }
+        }
+        resultSet.addAll(listWithConsideringRssi);
+
+        return resultSet;
+    }
+
+    @Override
     public List<Observation> getAllObservationsByEventId(long id) {
         List<Observation> resultSet = new ArrayList<>();
 
@@ -57,35 +73,33 @@ public class StatisticServiceImpl implements StatisticService {
         return resultSet;
     }
 
-    @Transactional
-    public List<Router> getRoutersByEventId(long id) {
-//        List<Router> resultList = new ArrayList<>();
-//
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        List<Router> loadedList = session.createQuery("from Router r where r.event.id = " + id).list();
-//        transaction.commit();
-//        session.flush();
-//        session.close();
-//
-//        resultList.addAll(loadedList);
+    @Override
+    public List<Observation> getAllObservationsByStoreId(long id) {
+        List<Observation> resultSet = new ArrayList<>();
 
+        List<Router> loadedRouters = getRoutersByStoreId(id);
+
+        List<Observation> tempList;
+        for (Router router : loadedRouters) {
+            tempList = getObservationsByRouterId(router.getId());
+            resultSet.addAll(tempList);
+        }
+
+        return resultSet;
+    }
+
+    @Override
+    public List<Router> getRoutersByEventId(long id) {
         return statisticDao.getRoutersByEventId(id);
     }
 
-    @Transactional
-    public List<Observation> getObservationsByRouterId(long id) {
-//        List<Observation> resultList = new ArrayList<>();
-//
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        List<Observation> loadedList = session.createQuery("from Observation o where o.router.id = " + id).list();
-//        transaction.commit();
-//        session.flush();
-//        session.close();
-//
-//        resultList.addAll(loadedList);
+    @Override
+    public List<Router> getRoutersByStoreId(long id) {
+        return statisticDao.getRoutersByStoreId(id);
+    }
 
+    @Override
+    public List<Observation> getObservationsByRouterId(long id) {
         return statisticDao.getObservationsByRouterId(id);
     }
 

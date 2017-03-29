@@ -10,9 +10,15 @@ public interface StatisticService {
 
     Set<Observation> getAllUniqueObservationsByEventId(long id);
 
+    Set<Observation> getAllUniqueObservationsByStoreId(long id);
+
     List<Observation> getAllObservationsByEventId(long id);
 
+    List<Observation> getAllObservationsByStoreId(long id);
+
     List<Router> getRoutersByEventId(long id);
+
+    List<Router> getRoutersByStoreId(long id);
 
     List<Observation> getObservationsByRouterId(long id);
 
