@@ -16,7 +16,7 @@ public class ApFloor implements Serializable {
     @Column(name = "apFloors")
     private String apFloors;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "router_id")
     private Router router;
 }

@@ -31,7 +31,13 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public long createEvent(Event event) {
-        return (Long) hibernateUtil.create(event);
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        long loadedEventId = (long) session.save(event);
+        transaction.commit();
+        session.close();
+
+        return loadedEventId;
     }
 
     @Override

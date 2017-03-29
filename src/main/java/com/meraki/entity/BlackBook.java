@@ -3,12 +3,13 @@ package com.meraki.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Data
 @Entity
 @Table(name = "blackBook")
-public class BlackBook {
+public class BlackBook implements Serializable {
 
     private static final long serialVersionUID = -7988799579036225137L;
 

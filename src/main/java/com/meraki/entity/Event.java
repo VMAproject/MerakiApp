@@ -29,32 +29,19 @@ public class Event implements Serializable {
     private String location;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/mm/yyyy")
+//    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_from")
     private Date dateFrom;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/mm/yyyy")
+//    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_to")
     private Date dateTo;
 
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "event")
     private Set<Router> routers = new HashSet<>();
 
     public Event() {
     }
-
-    public Event(String name, String location, Date dateFrom, Date dateTo, Set<Router> routers) {
-        this.name = name;
-        this.location = location;
-        this.dateFrom = dateFrom;
-        this.dateTo = dateTo;
-        this.routers = routers;
-    }
-
-    //    @OneToOne(optional = false)
-//    @JoinColumn(name = "router_id", unique = false, nullable = true)
-//    private Router router;
-
 
 }

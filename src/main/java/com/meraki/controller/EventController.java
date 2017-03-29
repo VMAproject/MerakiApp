@@ -66,46 +66,38 @@ public class EventController {
         return "event/eventForm";
     }
 
-    @RequestMapping(value = "/events/createOrUpdate{id}", method = RequestMethod.GET)
-    public String createOrUpdateEvent(@PathVariable("id") long eventId,
+    @RequestMapping(value = "/events/createOrUpdate", method = RequestMethod.GET)
+    public String createOrUpdateEvent(@RequestParam String eventId,
                                       @RequestParam String name,
                                       @RequestParam String location,
                                       @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateFrom,
                                       @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateTo,
                                       @RequestParam long routerId) {
 
-        Event event = new Event();
-        event.setId(eventId);
-        event.setName(name);
-        event.setLocation(location);
-        event.setDateFrom(dateFrom);
-        event.setDateTo(dateTo);
-        eventService.updateEvent(event);
+        if (eventId.isEmpty()) {
+            Event event = new Event();
+            event.setName(name);
+            event.setLocation(location);
+            event.setDateFrom(dateFrom);
+            event.setDateTo(dateTo);
+            eventService.createEvent(event);
 
-        Router router = routerService.getRouter(routerId);
-        router.setEvent(event);
-        routerService.updateRouter(router);
+            Router router = routerService.getRouter(routerId);
+            router.setEvent(event);
+            routerService.updateRouter(router);
+        } else {
+            Event event = new Event();
+            event.setId(new Long(eventId));
+            event.setName(name);
+            event.setLocation(location);
+            event.setDateFrom(dateFrom);
+            event.setDateTo(dateTo);
+            eventService.updateEvent(event);
 
-        return "redirect:/events/all";
-    }
-
-    @RequestMapping(value = "/events/createOrUpdate", method = RequestMethod.GET)
-    public String createOrUpdateEvent(@RequestParam String name,
-                                      @RequestParam String location,
-                                      @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateFrom,
-                                      @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateTo,
-                                      @RequestParam long routerId) {
-
-        Event event = new Event();
-        event.setName(name);
-        event.setLocation(location);
-        event.setDateFrom(dateFrom);
-        event.setDateTo(dateTo);
-        eventService.createEvent(event);
-
-        Router router = routerService.getRouter(routerId);
-        router.setEvent(event);
-        routerService.updateRouter(router);
+            Router router = routerService.getRouter(routerId);
+            router.setEvent(event);
+            routerService.updateRouter(router);
+        }
 
         return "redirect:/events/all";
     }
@@ -113,11 +105,9 @@ public class EventController {
     @RequestMapping("/events/delete")
     public String deleteEvent(@RequestParam("id") long id) {
 
-        Event emptyEvent = new Event();
-        emptyEvent.setId(new Long(0));
         List<Router> routers = statisticService.getRoutersByEventId(id);
         for (Router router : routers) {
-            router.setEvent(emptyEvent);
+            router.setEvent(null);
             routerService.updateRouter(router);
         }
 
