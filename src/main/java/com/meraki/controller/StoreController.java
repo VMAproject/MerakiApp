@@ -5,6 +5,8 @@ import com.meraki.entity.Store;
 import com.meraki.service.interfaces.EventService;
 import com.meraki.service.interfaces.RouterService;
 import com.meraki.service.interfaces.StoreService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class StoreController {
+
+    private static final Logger logger = LoggerFactory.getLogger(StoreController.class);
 
     private StoreService storeService;
 
@@ -35,7 +39,7 @@ public class StoreController {
     @RequestMapping("/stores/add")
     public String addStore(Model model) {
         model.addAttribute("routers", routerService.getAllRouters());
-
+        logger.info("*** Store Controller *** add Store" + model);
         return "store/storeForm";
     }
 
@@ -54,6 +58,7 @@ public class StoreController {
         Router loadedRouter = routerService.getRouter(id);
         loadedRouter.setStore(storeByParam);
         routerService.updateRouter(loadedRouter);
+        logger.info("*** Store Controller *** create Store" + id + name + location);
 
         return "redirect:/stores/all";
     }
@@ -61,6 +66,7 @@ public class StoreController {
     @RequestMapping("/stores/all")
     public String showStores(Model model) {
         model.addAttribute("stores", storeService.getAllStore());
+        logger.info("*** Store Controller *** showStores" + model);
         return "store/storeList";
     }
 

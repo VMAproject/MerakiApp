@@ -29,33 +29,35 @@ public class BlackBookController {
     @RequestMapping("getAllBlackBookLists")
     public ModelAndView getAllBlackBook() {
         List<BlackBook> blackBookList = blackBookService.getAllBlackBooks();
-        logger.info("get all blakc book" + blackBookList);
+        logger.info("*** Black Book Controller *** get all black book" + blackBookList);
         return new ModelAndView("blackBook/blackBookList", "blackBookList", blackBookList);
 
     }
 
     @RequestMapping("createBlackBook")
     public ModelAndView createBlackBook(@ModelAttribute BlackBook blackBook) {
-        logger.info("create black book " + blackBook);
+        logger.info("*** Black Book Controller *** create black book " + blackBook);
         return new ModelAndView("blackBook/blackBookForm");
     }
 
     @RequestMapping("editBlackBook")
     public ModelAndView editBlackBook(@RequestParam long id, @ModelAttribute BlackBook blackBook) {
         blackBook = blackBookService.getBlackBook(id);
-        logger.info("edit black book " + blackBook);
+        logger.info("*** Black Book Controller *** edit black book " + blackBook);
         return new ModelAndView("blackBook/blackBookForm", "blackBookObject", blackBook);
     }
 
     @RequestMapping("saveBlackBook")
     public ModelAndView saveBlackBook(@ModelAttribute BlackBook blackBook) {
-        logger.info("save black book" + blackBook);
+        logger.info("*** Black Book Controller *** pre save black book" + blackBook);
         if (blackBook.getId() == 0) {
             blackBookService.createBlackBook(blackBook);
+            logger.info("*** Black Book Controller *** create black book " + blackBook);
         } else {
             blackBookService.updateBlackBook(blackBook);
+            logger.info("*** Black Book Controller *** save black book " + blackBook);
         }
-        logger.info("save black book " + blackBook);
+
 
         return new ModelAndView("redirect:getAllBlackBookLists");
     }
@@ -63,7 +65,7 @@ public class BlackBookController {
     @RequestMapping("deleteBlackBook")
     public ModelAndView deleteBlackBook(@RequestParam long id) {
         blackBookService.deleteBlackBook(id);
-        logger.info("delete blak book " + id);
+        logger.info("*** Black Book Controller *** delete black book " + id);
         return new ModelAndView("redirect:getAllBlackBookLists");
     }
 

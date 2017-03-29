@@ -31,6 +31,7 @@ public class HomeController {
     @Autowired
     @Qualifier("userServiceImpl")
     public void setUserService(UserService userService) {
+        log.info("*** Home Controller *** " + userService);
         this.userService = userService;
     }
 
@@ -48,7 +49,7 @@ public class HomeController {
             User user = userService.getUserByUsername(username);
             response.setAttribute("user", user);
         }
-        log.info("Welcome home! ");
+        log.info("*** Home Controller *** ||| Welcome home! ||| ");
         return "home";
     }
 
