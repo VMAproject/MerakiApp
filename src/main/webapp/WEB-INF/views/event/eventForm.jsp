@@ -35,11 +35,17 @@
                             </div>
 
                             <div class="form-group">
-                                <select class="selectpicker" name="id">
-                                    <c:forEach items="${routersList}" var="router">
-                                        <option value="${router.id}">${router.routerName}</option>
-                                    </c:forEach>
-                                </select>
+                                <label for="id">router:</label>
+                                <c:if test="${not empty routersList}">
+                                    <select class="selectpicker form-control" name="id" id="id">
+                                        <c:forEach items="${routersList}" var="router">
+                                            <option value="${router.id}">${router.routerName}</option>
+                                        </c:forEach>
+                                    </select>
+                                </c:if>
+                                <c:if test="${empty routersList}">
+                                    <p class="error">You haven't available routers</p>
+                                </c:if>
                             </div>
 
                             <div class="form-group">

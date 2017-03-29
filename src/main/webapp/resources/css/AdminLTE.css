@@ -117,7 +117,7 @@ body {
 .content-wrapper,
 .right-side {
   height: 100%;
-  background-color: #ecf0f5;
+  background-color: #eeeeee;
   z-index: 800;
 }
 .main-footer {
@@ -407,7 +407,13 @@ a:focus {
   .main-header {
     position: relative;
   }
-  .main-header .logo,
+  .main-header .logo {
+    float: none;
+    position: absolute;
+    left: 10%;
+    z-index: 10000;
+    width: 70%
+  }
   .main-header .navbar {
     width: 100%;
     float: none;
@@ -4845,4 +4851,8 @@ nav {
 .breadcrumbs {
   color: #5790C6;
   padding-bottom: 7px;
+}
+
+.myrow-container .form-group .error {
+  color: #dd4b39;
 }

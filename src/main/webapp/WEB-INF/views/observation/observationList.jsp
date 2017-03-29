@@ -63,6 +63,12 @@
             </div>
         </div>
 
+        <script>
+            $(function () {
+                $('#statistic').addClass('active');
+            });
+        </script>
+
     </jsp:body>
 </t:dashboard>
 </html>

@@ -23,6 +23,14 @@
                                 </c:forEach>
                             </select>
                             <input type="submit" id="sendEvent" class="btn btn-primary button" value="Apply"/>
+                        </form>
+                        <form action="/statistic/select/store" method="get">
+                            <select class="selectpicker" name="id">
+                                <c:forEach items="${stores}" var="store">
+                                    <option value="${store.id}">${store.name}</option>
+                                </c:forEach>
+                            </select>
+                            <input type="submit" id="sendStore" class="btn btn-primary button" value="Apply"/>
                             <h2 class="panel-add">Items: ${amount}</h2>
                         </form>
                     </div>

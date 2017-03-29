@@ -9,5 +9,8 @@ public interface StatisticDao {
 
     List<Router> getRoutersByEventId(long id);
 
+    List<Router> getRoutersByStoreId(long id);
+
     List<Observation> getObservationsByRouterId(long id);
+
 }

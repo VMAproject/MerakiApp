@@ -25,11 +25,17 @@
                         </div>
 
                         <div class="form-group">
-                            <select class="selectpicker" name="id">
-                                <c:forEach items="${routers}" var="router">
-                                    <option value="${router.id}">${router.routerName}</option>
-                                </c:forEach>
-                            </select>
+                            <label for="id">router:</label>
+                            <c:if test="${not empty routers}">
+                                <select class="selectpicker form-control" name="id" id="id">
+                                    <c:forEach items="${routers}" var="router">
+                                        <option value="${router.id}">${router.routerName}</option>
+                                    </c:forEach>
+                                </select>
+                            </c:if>
+                            <c:if test="${empty routers}">
+                                <p class="error">You haven't available routers</p>
+                            </c:if>
                         </div>
 
                         <div class="form-group">
@@ -44,7 +50,7 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#event').addClass('active');
+            $('#shop').addClass('active');
         });
         $(function () {
             $('#datetimepicker1').datetimepicker({
