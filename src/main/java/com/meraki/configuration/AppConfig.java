@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -37,7 +38,13 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
-        resourceHandlerRegistry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        resourceHandlerRegistry.addResourceHandler("/resources/**").addResourceLocations("/resources/")
+                .setCachePeriod(Integer.valueOf("31556926"));
+    }
+
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
     }
 
     @Bean
