@@ -1,7 +1,9 @@
 package com.meraki.statistics.service.impls;
 
+import com.meraki.entity.Event;
 import com.meraki.entity.Observation;
 import com.meraki.entity.Router;
+import com.meraki.entity.Store;
 import com.meraki.statistics.dao.interfaces.StatisticDao;
 import com.meraki.statistics.service.interfaces.StatisticService;
 import org.hibernate.SessionFactory;
@@ -25,6 +27,7 @@ public class StatisticServiceImpl implements StatisticService {
     public void setStatisticDao(StatisticDao statisticDao) {
         this.statisticDao = statisticDao;
     }
+
 
     @Override
     public Set<Observation> getAllUniqueObservationsByEventId(long id) {
@@ -101,6 +104,16 @@ public class StatisticServiceImpl implements StatisticService {
     @Override
     public List<Observation> getObservationsByRouterId(long id) {
         return statisticDao.getObservationsByRouterId(id);
+    }
+
+    @Override
+    public Set<Observation> compareEventToStore(Event event, Store store) {
+        Set<Observation> resultSet = new HashSet<>();
+
+//        Set<Observation> observationsByEvent = getAllUniqueObservationsByEventId();
+//        Set<Observation> observationsByStore =
+
+        return resultSet;
     }
 
 }

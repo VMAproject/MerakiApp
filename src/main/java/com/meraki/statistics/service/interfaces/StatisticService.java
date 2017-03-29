@@ -1,7 +1,9 @@
 package com.meraki.statistics.service.interfaces;
 
+import com.meraki.entity.Event;
 import com.meraki.entity.Observation;
 import com.meraki.entity.Router;
+import com.meraki.entity.Store;
 
 import java.util.List;
 import java.util.Set;
@@ -21,5 +23,7 @@ public interface StatisticService {
     List<Router> getRoutersByStoreId(long id);
 
     List<Observation> getObservationsByRouterId(long id);
+
+    Set<Observation> compareEventToStore(Event event, Store store);
 
 }
