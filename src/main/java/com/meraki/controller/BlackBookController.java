@@ -29,9 +29,7 @@ public class BlackBookController {
     @RequestMapping("getAllBlackBookLists")
     public ModelAndView getAllBlackBook() {
         List<BlackBook> blackBookList = blackBookService.getAllBlackBooks();
-        logger.info("*** Black Book Controller *** get all black book" + blackBookList);
         return new ModelAndView("blackBook/blackBookList", "blackBookList", blackBookList);
-
     }
 
     @RequestMapping("createBlackBook")
@@ -43,13 +41,12 @@ public class BlackBookController {
     @RequestMapping("editBlackBook")
     public ModelAndView editBlackBook(@RequestParam long id, @ModelAttribute BlackBook blackBook) {
         blackBook = blackBookService.getBlackBook(id);
-        logger.info("*** Black Book Controller *** edit black book " + blackBook);
+        logger.info("*** Black Book Controller *** edit black book " + blackBookService.getBlackBook(id) + blackBook);
         return new ModelAndView("blackBook/blackBookForm", "blackBookObject", blackBook);
     }
 
     @RequestMapping("saveBlackBook")
     public ModelAndView saveBlackBook(@ModelAttribute BlackBook blackBook) {
-        logger.info("*** Black Book Controller *** pre save black book" + blackBook);
         if (blackBook.getId() == 0) {
             blackBookService.createBlackBook(blackBook);
             logger.info("*** Black Book Controller *** create black book " + blackBook);
@@ -57,7 +54,6 @@ public class BlackBookController {
             blackBookService.updateBlackBook(blackBook);
             logger.info("*** Black Book Controller *** save black book " + blackBook);
         }
-
 
         return new ModelAndView("redirect:getAllBlackBookLists");
     }

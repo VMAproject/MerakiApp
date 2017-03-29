@@ -31,7 +31,6 @@ public class HomeController {
     @Autowired
     @Qualifier("userServiceImpl")
     public void setUserService(UserService userService) {
-        log.info("*** Home Controller *** " + userService);
         this.userService = userService;
     }
 

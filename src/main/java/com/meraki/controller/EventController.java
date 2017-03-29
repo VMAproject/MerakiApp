@@ -44,7 +44,6 @@ public class EventController {
     @RequestMapping("/events/add")
     public String addEvent(Model model) {
         model.addAttribute("routersList", routerService.getAllRouters());
-        logger.info("*** Event Controller *** add Event => " + model);
         return "event/eventForm";
     }
 
@@ -64,7 +63,6 @@ public class EventController {
         event.setId(eventId);
         Router router = routerService.getRouter(id);
         router.setEvent(event);
-        logger.info("*** Event Controller *** create Event =>" + name + location + dateFrom + dateTo + router);
         routerService.updateRouter(router);
 
         return "redirect:/events/all";
@@ -72,7 +70,6 @@ public class EventController {
 
     @RequestMapping("/events/all")
     public String showEvents(Model model) {
-        logger.info("*** Event Controller *** show Events => " + model);
         model.addAttribute("eventsList", eventService.getAllEvents());
         return "event/eventList";
     }
