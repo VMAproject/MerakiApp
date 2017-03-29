@@ -17,10 +17,10 @@
                     <div class="panel-add"><a href="/stores/add">Add Store</a></div>
                 </div>
                 <div class="panel-body">
-                    <c:if test="${empty eventsList}">
-                        There are no Event
+                    <c:if test="${empty stores}">
+                        There are no Stores
                     </c:if>
-                    <c:if test="${not empty eventsList}">
+                    <c:if test="${not empty stores}">
 
                         <form action="/searchEvent">
                             <div class="row">
@@ -36,37 +36,19 @@
                         </form>
 
                         <h2>All Stores</h2>
-                        <table border="1">
-                            <tr>
-                                <th>id</th>
-                                <th>name</th>
-                                <th>location</th>
-                            </tr>
-                            <c:forEach items="${stores}" var="store">
+                        <table border="1" class="table table-hover table-bordered">
+                            <thead style="background-color: #bce8f1;">
                                 <tr>
-                                    <td>${store.id}</td>
-                                    <td>${store.name}</td>
-                                    <td>${store.location}</td>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>location</th>
                                 </tr>
-                            </c:forEach>
-                        </table>
-                        <table border="1">
-                            <tr>
-                                <th>id</th>
-                                <th>name</th>
-                                <th>location</th>
-                                <th>Update</th>
-                                <th>Delete</th>
-                            </tr>
+                            </thead>
                             <c:forEach items="${stores}" var="store">
                                 <tr>
                                     <td>${store.id}</td>
                                     <td>${store.name}</td>
                                     <td>${store.location}</td>
-
-                                    <td><a href="/editStore?id=<c:out value='${event.id}'/>">Edit</a></td>
-                                    <td><a href="/deleteStore?id=<c:out value='${event.id}'/>">Delete</a></td>
-
                                 </tr>
                             </c:forEach>
                         </table>

@@ -75,7 +75,7 @@ public class StatisticController {
         return "statistic/statisticList";
     }
 
-    @RequestMapping(value = "/statistic/compare{id1},{id2}", method = RequestMethod.GET)
+    @RequestMapping(value = "/statistic/compare", method = RequestMethod.POST)
     public String compareEventToStore(@PathVariable("id1") long eventId,
                                       @PathVariable("id2") long storeId,
                                       Model model) {
