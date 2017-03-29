@@ -4852,3 +4852,7 @@ nav {
   color: #5790C6;
   padding-bottom: 7px;
 }
+
+.myrow-container .form-group .error {
+  color: #dd4b39;
+}
