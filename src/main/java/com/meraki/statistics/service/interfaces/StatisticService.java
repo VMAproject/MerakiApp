@@ -1,4 +1,4 @@
-package com.meraki.statistics.interfaces;
+package com.meraki.statistics.service.interfaces;
 
 import com.meraki.entity.Observation;
 import com.meraki.entity.Router;

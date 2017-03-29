@@ -1,12 +1,10 @@
-package com.meraki.statistics.impls;
+package com.meraki.statistics.service.impls;
 
 import com.meraki.entity.Observation;
 import com.meraki.entity.Router;
 import com.meraki.statistics.dao.interfaces.StatisticDao;
-import com.meraki.statistics.interfaces.StatisticService;
-import org.hibernate.Session;
+import com.meraki.statistics.service.interfaces.StatisticService;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -20,16 +18,12 @@ import java.util.Set;
 @Service
 public class StatisticServiceImpl implements StatisticService {
 
-
-    @Autowired
     private StatisticDao statisticDao;
 
-    private SessionFactory sessionFactory;
-
     @Autowired
-    @Qualifier("sessionFactory")
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    @Qualifier("statisticDaoImpl")
+    public void setStatisticDao(StatisticDao statisticDao) {
+        this.statisticDao = statisticDao;
     }
 
     @Transactional

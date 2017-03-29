@@ -13,9 +13,6 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Verlamov on 29.03.17.
- */
 @Repository
 public class StatisticDaoImpl implements StatisticDao {
 
@@ -39,12 +36,13 @@ public class StatisticDaoImpl implements StatisticDao {
         session.flush();
         session.close();
 
+        resultList.addAll(loadedList);
+
         return resultList;
     }
 
     @Override
     public List<Observation> getObservationsByRouterId(long id) {
-
         List<Observation> resultList = new ArrayList<>();
 
         Session session = sessionFactory.openSession();
@@ -53,6 +51,8 @@ public class StatisticDaoImpl implements StatisticDao {
         transaction.commit();
         session.flush();
         session.close();
+
+        resultList.addAll(loadedList);
 
         return resultList;
     }

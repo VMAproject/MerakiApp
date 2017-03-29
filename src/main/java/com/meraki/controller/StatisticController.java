@@ -2,8 +2,7 @@ package com.meraki.controller;
 
 import com.meraki.entity.Observation;
 import com.meraki.service.interfaces.EventService;
-import com.meraki.statistics.impls.StatisticServiceImpl;
-import com.meraki.statistics.interfaces.StatisticService;
+import com.meraki.statistics.service.interfaces.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
