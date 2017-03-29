@@ -3,9 +3,7 @@ package com.meraki.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by Verlamov on 21.03.17.
- */
+
 @Entity
 @Table(name = "apTag")
 public class ApTag implements Serializable{

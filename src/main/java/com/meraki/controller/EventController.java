@@ -20,7 +20,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-
 @Controller
 public class EventController {
 
@@ -45,7 +44,7 @@ public class EventController {
     @RequestMapping("/events/add")
     public String addEvent(Model model) {
         model.addAttribute("routersList", routerService.getAllRouters());
-
+        logger.info("*** Event Controller *** add Event => " + model);
         return "event/eventForm";
     }
 
@@ -65,40 +64,15 @@ public class EventController {
         event.setId(eventId);
         Router router = routerService.getRouter(id);
         router.setEvent(event);
+        logger.info("*** Event Controller *** create Event =>" + name + location + dateFrom + dateTo + router);
         routerService.updateRouter(router);
 
-//        Event event = new Event();
-//        event.setName(name);
-//        event.setLocation(location);
-//        event.setDateFrom(dateFrom);
-//        event.setDateTo(dateTo);
-//
-//        Router router = routerService.getRouter(id);
-//        router.setEvent(event);
-//        event.getRouters().add(router);
-//
-//        eventService.createEvent(event);
-
-        return "redirect:/events/all";
-    }
-
-    @RequestMapping("/events/edit")
-    public ModelAndView editEvent(@RequestParam long id,
-                                  @ModelAttribute Event event) {
-        event = eventService.getEvent(id);
-        logger.info("edit event " + event);
-        return new ModelAndView("event/eventForm", "eventObject", event);
-    }
-
-    @RequestMapping("/events/delete")
-    public String deleteEvent(@RequestParam long id) {
-        eventService.deleteEvent(id);
-        logger.info("delete event " + id);
         return "redirect:/events/all";
     }
 
     @RequestMapping("/events/all")
     public String showEvents(Model model) {
+        logger.info("*** Event Controller *** show Events => " + model);
         model.addAttribute("eventsList", eventService.getAllEvents());
         return "event/eventList";
     }

@@ -1,4 +1,4 @@
-package com.meraki.dao.impl;
+package com.meraki.dao.impls;
 
 import com.meraki.dao.interfaces.StoreDao;
 import com.meraki.entity.Store;
@@ -10,10 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 24.03.17.
- */
-
 @Repository
 public class StoreDaoImpl implements StoreDao {
 
@@ -23,11 +19,13 @@ public class StoreDaoImpl implements StoreDao {
 
     @Override
     public long createStore(Store store) {
+        logger.info("*** Store Dao *** create Store => " + store);
         return (Long) hibernateUtil.create(store);
     }
 
     @Override
     public Store updateStore(Store store) {
+        logger.info("*** Store Dao *** update Store => " + store);
         return hibernateUtil.update(store);
     }
 
@@ -35,16 +33,19 @@ public class StoreDaoImpl implements StoreDao {
     public void deleteStore(long id) {
         Store store = new Store();
         store.getId();
+        logger.info("*** Store Dao *** delete Store for ID => " + id);
         hibernateUtil.delete(store);
     }
 
     @Override
     public List<Store> getAllStore() {
+        logger.info("*** Store Dao *** get All Store => " + Store.class);
         return hibernateUtil.fetchAll(Store.class);
     }
 
     @Override
     public Store getStore(long id) {
+        logger.info("*** Store Dao *** get Store => " + id + Store.class);
         return hibernateUtil.fetchById(id, Store.class);
     }
 }

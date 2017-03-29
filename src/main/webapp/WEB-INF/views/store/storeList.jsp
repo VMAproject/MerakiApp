@@ -8,7 +8,7 @@
     <jsp:body>
 
         <p><a href="/">Back to main page</a>
-        <p><a href="/events">Store page</a>
+        <p><a href="/stores/add">Add store</a>
 
         <h2>All Stores</h2>
         <table border="1">
@@ -16,18 +16,12 @@
                 <th>id</th>
                 <th>name</th>
                 <th>location</th>
-                <th>Update</th>
-                <th>Delete</th>
             </tr>
-            <c:forEach items="${allStores}" var="store">
+            <c:forEach items="${stores}" var="store">
                 <tr>
                     <td>${store.id}</td>
                     <td>${store.name}</td>
                     <td>${store.location}</td>
-
-                    <td><a href="/editStore?id=<c:out value='${event.id}'/>">Edit</a></td>
-                    <td><a href="/deleteStore?id=<c:out value='${event.id}'/>">Delete</a></td>
-
                 </tr>
             </c:forEach>
         </table>

@@ -2,5 +2,9 @@
 Meraki.iml
 MerakiApp.iml
 target
+README.md
+.DS_Store
 out
 classes
+/MerakiApp.iml
+/Meraki.iml

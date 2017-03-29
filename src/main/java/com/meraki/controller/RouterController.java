@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class RouterController {
 
-    private static final Logger logger = org.jboss.logging.Logger.getLogger(RouterController.class);
+    private static final Logger logger = Logger.getLogger(RouterController.class);
 
     private RouterService routerService;
 
@@ -35,21 +35,21 @@ public class RouterController {
 
     @RequestMapping("createRouter")
     public ModelAndView createRouter(@ModelAttribute Router router) {
-        logger.info("create router" + router);
-        return new ModelAndView("routerForm");
+        logger.info("*** RouterController *** Create Router" + router);
+        return new ModelAndView("router/routerForm");
     }
 
     @RequestMapping("editRouter")
     public ModelAndView editRouter(@RequestParam long id, @ModelAttribute Router router) {
         router = routerService.getRouter(id);
-        logger.info("edit router" + router);
-        return new ModelAndView("routerForm", "routerObject", router);
+        logger.info("*** RouterController *** Edit Router" + router);
+        return new ModelAndView("router/routerForm", "routerObject", router);
     }
 
 
     @RequestMapping(value = "saveRouter", method = RequestMethod.POST)
     public ModelAndView saveRouter(@ModelAttribute Router router) {
-        logger.info("save router" + router);
+        logger.info("*** RouterController *** Save Router " + router);
 
         if (router.getId() == 0) {
             routerService.createRouter(router);
@@ -57,7 +57,7 @@ public class RouterController {
             routerService.updateRouter(router);
         }
 
-        logger.info("save " + router);
+        logger.info("*** RouterController *** Save Success" + router);
 
         return new ModelAndView("redirect:/routers/all");
     }
@@ -66,7 +66,7 @@ public class RouterController {
     @RequestMapping("deleteRouter")
     public ModelAndView deleteRouter(@RequestParam long id) {
         routerService.deleteRouter(id);
-        logger.info("delete router " + id);
+        logger.info("*** RouterController *** Delete Router " + id);
 
         return new ModelAndView("redirect:/routers/all");
     }

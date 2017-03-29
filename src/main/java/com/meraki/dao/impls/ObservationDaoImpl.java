@@ -1,4 +1,4 @@
-package com.meraki.dao.impl;
+package com.meraki.dao.impls;
 
 import com.meraki.dao.interfaces.ObservationDao;
 import com.meraki.entity.Observation;
@@ -10,9 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 22.03.17.
- */
+
 @Repository
 public class ObservationDaoImpl implements ObservationDao {
 
@@ -25,11 +23,13 @@ public class ObservationDaoImpl implements ObservationDao {
 
     @Override
     public long createObservation(Observation observation) {
+        logger.info("*** Observation Dao *** create Observation =>" + observation);
         return (Long) hibernateUtil.create(observation);
     }
 
     @Override
     public Observation updateObservation(Observation observation) {
+        logger.info("*** Observation Dao *** update Observation =>" + observation);
         return hibernateUtil.update(observation);
     }
 
@@ -37,21 +37,25 @@ public class ObservationDaoImpl implements ObservationDao {
     public void deleteObservation(long id) {
         Observation observation = new Observation();
         observation.setId(id);
+        logger.info("*** Observation Dao *** delete Observation for ID =>" + id);
         hibernateUtil.delete(observation);
     }
 
     @Override
     public List<Observation> getAllObservation() {
+        logger.info("*** Observation Dao *** get All Observation =>" + Observation.class);
         return hibernateUtil.fetchAll(Observation.class);
     }
 
     @Override
     public Observation getObservation(long id) {
+        logger.info("*** Observation Dao *** get Observation for ID =>" + Observation.class);
         return hibernateUtil.fetchById(id, Observation.class);
     }
 
     @Override
     public List<Observation> getAllUniqueObservation() {
+        logger.info("*** Observation Dao *** get All Unique Observation =>" +Observation.class);
         return hibernateUtil.fetchAllU(Observation.class);
     }
 }

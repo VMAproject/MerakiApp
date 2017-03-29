@@ -5,10 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
-/**
- * Created by Verlamov on 21.03.17.
- */
 @Data
 @Entity
 @Table(name = "observation")
@@ -51,4 +49,18 @@ public class Observation implements Serializable {
     private Router router;
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Observation that = (Observation) o;
+
+        return Objects.equals(this.clientMac, that.clientMac);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(clientMac);
+    }
 }

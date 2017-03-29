@@ -15,7 +15,7 @@ import java.util.Collection;
 
 
 @Service
-public class UserDetailesServiceImpl implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
 
     @Autowired
