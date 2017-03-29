@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -75,9 +74,9 @@ public class StatisticController {
         return "statistic/statisticList";
     }
 
-    @RequestMapping(value = "/statistic/compare", method = RequestMethod.POST)
-    public String compareEventToStore(@PathVariable("id1") long eventId,
-                                      @PathVariable("id2") long storeId,
+    @RequestMapping(value = "/statistic/compare", method = RequestMethod.GET)
+    public String compareEventToStore(@RequestParam(value = "eventId") long eventId,
+                                      @RequestParam(value = "storeId") long storeId,
                                       Model model) {
 
         Event loadedEvent = eventService.getEvent(eventId);

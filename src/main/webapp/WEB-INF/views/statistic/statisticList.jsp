@@ -16,9 +16,9 @@
                 </div>
                 <div class="panel-body">
 
-                        <form action="/statistic/select/event" method="post">
+                        <form action="/statistic/compare" method="get">
                             <div class="form-group">
-                            <select class="selectpicker" name="id" id="event">
+                            <select class="selectpicker" name="eventId" id="event">
                                 <c:forEach items="${events}" var="event">
                                     <option value="${event.id}">${event.name}</option>
                                 </c:forEach>
@@ -26,7 +26,7 @@
                             <input type="submit" id="sendEvent" class="btn btn-primary button" value="Apply"/>
                             </div>
                             <div class="form-group">
-                                <select class="selectpicker" name="id" id="store">
+                                <select class="selectpicker" name="storeId" id="store">
                                     <c:forEach items="${stores}" var="store">
                                         <option value="${store.id}">${store.name}</option>
                                     </c:forEach>
@@ -80,20 +80,20 @@
             $(function () {
                 $('#statistic').addClass('active');
             });
-            $('#compare').click(function () {
-                var event = $('#event').val();
-                var store = $('#store').val();
-                $.ajax({
-                    method: "POST",
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    url: "/compare",
-                    data: {
-                        "eventId": JSON.stringify(event),
-                        "storeId": JSON.stringify(store)
-                    }
-                })
-            });
+//            $('#compare').click(function () {
+//                var event = $('#event').val();
+//                var store = $('#store').val();
+//                $.ajax({
+//                    type: "post",
+//                    contentType: 'application/json',
+//                    dataType: 'json',
+//                    url: "/statistic/compare",
+//                    data: {
+//                        "eventId": JSON.stringify(event),
+//                        "storeId": JSON.stringify(store)
+//                    }
+//                })
+//            });
         </script>
 
     </jsp:body>
