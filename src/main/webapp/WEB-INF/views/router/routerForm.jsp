@@ -10,7 +10,7 @@
         <div class="container-fluid myrow-container">
             <div class="form">
                 <div class="panel-body">
-                    <form:form id="routerForm" cssClass="form-horizontal" modelAttribute="router" method="post"
+                    <form:form id="routerForm" cssClass="form-horizontal adding-form" modelAttribute="router" method="post"
                                action="/routers/add">
                         <div class="container panel-bod y-group">
                             <div class="panel-title panel-title_bottom"><h1>Router Details</h1></div>
@@ -28,8 +28,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" id="saveRouter" class="btn btn-primary button" value="Save"
-                                       onclick="return submitRouterForm();"/>
+                                <input type="submit" id="saveRouter" class="btn btn-primary button incorrect" value="Save"/>
                             </div>
                         </div>
                     </form:form>
@@ -41,26 +40,26 @@
             $(function () {
                 $('#router').addClass('active');
             });
-            function submitRouterForm() {
-
-                // getting the employee form values
-                var routerName = $('#routerName').val().trim();
-                var apMac = $('#apMac').val();
-                var event = $('#event').val();
-
-                if (routerName.length == 0) {
-                    alert('Please enter routerName');
-                    $('#routerName').focus();
-                    return false;
-                }
-
-                if (apMac <= 0) {
-                    alert('Please enter apMac');
-                    $('#apMac').focus();
-                    return false;
-                }
-                return true;
-            }
+//            function submitRouterForm() {
+//
+//                // getting the employee form values
+//                var routerName = $('#routerName').val().trim();
+//                var apMac = $('#apMac').val();
+//                var event = $('#event').val();
+//
+//                if (routerName.length == 0) {
+//                    alert('Please enter routerName');
+//                    $('#routerName').focus();
+//                    return false;
+//                }
+//
+//                if (apMac <= 0) {
+//                    alert('Please enter apMac');
+//                    $('#apMac').focus();
+//                    return false;
+//                }
+//                return true;
+//            }
         </script>
 
     </jsp:body>

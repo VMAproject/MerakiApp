@@ -10,7 +10,7 @@
             <div class="panel-body">
                 <div class="container panel-body-group">
 
-                    <form action="/stores/create" method="get">
+                    <form action="/stores/create" method="get" class="adding-form">
 
                         <div class="panel-title panel-title_bottom"><h1>Store Details</h1></div>
 
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" id="saveStore" class="btn btn-primary button" value="Save"/>
+                            <input type="submit" id="saveStore" class="btn btn-primary button incorrect" value="Save"/>
                         </div>
 
                     </form>

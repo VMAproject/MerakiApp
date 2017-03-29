@@ -4862,3 +4862,8 @@ nav {
 .item_bottom {
   padding-bottom: 20px;
 }
+
+.form-group .message {
+  color: red;
+  padding-top: 10px;
+}

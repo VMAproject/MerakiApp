@@ -80,6 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- AdminLTE App -->
         <script src="/resources/js/app.min.js"></script>
         <script src="/resources/js/faq.js"></script>
+        <script src="/resources/js/validationAddForm.js"></script>
 
         <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>

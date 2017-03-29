@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <div class="container panel-body-group">
 
-                        <form action="/events/create" method="get">
+                        <form action="/events/create" method="get" class="adding-form">
 
                             <div class="panel-title panel-title_bottom"><h1>Event Details</h1></div>
                             <input type="hidden" value="${eventId}" name="eventId" />
@@ -54,9 +54,8 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" id="saveEvent" class="btn btn-primary button" value="Save"/>
+                                <input type="submit" id="saveEvent" class="btn btn-primary button incorrect" value="Save"/>
                             </div>
-
                         </form>
                     </div>
                 </div>
