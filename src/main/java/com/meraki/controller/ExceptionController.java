@@ -12,7 +12,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 @ControllerAdvice
 public class ExceptionController {
 
-
     private static final Logger logger = Logger.getLogger(ExceptionController.class);
 
     @ExceptionHandler(NoHandlerFoundException.class)

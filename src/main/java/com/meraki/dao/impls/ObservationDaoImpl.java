@@ -14,9 +14,6 @@ import java.util.List;
 @Repository
 public class ObservationDaoImpl implements ObservationDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(ObservationDaoImpl.class);
-
-
     @Autowired
     private HibernateUtil hibernateUtil;
 

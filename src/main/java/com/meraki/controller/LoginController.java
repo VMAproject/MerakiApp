@@ -48,6 +48,9 @@ public class LoginController {
         return "login";
     }
 
+
+    //====================================== Methods ==============================================
+
     @ResponseBody
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public Map<String, Object> registration(@RequestBody User user) {
@@ -64,7 +67,6 @@ public class LoginController {
 
 
         Boolean save = userService.addUser(user);
-        logger.info("*** Login Controller *** ");
         if (save) {
             response.put("success", true);
             response.put("message", "Registration Success");
@@ -84,7 +86,6 @@ public class LoginController {
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        logger.info("*** Login Controller *** logout Page =>" + request + response + auth);
         return "redirect:/login";
     }
 

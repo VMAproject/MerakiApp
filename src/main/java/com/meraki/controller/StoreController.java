@@ -34,6 +34,10 @@ public class StoreController {
         this.routerService = routerService;
     }
 
+
+    //====================================== Methods ==============================================
+
+
     @RequestMapping("/stores/add")
     public String addStore(Model model) {
         model.addAttribute("routers", routerService.getAllRouters());

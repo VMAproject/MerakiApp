@@ -13,8 +13,6 @@ import java.util.List;
 @Repository
 public class RouterDaoImpl implements RouterDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(RouterDaoImpl.class);
-
     @Autowired
     private HibernateUtil hibernateUtil;
 

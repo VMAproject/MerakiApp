@@ -23,8 +23,6 @@ import java.util.Set;
 @Controller
 public class EventController {
 
-    private static final Logger logger = Logger.getLogger(EventController.class);
-
     private EventService eventService;
 
     private RouterService routerService;
@@ -40,6 +38,9 @@ public class EventController {
     public void setRouterService(RouterService routerService) {
         this.routerService = routerService;
     }
+
+
+    //====================================== Methods ==============================================
 
     @RequestMapping("/events/add")
     public String addEvent(Model model) {

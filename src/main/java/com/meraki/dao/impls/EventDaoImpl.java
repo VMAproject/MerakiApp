@@ -14,8 +14,6 @@ import java.util.List;
 @Repository
 public class EventDaoImpl implements EventDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(EventDaoImpl.class);
-
     @Autowired
     private HibernateUtil hibernateUtil;
 

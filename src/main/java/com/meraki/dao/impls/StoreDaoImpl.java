@@ -13,7 +13,6 @@ import java.util.List;
 @Repository
 public class StoreDaoImpl implements StoreDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(StoreDaoImpl.class);
     @Autowired
     private HibernateUtil hibernateUtil;
 
