@@ -57,6 +57,8 @@ public class StatisticController {
 
         Set<Observation> resultSet = statisticService.getAllUniqueObservationsByEventId(eventId);
 
+        model.addAttribute("events", eventService.getAllEvents());
+        model.addAttribute("stores", storeService.getAllStore());
         model.addAttribute("observations", resultSet);
         model.addAttribute("amount", resultSet.size());
 
@@ -69,6 +71,8 @@ public class StatisticController {
 
         Set<Observation> resultSet = statisticService.getAllUniqueObservationsByStoreId(storeId);
 
+        model.addAttribute("events", eventService.getAllEvents());
+        model.addAttribute("stores", storeService.getAllStore());
         model.addAttribute("observations", resultSet);
         model.addAttribute("amount", resultSet.size());
 
