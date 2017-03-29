@@ -51,7 +51,7 @@ public class StatisticController {
     }
 
     @RequestMapping(value = "/statistic/select/event", method = RequestMethod.GET)
-    public String getAllUniqueObservationsByEventId(@RequestParam("id") long eventId,
+    public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId,
                                                     Model model) {
 
         Set<Observation> resultSet = statisticService.getAllUniqueObservationsByEventId(eventId);
@@ -65,7 +65,7 @@ public class StatisticController {
     }
 
     @RequestMapping(value = "/statistic/select/store", method = RequestMethod.GET)
-    public String getAllUniqueObservationsByStoreId(@RequestParam("id") long storeId,
+    public String getAllUniqueObservationsByStoreId(@RequestParam("storeId") long storeId,
                                                     Model model) {
 
         Set<Observation> resultSet = statisticService.getAllUniqueObservationsByStoreId(storeId);
@@ -88,6 +88,8 @@ public class StatisticController {
 
         Set<Observation> resultSet = statisticService.compareEventToStore(loadedEvent, loadedStore);
 
+        model.addAttribute("events", eventService.getAllEvents());
+        model.addAttribute("stores", storeService.getAllStore());
         model.addAttribute("observations", resultSet);
         model.addAttribute("amount", resultSet.size());
 
