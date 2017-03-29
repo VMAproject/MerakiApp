@@ -3,11 +3,14 @@ package com.meraki.dao.impl;
 import com.meraki.dao.interfaces.EventDao;
 import com.meraki.entity.Event;
 import com.meraki.util.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +22,12 @@ public class EventDaoImpl implements EventDao {
     @Autowired
     private HibernateUtil hibernateUtil;
 
+    @Autowired
+    private SessionFactory sessionFactory;
+
+    private Session getCurrentSession() {
+        return sessionFactory.getCurrentSession();
+    }
 
     @Override
     public long createEvent(Event event) {
@@ -49,13 +58,8 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Event> getAllEvents(String eventName) {
-        String query = "SELECT e.* FROM Event e WHERE e.name like '%" + eventName + "%'";
-        List<Object[]> eventObjects = hibernateUtil.fetchAll(query);
-        List<Event> events = new ArrayList<Event>();
-        for (Object[] eventObject : eventObjects) ;
-        Event event = new Event();
-//        int id = ((BigInteger) eventObject[0]).longValue();
-        return null;
+    public List<Event> getAllSearchEvents(String eventName) {
+       return getCurrentSession().createQuery("from Event where name like \'%" + eventName + "%'").list();
+
     }
 }

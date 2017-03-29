@@ -17,6 +17,6 @@ public interface EventService {
 
     Event getEvent(long id);
 
-    List<Event> getAllEvents(String eventName);
+    List<Event> getAllSearchEvents(List<Event> events);
 
 }

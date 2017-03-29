@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -44,7 +45,12 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public List<Event> getAllEvents(String eventName) {
-        return eventDao.getAllEvents(eventName);
+    @Transactional
+    public List<Event> getAllSearchEvents(List<Event> events) {
+        events.sort((o1, o2) -> {
+            int resCompare = String.CASE_INSENSITIVE_ORDER.compare(o1.getName(), o2.getName());
+            return (resCompare != 0) ? resCompare : o1.getName().compareTo(o2.getName());
+        });
+        return events;
     }
 }
