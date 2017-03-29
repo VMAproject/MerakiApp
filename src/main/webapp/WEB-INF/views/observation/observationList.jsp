@@ -63,12 +63,6 @@
             </div>
         </div>
 
-        <script>
-            $(function () {
-                $('#shop').addClass('active');
-            });
-        </script>
-
     </jsp:body>
 </t:dashboard>
 </html>

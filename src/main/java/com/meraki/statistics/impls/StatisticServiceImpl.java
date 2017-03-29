@@ -1,6 +1,5 @@
 package com.meraki.statistics.impls;
 
-import com.meraki.dao.interfaces.StatisticDao;
 import com.meraki.entity.Observation;
 import com.meraki.entity.Router;
 import com.meraki.statistics.interfaces.StatisticService;
@@ -27,9 +26,6 @@ public class StatisticServiceImpl implements StatisticService {
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
-
-    @Autowired
-    private StatisticDao statisticDao;
 
     @Transactional
     public Set<Observation> getAllUniqueObservationsByEventId(long id) {
@@ -64,37 +60,34 @@ public class StatisticServiceImpl implements StatisticService {
 
     @Transactional
     public List<Router> getRoutersByEventId(long id) {
-//        List<Router> resultList = new ArrayList<>();
-//
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        List<Router> loadedList = session.createQuery("from Router r where r.event.id = " + id).list();
-//        transaction.commit();
-//        session.flush();
-//        session.close();
-//
-//        resultList.addAll(loadedList);
-//
-//        return resultList;
-        return statisticDao.getRoutersByEventId(id);
+        List<Router> resultList = new ArrayList<>();
+
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Router> loadedList = session.createQuery("from Router r where r.event.id = " + id).list();
+        transaction.commit();
+        session.flush();
+        session.close();
+
+        resultList.addAll(loadedList);
+
+        return resultList;
     }
 
     @Transactional
     public List<Observation> getObservationsByRouterId(long id) {
-//        List<Observation> resultList = new ArrayList<>();
-//
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        List<Observation> loadedList = session.createQuery("from Observation o where o.router.id = " + id).list();
-//        transaction.commit();
-//        session.flush();
-//        session.close();
-//
-//        resultList.addAll(loadedList);
-//
-//        return resultList;
+        List<Observation> resultList = new ArrayList<>();
 
-        return statisticDao.getObservationsByRouterId(id);
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Observation> loadedList = session.createQuery("from Observation o where o.router.id = " + id).list();
+        transaction.commit();
+        session.flush();
+        session.close();
+
+        resultList.addAll(loadedList);
+
+        return resultList;
     }
 
 }

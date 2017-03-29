@@ -7,7 +7,6 @@ import com.meraki.service.interfaces.RouterService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.support.PagedListHolder;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +18,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -76,15 +74,5 @@ public class EventController {
         model.addAttribute("eventsList", eventService.getAllEvents());
         return "event/eventList";
     }
-
-//    @RequestMapping(value = "/events/search", method = RequestMethod.POST)
-//    public String search(@RequestParam String eventName, Model model) {
-//
-//        model.addAttribute("events", eventService.getAllEvents(eventName));
-//        if (!"".equals(eventName)) {
-//            model.addAttribute("messageHeadEvent", " searched by '" + eventName + "'");
-//        }
-//        return "event/eventList";
-//    }
 
 }

@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class RouterController {
 
-    private static final Logger logger = org.jboss.logging.Logger.getLogger(RouterController.class);
+    private static final Logger logger = Logger.getLogger(RouterController.class);
 
     private RouterService routerService;
 

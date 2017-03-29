@@ -16,7 +16,7 @@ public interface EventDao {
 
      Event getEvent(long id);
 
-     List<Event> getAllSearchEvents(String eventName);
+     List<Event> getAllEvents(String eventName);
 
 
 }

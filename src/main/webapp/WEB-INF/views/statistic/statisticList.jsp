@@ -32,18 +32,18 @@
                     <c:if test="${not empty observations}">
                         <table class="table table-hover table-bordered">
                             <thead style="background-color: #bce8f1;">
-                            <tr>
-                                <th>id</th>
-                                <th>clientMac</th>
-                                <th>ipv4</th>
-                                <th>ipv6</th>
-                                <th>ssid</th>
-                                <th>os</th>
-                                <th>manufacturer</th>
-                                <th>rssi</th>
-                                <th>seenEpoch</th>
-                                <th>seenTime</th>
-                            </tr>
+                                <tr>
+                                    <th>id</th>
+                                    <th>clientMac</th>
+                                    <th>ipv4</th>
+                                    <th>ipv6</th>
+                                    <th>ssid</th>
+                                    <th>os</th>
+                                    <th>manufacturer</th>
+                                    <th>rssi</th>
+                                    <th>seenEpoch</th>
+                                    <th>seenTime</th>
+                                </tr>
                             </thead>
                             <c:forEach items="${observations}" var="observation">
                                 <tr>
