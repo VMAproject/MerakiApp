@@ -65,7 +65,7 @@
 
         <script>
             $(function () {
-                $('#shop').addClass('active');
+                $('#statistic').addClass('active');
             });
         </script>
 
