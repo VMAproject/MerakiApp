@@ -3,6 +3,6 @@
  */
 jQuery(document).ready(function ($) {
     $('.demo1').dsCountDown({
-        endDate: new Date("March 24, 2017 18:00:00")
+        endDate: new Date("March 30, 2017 9:00:00")
     });
 });

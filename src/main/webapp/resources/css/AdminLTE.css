@@ -4853,6 +4853,12 @@ nav {
   padding-bottom: 7px;
 }
 
-.myrow-container .form-group .error {
+.myrow-container .form-group .error,
+.form-group_red
+{
   color: #dd4b39;
+}
+
+.item_bottom {
+  padding-bottom: 20px;
 }

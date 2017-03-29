@@ -18,37 +18,41 @@
                         <div class="panel-body">
                             <form action="/statistic/select/event" method="get">
                                 <div class="form-group">
-                                    <select class="selectpicker" name="eventId" id="event">
+                                    <label for="eventApply">Event</label>
+                                    <select class="selectpicker form-control" name="eventId" id="eventApply">
                                         <c:forEach items="${events}" var="event">
                                             <option value="${event.id}">${event.name}</option>
                                         </c:forEach>
                                     </select>
-                                    <input type="submit" id="sendEvent" class="btn btn-primary button" value="Apply"/>
                                 </div>
+                                <button class="btn btn-primary" id="sendEvent">Compare</button>
                             </form>
                             <form action="/statistic/select/store" method="get">
                                 <div class="form-group">
-                                    <select class="selectpicker" name="storeId" id="store">
+                                    <label for="storeApply">Store</label>
+                                    <select class="selectpicker form-control" name="storeId" id="storeApply">
                                         <c:forEach items="${stores}" var="store">
                                             <option value="${store.id}">${store.name}</option>
                                         </c:forEach>
                                     </select>
-                                    <input type="submit" id="sendStore" class="btn btn-primary button" value="Apply"/>
                                 </div>
+                                <button class="btn btn-primary" id="sendStore">Compare</button>
                             </form>
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-sm-6">
-                        <form action="/statistic/compare" method="get" class="panel-add">
+                        <form action="/statistic/compare" method="get" class="panel-body">
                             <div class="form-group">
-                                <select class="selectpicker" name="eventId" id="event">
+                                <label for="eventCompare">Event</label>
+                                <select class="selectpicker form-control" name="eventId" id="eventCompare">
                                     <c:forEach items="${events}" var="event">
                                         <option value="${event.id}">${event.name}</option>
                                     </c:forEach>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="selectpicker" name="storeId" id="store">
+                                <label for="storeCompare">Store</label>
+                                <select class="selectpicker form-control" name="storeId" id="storeCompare">
                                     <c:forEach items="${stores}" var="store">
                                         <option value="${store.id}">${store.name}</option>
                                     </c:forEach>
@@ -58,7 +62,7 @@
                         </form>
                     </div>
                 </div>
-                <h2 class="panel-add">Items: ${amount}</h2>
+                <h2 class="center-block item_bottom">Items: ${amount}</h2>
                 <c:if test="${not empty observations}">
                     <table class="table table-hover table-bordered">
                         <thead style="background-color: #bce8f1;">
