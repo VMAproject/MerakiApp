@@ -58,7 +58,7 @@
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
-                            <c:forEach items="${allStores}" var="store">
+                            <c:forEach items="${stores}" var="store">
                                 <tr>
                                     <td>${store.id}</td>
                                     <td>${store.name}</td>
