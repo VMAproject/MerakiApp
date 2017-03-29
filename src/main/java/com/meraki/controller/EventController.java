@@ -20,7 +20,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-
 @Controller
 public class EventController {
 
@@ -67,33 +66,6 @@ public class EventController {
         router.setEvent(event);
         routerService.updateRouter(router);
 
-//        Event event = new Event();
-//        event.setName(name);
-//        event.setLocation(location);
-//        event.setDateFrom(dateFrom);
-//        event.setDateTo(dateTo);
-//
-//        Router router = routerService.getRouter(id);
-//        router.setEvent(event);
-//        event.getRouters().add(router);
-//
-//        eventService.createEvent(event);
-
-        return "redirect:/events/all";
-    }
-
-    @RequestMapping("/events/edit")
-    public ModelAndView editEvent(@RequestParam long id,
-                                  @ModelAttribute Event event) {
-        event = eventService.getEvent(id);
-        logger.info("edit event " + event);
-        return new ModelAndView("event/eventForm", "eventObject", event);
-    }
-
-    @RequestMapping("/events/delete")
-    public String deleteEvent(@RequestParam long id) {
-        eventService.deleteEvent(id);
-        logger.info("delete event " + id);
         return "redirect:/events/all";
     }
 

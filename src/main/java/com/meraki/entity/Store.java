@@ -7,9 +7,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Verlamov on 23.03.17.
- */
 @Data
 @Entity
 @Table(name = "store")
