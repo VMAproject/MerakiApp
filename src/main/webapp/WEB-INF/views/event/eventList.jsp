@@ -45,10 +45,10 @@
                     <div class="panel-add"><a href="/events/add">Add New Event</a></div>
                 </div>
                 <div class="panel-body">
-                    <c:if test="${empty eventsList}">
+                    <c:if test="${empty events}">
                         There are no Event
                     </c:if>
-                    <c:if test="${not empty eventsList}">
+                    <c:if test="${not empty events}">
 
                         <form action="/searchEvent">
                             <div class="row">
@@ -76,15 +76,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${eventsList}" var="event">
+                                <c:forEach items="${events}" var="event">
                                     <tr>
                                         <td>${event.id}</td>
                                         <td>${event.name}</td>
                                         <td>${event.location}</td>
                                         <td>${event.dateFrom.toString()}</td>
                                         <td>${event.dateTo.toString()}</td>
-                                        <td><a href="/editEvent?id=<c:out value='${event.id}'/>">Edit</a></td>
-                                        <td><a href="/deleteEvent?id=<c:out value='${event.id}'/>">Delete</a></td>
+                                        <td><a href="/events/edit?id=<c:out value='${event.id}'/>">Edit</a></td>
+                                        <td><a href="/events/delete?id=<c:out value='${event.id}'/>">Delete</a></td>
                                     </tr>
                                 </c:forEach>
                             </tbody>

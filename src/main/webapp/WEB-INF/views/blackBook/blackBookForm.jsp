@@ -25,8 +25,7 @@
                                             value="${blackBookObject.clientMac}"/>
                             </div>
                             <div class="form-group">
-                                <p><span class="form-group_red">* </span> - Поле обязательное
-                                    для заполнения</p>
+                                <p><span class="form-group_red">* </span> - Required field</p>
                             </div>
                             <div class="form-group">
                                 <input type="submit" id="saveBlackBook" class="btn btn-primary button incorrect" value="Save"/>

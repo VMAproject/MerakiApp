@@ -19,4 +19,6 @@ public interface EventService {
 
     List<Event> getAllEvents(String eventName);
 
+    boolean existsEventById(long id);
+
 }

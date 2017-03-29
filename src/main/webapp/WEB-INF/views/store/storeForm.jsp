@@ -41,8 +41,7 @@
                         </div>
 
                         <div class="form-group">
-                            <p><span class="form-group_red">* </span> - Поле обязательное
-                                для заполнения</p>
+                            <p><span class="form-group_red">* </span> - Required field</p>
                         </div>
 
                         <div class="form-group">
