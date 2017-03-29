@@ -20,11 +20,13 @@ public class RouterDaoImpl implements RouterDao {
 
     @Override
     public long createRouter(Router router) {
+        logger.info("*** Router Dao *** create Router => " + router);
         return (Long) hibernateUtil.create(router);
     }
 
     @Override
     public Router updateRouter(Router router) {
+        logger.info("*** Router Dao *** update Router =>" + router);
         return hibernateUtil.update(router);
     }
 
@@ -32,16 +34,19 @@ public class RouterDaoImpl implements RouterDao {
     public void deleteRouter(long id) {
         Router router = new Router();
         router.setId(id);
+        logger.info("*** Router Dao *** delete Router for ID => " + id);
         hibernateUtil.delete(router);
     }
 
     @Override
     public List<Router> getAllRouters() {
+        logger.info("*** Router Dao *** get All Routers =>" + Router.class);
         return hibernateUtil.fetchAll(Router.class);
     }
 
     @Override
     public Router getRouter(long id) {
+        logger.info("*** Router Dao *** get Router for ID =>" + id + Router.class);
         return hibernateUtil.fetchById(id, Router.class);
     }
 }

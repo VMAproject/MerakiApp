@@ -10,9 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Verlamov on 22.03.17.
- */
 
 @Service
 @Transactional
