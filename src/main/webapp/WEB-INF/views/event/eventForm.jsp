@@ -13,7 +13,7 @@
                         <form action="/events/create" method="get">
 
                             <div class="panel-title panel-title_bottom"><h1>Event Details</h1></div>
-
+                            <input type="hidden" value="${eventId}" name="eventId" />
                             <div class="form-group">
                                 <label for="name"><span class="form-group_red">* </span> name:</label>
                                 <input id="name" class="form-control" type="text" name="name"/>

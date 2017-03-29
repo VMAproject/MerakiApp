@@ -39,7 +39,7 @@
                                 <p class="error">You haven't available routers</p>
                             </c:if>
                         </div>
-                        
+
                         <div class="form-group">
                             <p><span class="form-group_red">* </span> - Поле обязательное
                                 для заполнения</p>
