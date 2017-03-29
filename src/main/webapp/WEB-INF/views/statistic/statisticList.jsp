@@ -15,24 +15,27 @@
                     <div class="panel-add"><a href="#">Add Statistic if need</a></div>
                 </div>
                 <div class="panel-body">
-                    <div class="form-group">
-                        <form action="/statistic/select/event" method="get">
-                            <select class="selectpicker" name="id">
+
+                        <form action="/statistic/select/event" method="post">
+                            <div class="form-group">
+                            <select class="selectpicker" name="id" id="event">
                                 <c:forEach items="${events}" var="event">
                                     <option value="${event.id}">${event.name}</option>
                                 </c:forEach>
                             </select>
                             <input type="submit" id="sendEvent" class="btn btn-primary button" value="Apply"/>
+                            </div>
+                            <div class="form-group">
+                                <select class="selectpicker" name="id" id="store">
+                                    <c:forEach items="${stores}" var="store">
+                                        <option value="${store.id}">${store.name}</option>
+                                    </c:forEach>
+                                </select>
+                                <input type="submit" id="sendStore" class="btn btn-primary button" value="Apply"/>
+                            </div>
+                            <button class="btn btn-primary" id="compare">Compare</button>
                         </form>
-                        <form action="/statistic/select/store" method="get">
-                            <select class="selectpicker" name="id">
-                                <c:forEach items="${stores}" var="store">
-                                    <option value="${store.id}">${store.name}</option>
-                                </c:forEach>
-                            </select>
-                            <input type="submit" id="sendStore" class="btn btn-primary button" value="Apply"/>
                             <h2 class="panel-add">Items: ${amount}</h2>
-                        </form>
                     </div>
                     <c:if test="${empty observations}">
                         There are no Event
@@ -76,6 +79,20 @@
         <script>
             $(function () {
                 $('#statistic').addClass('active');
+            });
+            $('#compare').click(function () {
+                var event = $('#event').val();
+                var store = $('#store').val();
+                $.ajax({
+                    method: "POST",
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    url: "/compare",
+                    data: {
+                        "eventId": JSON.stringify(event),
+                        "storeId": JSON.stringify(store)
+                    }
+                })
             });
         </script>
 
