@@ -60,7 +60,7 @@ public class EventController {
         model.addAttribute("eventName", event.getName());
         model.addAttribute("eventLocation", event.getLocation());
         model.addAttribute("eventDateFrom", event.getDateFrom());
-        model.addAttribute("eventTo", event.getDateTo());
+        model.addAttribute("eventDateTo", event.getDateTo());
         model.addAttribute("routers", routerService.getAllRouters());
 
         return "event/eventForm";
