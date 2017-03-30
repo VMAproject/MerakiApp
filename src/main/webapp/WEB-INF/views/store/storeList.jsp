@@ -35,7 +35,6 @@
                             </div>
                         </form>
 
-                        <h2>All Stores</h2>
                         <table border="1" class="table table-hover table-bordered">
                             <thead style="background-color: #bce8f1;">
                                 <tr>

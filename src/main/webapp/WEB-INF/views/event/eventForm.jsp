@@ -16,22 +16,22 @@
                         <input type="hidden" value="${eventId}" name="eventId"/>
                         <div class="form-group">
                             <label for="name"><span class="form-group_red">* </span> name:</label>
-                            <input id="name" class="form-control" type="text" name="name"/>
+                            <input id="name" class="form-control" type="text" name="name" value=""/>
                         </div>
 
                         <div class="form-group">
                             <label for="location"><span class="form-group_red">* </span>location:</label>
-                            <input id="location" class="form-control" type="text" name="location"/>
+                            <input id="location" class="form-control" type="text" name="location" value=""/>
                         </div>
 
                         <div class="form-group">
                             <label for="dateFrom"><span class="form-group_red">* </span>dateFrom:</label>
-                            <input id="dateFrom" type="date" class="form-control" name="dateFrom"/>
+                            <input id="dateFrom" type="date" class="form-control" name="dateFrom" value=""/>
                         </div>
 
                         <div class="form-group">
                             <label for="dateTo"><span class="form-group_red">* </span>dateTo:</label>
-                            <input id="dateTo" type="date" class="form-control" name="dateTo"/></p>
+                            <input id="dateTo" type="date" class="form-control" name="dateTo" value=""/></p>
                         </div>
 
                         <div class="form-group">

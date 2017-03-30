@@ -14,8 +14,6 @@ $(function() {
 
         // Функция проверки полей формы
         function checkInput(){
-            // var select = form.find('.empty_field .selectpicker :selected').val();
-            // console.log(select);
             form.find('.form-control').each(function(){
                 if($(this).val() != ''){
                     // Если поле не пустое удаляем класс-указание
