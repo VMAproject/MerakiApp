@@ -28,7 +28,7 @@
                                     <div class="input-group bottom-space">
                                         <input type="text" class="form-control" placeholder="Search for...">
                                         <span class="input-group-btn">
-                                            <input class="btn btn-primary" type='submit' value='Search'/>
+                                            <input class="btn btn-success" type='submit' value='Search'/>
                                         </span>
                                     </div><!-- /input-group -->
                                 </div>
