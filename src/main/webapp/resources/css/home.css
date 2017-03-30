@@ -21,5 +21,16 @@
 }
 
 .myrow-container .table tbody {
-    background-color: #f9f9f9;
+    background-color: #FFFFFF;
+}
+
+.btn-success {
+    background-color: #78be20 !important;
+    border-color: #78be20 !important;
+}
+
+.btn-success:active,
+.btn-success:hover {
+    background-color: #71b31e !important;
+    border-color: #71b31e !important;
 }
