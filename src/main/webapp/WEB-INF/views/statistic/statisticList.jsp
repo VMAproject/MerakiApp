@@ -7,8 +7,9 @@
     <jsp:body>
         <div class="container-fluid myrow-container">
             <div class="form">
-                <div class="panel-heading">
-                    <div>
+                <div class="row">
+                    <div class="col-lg-offset-1 col-md-offset-1
+                     col-lg-5 col-sm-5 col-sm-5">
                         <div class="panel-title"><h1>Statistics</h1></div>
                     </div>
                 </div>
@@ -63,7 +64,12 @@
                         </form>
                     </div>
                 </div>
-                <h2 class="center-block item_bottom">Items: ${amount}</h2>
+                <div class="row">
+                    <div  class="col-lg-offset-1 col-md-offset-1
+                     col-lg-5 col-sm-5 col-sm-5">
+                        <h2 class="item_padding">Items: ${amount}</h2>
+                    </div>
+                </div>
                 <c:if test="${not empty observations}">
                     <table class="table table-hover table-bordered">
                         <thead style="background-color: #bce8f1;">

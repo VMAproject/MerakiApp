@@ -4,6 +4,7 @@
 /*if we will do new site this styles contain in new folder*/
 .panel-title {
     display: inline-block;
+    padding-left: 15px;
 }
 
 .panel-add {
