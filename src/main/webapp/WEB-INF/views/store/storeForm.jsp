@@ -10,26 +10,27 @@
             <div class="panel-body">
                 <div class="container panel-body-group">
 
-                    <form action="/stores/create" method="get" class="adding-form">
+                    <form action="/stores/createOrUpdate" method="get" class="adding-form">
 
                         <div class="panel-title panel-title_bottom"><h1>Store Details</h1></div>
-
+                        <input type="hidden" value="${storeId}" name="storeId"/>
                         <div class="form-group">
                             <label for="name"><span class="form-group_red">* </span> name:</label>
-                            <input id="name" class="form-control" type="text" name="name"/>
+                            <input id="name" class="form-control" type="text" name="name" value="${storeName}"/>
                         </div>
 
                         <div class="form-group">
                             <label for="location"><span class="form-group_red">* </span>
                                 location:</label>
-                            <input id="location" class="form-control" type="text" name="location"/></p>
+                            <input id="location" class="form-control" type="text" name="location"
+                                   value="${storeLocation}"/></p>
                         </div>
 
                         <div class="form-group">
                             <label for="id"><span class="form-group_red">* </span>
                                 router:</label>
                             <c:if test="${not empty routers}">
-                                <select class="selectpicker form-control" name="id" id="id">
+                                <select class="selectpicker form-control" name="routerId" id="id">
                                     <c:forEach items="${routers}" var="router">
                                         <option value="${router.id}">${router.routerName}</option>
                                     </c:forEach>

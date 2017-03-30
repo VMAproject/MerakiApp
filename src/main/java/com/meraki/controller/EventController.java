@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -74,8 +73,8 @@ public class EventController {
                                       @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dateTo,
                                       @RequestParam long routerId) {
 
+        Event event = new Event();
         if (eventId.isEmpty()) {
-            Event event = new Event();
             event.setName(name);
             event.setLocation(location);
             event.setDateFrom(dateFrom);
@@ -86,7 +85,6 @@ public class EventController {
             router.setEvent(event);
             routerService.updateRouter(router);
         } else {
-            Event event = new Event();
             event.setId(new Long(eventId));
             event.setName(name);
             event.setLocation(location);
