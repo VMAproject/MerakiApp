@@ -170,15 +170,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
-                                    class="fa fa-search"></i></button>
-                          </span>
-                </div>
-            </form>
+            <%--<form action="#" method="get" class="sidebar-form">--%>
+                <%--<div class="input-group">--%>
+                    <%--<input type="text" name="q" class="form-control" placeholder="Search...">--%>
+                    <%--<span class="input-group-btn">--%>
+                            <%--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i--%>
+                                    <%--class="fa fa-search"></i></button>--%>
+                          <%--</span>--%>
+                <%--</div>--%>
+            <%--</form>--%>
             <!-- /.search form -->
 
             <!-- Sidebar Menu -->
@@ -197,11 +197,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li id="shop"><a href="<c:url value='/stores/all' />"/><i
                         class="fa fa-shopping-cart"></i><span>Stores</span></a>
                 </li>
-                <li id="router"><a href="<c:url value='/routers/all' />"/><i
-                        class="fa fa-signal"></i><span>Routers</span></a>
-                </li>
                 <li id="statistic"><a href="<c:url value='/statistic/all' />"/><i
                         class="fa fa-pie-chart"></i><span>Statistic</span></a>
+                </li>
+                <li id="router"><a href="<c:url value='/routers/all' />"/><i
+                        class="fa fa-signal"></i><span>Routers</span></a>
                 </li>
                 <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i
                         class="fa fa-file-text"></i><span>Black list</span></a>
@@ -245,18 +245,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="b-popup" id="popup1">
     <div class="b-popup-content">
         <input type="button" onclick="PopUpToggle()" class="great_btn">
-        <div class="container">
-            <img src="${contextPath}/resources/images/faq/Android_1.webp" alt="Android-step1">
-        </div>
-        <div class="container">
-            <b>Подключитесь к сети</b>
-            Это способ будет работать только при активном подключении к интерфейсу, который нуждается
-            в МАС-адресе (Wi-Fi, если вам нужен MAC-адрес карты беспроводной связи; Ethernet, если вам
-            нужен MAC-адрес проводной карты).
-        </div>
-        <div class="container">
-            <img src="${contextPath}/resources/images/faq/Android_2.webp" alt="Android-step2">
-        </div>
+        <h2>WindowsVista</h2>
+        <img src="${contextPath}/resources/images/faq/windowsVista_1.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_2.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_3.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_4.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_5.webp">
+        <h2>WindowsXp</h2>
+        <img src="${contextPath}/resources/images/faq/WindowsXP_1.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_2.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_3.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_4.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_5.webp">
+        <h2>Android</h2>
+        <img src="${contextPath}/resources/images/faq/Android_1.webp">
+        <img src="${contextPath}/resources/images/faq/Android_2.webp">
+        <img src="${contextPath}/resources/images/faq/Android_3.webp">
+        <img src="${contextPath}/resources/images/faq/Android_4.webp">
+        <h2>Linux</h2>
+        <img src="${contextPath}/resources/images/faq/Linux_1.webp">
+        <img src="${contextPath}/resources/images/faq/Linux_2.webp">
+        <img src="${contextPath}/resources/images/faq/Linux_3.webp">
+        <h2>Mac 10-4</h2>
+        <img src="${contextPath}/resources/images/faq/Mac10-4_1.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-4_2.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-4_3.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-4_4.webp">
+        <h2>Mac 10-5</h2>
+        <img src="${contextPath}/resources/images/faq/Mac10-5_1.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-5_2.webp">
+        <h2>IOS</h2>
+        <img src="${contextPath}/resources/images/faq/IOS_1.webp">
+        <img src="${contextPath}/resources/images/faq/IOS_2.webp">
+        <img src="${contextPath}/resources/images/faq/IOS_3.webp">
+    </div>
     </div>
 </div>
 </body>

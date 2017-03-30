@@ -38,6 +38,7 @@
                                     </select>
                                     <button class="btn btn-success" id="sendStore">Apply</button>
                                 </div>
+                                <small>Choose an event and see unique customers</small>
                             </form>
                         </div>
                     </div>
@@ -61,6 +62,8 @@
                                 </select>
                             </div>
                             <button class="btn btn-success btn_width" id="compare">Compare</button>
+                                <small class="bottom">Here you can get information about the number of
+                                    customers who visited your store after the event</small>
                         </form>
                     </div>
                 </div>
