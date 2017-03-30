@@ -8,36 +8,40 @@
         <div class="container-fluid myrow-container">
             <div class="form">
                 <div class="panel-heading">
-                    <div class="panel-title"><h1>Statistics</h1></div>
+                    <div>
+                        <div class="panel-title"><h1>Statistics</h1></div>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-sm-6">
+                    <div class="col-lg-offset-1 col-md-offset-1
+                     col-lg-5 col-sm-5 col-sm-5">
                         <div class="panel-body">
                             <form action="/statistic/select/event" method="get">
-                                <div class="form-group">
-                                    <label for="eventApply">Event</label>
-                                    <select class="selectpicker form-control" name="eventId" id="eventApply">
+                                <label for="eventApply">Event</label>
+                                <div class="form-group form-group-width">
+                                    <select class="selectpicker" name="eventId" id="eventApply">
                                         <c:forEach items="${events}" var="event">
                                             <option value="${event.id}">${event.name}</option>
                                         </c:forEach>
                                     </select>
+                                    <button class="btn btn-success" id="sendEvent">Apply</button>
                                 </div>
-                                <button class="btn btn-primary" id="sendEvent">Compare</button>
                             </form>
                             <form action="/statistic/select/store" method="get">
-                                <div class="form-group">
-                                    <label for="storeApply">Store</label>
-                                    <select class="selectpicker form-control" name="storeId" id="storeApply">
+                                <label for="storeApply">Store</label>
+                                <div class="form-group form-group-width">
+                                    <select class="selectpicker" name="storeId" id="storeApply">
                                         <c:forEach items="${stores}" var="store">
                                             <option value="${store.id}">${store.name}</option>
                                         </c:forEach>
                                     </select>
+                                    <button class="btn btn-success" id="sendStore">Apply</button>
                                 </div>
-                                <button class="btn btn-primary" id="sendStore">Compare</button>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-6 col-sm-6">
+                    <div class="col-lg-offset-1 col-md-offset-1
+                     col-lg-4 col-sm-4 col-sm-4">
                         <form action="/statistic/compare" method="get" class="panel-body">
                             <div class="form-group">
                                 <label for="eventCompare">Event</label>
@@ -55,7 +59,7 @@
                                     </c:forEach>
                                 </select>
                             </div>
-                            <button class="btn btn-primary" id="compare">Compare</button>
+                            <button class="btn btn-success btn_width" id="compare">Compare</button>
                         </form>
                     </div>
                 </div>

@@ -4867,3 +4867,11 @@ nav {
   color: red;
   padding-top: 10px;
 }
+
+.form .btn_width {
+  width: 100%;
+}
+
+.panel-body .form-group-width {
+  min-width: 300px;
+}

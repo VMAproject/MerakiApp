@@ -47,18 +47,18 @@
                     </c:if>
                     <c:if test="${not empty events}">
 
-                        <form action="/searchEvent">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group bottom-space">
-                                        <input type="text" class="form-control" placeholder="Search for...">
-                                        <span class="input-group-btn">
-                                            <input class="btn btn-success" type='submit' value='Search'/>
-                                        </span>
-                                    </div><!-- /input-group -->
-                                </div>
-                            </div>
-                        </form>
+                        <%--<form action="/searchEvent">--%>
+                            <%--<div class="row">--%>
+                                <%--<div class="col-md-6">--%>
+                                    <%--<div class="input-group bottom-space">--%>
+                                        <%--<input type="text" class="form-control" placeholder="Search for...">--%>
+                                        <%--<span class="input-group-btn">--%>
+                                            <%--<input class="btn btn-success" type='submit' value='Search'/>--%>
+                                        <%--</span>--%>
+                                    <%--</div><!-- /input-group -->--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</form>--%>
 
                         <table class="table table-hover table-bordered">
                             <thead>

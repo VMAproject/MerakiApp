@@ -8,9 +8,6 @@
     <jsp:body>
 
         <div class="container-fluid myrow-container">
-            <div class="breadcrumbs">
-                <a href="/">Back to main page</a>
-            </div>
             <div class="form">
                 <div class="panel-heading">
                     <div class="panel-title"><h1>All Stores</h1></div>
@@ -22,18 +19,18 @@
                     </c:if>
                     <c:if test="${not empty stores}">
 
-                        <form action="/searchEvent">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group bottom-space">
-                                        <input type="text" class="form-control" placeholder="Search for...">
-                                        <span class="input-group-btn">
-                                            <input class="btn btn-success" type='submit' value='Search'/>
-                                        </span>
-                                    </div><!-- /input-group -->
-                                </div>
-                            </div>
-                        </form>
+                        <%--<form action="/searchEvent">--%>
+                            <%--<div class="row">--%>
+                                <%--<div class="col-md-6">--%>
+                                    <%--<div class="input-group bottom-space">--%>
+                                        <%--<input type="text" class="form-control" placeholder="Search for...">--%>
+                                        <%--<span class="input-group-btn">--%>
+                                            <%--<input class="btn btn-success" type='submit' value='Search'/>--%>
+                                        <%--</span>--%>
+                                    <%--</div><!-- /input-group -->--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</form>--%>
 
                         <table border="1" class="table table-hover table-bordered">
                             <thead>
