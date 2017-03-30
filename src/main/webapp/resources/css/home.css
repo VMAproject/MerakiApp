@@ -7,7 +7,19 @@
 .form {
     position: relative;
     z-index: 1;
-    background: #FFFFFF;
+    background: url(../images/black-thread.jpg) #FFFFFF;
     margin: 0 auto 20px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form h1 {
+    color: #78be20;
+}
+
+.myrow-container .table thead {
+    background-color: #dddddd;
+}
+
+.myrow-container .table tbody {
+    background-color: #f9f9f9;
 }

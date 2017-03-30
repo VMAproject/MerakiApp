@@ -11,6 +11,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "observation")
 public class Observation implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -40,11 +41,11 @@ public class Observation implements Serializable {
     @Column(name = "seenEpoch")
     private int seenEpoch;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "seenTime")
     private Date seenTime;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "router_id")
     private Router router;
 

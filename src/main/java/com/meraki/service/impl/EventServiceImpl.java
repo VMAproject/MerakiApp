@@ -3,6 +3,8 @@ package com.meraki.service.impl;
 import com.meraki.dao.interfaces.EventDao;
 import com.meraki.entity.Event;
 import com.meraki.service.interfaces.EventService;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,5 +48,10 @@ public class EventServiceImpl implements EventService {
     @Override
     public List<Event> getAllEvents(String eventName) {
         return eventDao.getAllEvents(eventName);
+    }
+
+    @Override
+    public boolean existsEventById(long id) {
+        return eventDao.existsEventById(id);
     }
 }

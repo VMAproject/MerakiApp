@@ -14,7 +14,7 @@
             <div class="form">
                 <div class="panel-heading">
                     <div class="panel-title"><h1>All Stores</h1></div>
-                    <div class="panel-add"><a href="/stores/add">Add Store</a></div>
+                    <div class="panel-add"><a href="/stores/add">Add New Store</a></div>
                 </div>
                 <div class="panel-body">
                     <c:if test="${empty stores}">
@@ -35,9 +35,8 @@
                             </div>
                         </form>
 
-                        <h2>All Stores</h2>
                         <table border="1" class="table table-hover table-bordered">
-                            <thead style="background-color: #bce8f1;">
+                            <thead>
                                 <tr>
                                     <th>id</th>
                                     <th>name</th>

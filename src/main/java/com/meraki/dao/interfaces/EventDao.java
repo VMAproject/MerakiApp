@@ -6,17 +6,18 @@ import java.util.List;
 
 public interface EventDao {
 
-     long createEvent(Event event);
+    long createEvent(Event event);
 
-     Event updateEvent(Event event);
+    Event updateEvent(Event event);
 
-     void deleteEvent(long id);
+    void deleteEvent(long id);
 
-     List<Event> getAllEvents();
+    List<Event> getAllEvents();
 
-     Event getEvent(long id);
+    Event getEvent(long id);
 
-     List<Event> getAllEvents(String eventName);
+    List<Event> getAllEvents(String eventName);
 
+    boolean existsEventById(long id);
 
 }

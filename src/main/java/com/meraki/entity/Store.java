@@ -23,6 +23,6 @@ public class Store implements Serializable {
     @Column(name = "location")
     private String location;
 
-    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "store")
     private Set<Router> routers = new HashSet<>();
 }

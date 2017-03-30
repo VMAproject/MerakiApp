@@ -3,7 +3,6 @@ package com.meraki.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @Entity
 @Table(name = "apTag")
 public class ApTag implements Serializable{
@@ -16,7 +15,7 @@ public class ApTag implements Serializable{
     @Column(name = "apTags")
     private String apTags;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "router_id")
     private Router router;
 

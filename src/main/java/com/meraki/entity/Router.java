@@ -25,23 +25,21 @@ public class Router implements Serializable {
     @Column(name = "router_name")
     private String routerName;
 
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "store_id")
-    private Store store;
-
-    @ManyToOne( optional = true, cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "event_id")
     private Event event;
 
-    @OneToMany(mappedBy = "router", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToOne()
+    @JoinColumn(name = "store_id")
+    private Store store;
+
+    @OneToMany(mappedBy = "router")
     private Set<Observation> observations = new HashSet<>();
 
-    @OneToMany(mappedBy = "router", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "router")
     private Set<ApTag> apTags = new HashSet<>();
 
-    @OneToMany(mappedBy = "router", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "router")
     private Set<ApFloor> apFloors = new HashSet<>();
-
 
 }
