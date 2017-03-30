@@ -38,6 +38,8 @@
                                     <th>id</th>
                                     <th>name</th>
                                     <th>location</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <c:forEach items="${stores}" var="store">
@@ -45,6 +47,8 @@
                                     <td>${store.id}</td>
                                     <td>${store.name}</td>
                                     <td>${store.location}</td>
+                                    <td><a href="/stores/edit?id=<c:out value='${store.id}'/>">Edit</a></td>
+                                    <td><a href="/stores/delete?id=<c:out value='${store.id}'/>">Delete</a></td>
                                 </tr>
                             </c:forEach>
                         </table>
