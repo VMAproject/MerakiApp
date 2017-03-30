@@ -9,7 +9,7 @@
             <div class="form">
                 <div class="row">
                     <div class="col-lg-offset-1 col-md-offset-1
-                     col-lg-5 col-sm-5 col-sm-5">
+                     col-lg-10 col-sm-10 col-sm-10">
                         <div class="panel-title"><h1>Statistics</h1></div>
                     </div>
                 </div>
