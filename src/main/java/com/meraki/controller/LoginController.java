@@ -2,6 +2,8 @@ package com.meraki.controller;
 
 import com.meraki.entity.User;
 import com.meraki.service.interfaces.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.Authentication;
@@ -22,6 +24,8 @@ import java.util.Map;
 
 @Controller
 public class LoginController {
+
+    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     private PasswordEncoder passwordEncoder;
 
@@ -44,6 +48,9 @@ public class LoginController {
         return "login";
     }
 
+
+    //====================================== Methods ==============================================
+
     @ResponseBody
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public Map<String, Object> registration(@RequestBody User user) {
@@ -63,10 +70,12 @@ public class LoginController {
         if (save) {
             response.put("success", true);
             response.put("message", "Registration Success");
+            logger.info("*** Login Controller || Registration Success ***");
             return response;
         } else {
             response.put("error", true);
             response.put("message", "Registration Failed");
+            logger.info("*** Login Controller || Registration Failed ***");
             return response;
         }
     }

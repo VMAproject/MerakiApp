@@ -25,6 +25,31 @@ import java.util.Properties;
 @PropertySource("classpath:database.properties")
 public class HibernateConfig {
 
+
+    //======================================== Database properties======================================================
+    private static final String DATABASE_DRIVER = "database.driver";
+    private static final String DATABASE_URL = "database.url";
+    private static final String DATABASE_USERNAME = "database.username";
+    private static final String DATABASE_PASSWORD = "database.password";
+    private static final String ENTITY_MANAGER_PACKAGES_TO_SCAN = "packagesToScan";
+
+    //=========================================== Hibernate properties==================================================
+    private static final String HIBERNATE_DIALECT = "hibernate.dialect";
+    private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+    private static final String HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
+    private static final String HIBERNATE_ENABLE_LAZY_LOAD_NO_TRANS = "hibernate.enable_lazy_load_no_trans";
+
+    //===================================== 光 HikariCP properties =====================================================
+    private static final String POOL_NAME = "PoolName";
+    private static final String MAXIMUM_POOL_SIZE =  "MaximumPoolSize";
+    private static final String HIKARI_CONNECTION_TEST_QUERY = "hikari.ConnectionTestQuery";
+    private static final String DATA_SOURCE_CACHE_PREP_STMTS = "dataSource.cachePrepStmts";
+    private static final String DATA_SOURCE_PREP_STMT_CACHE_SIZE = "dataSource.prepStmtCacheSize";
+    private static final String DATA_SOURCE_PREP_STMT_CACHE_SQL_LIMIT = "dataSource.prepStmtCacheSqlLimit";
+    private static final String DATA_SOURCE_USE_SERVER_PREP_STMTS = "dataSource.useServerPrepStmts";
+
+
+
     @Autowired
     private Environment environment;
 
@@ -36,8 +61,8 @@ public class HibernateConfig {
     @Bean
     public SessionFactory sessionFactory() {
         LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
-        localSessionFactoryBean.setDataSource(getDataSource());
-        localSessionFactoryBean.setPackagesToScan("com.meraki");
+        localSessionFactoryBean.setDataSource(dataSource());
+        localSessionFactoryBean.setPackagesToScan(environment.getRequiredProperty(ENTITY_MANAGER_PACKAGES_TO_SCAN));
         localSessionFactoryBean.setHibernateProperties(hibernateProperties());
         try {
             localSessionFactoryBean.afterPropertiesSet();
@@ -48,40 +73,30 @@ public class HibernateConfig {
     }
 
 
-    @Bean
-    public DataSource getDataSource() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(environment.getProperty("database.driver"));
-        dataSource.setUrl(environment.getProperty("database.url"));
-        dataSource.setUsername(environment.getProperty("database.root"));
-        dataSource.setPassword(environment.getProperty("database.password"));
+
+
+
+    //// Hikari CP 光 CONFIG
+    @Bean(destroyMethod = "close")
+    public DataSource dataSource() {
+        HikariConfig hikariConfig = new HikariConfig();
+        hikariConfig.setDriverClassName(environment.getProperty(DATABASE_DRIVER));
+        hikariConfig.setJdbcUrl(environment.getProperty(DATABASE_URL));
+        hikariConfig.setUsername(environment.getProperty(DATABASE_USERNAME));
+        hikariConfig.setPassword(environment.getProperty(DATABASE_PASSWORD));
+
+        hikariConfig.setMaximumPoolSize(Integer.parseInt(environment.getProperty(MAXIMUM_POOL_SIZE)));
+        hikariConfig.setConnectionTestQuery(environment.getProperty(HIKARI_CONNECTION_TEST_QUERY));
+        hikariConfig.setPoolName(environment.getProperty(POOL_NAME));
+
+        hikariConfig.addDataSourceProperty(DATA_SOURCE_CACHE_PREP_STMTS,environment.getRequiredProperty(DATA_SOURCE_CACHE_PREP_STMTS));
+        hikariConfig.addDataSourceProperty(DATA_SOURCE_PREP_STMT_CACHE_SIZE,environment.getRequiredProperty(DATA_SOURCE_PREP_STMT_CACHE_SIZE));
+        hikariConfig.addDataSourceProperty(DATA_SOURCE_PREP_STMT_CACHE_SQL_LIMIT,environment.getRequiredProperty(DATA_SOURCE_PREP_STMT_CACHE_SQL_LIMIT));
+        hikariConfig.addDataSourceProperty(DATA_SOURCE_USE_SERVER_PREP_STMTS,environment.getRequiredProperty(DATA_SOURCE_USE_SERVER_PREP_STMTS));
+
+        HikariDataSource dataSource = new HikariDataSource(hikariConfig);
         return dataSource;
     }
-
-
-//// heraki CONFIG
-//    @Bean(destroyMethod = "close")
-//    public DataSource dataSource(){
-//        HikariConfig hikariConfig = new HikariConfig();
-//        hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
-//        hikariConfig.setJdbcUrl("jdbc:mysql://localhost:3306/meraki_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-////        hikariConfig.setJdbcUrl("jdbc:mysql://10.103.185.145:3306/meraki_db");
-//        hikariConfig.setUsername("root");
-//        hikariConfig.setPassword("root");
-////        hikariConfig.setPassword("D120d10k83");
-//
-//        hikariConfig.setMaximumPoolSize(5);
-//        hikariConfig.setConnectionTestQuery("SELECT 1");
-//        hikariConfig.setPoolName("springHikariCP");
-//
-//        hikariConfig.addDataSourceProperty("dataSource.cachePrepStmts", "true");
-//        hikariConfig.addDataSourceProperty("dataSource.prepStmtCacheSize", "250");
-//        hikariConfig.addDataSourceProperty("dataSource.prepStmtCacheSqlLimit", "2048");
-//        hikariConfig.addDataSourceProperty("dataSource.useServerPrepStmts", "true");
-//
-//        HikariDataSource dataSource = new HikariDataSource(hikariConfig);
-//        return dataSource;
-//    }
 
     @Bean
     public HibernateTransactionManager hibernateTransactionManager() {
@@ -90,11 +105,22 @@ public class HibernateConfig {
 
     private Properties hibernateProperties() {
         Properties properties = new Properties();
-        properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
-        properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
-        properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
-        properties.put("hibernate.enable_lazy_load_no_trans", "true");
+        properties.put(HIBERNATE_DIALECT, environment.getProperty(HIBERNATE_DIALECT));
+        properties.put(HIBERNATE_HBM2DDL_AUTO, environment.getProperty(HIBERNATE_HBM2DDL_AUTO));
+        properties.put(HIBERNATE_SHOW_SQL, environment.getProperty(HIBERNATE_SHOW_SQL));
+        properties.put(HIBERNATE_ENABLE_LAZY_LOAD_NO_TRANS, environment.getRequiredProperty(HIBERNATE_ENABLE_LAZY_LOAD_NO_TRANS));
         properties.put("hibernate.hbm2ddl.import_files", "import.sql");
         return properties;
     }
+
+
+    //    @Bean
+//    public DataSource dataSource() {
+//        BasicDataSource dataSource = new BasicDataSource();
+//        dataSource.setDriverClassName(environment.getProperty("database.driver"));
+//        dataSource.setUrl(environment.getProperty("database.url"));
+//        dataSource.setUsername(environment.getProperty("database.root"));
+//        dataSource.setPassword(environment.getProperty("database.password"));
+//        return dataSource;
+//    }
 }

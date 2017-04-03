@@ -21,7 +21,7 @@
                     <c:if test="${not empty blackBookList}">
 
                         <table class="table table-hover table-bordered">
-                            <thead style="background-color: #bce8f1;">
+                            <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>

@@ -40,6 +40,10 @@ public class HomeController {
         this.response = response;
     }
 
+
+
+    //====================================== Methods ==============================================
+
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -48,13 +52,8 @@ public class HomeController {
             User user = userService.getUserByUsername(username);
             response.setAttribute("user", user);
         }
-        log.info("Welcome home! ");
+        log.info("*** Home Controller *** ||| Welcome home! ||| ");
         return "home";
     }
-
-//    @RequestMapping(value = "/eventList", method = RequestMethod.GET)
-//    public String goEvents() {
-//        return "eventList";
-//    }
 
 }

@@ -1,16 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Verlamov
-  Date: 23.03.17
-  Time: 15:37
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -18,23 +5,90 @@
 <%@ include file="/WEB-INF/tags/layout/includes.jsp" %>
 <t:dashboard>
 
-    <p><a href="/">Back to main page</a>
-    <p><a href="/stores/all">Look all Events</a>
+    <div class="container-fluid myrow-container">
+        <div class="form">
+            <div class="panel-body">
+                <div class="container panel-body-group">
 
-    <h2>Add Event</h2>
-    <form action="/storesname">name:</label>
-    <input id="name" type="text" name="name"/></p>
+                    <form action="/stores/createOrUpdate" method="get" class="adding-form">
 
-    <p><label for="location">location:</label>
-    <input id="location" type="text" name="location"/></p>
+                        <div class="panel-title panel-title_bottom"><h1>Store Details</h1></div>
+                        <input type="hidden" value="${storeId}" name="storeId"/>
+                        <div class="form-group">
+                            <label for="name"><span class="form-group_red">* </span> name:</label>
+                            <input id="name" class="form-control" type="text" name="name" value="${storeName}"/>
+                        </div>
 
-    <select name="id">
-    <c:forEach items="${allRouters}" var="router">
-        <option value="${router.id}">${router.routerName}</option>
-    </c:forEach>
-    </select>
+                        <div class="form-group">
+                            <label for="location"><span class="form-group_red">* </span>
+                                location:</label>
+                            <input id="location" class="form-control" type="text" name="location"
+                                   value="${storeLocation}"/></p>
+                        </div>
 
-    <p><input type="submit" value="Add"/></p>
-    </form>
-</body>
+                        <div class="form-group">
+                            <label for="id"><span class="form-group_red">* </span>
+                                router:</label>
+                            <c:if test="${not empty routers}">
+                                <select class="selectpicker form-control" name="routerId" id="id">
+                                    <c:forEach items="${routers}" var="router">
+                                        <option value="${router.id}">${router.routerName}</option>
+                                    </c:forEach>
+                                </select>
+                            </c:if>
+                            <c:if test="${empty routers}">
+                                <p class="error">You haven't available routers</p>
+                            </c:if>
+                        </div>
+
+                        <div class="form-group">
+                            <p><span class="form-group_red">* </span> - Required field</p>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" id="saveStore" class="btn btn-primary button incorrect" value="Save"/>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#shop').addClass('active');
+        });
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                locale: 'ru'
+            });
+        });
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                locale: 'ru'
+            });
+        });
+        function submitEventForm() {
+
+            var name = $('#name').val().trim();
+            var location = $('#location').val();
+
+            if (name <= 0) {
+                alert('Please enter name');
+                $('#name').focus();
+                return false;
+            }
+
+            if (location <= 0) {
+                alert('Please enter location');
+                $('#location').focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</t:dashboard>
 </html>

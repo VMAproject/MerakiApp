@@ -7,9 +7,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Verlamov on 23.03.17.
- */
 @Data
 @Entity
 @Table(name = "store")
@@ -26,6 +23,6 @@ public class Store implements Serializable {
     @Column(name = "location")
     private String location;
 
-    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "store")
     private Set<Router> routers = new HashSet<>();
 }

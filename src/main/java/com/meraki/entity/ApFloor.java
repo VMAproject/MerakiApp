@@ -3,9 +3,7 @@ package com.meraki.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by Verlamov on 21.03.17.
- */
+
 @Entity
 @Table(name = "apFloor")
 public class ApFloor implements Serializable {
@@ -18,7 +16,7 @@ public class ApFloor implements Serializable {
     @Column(name = "apFloors")
     private String apFloors;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "router_id")
     private Router router;
 }

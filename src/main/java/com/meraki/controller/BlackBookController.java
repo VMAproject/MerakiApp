@@ -16,8 +16,6 @@ import java.util.List;
 @Controller
 public class BlackBookController {
 
-    private static final Logger logger = Logger.getLogger(BlackBookController.class);
-
     private BlackBookService blackBookService;
 
     @Autowired
@@ -26,36 +24,33 @@ public class BlackBookController {
         this.blackBookService = blackBookService;
     }
 
+
+    //====================================== Methods ==============================================
+
     @RequestMapping("getAllBlackBookLists")
     public ModelAndView getAllBlackBook() {
         List<BlackBook> blackBookList = blackBookService.getAllBlackBooks();
-        logger.info("get all blakc book" + blackBookList);
         return new ModelAndView("blackBook/blackBookList", "blackBookList", blackBookList);
-
     }
 
     @RequestMapping("createBlackBook")
     public ModelAndView createBlackBook(@ModelAttribute BlackBook blackBook) {
-        logger.info("create black book " + blackBook);
         return new ModelAndView("blackBook/blackBookForm");
     }
 
     @RequestMapping("editBlackBook")
     public ModelAndView editBlackBook(@RequestParam long id, @ModelAttribute BlackBook blackBook) {
         blackBook = blackBookService.getBlackBook(id);
-        logger.info("edit black book " + blackBook);
         return new ModelAndView("blackBook/blackBookForm", "blackBookObject", blackBook);
     }
 
     @RequestMapping("saveBlackBook")
     public ModelAndView saveBlackBook(@ModelAttribute BlackBook blackBook) {
-        logger.info("save black book" + blackBook);
         if (blackBook.getId() == 0) {
             blackBookService.createBlackBook(blackBook);
         } else {
             blackBookService.updateBlackBook(blackBook);
         }
-        logger.info("save black book " + blackBook);
 
         return new ModelAndView("redirect:getAllBlackBookLists");
     }
@@ -63,7 +58,6 @@ public class BlackBookController {
     @RequestMapping("deleteBlackBook")
     public ModelAndView deleteBlackBook(@RequestParam long id) {
         blackBookService.deleteBlackBook(id);
-        logger.info("delete blak book " + id);
         return new ModelAndView("redirect:getAllBlackBookLists");
     }
 
