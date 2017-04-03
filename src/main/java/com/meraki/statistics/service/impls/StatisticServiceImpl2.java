@@ -42,6 +42,7 @@ public class StatisticServiceImpl2 {
                 .setParameter("dateTo", event.getDateTo())
                 .list();
         transaction.commit();
+        session.close();
 
         resultList.addAll(loadedList);
 
@@ -67,6 +68,7 @@ public class StatisticServiceImpl2 {
                 .setParameter("id", id)
                 .list();
         transaction.commit();
+        session.close();
 
         return routers;
     }
@@ -76,6 +78,7 @@ public class StatisticServiceImpl2 {
         Transaction transaction = session.beginTransaction();
         Event event = (Event) session.createQuery("from Event where event_id = (:id)").setParameter("id", id).uniqueResult();
         transaction.commit();
+        session.close();
 
         return event;
     }
