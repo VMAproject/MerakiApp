@@ -21,17 +21,20 @@
 
                         <div class="form-group">
                             <label for="location"><span class="form-group_red">* </span>location:</label>
-                            <input id="location" class="form-control" type="text" name="location" value="${eventLocation}"/>
+                            <input id="location" class="form-control" type="text" name="location"
+                                   value="${eventLocation}"/>
                         </div>
 
                         <div class="form-group">
                             <label for="dateFrom"><span class="form-group_red">* </span>dateFrom:</label>
-                            <input id="dateFrom" type="date" class="form-control" name="dateFrom" value="${eventDateFrom}"/>
+                            <input id="dateFrom" type="date" class="form-control" name="dateFrom"
+                                   value="${eventDateFrom}"/>
                         </div>
 
                         <div class="form-group">
                             <label for="dateTo"><span class="form-group_red">* </span>dateTo:</label>
-                            <input id="dateTo" type="date" class="form-control" name="dateTo" value="${eventDateTo}"/></p>
+                            <input id="dateTo" type="date" class="form-control" name="dateTo"
+                                   value="${eventDateTo}"/></p>
                         </div>
 
                         <div class="form-group">

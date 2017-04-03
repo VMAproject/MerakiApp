@@ -62,13 +62,14 @@
                                 </select>
                             </div>
                             <button class="btn btn-success btn_width" id="compare">Compare</button>
-                                <small class="bottom">Here you can get information about the number of
-                                    customers who visited your store after the event</small>
+                            <small class="bottom">Here you can get information about the number of
+                                customers who visited your store after the event
+                            </small>
                         </form>
                     </div>
                 </div>
                 <div class="row">
-                    <div  class="col-lg-offset-1 col-md-offset-1
+                    <div class="col-lg-offset-1 col-md-offset-1
                      col-lg-5 col-sm-5 col-sm-5">
                         <h2 class="item_padding">Items: ${amount}</h2>
                     </div>
@@ -76,17 +77,17 @@
                 <c:if test="${not empty observations}">
                     <table class="table table-hover table-bordered">
                         <thead style="background-color: #bce8f1;">
-                            <tr>
-                                <th>clientMac</th>
-                                <th>ipv4</th>
-                                <th>ipv6</th>
-                                <th>ssid</th>
-                                <th>os</th>
-                                <th>manufacturer</th>
-                                <th>rssi</th>
-                                <th>seenEpoch</th>
-                                <th>seenTime</th>
-                            </tr>
+                        <tr>
+                            <th>clientMac</th>
+                            <th>ipv4</th>
+                            <th>ipv6</th>
+                            <th>ssid</th>
+                            <th>os</th>
+                            <th>manufacturer</th>
+                            <th>rssi</th>
+                            <th>seenEpoch</th>
+                            <th>seenTime</th>
+                        </tr>
                         </thead>
                         <c:forEach items="${observations}" var="observation">
                             <tr>

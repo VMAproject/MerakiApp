@@ -10,16 +10,18 @@
             <div class="form">
                 <div class="panel-body">
                     <div class="container panel-body-group">
-                        <form:form id="blackBookForm" cssClass="form-horizontal adding-form" modelAttribute="blackBook" method="post"
+                        <form:form id="blackBookForm" cssClass="form-horizontal adding-form" modelAttribute="blackBook"
+                                   method="post"
                                    action="saveBlackBook">
                             <div class="panel-title panel-title_bottom"><h1>Black List Details</h1></div>
                             <div class="form-group">
-                                    <form:label path="name"><span class="form-group_red">* </span>name</form:label>
-                                    <form:hidden path="id" value="${blackBookObject.id}"/>
-                                    <form:input cssClass="form-control" path="name" value="${blackBookObject.name}"/>
+                                <form:label path="name"><span class="form-group_red">* </span>name</form:label>
+                                <form:hidden path="id" value="${blackBookObject.id}"/>
+                                <form:input cssClass="form-control" path="name" value="${blackBookObject.name}"/>
                             </div>
                             <div class="form-group">
-                                <form:label path="clientMac" cssClass="control-label"><span class="form-group_red">* </span>
+                                <form:label path="clientMac" cssClass="control-label"><span
+                                        class="form-group_red">* </span>
                                     clientMac</form:label>
                                 <form:input cssClass="form-control" path="clientMac"
                                             value="${blackBookObject.clientMac}"/>
@@ -28,7 +30,8 @@
                                 <p><span class="form-group_red">* </span> - Required field</p>
                             </div>
                             <div class="form-group">
-                                <input type="submit" id="saveBlackBook" class="btn btn-primary button incorrect" value="Save"/>
+                                <input type="submit" id="saveBlackBook" class="btn btn-primary button incorrect"
+                                       value="Save"/>
                             </div>
                         </form:form>
                     </div>
@@ -40,26 +43,26 @@
             $(function () {
                 $('#blackList').addClass('active');
             });
-//            function submitBlackBookForm() {
-//
-//                // getting the employee form values
-//                var name = $('#name').val().trim();
-//                var clientMac = $('#clientMac').val();
-////        var salary = $('#salary').val();
-//                if (name.length == 0) {
-//                    alert('Please enter name');
-//                    $('#name').focus();
-//                    return false;
-//                }
-//
-//                if (clientMac <= 0) {
-//                    alert('Please enter clientMac');
-//                    $('#clientMac').focus();
-//                    return false;
-//                }
-//
-//                return true;
-//            }
+            //            function submitBlackBookForm() {
+            //
+            //                // getting the employee form values
+            //                var name = $('#name').val().trim();
+            //                var clientMac = $('#clientMac').val();
+            ////        var salary = $('#salary').val();
+            //                if (name.length == 0) {
+            //                    alert('Please enter name');
+            //                    $('#name').focus();
+            //                    return false;
+            //                }
+            //
+            //                if (clientMac <= 0) {
+            //                    alert('Please enter clientMac');
+            //                    $('#clientMac').focus();
+            //                    return false;
+            //                }
+            //
+            //                return true;
+            //            }
         </script>
 
     </jsp:body>

@@ -24,7 +24,7 @@
         /resources/images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="${contextPath}
         /resources/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="${contextPath}
+    <link rel="icon" type="image/png" sizes="192x192" href="${contextPath}
         /resources/images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="${contextPath}
         /resources/images/favicon/favicon-32x32.png">
@@ -137,7 +137,8 @@
 <%--FOOTER--%>
 <footer class="footer">
     <div class="container-fluid footer_bottom">
-        <p class="text-muted">Copyright &copy; 2017 by Verlamov Michail, Matushkin Rostyslav, Tsymbalenko Oleksandr, Mikhaylik Denis.
+        <p class="text-muted">Copyright &copy; 2017 by Verlamov Michail, Matushkin Rostyslav, Tsymbalenko Oleksandr,
+            Mikhaylik Denis.
             All rights reserved.</p>
     </div>
 </footer>

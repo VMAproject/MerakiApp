@@ -20,27 +20,27 @@
                     <c:if test="${not empty stores}">
 
                         <%--<form action="/searchEvent">--%>
-                            <%--<div class="row">--%>
-                                <%--<div class="col-md-6">--%>
-                                    <%--<div class="input-group bottom-space">--%>
-                                        <%--<input type="text" class="form-control" placeholder="Search for...">--%>
-                                        <%--<span class="input-group-btn">--%>
-                                            <%--<input class="btn btn-success" type='submit' value='Search'/>--%>
-                                        <%--</span>--%>
-                                    <%--</div><!-- /input-group -->--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
+                        <%--<div class="row">--%>
+                        <%--<div class="col-md-6">--%>
+                        <%--<div class="input-group bottom-space">--%>
+                        <%--<input type="text" class="form-control" placeholder="Search for...">--%>
+                        <%--<span class="input-group-btn">--%>
+                        <%--<input class="btn btn-success" type='submit' value='Search'/>--%>
+                        <%--</span>--%>
+                        <%--</div><!-- /input-group -->--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
                         <%--</form>--%>
 
                         <table border="1" class="table table-hover table-bordered">
                             <thead>
-                                <tr>
-                                    <th>id</th>
-                                    <th>name</th>
-                                    <th>location</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>location</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
                             </thead>
                             <c:forEach items="${stores}" var="store">
                                 <tr>

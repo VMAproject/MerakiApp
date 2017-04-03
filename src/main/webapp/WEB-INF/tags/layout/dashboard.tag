@@ -171,13 +171,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- search form (Optional) -->
             <%--<form action="#" method="get" class="sidebar-form">--%>
-                <%--<div class="input-group">--%>
-                    <%--<input type="text" name="q" class="form-control" placeholder="Search...">--%>
-                    <%--<span class="input-group-btn">--%>
-                            <%--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i--%>
-                                    <%--class="fa fa-search"></i></button>--%>
-                          <%--</span>--%>
-                <%--</div>--%>
+            <%--<div class="input-group">--%>
+            <%--<input type="text" name="q" class="form-control" placeholder="Search...">--%>
+            <%--<span class="input-group-btn">--%>
+            <%--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i--%>
+            <%--class="fa fa-search"></i></button>--%>
+            <%--</span>--%>
+            <%--</div>--%>
             <%--</form>--%>
             <!-- /.search form -->
 
@@ -279,7 +279,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <img src="${contextPath}/resources/images/faq/IOS_2.webp">
         <img src="${contextPath}/resources/images/faq/IOS_3.webp">
     </div>
-    </div>
+</div>
 </div>
 </body>
 </html>
