@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class StatisticServiceImpl implements StatisticService {
@@ -32,12 +33,7 @@ public class StatisticServiceImpl implements StatisticService {
         Set<Observation> resultSet = new HashSet<>();
 
         List<Observation> listWithoutUniqueness = getAllObservationsByEventId(id);
-        List<Observation> listWithConsideringRssi = new ArrayList<>();
-        for (Observation obsv : listWithoutUniqueness) {
-            if (obsv.getRssi() >= 15) {
-                listWithConsideringRssi.add(obsv);
-            }
-        }
+        List<Observation> listWithConsideringRssi = listWithoutUniqueness.stream().filter(obsv -> obsv.getRssi() >= 15).collect(Collectors.toList());
         resultSet.addAll(listWithConsideringRssi);
 
         return resultSet;
@@ -48,12 +44,7 @@ public class StatisticServiceImpl implements StatisticService {
         Set<Observation> resultSet = new HashSet<>();
 
         List<Observation> listWithoutUniqueness = getAllObservationsByStoreId(id);
-        List<Observation> listWithConsideringRssi = new ArrayList<>();
-        for (Observation obsv : listWithoutUniqueness) {
-            if (obsv.getRssi() >= 15) {
-                listWithConsideringRssi.add(obsv);
-            }
-        }
+        List<Observation> listWithConsideringRssi = listWithoutUniqueness.stream().filter(obsv -> obsv.getRssi() >= 15).collect(Collectors.toList());
         resultSet.addAll(listWithConsideringRssi);
 
         return resultSet;
@@ -113,12 +104,8 @@ public class StatisticServiceImpl implements StatisticService {
 
         for (Observation obsv1 : observationsByEvent) {
             String clientMac1 = obsv1.getClientMac();
-            for (Observation obsv2 : observationsByStore) {
-                String clientMac2 = obsv2.getClientMac();
-                if (clientMac1.equals(clientMac2)) {
-                    resultSet.add(obsv1);
-                    break;
-                }
+            if (observationsByStore.stream().map(Observation::getClientMac).anyMatch(clientMac1::equals)) {
+                resultSet.add(obsv1);
             }
         }
 

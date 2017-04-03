@@ -48,42 +48,42 @@
                     <c:if test="${not empty events}">
 
                         <%--<form action="/searchEvent">--%>
-                            <%--<div class="row">--%>
-                                <%--<div class="col-md-6">--%>
-                                    <%--<div class="input-group bottom-space">--%>
-                                        <%--<input type="text" class="form-control" placeholder="Search for...">--%>
-                                        <%--<span class="input-group-btn">--%>
-                                            <%--<input class="btn btn-success" type='submit' value='Search'/>--%>
-                                        <%--</span>--%>
-                                    <%--</div><!-- /input-group -->--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
+                        <%--<div class="row">--%>
+                        <%--<div class="col-md-6">--%>
+                        <%--<div class="input-group bottom-space">--%>
+                        <%--<input type="text" class="form-control" placeholder="Search for...">--%>
+                        <%--<span class="input-group-btn">--%>
+                        <%--<input class="btn btn-success" type='submit' value='Search'/>--%>
+                        <%--</span>--%>
+                        <%--</div><!-- /input-group -->--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
                         <%--</form>--%>
 
                         <table class="table table-hover table-bordered">
                             <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>location</th>
-                                    <th>Date From</th>
-                                    <th>Date To</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>location</th>
+                                <th>Date From</th>
+                                <th>Date To</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                <c:forEach items="${events}" var="event">
-                                    <tr>
-                                        <td>${event.id}</td>
-                                        <td>${event.name}</td>
-                                        <td>${event.location}</td>
-                                        <td>${event.dateFrom.toString()}</td>
-                                        <td>${event.dateTo.toString()}</td>
-                                        <td><a href="/events/edit?id=<c:out value='${event.id}'/>">Edit</a></td>
-                                        <td><a href="/events/delete?id=<c:out value='${event.id}'/>">Delete</a></td>
-                                    </tr>
-                                </c:forEach>
+                            <c:forEach items="${events}" var="event">
+                                <tr>
+                                    <td>${event.id}</td>
+                                    <td>${event.name}</td>
+                                    <td>${event.location}</td>
+                                    <td>${event.dateFrom.toString()}</td>
+                                    <td>${event.dateTo.toString()}</td>
+                                    <td><a href="/events/edit?id=<c:out value='${event.id}'/>">Edit</a></td>
+                                    <td><a href="/events/delete?id=<c:out value='${event.id}'/>">Delete</a></td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </c:if>

@@ -24,7 +24,7 @@
         /resources/images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="${contextPath}
         /resources/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="${contextPath}
+    <link rel="icon" type="image/png" sizes="192x192" href="${contextPath}
         /resources/images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="${contextPath}
         /resources/images/favicon/favicon-32x32.png">
@@ -72,7 +72,7 @@
 <%--countdown--%>
 <div class="countdown">
     <div class="start">
-        <h1>ДО ЗАПУСКА ПРОЕКТА ОСТАЛОСЬ</h1>
+        <h1>Application is working in test mode :</h1>
     </div>
     <div class="demo1"></div>
 </div>
@@ -137,13 +137,14 @@
 <%--FOOTER--%>
 <footer class="footer">
     <div class="container-fluid footer_bottom">
-        <p class="text-muted">Copyright &copy; 2017 by Verlamov Michail, Matushkin Rostyslav, Tsymbalenko Oleksandr, Mikhaylik Denis.
+        <p class="text-muted">Copyright &copy; 2017 by Verlamov Michail, Matushkin Rostyslav, Tsymbalenko Oleksandr,
+            Mikhaylik Denis.
             All rights reserved.</p>
     </div>
 </footer>
 
 <script src="${contextPath}/resources/js/clock.js"></script>
-<script type="text/javascript" src="${contextPath}/resources/js/dscountdown.min.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/dscount.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/startCountdown.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/validation.js"></script>
 </body>
