@@ -242,16 +242,125 @@ scratch. This page gets rid of all links and provides the needed markup only.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+
+<!--FAQ-->
 <div class="b-popup" id="popup1">
     <div class="b-popup-content">
         <input type="button" onclick="PopUpToggle()" class="great_btn">
-        <h2>WindowsVista</h2>
-        <img src="${contextPath}/resources/images/faq/windowsVista_1.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_2.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_3.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_4.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_5.webp">
-        <h2>WindowsXp</h2>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div class="altblock"><label class="method_label">Method/label> <span>1</span>
+                    </div>
+                    <span>Windows Vista, 7 или 8</span>
+                    <img src="${contextPath}/resources/images/faq/windowsVista_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Connect to the network.</b>
+                        This method will work only if you are actively connected to an interface that
+                        needs a MAC address (Wi-Fi if you need a MAC address for a wireless card, Ethernet
+                        if you need a MAC address for a wired card).
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Click the connection icon in the system tray.</b>
+                        Он может выглядеть как маленький график (см. рисунок) или как маленький монитор компьютера.
+                        В меню выберите «Открыть центр управления сетями и общим доступом».
+                        <ul>
+                            <li>In Windows 8, open the desktop. Then right-click the connection icon in the system tray.
+                                From the menu, select "Network and Sharing Center".</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_3.webp">
+                    <div class="section-description">
+                        <div class="step_num">3</div>
+                        <b>In the "Connections" row, find the name of your network connection and click on it</b>
+                        A new window will open.
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_4.webp">
+                    <div class="section-description">
+                        <div class="step_num">4</div>
+                        <b>Click "Details".</b>
+                        The connection information is displayed (similar to the one displayed when
+                        you enter the IPConfig command on the command line).
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_5.webp">
+                    <div class="section-description">
+                        <div class="step_num">5</div>
+                        <b>Find the line "Physical Address".</b>
+                        It shows your MAC address.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div class="altblock"><label class="method_label">Method</label> <span>1</span>
+                    </div>
+                    <span>Windows 98 и Xp</span>
+                    <img src="${contextPath}/resources/images/faq/windowsVista_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Connect to the network.</b>
+                        This method will work only if you are actively connected to an interface that
+                        needs a MAC address (Wi-Fi if you need a MAC address for a wireless card, Ethernet
+                        if you need a MAC address for a wired card).
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Open "Network Connections".</b>
+                        If the desktop icon does not have a "Network Connections" icon, locate it in the taskbar
+                        (in the lower right corner of the Windows toolbar) and click it.
+                        <ul>
+                            <li>В Windows 8 откройте рабочий стол. Затем щелкните правой кнопкой мыши по значку соединения
+                                в системном трее. В меню выберите «Центр управления сетями и общим доступом».</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_3.webp">
+                    <div class="section-description">
+                        <div class="step_num">3</div>
+                        <b>В строке «Подключения» найдите название вашего
+                            сетевого подключения и щелкните по нему.</b>
+                        Откроется новое окно.
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_4.webp">
+                    <div class="section-description">
+                        <div class="step_num">4</div>
+                        <b>Нажмите «Сведения».</b>
+                        Отобразится информация о подключении (аналогично той, которая отображается
+                        при вводе команды IPConfig в командной строке).
+                    </div>
+                </li>
+                <li>
+                    <img src="${contextPath}/resources/images/faq/WindowsVista_5.webp">
+                    <div class="section-description">
+                        <div class="step_num">5</div>
+                        <b>Найдите строку «Физический адрес».</b>
+                        В ней указан ваш MAC-адрес.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
         <img src="${contextPath}/resources/images/faq/WindowsXP_1.webp">
         <img src="${contextPath}/resources/images/faq/WindowsXp_2.webp">
         <img src="${contextPath}/resources/images/faq/WindowsXp_3.webp">
