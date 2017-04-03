@@ -14,6 +14,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>IssueTracking System</title>
+
+    <!-- adding favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="${contextPath}
+        /resources/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="${contextPath}
+        /resources/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="${contextPath}
+        /resources/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="${contextPath}
+        /resources/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="${contextPath}
+        /resources/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="${contextPath}
+        /resources/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="${contextPath}
+        /resources/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="${contextPath}
+        /resources/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="${contextPath}
+        /resources/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="${contextPath}
+        /resources/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="${contextPath}
+        /resources/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="${contextPath}
+        /resources/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="${contextPath}
+        /resources/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="${contextPath}
+        /resources/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel=icon href=favicon.png sizes="16x16" type="image/png">
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -24,9 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/resources/css/AdminLTE.css">
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
+    <!-- AdminLTE Skins
     -->
     <link rel="stylesheet" href="/resources/css/skins/skin-black-light.css">
 
@@ -36,7 +69,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
@@ -46,6 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE App -->
     <script src="/resources/js/app.min.js"></script>
     <script src="/resources/js/faq.js"></script>
+    <script src="/resources/js/validationAddForm.js"></script>
 
     <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
@@ -58,26 +93,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <![endif]-->
     <jsp:invoke fragment="header"/>
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition skin-black-light sidebar-collapse">
 <%--<c:url var="index" value="/" />--%>
 <div class="wrapper">
@@ -86,14 +101,14 @@ desired effect
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="#" class="logo">
+        <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">
-            <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
+            <img src="${contextPath}/resources/images/faq/CiscoMeraki.png" alt="logo">
           </span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">
-            <img src="${contextPath}/resources/images/CiscoMeraki.png" alt="logo">
+            <img src="${contextPath}/resources/images/faq/CiscoMeraki.png" alt="logo">
           </span>
         </a>
 
@@ -112,14 +127,14 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="/resources/images/avatar.png" class="user-image" alt="User Image">
+                            <img src="/resources/images/faq/avatar.png" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">${user.username}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="/resources/images/avatar.png" class="img-circle" alt="User Image">
+                                <img src="/resources/images/faq/avatar.png" class="img-circle" alt="User Image">
                                 <p>
                                     You are logged in as ${user.role.rolename}
                                     <small>Member since ${user.regdate}</small>
@@ -145,7 +160,7 @@ desired effect
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="/resources/images/avatar.png" class="img-circle" alt="User Image">
+                    <img src="/resources/images/faq/avatar.png" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>${user.firstName} ${user.lastName}</p>
@@ -155,15 +170,15 @@ desired effect
             </div>
 
             <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
-                                    class="fa fa-search"></i></button>
-                          </span>
-                </div>
-            </form>
+            <%--<form action="#" method="get" class="sidebar-form">--%>
+                <%--<div class="input-group">--%>
+                    <%--<input type="text" name="q" class="form-control" placeholder="Search...">--%>
+                    <%--<span class="input-group-btn">--%>
+                            <%--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i--%>
+                                    <%--class="fa fa-search"></i></button>--%>
+                          <%--</span>--%>
+                <%--</div>--%>
+            <%--</form>--%>
             <!-- /.search form -->
 
             <!-- Sidebar Menu -->
@@ -180,14 +195,13 @@ desired effect
                         class="fa fa-list-alt"></i><span>Events</span></a>
                 </li>
                 <li id="shop"><a href="<c:url value='/stores/all' />"/><i
-                        class="fa fa-shopping-cart"></i>
-                    <span>Shop</span></a>
+                        class="fa fa-shopping-cart"></i><span>Stores</span></a>
+                </li>
+                <li id="statistic"><a href="<c:url value='/statistic/all' />"/><i
+                        class="fa fa-pie-chart"></i><span>Statistic</span></a>
                 </li>
                 <li id="router"><a href="<c:url value='/routers/all' />"/><i
                         class="fa fa-signal"></i><span>Routers</span></a>
-                </li>
-                <li id="statistic"><a href="<c:url value='/observations/all' />"/><i
-                        class="fa fa-pie-chart"></i><span>Statistic</span></a>
                 </li>
                 <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i
                         class="fa fa-file-text"></i><span>Black list</span></a>
@@ -218,7 +232,7 @@ desired effect
     <footer class="main-footer">
         <!-- Default to the left -->
         <jsp:invoke fragment="footer"/>
-        Copyright &copy; 2017 by Mikhaylik Denis, Mikhaylik Denis, Tsymbalenko Oleksandr.
+        Copyright &copy; 2017 by Verlamov Michail, Matushkin Rostyslav, Tsymbalenko Oleksandr, Mikhaylik Denis.
         All rights reserved.
     </footer>
 </div><!-- ./wrapper -->
@@ -231,8 +245,40 @@ desired effect
 <div class="b-popup" id="popup1">
     <div class="b-popup-content">
         <input type="button" onclick="PopUpToggle()" class="great_btn">
-        <img src="/resources/images/main.png" alt="main">
-        <img src="/resources/images/second.png" alt="second">
+        <h2>WindowsVista</h2>
+        <img src="${contextPath}/resources/images/faq/windowsVista_1.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_2.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_3.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_4.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsVista_5.webp">
+        <h2>WindowsXp</h2>
+        <img src="${contextPath}/resources/images/faq/WindowsXP_1.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_2.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_3.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_4.webp">
+        <img src="${contextPath}/resources/images/faq/WindowsXp_5.webp">
+        <h2>Android</h2>
+        <img src="${contextPath}/resources/images/faq/Android_1.webp">
+        <img src="${contextPath}/resources/images/faq/Android_2.webp">
+        <img src="${contextPath}/resources/images/faq/Android_3.webp">
+        <img src="${contextPath}/resources/images/faq/Android_4.webp">
+        <h2>Linux</h2>
+        <img src="${contextPath}/resources/images/faq/Linux_1.webp">
+        <img src="${contextPath}/resources/images/faq/Linux_2.webp">
+        <img src="${contextPath}/resources/images/faq/Linux_3.webp">
+        <h2>Mac 10-4</h2>
+        <img src="${contextPath}/resources/images/faq/Mac10-4_1.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-4_2.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-4_3.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-4_4.webp">
+        <h2>Mac 10-5</h2>
+        <img src="${contextPath}/resources/images/faq/Mac10-5_1.webp">
+        <img src="${contextPath}/resources/images/faq/Mac10-5_2.webp">
+        <h2>IOS</h2>
+        <img src="${contextPath}/resources/images/faq/IOS_1.webp">
+        <img src="${contextPath}/resources/images/faq/IOS_2.webp">
+        <img src="${contextPath}/resources/images/faq/IOS_3.webp">
+    </div>
     </div>
 </div>
 </body>

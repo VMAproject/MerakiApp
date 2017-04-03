@@ -38,7 +38,7 @@
 <%--countdown--%>
 <div class="countdown">
     <div class="start">
-        <h1>ДО ЗАПУСКА ПРОЕКТА ОСТАЛОСЬ</h1>
+        <h1>Application is working in test mode :</h1>
     </div>
     <div class="demo1"></div>
 </div>
@@ -109,7 +109,7 @@
 </footer>
 
 <script src="${contextPath}/resources/js/clock.js"></script>
-<script type="text/javascript" src="${contextPath}/resources/js/dscountdown.min.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/dscount.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/startCountdown.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/validation.js"></script>
 </body>
