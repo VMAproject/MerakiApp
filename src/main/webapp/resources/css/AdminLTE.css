@@ -4943,7 +4943,7 @@ label {
   margin-bottom: 20px;
 }
 
-.section ol li>span {
+.section .faqheader {
   display: block;
   margin-left: 0px;
   font-size: 20px;
@@ -4954,8 +4954,9 @@ label {
 
 .section .section-description {
   background-color: #f6f5f4;
-  padding: 15px 10px 15px 42px;
+  padding: 15px 10px 25px 42px;
   text-align: initial;
+  font-size: 16px;
 }
 
 .section-description .step_num {
@@ -4964,4 +4965,14 @@ label {
   padding: 8px 20px 3px 0;
   float: left;
   font-weight: bold;
+}
+
+.sticking {
+  position: fixed;
+  top: 0;
+  width: 56%;
+  left: auto;
+  z-index: 998;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 }
