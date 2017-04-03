@@ -1,14 +1,11 @@
 package com.meraki.dao.impls;
 
 import com.meraki.dao.interfaces.StoreDao;
-import com.meraki.entity.Event;
 import com.meraki.entity.Store;
 import com.meraki.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;

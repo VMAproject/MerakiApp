@@ -3,8 +3,6 @@ package com.meraki.dao.impls;
 import com.meraki.dao.interfaces.RouterDao;
 import com.meraki.entity.Router;
 import com.meraki.util.HibernateUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
