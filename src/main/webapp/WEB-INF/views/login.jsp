@@ -144,8 +144,8 @@
 </footer>
 
 <script src="${contextPath}/resources/js/clock.js"></script>
-<script type="text/javascript" src="${contextPath}/resources/js/dscount.js"></script>
-<script type="text/javascript" src="${contextPath}/resources/js/startCountdown.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/counters/dscount.js"></script>
+<script type="text/javascript" src="${contextPath}/resources/js/counters/startCountdown.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/validation.js"></script>
 </body>
 </html>

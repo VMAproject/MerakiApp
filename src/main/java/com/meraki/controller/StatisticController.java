@@ -72,12 +72,12 @@ public class StatisticController {
     public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId,
                                                     Model model) {
 
-        List<Observation> resultSet = statisticServiceImpl2.getAllUniqueClientsByEventId(eventId);
+        List<Observation> resultList = statisticServiceImpl2.getAllUniqueClientsByEventId(eventId);
 
         model.addAttribute("events", eventService.getAllEvents());
         model.addAttribute("stores", storeService.getAllStore());
-        model.addAttribute("observations", resultSet);
-        model.addAttribute("amount", resultSet.size());
+        model.addAttribute("observations", resultList);
+        model.addAttribute("amount", resultList.size());
 
         return "statistic/statisticList";
     }
@@ -101,15 +101,12 @@ public class StatisticController {
                                       @RequestParam(value = "storeId") long storeId,
                                       Model model) {
 
-        Event loadedEvent = eventService.getEvent(eventId);
-        Store loadedStore = storeService.getStore(storeId);
-
-        Set<Observation> resultSet = statisticService.compareEventToStore(loadedEvent, loadedStore);
+        List<Observation> resultList = statisticServiceImpl2.compareEventToStore(eventId, storeId);
 
         model.addAttribute("events", eventService.getAllEvents());
         model.addAttribute("stores", storeService.getAllStore());
-        model.addAttribute("observations", resultSet);
-        model.addAttribute("amount", resultSet.size());
+        model.addAttribute("observations", resultList);
+        model.addAttribute("amount", resultList.size());
 
         return "statistic/statisticList";
     }

@@ -4889,3 +4889,90 @@ label {
   display: inline-block;
   margin-top: 15px;
 }
+
+.b-popup-content .section {
+  padding: 60px 0px 0 0px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  position: relative;
+  line-height: 25px;
+  margin: 0 auto;
+  width: 68%;
+}
+
+.b-popup-content .section img {
+  width: 100%;
+}
+
+.section .altblock {
+  margin: 0 15px 0 0;
+  background-color: #93b874;
+  float: left;
+  height: 55px;
+  width: 60px;
+  font-size: 12px;
+  line-height: 19px;
+  text-align: center;
+  padding-top: 10px;
+  color: #fff;
+  -webkit-border-radius: 4px 0 0 0;
+}
+
+.altblock .method_label {
+  margin-top: -1px;
+  line-height: 0;
+  display: inline-block;
+}
+
+.altblock label {
+  color: #FFFFFF;
+}
+
+.altblock span {
+  display: block;
+  magin: 0 auto;
+}
+
+.section ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.section ol>li {
+  margin-bottom: 20px;
+}
+
+.section .faqheader {
+  display: block;
+  margin-left: 0px;
+  font-size: 20px;
+  padding: 16px 0 13px 0;
+  background-color: #f6f5f4;
+  -webkit-border-radius: 4px 0 0 0;
+}
+
+.section .section-description {
+  background-color: #f6f5f4;
+  padding: 15px 10px 25px 42px;
+  text-align: initial;
+  font-size: 16px;
+}
+
+.section-description .step_num {
+  font-size: 43px;
+  color: #545454;
+  padding: 8px 20px 3px 0;
+  float: left;
+  font-weight: bold;
+}
+
+.sticking {
+  position: fixed;
+  top: 0;
+  width: 56%;
+  left: auto;
+  z-index: 998;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
