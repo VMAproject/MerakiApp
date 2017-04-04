@@ -2,9 +2,7 @@ package com.meraki.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "event")
@@ -86,4 +84,5 @@ public class Event implements Serializable {
     public void setRouters(Set<Router> routers) {
         this.routers = routers;
     }
+
 }
