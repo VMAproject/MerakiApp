@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
+import java.util.StringJoiner;
 
 
 @Data
@@ -23,5 +25,6 @@ public class BlackBook implements Serializable {
 
     @Column(name = "clientMac")
     private String clientMac;
+
 
 }

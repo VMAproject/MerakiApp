@@ -1,16 +1,9 @@
 package com.meraki.entity;
 
-import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-
-@Data
 @Entity
 @Table(name = "event")
 public class Event implements Serializable {
@@ -42,6 +35,54 @@ public class Event implements Serializable {
     private Set<Router> routers = new HashSet<>();
 
     public Event() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Date getDateFrom() {
+        return dateFrom;
+    }
+
+    public void setDateFrom(Date dateFrom) {
+        this.dateFrom = dateFrom;
+    }
+
+    public Date getDateTo() {
+        return dateTo;
+    }
+
+    public void setDateTo(Date dateTo) {
+        this.dateTo = dateTo;
+    }
+
+    public Set<Router> getRouters() {
+        return routers;
+    }
+
+    public void setRouters(Set<Router> routers) {
+        this.routers = routers;
     }
 
 }

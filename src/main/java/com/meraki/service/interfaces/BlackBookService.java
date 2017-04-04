@@ -1,7 +1,6 @@
 package com.meraki.service.interfaces;
 
 import com.meraki.entity.BlackBook;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
