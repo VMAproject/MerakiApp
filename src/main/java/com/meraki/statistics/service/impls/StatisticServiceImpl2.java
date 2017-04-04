@@ -10,7 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.List;
+=======
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+>>>>>>> 357c53a5b7491d35bacf463940f73cd44a0cb345
 
 @Service
 public class StatisticServiceImpl2 {
@@ -40,6 +46,10 @@ public class StatisticServiceImpl2 {
                 .setParameter("dateTo", event.getDateTo())
                 .list();
         transaction.commit();
+<<<<<<< HEAD
+=======
+        session.close();
+>>>>>>> 357c53a5b7491d35bacf463940f73cd44a0cb345
 
         resultList.addAll(loadedList);
 
@@ -65,6 +75,10 @@ public class StatisticServiceImpl2 {
                 .setParameter("id", id)
                 .list();
         transaction.commit();
+<<<<<<< HEAD
+=======
+        session.close();
+>>>>>>> 357c53a5b7491d35bacf463940f73cd44a0cb345
 
         return routers;
     }
@@ -74,6 +88,10 @@ public class StatisticServiceImpl2 {
         Transaction transaction = session.beginTransaction();
         Event event = (Event) session.createQuery("from Event where event_id = (:id)").setParameter("id", id).uniqueResult();
         transaction.commit();
+<<<<<<< HEAD
+=======
+        session.close();
+>>>>>>> 357c53a5b7491d35bacf463940f73cd44a0cb345
 
         return event;
     }
