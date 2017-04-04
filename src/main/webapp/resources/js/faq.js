@@ -1,7 +1,7 @@
 /**
  * Created by oleksandr on 24.03.17.
  */
-$(document).ready(function(){
+$(document).ready(function () {
     PopUpHide();
 });
 

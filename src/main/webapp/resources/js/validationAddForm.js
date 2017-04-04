@@ -2,9 +2,9 @@
  * Created by oleksandr on 29.03.17.
  */
 
-$(function() {
+$(function () {
 
-    $('.adding-form').each(function(){
+    $('.adding-form').each(function () {
         // Объявляем переменные (форма и кнопка отправки)
         var form = $(this),
             btn = form.find('.btn');
@@ -13,9 +13,9 @@ $(function() {
         form.find('.form-control').addClass('empty_field');
 
         // Функция проверки полей формы
-        function checkInput(){
-            form.find('.form-control').each(function(){
-                if($(this).val() != ''){
+        function checkInput() {
+            form.find('.form-control').each(function () {
+                if ($(this).val() != '') {
                     // Если поле не пустое удаляем класс-указание
                     $(this).removeClass('empty_field');
                 } else {
@@ -27,27 +27,27 @@ $(function() {
         }
 
         // Функция подсветки незаполненных полей
-        function lightEmpty(){
+        function lightEmpty() {
             var empty = form.find('.empty_field');
             form.find('.message').remove();
             var txt = $("<div class='message'></div>").text("This field required");
             empty.after(txt);
-            empty.css({'border-color':'#d8512d'});
+            empty.css({'border-color': '#d8512d'});
             // Через полсекунды удаляем подсветку
-            setTimeout(function(){
+            setTimeout(function () {
                 form.find('.empty_field').removeAttr('style');
-            },2000);
+            }, 2000);
         }
 
         // Проверка в режиме реального времени
-        setInterval(function(){
+        setInterval(function () {
             // Запускаем функцию проверки полей на заполненность
             checkInput();
             // Считаем к-во незаполненных полей
             var sizeEmpty = form.find('.empty_field').size();
             // Вешаем условие-тригер на кнопку отправки формы
-            if(sizeEmpty > 0){
-                if(btn.hasClass('incorrect')){
+            if (sizeEmpty > 0) {
+                if (btn.hasClass('incorrect')) {
                     return false
                 } else {
                     btn.addClass('incorrect');
@@ -55,11 +55,11 @@ $(function() {
             } else {
                 btn.removeClass('incorrect');
             }
-        },500);
+        }, 500);
 
         // Событие клика по кнопке отправить
-        btn.click(function(){
-            if($(this).hasClass('incorrect')){
+        btn.click(function () {
+            if ($(this).hasClass('incorrect')) {
                 // подсвечиваем незаполненные поля и форму не отправляем, если есть незаполненные поля
                 lightEmpty();
                 return false
