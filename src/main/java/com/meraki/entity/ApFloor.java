@@ -1,9 +1,14 @@
 package com.meraki.entity;
 
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
+import java.util.StringJoiner;
 
-
+@Data
 @Entity
 @Table(name = "apFloor")
 public class ApFloor implements Serializable {
@@ -19,4 +24,5 @@ public class ApFloor implements Serializable {
     @ManyToOne()
     @JoinColumn(name = "router_id")
     private Router router;
+
 }

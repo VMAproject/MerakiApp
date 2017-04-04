@@ -1,11 +1,11 @@
 package com.meraki.entity;
 
-import lombok.Data;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
+import java.util.StringJoiner;
 
 @Entity
 @Table(name = "router")
@@ -104,4 +104,5 @@ public class Router implements Serializable {
     public void setApFloors(Set<ApFloor> apFloors) {
         this.apFloors = apFloors;
     }
+
 }

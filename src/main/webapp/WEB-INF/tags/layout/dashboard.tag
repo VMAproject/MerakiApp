@@ -242,43 +242,267 @@ scratch. This page gets rid of all links and provides the needed markup only.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+
+<!--FAQ-->
 <div class="b-popup" id="popup1">
     <div class="b-popup-content">
         <input type="button" onclick="PopUpToggle()" class="great_btn">
-        <h2>WindowsVista</h2>
-        <img src="${contextPath}/resources/images/faq/windowsVista_1.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_2.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_3.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_4.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsVista_5.webp">
-        <h2>WindowsXp</h2>
-        <img src="${contextPath}/resources/images/faq/WindowsXP_1.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsXp_2.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsXp_3.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsXp_4.webp">
-        <img src="${contextPath}/resources/images/faq/WindowsXp_5.webp">
-        <h2>Android</h2>
-        <img src="${contextPath}/resources/images/faq/Android_1.webp">
-        <img src="${contextPath}/resources/images/faq/Android_2.webp">
-        <img src="${contextPath}/resources/images/faq/Android_3.webp">
-        <img src="${contextPath}/resources/images/faq/Android_4.webp">
-        <h2>Linux</h2>
-        <img src="${contextPath}/resources/images/faq/Linux_1.webp">
-        <img src="${contextPath}/resources/images/faq/Linux_2.webp">
-        <img src="${contextPath}/resources/images/faq/Linux_3.webp">
-        <h2>Mac 10-4</h2>
-        <img src="${contextPath}/resources/images/faq/Mac10-4_1.webp">
-        <img src="${contextPath}/resources/images/faq/Mac10-4_2.webp">
-        <img src="${contextPath}/resources/images/faq/Mac10-4_3.webp">
-        <img src="${contextPath}/resources/images/faq/Mac10-4_4.webp">
-        <h2>Mac 10-5</h2>
-        <img src="${contextPath}/resources/images/faq/Mac10-5_1.webp">
-        <img src="${contextPath}/resources/images/faq/Mac10-5_2.webp">
-        <h2>IOS</h2>
-        <img src="${contextPath}/resources/images/faq/IOS_1.webp">
-        <img src="${contextPath}/resources/images/faq/IOS_2.webp">
-        <img src="${contextPath}/resources/images/faq/IOS_3.webp">
-    </div>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div id="WindowsVista">
+                        <div class="altblock" id=""><label class="method_label">Method</label> <span>1</span>
+                        </div>
+                        <span class="faqheader">Windows Vista, 7 или 8</span>
+                    </div>
+                    <img src="/resources/images/faq/windowsVista_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Connect to the network. </b>
+                        This method will work only if you are actively connected to an interface that
+                        needs a MAC address (Wi-Fi if you need a MAC address for a wireless card, Ethernet
+                        if you need a MAC address for a wired card).
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsVista_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Click the connection icon in the system tray. </b>
+                        It can look like a small graph (see figure) or as a small computer monitor.
+                        From the menu, select "Open Network and Sharing Center".
+                        <ul>
+                            <li>In Windows 8, open the desktop. Then right-click the connection icon in the system tray.
+                                From the menu, select "Network and Sharing Center".
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsVista_3.webp">
+                    <div class="section-description">
+                        <div class="step_num">3</div>
+                        <b>In the "Connections" row, find the name of your network connection and click on it. </b>
+                        A new window will open.
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsVista_4.webp">
+                    <div class="section-description">
+                        <div class="step_num">4</div>
+                        <b>Click "Details". </b>
+                        The connection information is displayed (similar to the one displayed when
+                        you enter the IPConfig command on the command line).
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsVista_5.webp">
+                    <div class="section-description">
+                        <div class="step_num">5</div>
+                        <b>Find the line "Physical Address". </b>
+                        It shows your MAC address.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div class="altblock"><label class="method_label">Method</label> <span>2</span>
+                    </div>
+                    <span class="faqheader">Windows 98 and Xp</span>
+                    <img src="/resources/images/faq/WindowsXP_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Connect to the network. </b>
+                        This method will work only if you are actively connected to an interface that
+                        needs a MAC address (Wi-Fi if you need a MAC address for a wireless card, Ethernet
+                        if you need a MAC address for a wired card).
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsXp_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Open "Network Connections". </b>
+                        If the desktop icon does not have a "Network Connections" icon, locate it in the taskbar
+                        (in the lower right corner of the Windows toolbar) and click it.
+                        <ul>
+                            <li>Or, click Start - Control Panel - Network Connections.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsXp_3.webp">
+                    <div class="section-description">
+                        <div class="step_num">3</div>
+                        <b>Right click on the active connection and select "Status" from the menu. </b>
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsXp_4.webp">
+                    <div class="section-description">
+                        <div class="step_num">4</div>
+                        <b>Click "Details" (in some versions of Windows, you first need to go
+                            to the "Support" tab). </b>
+                        The connection information is displayed (similar to the one displayed when you
+                        enter the IPConfig command on the command line).
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsXp_5.webp">
+                    <div class="section-description">
+                        <div class="step_num">5</div>
+                        <b>Find the line "Physical address". </b>
+                        It shows your MAC address.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div class="altblock"><label class="method_label">Method</label> <span>3</span>
+                    </div>
+                    <span class="faqheader">Any version of Windows</span>
+                    <img src="/resources/images/faq/WindowsAnyWind_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Open a command prompt. </b>
+                        o do this, press ⌘ Win + R and in the window that opens, enter cmd.
+                        Press ⌅ Enter.
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsAnyWind_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Run GetMAC. </b>
+                        At the command prompt, type "getmac / v / fo" list and press ⌅ Enter.
+                        Information about all network connections is displayed.
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/WindowsAnyWind_3.webp">
+                    <div class="section-description">
+                        <div class="step_num">3</div>
+                        <b>Find the line "Physical Address". </b>
+                        It shows your MAC address. Make sure that this is the physical
+                        address of the network adapter you need (usually several physical addresses are displayed,
+                        for example, separately for wireless connection and separately for connection via Ethernet).
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div class="altblock"><label class="method_label">Method</label> <span>4</span>
+                    </div>
+                    <span class="faqheader">Linux</span>
+                    <img src="/resources/images/faq/Linux_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Open the terminal by pressing Ctrl + Alt + T. </b>
+                        Depending on the system, the terminal can be named Terminal, Xterm, Shell,
+                        Command Prompt, or something like that.
+                    </div>
+                </li>
+                <li>
+                    <img src="resources/images/faq/Linux_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Open the interface configuration. </b>
+                        Type ifconfig -a and press ⌅ Enter. If this does not work, type sudo ifconfig -a,
+                        press ⌅ Enter and enter the password.
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/Linux_3.webp">
+                    <div class="section-description">
+                        <div class="step_num">3</div>
+                        <b>Find the network connection (the connection via Ethernet is called eth0). </b>
+                        Find the string "HWaddr", in which the MAC address is specified.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div class="altblock"><label class="method_label">Method</label> <span>5</span>
+                    </div>
+                    <span class="faqheader">Mac 10-4 (Tiger) and older versions</span>
+                    <img src="/resources/images/faq/Mac10-4_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Open System Preferences. </b>
+                        Click the Apple icon (in the upper-left corner of the screen) and click System Preferences.
+                        Make sure you are connected to the network.
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/Mac10-4_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Select "Network". </b>
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/Mac10-4_3.webp">
+                    <div class="section-description">
+                        <div class="step_num">3</div>
+                        <b>In the drop-down menu "Show" select the connection: </b>
+                        Either "Ethernet" or "AirPort".
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/Mac10-4_4.webp">
+                    <div class="section-description">
+                        <div class="step_num">4</div>
+                        <b>Go to the "Ethernet" tab or the "AirPort" tab. </b>
+                        Find the string "Ethernet ID" or "AirPort ID" in which
+                        the MAC address is specified.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <ol>
+                <li>
+                    <div class="altblock"><label class="method_label">Method</label> <span>6</span>
+                    </div>
+                    <span class="faqheader">Mac 10-4 (Leopard) and new versions</span>
+                    <img src="/resources/images/faq/Mac10-5_1.webp">
+                    <div class="section-description">
+                        <div class="step_num">1</div>
+                        <b>Open System Preferences. </b>
+                        Click the Apple icon (in the upper-left corner of the screen) and click "System Preferences".
+                        Make sure you are connected to the network.
+                    </div>
+                </li>
+                <li>
+                    <img src="/resources/images/faq/Mac10-5_2.webp">
+                    <div class="section-description">
+                        <div class="step_num">2</div>
+                        <b>Select the connection. </b>
+                        Select "Network", then "AirPort" or "Ethernet" (depending on how you connect to the network).
+                        <ul>
+                            <li>In the case of Ethernet, click "Advanced" and go to the "Ethernet" tab. At the top you will
+                                see the line "Ethernet ID", in which the MAC-address is indicated.</li>
+                            <li>In the case of AirPort, click "Advanced" and click the "AirPort" tab. You will see the line
+                                "AirPort ID", in which the MAC address is specified.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </div>
     </div>
 </div>
 </body>

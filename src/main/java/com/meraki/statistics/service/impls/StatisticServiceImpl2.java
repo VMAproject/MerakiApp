@@ -11,9 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class StatisticServiceImpl2 {
@@ -105,6 +104,7 @@ public class StatisticServiceImpl2 {
         transaction.commit();
         session.close();
 
+
         return routers;
     }
 
@@ -126,7 +126,9 @@ public class StatisticServiceImpl2 {
         Transaction transaction = session.beginTransaction();
         Event event = (Event) session.createQuery("from Event where event_id = (:id)").setParameter("id", id).uniqueResult();
         transaction.commit();
+
         session.close();
+
 
         return event;
     }
