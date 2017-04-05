@@ -14,7 +14,7 @@
                                method="post"
                                action="/routers/add">
                         <div class="container panel-bod y-group">
-                            <div class="panel-title panel-title_bottom"><h1>Router Details</h1></div>
+                            <div class="panel-title panel-title_bottom"><h1>Access Point Details</h1></div>
                             <div class="form-group">
 
                                 <form:label path="routerName">Router Name</form:label>
