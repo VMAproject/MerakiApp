@@ -48,7 +48,7 @@
 
         <script>
             $(function () {
-                $('#statistic').addClass('active');
+                $('#shop').addClass('active');
             });
         </script>
     </jsp:body>

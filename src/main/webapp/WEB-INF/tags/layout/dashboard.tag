@@ -201,7 +201,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         class="fa fa-pie-chart"></i><span>Statistic</span></a>
                 </li>
                 <li id="router"><a href="<c:url value='/routers/all' />"/><i
-                        class="fa fa-signal"></i><span>Routers</span></a>
+                        class="fa fa-signal"></i><span>Access Points</span></a>
                 </li>
                 <li id="blackList"><a href="<c:url value='/getAllBlackBookLists' />"/><i
                         class="fa fa-file-text"></i><span>Black list</span></a>
