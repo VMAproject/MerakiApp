@@ -8,7 +8,7 @@
         <div class="container-fluid myrow-container">
             <div class="form">
                 <div class="panel-heading">
-                    <div class="panel-title"><h1>Routers</h1></div>
+                    <div class="panel-title"><h1>Access Points</h1></div>
                         <%--<div class="panel-add"><a href="createRouter">Add New Router</a></div>--%>
                 </div>
                 <div class="panel-body">
