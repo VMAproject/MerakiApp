@@ -7,9 +7,6 @@
 
     <jsp:body>
         <div class="container-fluid myrow-container">
-            <div class="breadcrumbs">
-                <a href="/">Back to main page</a>
-            </div>
             <div class="form">
                 <div class="panel-heading">
                     <div class="panel-title"><h1>All Stores</h1></div>

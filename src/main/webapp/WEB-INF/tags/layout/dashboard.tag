@@ -104,11 +104,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">
-            <img src="${contextPath}/resources/images/faq/CiscoMeraki.png" alt="logo">
+            <img src="${contextPath}/resources/images/Sava-04.png" alt="logo">
           </span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg">
-            <img src="${contextPath}/resources/images/faq/CiscoMeraki.png" alt="logo">
+            <img src="${contextPath}/resources/images/Sava-04.png" alt="logo">
           </span>
         </a>
 
