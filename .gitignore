@@ -1,12 +1,9 @@
-.idea
-Meraki.iml
-MerakiApp.iml
-target
-README.md
 .DS_Store
 out
 classes
 # IntelliJ IDEA
-/MerakiApp.iml
-/Meraki.iml
 *.iml
+/target/
+/.idea/
+/Meraki.iml
+/MerakiApp.iml

@@ -27,14 +27,24 @@
 
                         <div class="form-group">
                             <label for="dateFrom"><span class="form-group_red">* </span>dateFrom:</label>
-                            <input id="dateFrom" type="date" class="form-control" name="dateFrom"
-                                   value="${eventDateFrom}"/>
+                            <div class='input-group date' id='dateFrom'>
+                                <input type='text' class="form-control dater"
+                                       name="dateFrom" value="${eventDateTo}" />
+                                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="dateTo"><span class="form-group_red">* </span>dateTo:</label>
-                            <input id="dateTo" type="date" class="form-control" name="dateTo"
-                                   value="${eventDateTo}"/></p>
+                            <div class='input-group date' id='dateTo'>
+                                <input type='text' class="form-control dater"
+                                       name="dateTo" value="${eventDateTo}" />
+                                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -65,52 +75,52 @@
     </div>
 
     <script type="text/javascript">
+//        $(function () {
+//            $('#event').addClass('active');
+//        });
         $(function () {
-            $('#event').addClass('active');
-        });
-        $(function () {
-            $('#datetimepicker1').datetimepicker({
+            $('#dateFrom').datetimepicker({
                 locale: 'ru'
             });
         });
         $(function () {
-            $('#datetimepicker2').datetimepicker({
+            $('#dateTo').datetimepicker({
                 locale: 'ru'
             });
         });
-        function submitEventForm() {
-
-            // getting the employee form values
-            var name = $('#name').val().trim();
-            var location = $('#location').val();
-            var dateFrom = $('#dateFrom').val();
-            var dateTo = $('#dateTo').val();
-
-            if (name.length == 0) {
-                alert('Please enter name');
-                $('#name').focus();
-                return false;
-            }
-
-            if (location <= 0) {
-                alert('Please enter location');
-                $('#location').focus();
-                return false;
-            }
-
-            if (dateFrom <= 0) {
-                alert('please enter date from');
-                $('#dateFrom').focus();
-                return false;
-            }
-
-            if (dateTo.length <= 0) {
-                alert('please enter date to');
-                $('#dateTo').focus();
-                return false;
-            }
-            return true;
-        }
+//        function submitEventForm() {
+//
+//            // getting the employee form values
+//            var name = $('#name').val().trim();
+//            var location = $('#location').val();
+//            var dateFrom = $('#dateFrom').val();
+//            var dateTo = $('#dateTo').val();
+//
+//            if (name.length == 0) {
+//                alert('Please enter name');
+//                $('#name').focus();
+//                return false;
+//            }
+//
+//            if (location <= 0) {
+//                alert('Please enter location');
+//                $('#location').focus();
+//                return false;
+//            }
+//
+//            if (dateFrom <= 0) {
+//                alert('please enter date from');
+//                $('#dateFrom').focus();
+//                return false;
+//            }
+//
+//            if (dateTo.length <= 0) {
+//                alert('please enter date to');
+//                $('#dateTo').focus();
+//                return false;
+//            }
+//            return true;
+//        }
     </script>
 
 </t:dashboard>
