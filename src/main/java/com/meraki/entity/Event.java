@@ -22,12 +22,10 @@ public class Event implements Serializable {
     private String location;
 
     @Temporal(TemporalType.TIMESTAMP)
-//    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_from")
     private Date dateFrom;
 
     @Temporal(TemporalType.TIMESTAMP)
-//    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_to")
     private Date dateTo;
 
