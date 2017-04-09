@@ -31,8 +31,15 @@ $(function() {
             var empty = form.find('.empty_field');
             form.find('.message').remove();
             var txt = $("<div class='message'></div>").text("This field required");
-            empty.after(txt);
-            empty.css({'border-color':'#d8512d'});
+            empty.each(function(index) {
+                var elem = txt.clone();
+                if ($(this).hasClass('dater')) {
+                    $(this).parent().after(elem)
+                } else {
+                    $(this).after(elem)
+                }
+            });
+            empty.css({'border-color': '#d8512d'});
             // Через полсекунды удаляем подсветку
             setTimeout(function(){
                 form.find('.empty_field').removeAttr('style');

@@ -38,7 +38,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="<c:url value='/resources/css/login/login.css' />" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis" rel="stylesheet">
     <link rel="stylesheet" href="${contextPath}/resources/css/login/dscountdown.css"/>
@@ -46,7 +46,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="<c:url value='/resources/js/funtions/login.js' />"></script>
-    <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
