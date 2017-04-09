@@ -113,6 +113,7 @@ public class HibernateConfig {
         properties.put(HIBERNATE_CONNECTION_USEUNICODE, environment.getProperty(HIBERNATE_CONNECTION_USEUNICODE));
 
         properties.put("hibernate.hbm2ddl.import_files", "import.sql");
+        properties.put("hibernate.hbm2ddl.import_files","ONLY_FULL_GROUP_BY.sql");
         return properties;
     }
 

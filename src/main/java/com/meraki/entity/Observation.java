@@ -41,7 +41,7 @@ public class Observation implements Serializable {
     @Column(name = "seenEpoch")
     private int seenEpoch;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "seenTime")
     private Date seenTime;
 
