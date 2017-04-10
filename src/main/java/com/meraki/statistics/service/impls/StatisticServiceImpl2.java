@@ -58,17 +58,17 @@ public class StatisticServiceImpl2 {
         Transaction transaction = session.beginTransaction();
         List<Observation> loadedList = session
                 .createSQLQuery("SELECT *\n" +
-                "FROM Observation\n" +
-                "WHERE\n" +
-                "  clientMac IN (SELECT clientMac\n" +
-                "                FROM observation\n" +
-                "                WHERE rssi >= 15 AND (seenTime BETWEEN (:dateFrom) AND (:dateTo)) AND router_id IN (:eventRoutersId)\n" +
-                "                GROUP BY clientMac)\n" +
-                "  AND clientMac IN (SELECT clientMac\n" +
-                "                    FROM observation\n" +
-                "                    WHERE rssi >= 15 AND seenTime >= (:dateFrom) AND router_id IN (:storeRoutersId)\n" +
-                "                    GROUP BY clientMac)\n" +
-                "GROUP BY clientMac")
+                        "FROM Observation\n" +
+                        "WHERE\n" +
+                        "  clientMac IN (SELECT clientMac\n" +
+                        "                FROM observation\n" +
+                        "                WHERE rssi >= 15 AND (seenTime BETWEEN (:dateFrom) AND (:dateTo)) AND router_id IN (:eventRoutersId)\n" +
+                        "                GROUP BY clientMac)\n" +
+                        "  AND clientMac IN (SELECT clientMac\n" +
+                        "                    FROM observation\n" +
+                        "                    WHERE rssi >= 15 AND seenTime >= (:dateFrom) AND router_id IN (:storeRoutersId)\n" +
+                        "                    GROUP BY clientMac)\n" +
+                        "GROUP BY clientMac")
                 .addEntity(Observation.class)
                 .setParameterList("eventRoutersId", eventRoutersId)
                 .setParameterList("storeRoutersId", storeRoutersId)
