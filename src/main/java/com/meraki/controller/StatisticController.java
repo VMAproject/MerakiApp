@@ -6,6 +6,7 @@ import com.meraki.entity.Store;
 import com.meraki.service.interfaces.EventService;
 import com.meraki.service.interfaces.StoreService;
 import com.meraki.statistics.service.impls.StatisticServiceImpl2;
+import com.meraki.statistics.service.impls.StatisticServiceImpl3;
 import com.meraki.statistics.service.interfaces.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,8 +23,13 @@ import java.util.Set;
 public class StatisticController {
 
     private StatisticService statisticService;
+
     @Autowired
     private StatisticServiceImpl2 statisticServiceImpl2;
+
+    @Autowired
+    private StatisticServiceImpl3 statisticServiceImpl3;
+
     private EventService eventService;
     private StoreService storeService;
 
@@ -101,7 +107,8 @@ public class StatisticController {
                                       @RequestParam(value = "storeId") long storeId,
                                       Model model) {
 
-        List<Observation> resultList = statisticServiceImpl2.compareEventToStore(eventId, storeId);
+//        List<Observation> resultList = statisticServiceImpl2.compareEventToStore(eventId, storeId);
+        List<Observation> resultList = statisticServiceImpl3.compareEventToStore(eventId, storeId);
 
         model.addAttribute("events", eventService.getAllEvents());
         model.addAttribute("stores", storeService.getAllStore());

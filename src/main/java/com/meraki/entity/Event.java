@@ -8,8 +8,6 @@ import java.util.*;
 @Table(name = "event")
 public class Event implements Serializable {
 
-//    private static final long serialVersionUID = -7988799579036225132L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
@@ -22,12 +20,10 @@ public class Event implements Serializable {
     private String location;
 
     @Temporal(TemporalType.TIMESTAMP)
-//    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_from")
     private Date dateFrom;
 
     @Temporal(TemporalType.TIMESTAMP)
-//    @DateTimeFormat(pattern = "dd/mm/yyyy")
     @Column(name = "date_to")
     private Date dateTo;
 
