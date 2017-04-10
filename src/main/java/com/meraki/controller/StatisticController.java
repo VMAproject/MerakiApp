@@ -3,8 +3,7 @@ package com.meraki.controller;
 import com.meraki.entity.Observation;
 import com.meraki.service.interfaces.EventService;
 import com.meraki.service.interfaces.StoreService;
-import com.meraki.statistics.service.impls.StatisticServiceImpl2;
-import com.meraki.statistics.service.impls.StatisticServiceImpl3;
+import com.meraki.statistics.service.impls.StatisticServiceImpl;
 import com.meraki.statistics.service.interfaces.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,30 +20,20 @@ import java.util.Set;
 public class StatisticController {
 
     private StatisticService statisticService;
-
-    @Autowired
-    private StatisticServiceImpl2 statisticServiceImpl2;
-
-    @Autowired
-    private StatisticServiceImpl3 statisticServiceImpl3;
-
     private EventService eventService;
     private StoreService storeService;
 
     @Autowired
-    @Qualifier("statisticServiceImpl")
     public void setStatisticService(StatisticService statisticService) {
         this.statisticService = statisticService;
     }
 
     @Autowired
-    @Qualifier("eventServiceImpl")
     public void setEventService(EventService eventService) {
         this.eventService = eventService;
     }
 
     @Autowired
-    @Qualifier("storeServiceImpl")
     public void setStoreService(StoreService storeService) {
         this.storeService = storeService;
     }
@@ -58,55 +47,13 @@ public class StatisticController {
         return "statistic/statisticList";
     }
 
-//    @RequestMapping(value = "/statistic/select/event", method = RequestMethod.GET)
-//    public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId,
-//                                                    Model model) {
-//
-//        Set<Observation> resultSet = statisticService.getAllUniqueObservationsByEventId(eventId);
-//
-//        model.addAttribute("events", eventService.getAllEvents());
-//        model.addAttribute("stores", storeService.getAllStore());
-//        model.addAttribute("observations", resultSet);
-//        model.addAttribute("amount", resultSet.size());
-//
-//        return "statistic/statisticList";
-//    }
-
-    @RequestMapping(value = "/statistic/select/event", method = RequestMethod.GET)
-    public String getAllUniqueObservationsByEventId(@RequestParam("eventId") long eventId,
-                                                    Model model) {
-
-        List<Observation> resultList = statisticServiceImpl2.getAllUniqueClientsByEventId(eventId);
-
-        model.addAttribute("events", eventService.getAllEvents());
-        model.addAttribute("stores", storeService.getAllStore());
-        model.addAttribute("observations", resultList);
-        model.addAttribute("amount", resultList.size());
-
-        return "statistic/statisticList";
-    }
-
-    @RequestMapping(value = "/statistic/select/store", method = RequestMethod.GET)
-    public String getAllUniqueObservationsByStoreId(@RequestParam("storeId") long storeId,
-                                                    Model model) {
-
-        Set<Observation> resultSet = statisticService.getAllUniqueObservationsByStoreId(storeId);
-
-        model.addAttribute("events", eventService.getAllEvents());
-        model.addAttribute("stores", storeService.getAllStore());
-        model.addAttribute("observations", resultSet);
-        model.addAttribute("amount", resultSet.size());
-
-        return "statistic/statisticList";
-    }
-
     @RequestMapping(value = "/statistic/compare", method = RequestMethod.GET)
     public String compareEventToStore(@RequestParam(value = "eventId") long eventId,
                                       @RequestParam(value = "storeId") long storeId,
                                       Model model) {
 
         Long[] storesId = {storeId};
-        List<Observation> resultList = statisticServiceImpl3.getUniqueStoreVisitorsByEventId(eventId, storesId);
+        List<Observation> resultList = statisticService.getUniqueStoreVisitorsByEventId(eventId, storesId);
 
         model.addAttribute("events", eventService.getAllEvents());
         model.addAttribute("stores", storeService.getAllStore());

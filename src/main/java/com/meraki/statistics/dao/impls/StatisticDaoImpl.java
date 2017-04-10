@@ -1,72 +1,71 @@
 package com.meraki.statistics.dao.impls;
 
+import com.meraki.dao.interfaces.EventDao;
+import com.meraki.entity.Event;
 import com.meraki.entity.Observation;
-import com.meraki.entity.Router;
 import com.meraki.statistics.dao.interfaces.StatisticDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 @Repository
 public class StatisticDaoImpl implements StatisticDao {
 
     private SessionFactory sessionFactory;
+    private EventDao eventDao;
 
     @Autowired
-    @Qualifier("sessionFactory")
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
+    @Autowired
+    public void setEventDao(EventDao eventDao) {
+        this.eventDao = eventDao;
+    }
+
     @Override
-    public List<Router> getRoutersByEventId(long id) {
-        List<Router> resultList = new ArrayList<>();
+    public List<Observation> getUniqueStoreVisitorsByEventId(Long id, Long[] storesId) {
+        Event loadedEvent = eventDao.getEvent(id);
 
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        List<Router> loadedList = session.createQuery("from Router r where r.event.id = " + id).list();
-        transaction.commit();
-        session.close();
+        List<Observation> uniqueEventVisitors = getUniqueEventVisitors(loadedEvent);
+        List<Observation> uniqueStoreVisitors = getUniqueStoreVisitors(loadedEvent.getDateFrom(), storesId);
 
-        resultList.addAll(loadedList);
+        List<Observation> resultList = new ArrayList<>(uniqueStoreVisitors);
+        resultList.retainAll(uniqueEventVisitors);
+
+        resultList.sort(Comparator.comparing(Observation::getSeenTime));
 
         return resultList;
     }
 
     @Override
-    public List<Router> getRoutersByStoreId(long id) {
-        List<Router> resultList = new ArrayList<>();
-
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        List<Router> loadedList = session.createQuery("from Router r where r.store.id = " + id).list();
-        transaction.commit();
-        session.close();
-
-        resultList.addAll(loadedList);
-
-        return resultList;
+    @SuppressWarnings("unchecked")
+    public List<Observation> getUniqueEventVisitors(Event event) {
+        return sessionFactory.getCurrentSession()
+                .getNamedQuery("getUniqueEventVisitors")
+                .setParameter("id", event.getId())
+                .setParameter("dateFrom", event.getDateFrom())
+                .setParameter("dateTo", event.getDateTo())
+                .list();
     }
 
     @Override
-    public List<Observation> getObservationsByRouterId(long id) {
-        List<Observation> resultList = new ArrayList<>();
-
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        List<Observation> loadedList = session.createQuery("from Observation o where o.router.id = " + id).list();
-        transaction.commit();
-        session.close();
-
-        resultList.addAll(loadedList);
-
-        return resultList;
+    @SuppressWarnings("unchecked")
+    public List<Observation> getUniqueStoreVisitors(Date dateFrom, Long[] storesId) {
+        return sessionFactory.getCurrentSession()
+                .getNamedQuery("getUniqueStoreVisitors")
+                .setParameterList("id", storesId)
+                .setParameter("dateFrom", dateFrom)
+                .list();
     }
 
 }

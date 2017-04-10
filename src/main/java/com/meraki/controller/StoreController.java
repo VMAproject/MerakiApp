@@ -63,7 +63,7 @@ public class StoreController {
     }
 
     @RequestMapping(value = "/stores/createOrUpdate", method = RequestMethod.GET)
-    public String createOrUpdateEvent(@RequestParam String storeId,
+    public String createOrUpdateStore(@RequestParam String storeId,
                                       @RequestParam String name,
                                       @RequestParam String location,
                                       @RequestParam long routerId) {
@@ -91,19 +91,19 @@ public class StoreController {
         return "redirect:/stores/all";
     }
 
-    @RequestMapping("/stores/delete")
-    public String deleteEvent(@RequestParam("id") long id) {
-
-        List<Router> routers = statisticService.getRoutersByStoreId(id);
-        for (Router router : routers) {
-            router.setStore(null);
-            routerService.updateRouter(router);
-        }
-
-        storeService.deleteStore(id);
-
-        return "redirect:/stores/all";
-    }
+//    @RequestMapping("/stores/delete")
+//    public String deleteStore(@RequestParam("id") long id) {
+//
+//        List<Router> routers = statisticService.getRoutersByStoreId(id);
+//        for (Router router : routers) {
+//            router.setStore(null);
+//            routerService.updateRouter(router);
+//        }
+//
+//        storeService.deleteStore(id);
+//
+//        return "redirect:/stores/all";
+//    }
 
     @RequestMapping("/stores/all")
     public String showStores(Model model) {

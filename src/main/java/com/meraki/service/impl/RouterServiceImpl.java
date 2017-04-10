@@ -17,7 +17,6 @@ public class RouterServiceImpl implements RouterService {
     @Autowired
     private RouterDao routerDao;
 
-
     @Override
     public long createRouter(Router router) {
         return routerDao.createRouter(router);
