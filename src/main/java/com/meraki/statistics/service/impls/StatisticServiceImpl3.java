@@ -9,10 +9,7 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class StatisticServiceImpl3 {
@@ -54,7 +51,9 @@ public class StatisticServiceImpl3 {
 
         List<Observation> resultList = new ArrayList<>(uniqueClientsByStoreRoutersIdWithDate);
         resultList.retainAll(uniqueClientsByEventRoutersIdWithDate);
-//        Collections.sort(resultList, comp...);
+
+
+        Collections.sort(resultList, Comparator.comparing(Observation::getSeenTime));
 
         return resultList;
     }

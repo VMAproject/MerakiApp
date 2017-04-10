@@ -93,7 +93,8 @@ public class StatisticServiceImpl2 {
     private List<Router> getRoutersByEventId(long id) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        List<Router> routers = (List<Router>) session.createQuery("from Router where event_id = (:id)")
+        List<Router> routers;
+        routers = (List<Router>) session.createQuery("from Router where event_id = (:id)")
                 .setParameter("id", id)
                 .list();
         transaction.commit();
@@ -107,7 +108,8 @@ public class StatisticServiceImpl2 {
     private List<Router> getRoutersByStoreId(long id) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        List<Router> routers = (List<Router>) session.createQuery("from Router where store_id = (:id)")
+        List<Router> routers;
+        routers = (List<Router>) session.createQuery("from Router where store_id = (:id)")
                 .setParameter("id", id)
                 .list();
         transaction.commit();
@@ -119,7 +121,8 @@ public class StatisticServiceImpl2 {
     private Event getEventById(long id) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        Event event = (Event) session.createQuery("from Event where event_id = (:id)").setParameter("id", id).uniqueResult();
+        Event event;
+        event = (Event) session.createQuery("from Event where event_id = (:id)").setParameter("id", id).uniqueResult();
         transaction.commit();
         session.close();
 
