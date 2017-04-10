@@ -1,8 +1,6 @@
 package com.meraki.controller;
 
-import com.meraki.entity.Event;
 import com.meraki.entity.Observation;
-import com.meraki.entity.Store;
 import com.meraki.service.interfaces.EventService;
 import com.meraki.service.interfaces.StoreService;
 import com.meraki.statistics.service.impls.StatisticServiceImpl2;
@@ -107,8 +105,8 @@ public class StatisticController {
                                       @RequestParam(value = "storeId") long storeId,
                                       Model model) {
 
-//        List<Observation> resultList = statisticServiceImpl2.compareEventToStore(eventId, storeId);
-        List<Observation> resultList = statisticServiceImpl3.compareEventToStore(eventId, storeId);
+        Long[] storesId = {storeId};
+        List<Observation> resultList = statisticServiceImpl3.getUniqueStoreVisitorsByEventId(eventId, storesId);
 
         model.addAttribute("events", eventService.getAllEvents());
         model.addAttribute("stores", storeService.getAllStore());
