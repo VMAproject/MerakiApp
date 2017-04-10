@@ -33,7 +33,7 @@ public class StatisticServiceImpl2 {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         List<Observation> loadedList = (List<Observation>) session
-                .createSQLQuery("SELECT * FROM Observation WHERE rssi >= 15 AND (seenTime BETWEEN (:dateFrom) AND (:dateTo)) AND router_id IN (:routersId) GROUP BY clientMac;")
+                .createSQLQuery("SELECT * FROM Observation WHERE rssi >= 15 AND (seenTime BETWEEN (:dateFrom) AND (:dateTo)) AND router_id IN (:routersId) GROUP BY clientMac ORDER BY seenTime ASC;")
                 .addEntity(Observation.class)
                 .setParameterList("routersId", routersId)
                 .setParameter("dateFrom", event.getDateFrom())
@@ -57,18 +57,13 @@ public class StatisticServiceImpl2 {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         List<Observation> loadedList = session
-                .createSQLQuery("SELECT *\n" +
-                        "FROM Observation\n" +
-                        "WHERE\n" +
-                        "  clientMac IN (SELECT clientMac\n" +
-                        "                FROM observation\n" +
-                        "                WHERE rssi >= 15 AND (seenTime BETWEEN (:dateFrom) AND (:dateTo)) AND router_id IN (:eventRoutersId)\n" +
-                        "                GROUP BY clientMac)\n" +
-                        "  AND clientMac IN (SELECT clientMac\n" +
-                        "                    FROM observation\n" +
-                        "                    WHERE rssi >= 15 AND seenTime >= (:dateFrom) AND router_id IN (:storeRoutersId)\n" +
-                        "                    GROUP BY clientMac)\n" +
-                        "GROUP BY clientMac")
+                .createSQLQuery("SELECT * FROM Observation WHERE\n" +
+                        "  clientMac IN\n" +
+                        "  (SELECT clientMac FROM observation WHERE seenTime BETWEEN (:dateFrom) AND (:dateTo) AND router_id IN (:eventRoutersId) GROUP BY clientMac)\n" +
+                        "  AND clientMac IN\n" +
+                        "      (SELECT clientMac FROM observation WHERE seenTime >= (:dateFrom) AND router_id IN (:storeRoutersId) GROUP BY clientMac)\n" +
+                        "  AND rssi >= 15\n" +
+                        "GROUP BY clientMac ORDER BY seenTime ASC")
                 .addEntity(Observation.class)
                 .setParameterList("eventRoutersId", eventRoutersId)
                 .setParameterList("storeRoutersId", storeRoutersId)
@@ -126,9 +121,7 @@ public class StatisticServiceImpl2 {
         Transaction transaction = session.beginTransaction();
         Event event = (Event) session.createQuery("from Event where event_id = (:id)").setParameter("id", id).uniqueResult();
         transaction.commit();
-
         session.close();
-
 
         return event;
     }

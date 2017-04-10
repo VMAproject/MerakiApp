@@ -8,8 +8,6 @@ import java.util.*;
 @Table(name = "event")
 public class Event implements Serializable {
 
-//    private static final long serialVersionUID = -7988799579036225132L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
