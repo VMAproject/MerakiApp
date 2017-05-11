@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
-import java.util.List;
 
 @Controller
 public class EventController {
@@ -100,19 +99,19 @@ public class EventController {
         return "redirect:/events/all";
     }
 
-    @RequestMapping("/events/delete")
-    public String deleteEvent(@RequestParam("id") long id) {
-
-        List<Router> routers = statisticService.getRoutersByEventId(id);
-        for (Router router : routers) {
-            router.setEvent(null);
-            routerService.updateRouter(router);
-        }
-
-        eventService.deleteEvent(id);
-
-        return "redirect:/events/all";
-    }
+//    @RequestMapping("/events/delete")
+//    public String deleteStore(@RequestParam("id") long id) {
+//
+//        List<Router> routers = statisticService.getRoutersByEventId(id);
+//        for (Router router : routers) {
+//            router.setEvent(null);
+//            routerService.updateRouter(router);
+//        }
+//
+//        eventService.deleteStore(id);
+//
+//        return "redirect:/events/all";
+//    }
 
     @RequestMapping("/events/all")
     public String showEvents(Model model) {

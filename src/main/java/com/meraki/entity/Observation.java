@@ -1,15 +1,19 @@
 package com.meraki.entity;
 
-import lombok.Data;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
-import java.util.StringJoiner;
 
 @Entity
 @Table(name = "observation")
+@NamedQueries({
+        @NamedQuery(name = "getUniqueEventVisitors", query = "select o from Observation o " +
+                "left join fetch o.router r left join fetch r.event e " +
+                "where o.rssi >= 15 and e.id = (:id) and o.seenTime between (:dateFrom) and (:dateTo) group by o.clientMac"),
+        @NamedQuery(name = "getUniqueStoreVisitors", query = "select o from Observation o left join fetch o.router r left join fetch r.store s " +
+                "where s.id in (:id) and o.rssi >= 15 and o.seenTime >= (:dateFrom) group by o.clientMac")
+})
 public class Observation implements Serializable {
 
     @Id

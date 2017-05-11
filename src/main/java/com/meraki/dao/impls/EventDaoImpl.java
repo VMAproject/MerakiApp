@@ -64,13 +64,10 @@ public class EventDaoImpl implements EventDao {
 
     @Override
     public Event getEvent(long id) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        Event loadedEvent = (Event) session.get(Event.class, id);
-        transaction.commit();
-        session.close();
-
-        return loadedEvent;
+        return (Event) sessionFactory.getCurrentSession()
+                .createQuery("from Event e where e.id = (:id)")
+                .setParameter("id", id)
+                .uniqueResult();
     }
 
     @Override

@@ -41,7 +41,6 @@ public class HomeController {
     }
 
 
-
     //====================================== Methods ==============================================
 
     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
