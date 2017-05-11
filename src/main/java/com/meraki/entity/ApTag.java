@@ -4,12 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
-import java.util.StringJoiner;
+
 @Data
 @Entity
 @Table(name = "apTag")
-public class ApTag implements Serializable{
+public class ApTag implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
